@@ -5,5 +5,9 @@ services:
 before_install: 
   - docker build -t s403o/algo-front -f Dockerfile.dev .
 
-script: 
-  - docker run s403o/algo-front npm run test -- --coverage
+jobs:
+  include:
+  - stage: test
+    if: branch = main
+    script:
+    - docker run s403o/algo-front npm run test -- --coverage
