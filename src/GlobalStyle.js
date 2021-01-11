@@ -14,7 +14,7 @@ export default createGlobalStyle`
 	}
      
     body{
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';	    -webkit-font-smoothing: antialiased;
+font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';	    -webkit-font-smoothing: antialiased;
 	    -moz-osx-font-smoothing: grayscale;
 	    -webkit-overflow-scrolling: touch;
 	    min-width: 375px;
@@ -22,7 +22,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hira
     	background: ${({theme})=>theme.bg};
     	color: ${({theme})=>theme.text};
     	transition: all 0.50s linear;
-    	mrgin:0;
+    	margin:0;
     	padding:0;
     	min-heigth:1000px;
     }

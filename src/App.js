@@ -3,9 +3,15 @@
 import styled,{ThemeProvider} from 'styled-components'
 import GlobalStyle from './GlobalStyle';
 import {useDarkMode} from './shared/hooks/useDarkMode';
+import {BrowserRouter as Router , Route,Switch} from 'react-router-dom';
+
 import Home from './pages/home'
+import Login from './pages/login'
+import Signup from './pages/signup'
+
 import Button from './components/button/';
 import Navbar from './components/navbar/'
+
 
 const light ={
 	primary:'#005FF9',
@@ -39,16 +45,22 @@ function App() {
   return (
   	<ThemeProvider theme={light}>
   	    <GlobalStyle />
+        <Router>
         <Navbar />
-  	    <Wrapper className="App">
-  	    <Home />
-  	    <button onClick={()=>toggleTheme(theme === 'light'? 'dark' : 'light' )}>toggleTheme</button>
-  	    <div style={{margin:'60vh 0 100px',textAlign:'center'}}>
-  	      <Button>
-  	      	hello there
-  	      </Button>
-  	    </div>
-	    </Wrapper>
+    	    <Wrapper className="App">
+          <Switch>
+              <Route exact path="/">
+      	         <Home />
+              </Route>
+               <Route exact path="/login">
+                 <Login />
+              </Route>
+               <Route exact path="/signup">
+                 <Signup />
+              </Route>
+          </Switch>
+  	    </Wrapper>
+      </Router>
     </ThemeProvider>
   );
 }

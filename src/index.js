@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
-import App from './framer-motion/framer-motion-lesson-2'
+ import App from './App';
+//import App from './framer-motion/framer-motion-lesson-2'
 import reportWebVitals from './reportWebVitals';
+import './assets/style.css';
+//import styled from 'styled-components';
 
 ReactDOM.render(
   <React.StrictMode>

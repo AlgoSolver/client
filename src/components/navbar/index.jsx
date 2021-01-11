@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Button from '../button'
+import {Link} from 'react-router-dom';
+
 const StyledNavbar = styled.div`
     width: 100%;
     position: absolute;
@@ -18,7 +20,7 @@ const StyledNavbar = styled.div`
 			span{
 				display:inline-block;
 				margin-right:8rem;
-                font-family: 'MonoLisa';
+                font-family: 'Avenir';
                 font-weight: 700;
                 font-size:2.5rem;
 			}
@@ -51,7 +53,7 @@ const StyledNavbar = styled.div`
 			font-size:1.4rem;
 			font-weight: 600;
 			text-transform: capitalize;
-			font-family: 'Roboto';
+			font-family: 'Avenir';
 			margin:0 .4rem;
 		    display: flex;
 		    justify-content:center;
@@ -100,14 +102,18 @@ const Navbar = () =>{
               	</div>
               	<div className="menu__buttons">
                     <li className="menu__item login">
-	                    <Button small>
-	                       Log in
-	                    </Button>
+	                    <Link to="/login">
+		                    <Button small>
+		                       Log in
+		                    </Button>
+		                </Link>
                     </li>	
                     <li className="menu__item">
-	                    <Button outlined small>
-	                       Sign in
-	                    </Button>
+                        <Link to="/signup">
+		                    <Button outlined small>
+		                       Sign in
+		                    </Button>
+		                </Link>
                     </li>	
               	</div>
               </ul>

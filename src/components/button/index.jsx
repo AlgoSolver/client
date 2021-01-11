@@ -14,7 +14,7 @@ const StyledButton = styled.button`
     font-weight: 600;
     box-shadow:${({theme})=>theme.shadow};
     transition: transform 200ms ease-in-out;
-    font-family: 'MonoLisa';
+    font-family: 'Avenir';
     letter-spacing: 0.03rem;
     &.big{
         padding: 12px 26px;
@@ -23,7 +23,7 @@ const StyledButton = styled.button`
       padding:0 1.6rem;
       height:3.2rem;
       font-size:1.4rem;
-      font-family:'Roboto';
+      font-family:'Avenir';
       border-radius: .5rem;
     }
     &.contained{

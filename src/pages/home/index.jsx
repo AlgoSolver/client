@@ -3,15 +3,14 @@ import hero from '../../assets/images/hero.svg';
 import code from '../../assets/images/code2.png';
 import Button from '../../components/button/';
 const HeroSection = styled.section`
-	background-color: #E7E7E9;
-    color: #fff;
-    padding: 13rem 0 14rem;
+	background-color:${(props)=>props.theme.bg2};
+    padding: 18rem 0 14rem;
     &::before{
     	content: '';
 	    display: block;
 	    width: 3500px;
 	    height: 1000px;
-	    background: #E7E7E9 url(${hero}) 50% 100% no-repeat;
+	    background:${(props)=>props.theme.bg2} url(${hero}) 50% 100% no-repeat;
 	    background-size: cover;
 	    position: absolute;
 	    top: 0;
@@ -36,7 +35,7 @@ const HeroSection = styled.section`
 	    			color:${({theme})=>theme.bg2};
 	    			font-weight: 700;
 	    			font-size:5rem;
-	    			font-family: 'MonoLisa';
+	    			font-family: 'Avenir-Bold';
 	    			margin-bottom: 3rem;
 	    			span{
 	    				font-weight: bold;
@@ -45,12 +44,12 @@ const HeroSection = styled.section`
 	    		}
 	    		&__subtitle{
 	    			color:${(props)=>props.theme.bg};
-	    			font-size:1.6rem;
+	    			font-size:1.5rem;
 	    			font-weight: 300;
 	    			line-height: 2;
 	    			letter-spacing: .03rem;
 	    			text-transform: capitalize;
-	    			font-family: 'Roboto';
+	    			font-family: 'Avenir';
 	    			margin-bottom:2rem;
 
 
