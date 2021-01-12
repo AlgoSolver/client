@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 import Button from '../button'
-import {Link} from 'react-router-dom';
-
+import {Link,useLocation} from 'react-router-dom';
 const StyledNavbar = styled.div`
+    &.navnormal{
+    	.nav__container{
+			box-shadow: 0 1.5rem 2rem -0.5rem rgba(0,0,0,0.07), 0 0.25rem 2rem 0 rgba(0,0,0,0.03);
+			background:${({theme})=>theme.bg2};
+			width:100%;
+            .nav__body{
+		     display: flex;
+		     width: 100%;
+		      max-width: 111.8rem;
+		      margin: 0 auto;
+	          }
+		}
+	}
+    &.floatnav{
     width: 100%;
     position: absolute;
     top: 0;
@@ -10,7 +23,18 @@ const StyledNavbar = styled.div`
     z-index: 999;
     margin-top:2rem;
 	padding: 0rem 8rem;
-   
+	.nav__container{
+			border-radius: .9rem;
+			box-shadow: 0 1.5rem 2rem -0.5rem rgba(0,0,0,0.07), 0 0.25rem 2rem 0 rgba(0,0,0,0.03);
+			background:${({theme})=>theme.bg2};		
+		    max-width: 117rem;
+			margin: 0 auto;
+		}
+		.nav__body{
+	     display: flex;
+	     width: 100%;
+	}
+    }
 	.nav__brand{
 		height: 6.4rem;
 		display: flex;
@@ -71,22 +95,13 @@ const StyledNavbar = styled.div`
           }
 		}
 	}
-	.nav__body{
-	     display: flex;
-	     width: 100%;
-	}
-	.nav__container{
-			border-radius: .9rem;
-			box-shadow: 0 1.5rem 2rem -0.5rem rgba(0,0,0,0.07), 0 0.25rem 2rem 0 rgba(0,0,0,0.03);
-			background:${({theme})=>theme.bg2};
-			width:100%;
-			 max-width: 128rem;
-            margin: 0 auto;
-		}
+	
 `
 
 const Navbar = () =>{
-	return <StyledNavbar className="nav">
+	const location = useLocation();
+	console.log(location);
+	return <StyledNavbar className={`nav ${location.pathname === '/' ? "floatnav" :'navnormal'}`}>
 		<div className="nav__container">
 			<nav className="nav__body">
               <div className="nav__brand">
@@ -94,11 +109,11 @@ const Navbar = () =>{
               </div>
               <ul className="menu">
               	<div className="menu__links">
-              	    <li className="menu__item"><a href="#" className="menu__link">Explore</a></li>	
-      	  			<li className="menu__item"><a href="#" className="menu__link">Playground</a></li>
-      	  			<li className="menu__item"><a href="#" className="menu__link">Blog</a></li>	
-      	  			<li className="menu__item"><a href="#" className="menu__link">Abouts us</a></li>	
-      	  			<li className="menu__item"><a href="#" className="menu__link">Contact</a></li>		
+	              	    <li className="menu__item"><a href="#" className="menu__link">Explore</a></li>	
+	      	  			<li className="menu__item"><a href="#" className="menu__link">Playground</a></li>
+	      	  			<Link to="/blog"><li className="menu__item"><a href="#" className="menu__link">Blog</a></li></Link>	
+	      	  			<li className="menu__item"><a href="#" className="menu__link">Abouts us</a></li>	
+	      	  			<li className="menu__item"><a href="#" className="menu__link">Contact</a></li>		
               	</div>
               	<div className="menu__buttons">
                     <li className="menu__item login">

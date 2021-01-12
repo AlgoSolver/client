@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import classNames from "classnames";
 
-const types = ['primary','secondary2','text']
+const types = ['primary','secondary2','text','text2','text3']
 
 const StyledButton = styled.button`
 	display: inline-block;
@@ -13,6 +13,7 @@ const StyledButton = styled.button`
     padding: 5px 14px 6px;
     font-weight: 600;
     box-shadow:${({theme})=>theme.shadow};
+    box-shadow: 0 4px 4px rgba(71,77,46,0.05);
     transition: transform 200ms ease-in-out;
     font-family: 'Avenir';
     letter-spacing: 0.03rem;
@@ -36,6 +37,19 @@ const StyledButton = styled.button`
        border: 2px solid ${(props)=>props.theme[props.type]};
        color:${(props)=>props.theme[props.type]};
     }
+    &.link{
+       background:transparent;
+       border:0;
+       text-decoration: underline;
+       display: inline;
+       color:${(props)=>props.theme[props.type]};
+       box-shadow: none;
+       padding:0;
+       &:hover{
+        text-decoration: none;
+       }
+
+    }
     &.squared{
     	border-radius: 0;
     }
@@ -43,7 +57,7 @@ const StyledButton = styled.button`
     	display: block;
     	width:100%;
     }
-
+     
     &.scaling{
     &:hover{
     	transform: scale(1.03);
@@ -61,7 +75,7 @@ const Button = ({
 	 theme="primary",
 	 block,
 	 outlined,
-	 text,
+	 link,
 	 squared,
 	 circle,
 	 style={},
@@ -72,7 +86,7 @@ const Button = ({
 	})=>{
 	 const classes = classNames(
       className,
-      `${outlined ? "outlined":text ? "text" : "contained"}`,
+      `${outlined ? "outlined":link ? "link" : "contained"}`,
       big && "big",
       small && "small",
       squared && "squared",
