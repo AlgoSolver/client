@@ -1,0 +1,13 @@
+sudo: required
+services: 
+  - docker
+
+before_install: 
+  - docker build -t s403o/algo-front -f Dockerfile.dev .
+
+jobs:
+  include:
+  - stage: test
+    if: branch = main
+    script:
+    - docker run s403o/algo-front npm run test -- --coverage
