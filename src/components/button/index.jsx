@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import classNames from "classnames";
 
-const types = ['primary','secondary2','text','text2','text3']
+const types = ['primary', 'secondary2', 'text', 'text2', 'text3']
 
-const StyledButton = styled.button`
-	display: inline-block;
-	font-size: 1.6rem;
-	line-height: 1.6;
+const StyledButton = styled.button `
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 1.6;
     background: ${({theme})=>theme.primary};
     color: #fff;
     border-radius: 1rem;
@@ -51,57 +51,57 @@ const StyledButton = styled.button`
 
     }
     &.squared{
-    	border-radius: 0;
+      border-radius: 0;
     }
     &.block{
-    	display: block;
-    	width:100%;
+      display: block;
+      width:100%;
     }
      
     &.scaling{
     &:hover{
-    	transform: scale(1.03);
+      transform: scale(1.03);
         }
     &:active{
-    	 transform: scale(.9);
+       transform: scale(.9);
         }
     }
 }
-` 
+`
 const Button = ({
-	 children,
-	 disabled,
-	 big,
-	 theme="primary",
-	 block,
-	 outlined,
-	 link,
-	 squared,
-	 circle,
-	 style={},
-	 className,
-	 loading,
-   small,
-	 scale=true
-	})=>{
-	 const classes = classNames(
-      className,
-      `${outlined ? "outlined":link ? "link" : "contained"}`,
-      big && "big",
-      small && "small",
-      squared && "squared",
-      block && "block",
-      circle && "circle",
-      loading && "loading",
-      scale && 'scaling'
+    children,
+    disabled,
+    big,
+    theme = "primary",
+    block,
+    outlined,
+    link,
+    squared,
+    circle,
+    style = {},
+    className,
+    loading,
+    small,
+    scale = true
+}) => {
+    const classes = classNames(
+        className,
+        `${outlined ? "outlined":link ? "link" : "contained"}`,
+        big && "big",
+        small && "small",
+        squared && "squared",
+        block && "block",
+        circle && "circle",
+        loading && "loading",
+        scale && 'scaling'
     );
 
-	return <StyledButton
-	style={style}
-	className={classes}
-	type={theme}
-	>
-	{children}
-	</StyledButton>
+    return <StyledButton
+  style={style}
+  className={classes}
+  type={theme}
+  >
+  {children}
+  </StyledButton>
 }
 export default Button;

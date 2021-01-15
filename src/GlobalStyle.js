@@ -24,7 +24,6 @@ font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI'
     	transition: all 0.50s linear;
     	margin:0;
     	padding:0;
-    	min-heigth:1000px;
     }
 
     a{
