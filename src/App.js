@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import { useDarkMode } from "./shared/hooks/useDarkMode";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Elements from './pages/elements/'
+import Elements from './pages/elements/';
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
