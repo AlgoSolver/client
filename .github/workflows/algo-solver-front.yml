@@ -10,27 +10,25 @@ jobs:
   build0:
     name: Build-linux
     runs-on: ubuntu-latest
-  build1:
-    name: Build-Windows
-    runs-on: windows-latest
-  build2:
-    name: Build-Mac
-    runs-on: macos-latest
+#   build1:
+#     name: Build-Windows
+#     runs-on: windows-latest
+#   build2:
+#     name: Build-Mac
+#     runs-on: macos-latest
   
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
 
     steps:
-    - name: Checkout repository
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      
     - name: Install dependencies
-    - run: npm install
+      run: npm install
     #- name: Start 
     -  run: npm start
     - name: Run the tests and generate coverage report
