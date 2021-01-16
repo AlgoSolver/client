@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import * as Vectors from "../../assets/icons";
 import { useRef, useState, useEffect } from "react";
+import { TextInput } from "../../components/form";
 
 import { Search } from "../../assets/icons";
 const IconContainer = styled.div`
@@ -77,6 +78,7 @@ const Icons = () => {
     setSearchedIcons(searchedIcons);
   }, []);
   useEffect(() => {
+    if(! (inputRef?.current))return;
     const timer = setTimeout(() => {
       if (keyword === inputRef.current.value) {
         setSearchedIcons(
@@ -85,28 +87,26 @@ const Icons = () => {
           )
         );
       }
-    }, 400);
+          }, 400);
+  
 
     return () => clearTimeout(timer);
   }, [keyword]);
-  console.log("hey");
   return (
     <IconContainer>
       <div className="icons">
         <div className="icons__wrapper">
           <div className="icons__search">
             <div className="form__unit">
-              <input
+              <TextInput
                 type="text"
                 id="iconed"
-                ref={inputRef}
+                register={inputRef}
+                icon={Search}
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
                 className="form__input iconed"
               />
-              <span className="form__icon">
-                <Search />
-              </span>
             </div>
           </div>
 

@@ -42,7 +42,7 @@ const Login = ()=>{
 		</Text>
 		<Text 
 		  type="p" 
-		  size="2rem" color="secondary2"
+		  size="2rem"
 		  >
 			Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Eius itaque similique explicabo esse obcaecati nemo ratione quis et quam.	
 		</Text>

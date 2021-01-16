@@ -61,7 +61,7 @@ const Colors = ()=>{
 	<Text type="h1" >Colors</Text>
 	<div className="colors">
 	  {renderPlate('primary')}
-	  {renderPlate('darker')}
+	  {renderPlate('dark')}
 	  {renderPlate('light')}
 	  {renderPlate('red')}
 	  {renderPlate('green')}

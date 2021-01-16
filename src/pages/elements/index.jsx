@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import Icons from '../../elements/icons/'
 import Elevation from '../../elements/elevation/'
 import Colors from '../../elements/colors/'
+import Buttons from '../../elements/buttons'
+import Typography from '../../elements/typography'
+import Forms from '../../elements/form'
 
 const PageContainer = styled.div`
 	width: 100%;
@@ -70,6 +73,8 @@ const Sidebar = ()=>{
 	   		<LinkItem name="icons" active={active}/>
 	   		<LinkItem name="elevation" active={active}/>
 	   		<LinkItem name="buttons" active={active}/>
+	   		<LinkItem name="typography" active={active}/>
+	   	    <LinkItem name="forms" active={active}/>
 	   	</ul>
 	   </div>
 	 </ElementsSidebar>
@@ -86,8 +91,17 @@ const Elements = ()=>{
 	  <Route path="/elements/icons">
 	   <Icons />
 	  </Route>
+	  <Route path="/elements/buttons">
+	   <Buttons />
+	  </Route>
 	  <Route path="/elements/elevation">
 	   <Elevation />
+	  </Route>
+	  <Route path="/elements/typography">
+	   <Typography />
+	  </Route>
+	  <Route path="/elements/forms">
+	   <Forms />
 	  </Route>
 	 </ElementsBody>
 	  </>

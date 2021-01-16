@@ -4,8 +4,8 @@ import {Link,useLocation} from 'react-router-dom';
 const StyledNavbar = styled.div`
     &.navnormal{
     	.nav__container{
-			box-shadow: 0 1.5rem 2rem -0.5rem rgba(0,0,0,0.07), 0 0.25rem 2rem 0 rgba(0,0,0,0.03);
-			background:${({theme})=>theme.bg2};
+			box-shadow: ${({ theme }) => theme.elevation[4].shadow};
+			background:${({ theme }) => theme.colors.light[4]};
 			width:100%;
             .nav__body{
 		     display: flex;
