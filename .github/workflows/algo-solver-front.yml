@@ -35,6 +35,13 @@ jobs:
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
+    - uses: actions/checkout@main
+    - uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
+
     - name: Install dependencies
       run: npm install
 
@@ -47,8 +54,9 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
 
-    - name: Build 
-      run: npm run build
+
+    #- name: Build 
+    #  run: npm run build
 
     #- name: Test 
     #-  run: npm test
