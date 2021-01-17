@@ -66,9 +66,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v1.1.0
+        uses: mohammed-atif/firebase-publish-react@v1.0
         with:
-          args: deploy
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          PROJECT_ID: algosolver-front
+          firebase-token: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+      - name: Verifying Output
+        run: echo ${{ steps.firebase-deploy.outputs.hosting-url }}
