@@ -19,8 +19,8 @@ font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI'
 	    -webkit-overflow-scrolling: touch;
 	    min-width: 375px;
 	    width: 100%;
-    	background: ${({theme})=>theme.bg};
-    	color: ${({theme})=>theme.text};
+    	background: ${({theme})=>theme.colors.light[2]};
+    	color: ${({theme})=>theme.colors.dark[0]};
     	transition: all 0.50s linear;
     	margin:0;
     	padding:0;
@@ -36,5 +36,10 @@ font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI'
     	border:none;
     	cursor:pointer;
     	outline:none;
+    }
+    .center{
+        display:flex;
+        align-items:center;
+        justify-content:center;
     }
 `

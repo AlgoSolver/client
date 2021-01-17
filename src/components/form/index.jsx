@@ -49,27 +49,35 @@ export const Divider = () => {
     </DividerContainer>
   );
 };
+
+ 
 export const TextInput = ({
   label,
   placeholder,
-  type,
+  type="text",
   name,
   error,
   register,
   children,
+  icon,
+  ...rest
 }) => {
+  let iconExist = icon ? true : false;
   return (
-    <Unit>
-      <Label htmlFor={name}>{label}</Label>
-      <Input>
-        <input
+    <Unit iconExist>
+      {label && <Label htmlFor={name}>{label}</Label>}
+        <Input
+          iconExist={iconExist}
           ref={register}
           id={name}
           className={`${error ? "input__error" : ""}`}
           name={name}
           type={type}
           placeholder={placeholder}
+         {...rest}
         />
+         {iconExist && <Icon className="icon__wrapper">{icon()}</Icon>}
+ 
         {children ? children : null}
         <AnimatePresence exitBeforeEnter>
           {error && (
@@ -83,13 +91,19 @@ export const TextInput = ({
             </motion.span>
           )}
         </AnimatePresence>
-      </Input>
     </Unit>
   );
 };
 
 const Unit = styled(motion.div)`
+  position: relative;
   margin-bottom: 2rem;
+  .error {
+    display: inline-block;
+    margin: 0.4rem 0 0.4rem;
+    color: ${({ theme }) => theme.colors.red[1]};;
+    font-size: 1.5rem;
+  }
   .checkbox {
     cursor: pointer;
     margin: 0;
@@ -102,8 +116,8 @@ const Unit = styled(motion.div)`
       position: absolute;
       opacity: 0;
       &:checked ~ .checkbox__input {
-        border-color: ${({ theme }) => theme.primary};
-        background-color: ${({ theme }) => theme.primary};
+        border-color: ${({ theme }) => theme.colors.primary[1]};
+        background-color: ${({ theme }) => theme.colors.primary[1]};
         svg {
           path {
             transition: stroke-dashoffset 0.2s ease-in;
@@ -168,7 +182,7 @@ const Unit = styled(motion.div)`
     }
     &:hover {
       .checkbox__input {
-        border-color: ${({ theme }) => theme.primary};
+        border-color: ${({ theme }) => theme.colors.primary[1]};
         &::after {
           opacity: 1;
         }
@@ -176,50 +190,62 @@ const Unit = styled(motion.div)`
     }
   }
 `;
+const Icon = styled.div`
+  position: absolute;
+  top:50%;
+  left:.8rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  svg{
+    *{
+      stroke:${({ theme }) => theme.colors.dark[3]};
+      transition: stroke .2s ease;
+    }
+  }
+`
+const Input = styled.input`
 
-const Input = styled.div`
-  position: relative;
-  border-radius: 1rem;
-  input[type="text"],
-  input[type="password"] {
-    border: 0.2rem solid #d5dbde;
+    border: 0.2rem solid ${({ theme }) => theme.colors.light[0]};
     appearance: none;
-    color: ${({ theme }) => theme.text2};
+    color: ${({ theme }) => theme.colors.dark[0]};
     font-weight: 700;
     padding: 0 1.5rem;
     outline: none;
-    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: all 0.2s ease;
     display: block;
     width: 100%;
-    border-radius: inherit;
-    height: 4rem;
+    border-radius: .6rem;
+    height: 3.8rem;
     font-family: "Linotte-Light";
     font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    padding-left: ${({iconExist})=> iconExist ? '4rem' :'1.5rem'};
     &::placeholder {
-      color: #d5dbde;
+      color: ${({ theme }) => theme.colors.dark[3]};
       font-weight: bold;
       font-family: "Linotte-Light";
     }
     &:hover {
-      border-color: ${({ theme }) => theme.text3};
+      border-color: ${({ theme }) => theme.colors.dark[4]};
     }
     &:focus {
-      border-color: ${({ theme }) => theme.primary};
+      border-color: ${({ theme }) =>theme.colors.primary[1]};
+    }
+    &:focus ~ .icon__wrapper{
+       svg{
+        *{
+          stroke: ${({ theme }) =>theme.colors.primary[1]}  !important;
+        }
+       }
     }
     &.input__error {
-      border-color: red;
+      border-color: ${({ theme }) =>theme.colors.red[1]};
     }
-  }
-  .error {
-    display: inline-block;
-    margin: 0.4rem 0 0.4rem;
-    color: red;
-    font-size: 1.5rem;
-  }
+  
 `;
 const Label = styled.label`
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) =>  theme.colors.dark[1]};
   font-weight: 600;
   line-height: 1.6;
   display: inline-block;
@@ -227,20 +253,19 @@ const Label = styled.label`
   padding-bottom: 0.6rem;
 `;
 const FormWrapper = styled.div`
-  min-height: 100vh;
-  padding: 12rem 0;
+  min-height: calc(100vh - 6.4rem);
+  padding: 2rem 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const FormContainer = styled.div`
-  width: 41rem;
-  padding: 5rem 5rem 2rem;
-  background: ${({ theme }) => theme.bg2};
-  box-shadow: ${({ theme }) => theme.shadow2};
-  box-shadow: 0 80px 60px 0 rgba(41, 48, 51, 0.08);
-  border-radius: 4rem;
+  width: 39rem;
+  padding: 2rem 2rem 2rem;
+  background: ${({ theme }) => theme.colors.light[4]};
+  box-shadow:${({ theme }) => theme.elevation[3].shadow};
+  border-radius: 2rem;
   margin: 0 auto;
   form {
     width: 100%;
