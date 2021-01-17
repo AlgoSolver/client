@@ -13,10 +13,11 @@ import NewPost from "./pages/new-post";
 import Button from "./components/button/";
 import Navbar from "./components/navbar/";
 
+
 export const theme ={
   colors:{
   primary:['#3568d4','#3e7bfa','#6698fa','#ccddff'],
-  darker:['#1c1c28','#28293d','#555770','#8f90a6','#c7c9d9'],
+  dark:['#1c1c28','#28293d','#555770','#8f90a6','#c7c9d9'],
   light:['#e4e4eb','#ebebf0','#f3f2f5','#fafafc','#ffffff'],
   red:['#e53535','#ff3b3b','#ff5c5c','#ff8080','#ffe5e5'],
   green:['#05a660','#06c270','#39d9ba','#57EBA1','#E3FFF1'],
@@ -105,7 +106,7 @@ const Wrapper = styled.div`
 
 function App() {
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Navbar />

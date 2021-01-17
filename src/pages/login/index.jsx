@@ -19,8 +19,7 @@ const LoginForm = () => {
       <TextInput
         type="text"
         name="email"
-        placeholder="michael@knight.com"
-        label="E-mail Address"
+        placeholder="E-mail Address"
         register={register({
           required: true,
           pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
@@ -30,8 +29,7 @@ const LoginForm = () => {
       <TextInput
         type="password"
         name="password"
-        placeholder=""
-        label="Password"
+        placeholder="Password"
         register={register({ required: true, minLength: 6, maxLength: 32 })}
         error={checkErrors("password", errors)}
       />
@@ -53,7 +51,6 @@ const Login = () => {
           size="2.5rem"
           family="Linotte"
           bold
-          color="text2"
         >
           Login To Your Account
         </Text>
@@ -61,24 +58,21 @@ const Login = () => {
         <div
           style={{
             margin: "1rem 0",
-            textAlign: "center",
+            alignItems: "center",
+            display:'flex',
+            justifyContent:'space-between',
           }}
         >
-          <Button link scale={false} theme="text">
+          <Button link >
             Forgot your password?
           </Button>
-          <Divider />
-          <Button>Login with Google</Button>
-        </div>
-        <div
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <Button link scale={false} theme="text">
+          <Button link>
             Don't have an account
           </Button>
-        </div>
+          </div>
+          <Divider />
+          <Button>Login with Google</Button>
+        
       </Form>
     </Wrapper>
   );
