@@ -35,13 +35,6 @@ jobs:
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
-   # - uses: actions/checkout@main
-    - uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        fail_ci_if_error: true # optional (default = false)
-        verbose: true # optional (default = false)
-
     - name: Install dependencies
       run: npm install
 
@@ -53,6 +46,10 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
+        vflags: unittest
+        name: codecov-report
 
 
     #- name: Build 
@@ -62,17 +59,16 @@ jobs:
     #-  run: npm test
 
     #- name: Eject
-      #id: npm eject 
-
-
-#     - name: Deploy
-#       run: |
-#         git config --global user.name $user_name
-#         git config --global user.email $user_email
-#         git remote set-url origin https://${github_token}@github.com/${repository}
-#         npm run deploy
-#       env:
-#         user_name: 'github-actions[bot]'
-#         user_email: 'github-actions[bot]@users.noreply.github.com'
-#         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-#         repository: ${{ github.repository }}
+      #id: npm eject
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v1.1.0
+        with:
+          args: deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_ID: algosolver-front
