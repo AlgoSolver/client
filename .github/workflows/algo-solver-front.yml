@@ -66,8 +66,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Firebase
-        uses: mohammed-atif/firebase-publish-react@v1.0
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          firebase-token: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}'
+          channelId: live
+          projectId: algosolver-fronts
+
       - name: Verifying Output
         run: echo ${{ steps.firebase-deploy.outputs.hosting-url }}
