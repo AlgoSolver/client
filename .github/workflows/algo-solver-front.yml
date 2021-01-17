@@ -35,7 +35,7 @@ jobs:
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
-    - uses: actions/checkout@main
+   # - uses: actions/checkout@main
     - uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
