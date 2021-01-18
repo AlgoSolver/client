@@ -41,6 +41,12 @@ jobs:
     #- name: Start 
     #-  run: npm start
 
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: build
+        path: build
+
     - name: Run the tests and generate coverage report
       run: npm test -- --coverage
 
@@ -64,11 +70,20 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v1.5.0
-        with:
-          args: deploy --only hosting
-        env:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}
-          projectId: algosolver-front
+    - name: Checkout Repo
+      uses: actions/checkout@main
+
+    - name: Download Artifact
+      uses: actions/download-artifact@main
+      with:
+        name: build
+        path: build
+
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@main
+      with:
+        args: deploy --only hosting
+      env:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}
+        projectId: algosolver-front
