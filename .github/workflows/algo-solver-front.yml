@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: build
-        path: build
+        path: ./build
 
     - name: Run the tests and generate coverage report
       run: npm test -- --coverage
@@ -72,7 +72,7 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: build
-        path: build
+        path: ./build
 
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
