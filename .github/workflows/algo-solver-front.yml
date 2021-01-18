@@ -65,13 +65,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Firebase
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: w9jds/firebase-action@v1.5.0
         with:
+          args: deploy --only hosting
+        env:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}'
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}
           projectId: algosolver-front
-        # env:
-        #   FIREBASE_CLI_PREVIEWS: hostingchannels
-          
-      # - name: Verifying Output
-      #   run: echo ${{ steps.firebase-deploy.outputs.hosting-url }}
