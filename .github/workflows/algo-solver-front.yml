@@ -41,6 +41,9 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Serving!
+      run: serve -s build
+
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
@@ -59,7 +62,7 @@ jobs:
 
     #- name: Eject
       #id: npm eject
-      
+
   deploy:
     name: Deploy
     needs: build
