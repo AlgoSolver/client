@@ -40,7 +40,7 @@ jobs:
 
     # - name: Build
     #   run: npm run build
-    
+
     - name: Run the tests and generate coverage report
       run: npm test -- --coverage
 
@@ -67,6 +67,5 @@ jobs:
       with:
         args: deploy --only hosting
       env:
-        repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALGOSOLVER_FRONT }}
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         projectId: algosolver-front
