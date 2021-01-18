@@ -42,7 +42,7 @@ jobs:
     #-  run: npm start
 
     - name: Archive Production Artifact
-      uses: actions/upload-artifact@s403o-path-1
+      uses: actions/upload-artifact@s403o-patch-1
       with:
         name: build
         path: build
@@ -71,16 +71,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@s403o-path-1
+      uses: actions/checkout@s403o-patch-1
 
     - name: Download Artifact
-      uses: actions/download-artifact@s403o-path-1
+      uses: actions/download-artifact@s403o-patch-1
       with:
         name: build
         path: build
 
     - name: Deploy to Firebase
-      uses: w9jds/firebase-action@s403o-path-1
+      uses: w9jds/firebase-action@s403o-patch-1
       with:
         args: deploy --only hosting
       env:
