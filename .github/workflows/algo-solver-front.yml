@@ -38,8 +38,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    #- name: Start 
-    #-  run: npm start
+    - name: Build
+      run: npm run build
 
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
@@ -57,14 +57,9 @@ jobs:
         vflags: unittest
         name: codecov-report
 
-    #- name: Build 
-    #  run: npm run build
-
-    #- name: Test 
-    #-  run: npm test
-
     #- name: Eject
       #id: npm eject
+      
   deploy:
     name: Deploy
     needs: build
