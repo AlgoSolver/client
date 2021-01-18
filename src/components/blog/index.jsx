@@ -3,6 +3,7 @@ import {Divider} from '../divider';
 import Text from '../Text';
 import Button from '../button/'
 const StyledBlogItem = styled.div`
+
 	background:${({theme})=>theme.bg2};
 	width:100%;
 	padding:2rem;
@@ -66,25 +67,25 @@ const BlogItem = ()=>{
 		<Divider mg="1.2rem 0" />
 		<div className="blog__body">
 			<div className="blog__title">
-              <Text bold color="text2" type="h3" size="2rem" mg="0">
+              <Text bold type="h3" size="2rem" mg="0">
                A Simple Approach To Using Console.log For Debugging
               </Text>
 			</div>
 			<div className="blog__tags">
-               <Button link scale={false} theme="text3">
+               <Button link scale={false} >
                  #javascript
                </Button>
-               <Button  link scale={false} theme="text3">
+               <Button  link scale={false} >
                  #console
                </Button>
-               <Button  link scale={false} theme="text3">
+               <Button  link scale={false} >
                  #debuggin
                </Button>
 			</div>
 			<Divider mg="1.2rem 0" />
 			<div className="blog__tail">
 				<div className="blog__comment">
-				   <Button scale={false} theme="bg3" small>
+				   <Button scale={false} small>
                  		add Comment
                		</Button>
 				</div>

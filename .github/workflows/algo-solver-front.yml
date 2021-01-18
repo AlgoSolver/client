@@ -75,5 +75,5 @@ jobs:
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
           
-      - name: Verifying Output
-        run: echo ${{ steps.firebase-deploy.outputs.hosting-url }}
+      # - name: Verifying Output
+      #   run: echo ${{ steps.firebase-deploy.outputs.hosting-url }}
