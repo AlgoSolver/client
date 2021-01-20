@@ -39,7 +39,6 @@ const Blog = ()=>{
                <Text 
                type="h3" 
                
-               color="text"
                size="2.7rem"
                >
                	  Posts
@@ -56,12 +55,11 @@ const Blog = ()=>{
                    <Box>
                      <Text 
                      type="h4"
-                     color="bg2"
                       mg="0"
                      >
                      Want to write a post?
                      </Text>
-                     <Text type="p" color="bg"  mg=".4rem 0 .8rem">
+                     <Text type="p"   mg=".4rem 0 .8rem">
                       Share your Knowlege and write something you good at.
                      </Text>
                      <div style={{textAlign:'right'}}>

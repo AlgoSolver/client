@@ -75,46 +75,41 @@ export const theme ={
 
 
 
-const light = {
-  primary: "#005FF9",
-  secondary: "#A5F469",
-  secondary2: "#f7be4e",
-  bg: " #E7E7E9",
-  bg2: "#FFFFFF",
-  bg3: "#CBCBCD",
-  text: "#19191A",
-  text2: "#393e46",
-  text3: "#657884",
-  blur: "blur(15px) saturate(180%)",
-  shadow:
-    "0px 60px 80px rgba(15, 15, 15, 0.08), 0px 25.0666px 33.4221px rgba(15, 15, 15, 0.0575083), 0px 13.4018px 17.869px rgba(15, 15, 15, 0.0476886), 0px 7.51293px 10.0172px rgba(15, 15, 15, 0.04), 0px 3.99006px 5.32008px rgba(15, 15, 15, 0.0323114), 0px 1.66035px 2.21381px rgba(15, 15, 15, 0.0224916)",
-  shadowHover:
-    "0px 60px 80px rgba(15, 15, 15, 0.1), 0px 25.0666px 33.4221px rgba(15, 15, 15, 0.0775), 0px 13.4018px 17.869px rgba(15, 15, 15, 0.0277), 0px 7.51293px 10.0172px rgba(15, 15, 15, 0.06), 0px 3.99006px 5.32008px rgba(15, 15, 15, 0.0523), 0px 1.66035px 2.21381px rgba(15, 15, 15, 0.0425)",
-};
-const dark = {
-  bg: "#333",
-  text: "#fff",
-};
-
 const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   min-width: 375px;
+  position:relative;
+  width:100%;
+  max-width: 1376px;
+  margin:0 auto;
+  padding: 0px 32px;
+  overflow:hidden;
 `;
-
+const Main = styled.div`
+  position:relative;
+  width:100%;
+  max-width: 1376px;
+  margin:0 auto;
+  padding: 0px 32px;
+  overflow:hidden;
+`
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Navbar />
-        <Wrapper className="App">
+         <Wrapper className="App">
           <Switch>
+          
             <Route exact path="/">
               <Home />
             </Route>
+            
+            
             <Route  path="/login">
               <Login />
             </Route>
@@ -130,6 +125,7 @@ function App() {
             <Route path="/elements">
               <Elements />
             </Route>
+           
           </Switch>
         </Wrapper>
       </Router>
