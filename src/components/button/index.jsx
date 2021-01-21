@@ -103,6 +103,16 @@ const StyledButton = styled.button `
        }
 
     }
+    &.text{
+      background:transparent;
+       border:0;
+       display: inline;
+       color:${({color,theme})=>color ? color : theme.colors.dark[1]};
+       box-shadow: none;
+       &:hover{
+        background: ${({theme,type})=>theme.colors.primary[3]};
+       }
+    }
     &.squared{
       border-radius: 0;
     }
@@ -157,10 +167,12 @@ const Button = ({
     className,
     loading,
     small,
+    text,
     icon=null,
     scale = true,
     iconSize='2.4rem',
-    iconFill='#1c1c28'
+    iconFill='#1c1c28',
+    ...rest
 }) => {
     const classes = classNames(
         className,
@@ -172,7 +184,8 @@ const Button = ({
         circle && "circle",
         loading && "loading",
         scale && 'scaling',
-        disabled && 'disabled'
+        disabled && 'disabled',
+        text && 'text'
     );
 
     return <StyledButton
@@ -180,6 +193,7 @@ const Button = ({
   className={classes}
   type={theme}
   disabled={disabled || loading}
+  {...rest}
   >
     {icon && <span className="icon" >{icon({iconSize,iconSize})}</span>}
 

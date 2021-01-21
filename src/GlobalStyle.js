@@ -4,7 +4,6 @@ export default createGlobalStyle`
 	html{
 		font-size:62.5%;
 	}
-
 	*,
 	*::after,
 	*::before{
@@ -14,7 +13,7 @@ export default createGlobalStyle`
 	}
      
     body{
-font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';	    -webkit-font-smoothing: antialiased;
+		font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';	    -webkit-font-smoothing: antialiased;
 	    -moz-osx-font-smoothing: grayscale;
 	    -webkit-overflow-scrolling: touch;
 	    min-width: 375px;

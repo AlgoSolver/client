@@ -66,6 +66,9 @@ const StyledText = styled.div`
   &.pd {
     margin: ${({ pd }) => pd};
   }
+  &.center{
+    text-align:center;
+  }
 `;
 
 const Text = ({
@@ -80,11 +83,13 @@ const Text = ({
   pd,
   layer,
   transform = "initial",
+  center
 }) => {
   const classes = classNames(
     className,
     bold && "bold",
     size && "size",
+    center && "center",
     type,
     mg,
     "mg",
