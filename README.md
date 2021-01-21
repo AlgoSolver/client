@@ -5,31 +5,11 @@
 
 ### Installation
 
-1. **Clone the repository**
-
 ```sh
-git clone https://github.com/AlgoSolver/client.git
+./install.sh
 ```
-2. **Navigate to repository directory**
-```sh
-cd client
-```
-
-3. **Install dependencies**
-
-```sh
-npm install
-```
-
 ### Running
 
-1. **Running on development mode**
 ```sh
-npm run start
-```
-
-2. **build for production and launch server**
-```sh
-npm run build
-npm run start
+./run.sh
 ```
