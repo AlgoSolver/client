@@ -1,14 +1,14 @@
 // export { default as App } from './app';
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,useLocation } from "react-router-dom";
 import Elements from "./pages/elements/";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
-// import Navbar from "./components/navbar/";
+ import Navbar from "./components/navbar/";
 
 export const theme = {
   colors: {
@@ -88,7 +88,17 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <Switch>
+        <Routing />
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+const Routing = ()=>{
+  const location = useLocation();
+  return <>
+    {location.pathname !== '/' && <Navbar />}
+     <Switch>
           <Route exact path="/">
             <Home />
           </Route>
@@ -108,9 +118,7 @@ function App() {
             <Elements />
           </Route>
         </Switch>
-      </Router>
-    </ThemeProvider>
-  );
+        </>
 }
 
 export default App;
