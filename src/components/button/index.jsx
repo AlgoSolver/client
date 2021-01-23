@@ -7,7 +7,7 @@ const StyledButton = styled.button `
     
     font-size: 1.6rem;
     line-height: 1.6;
-    background: ${({theme,type})=>theme.colors[type][1]};
+    background: ${({theme,type})=>type === 'light' ?theme.colors[type][4] :theme.colors[type][1]} ;
     color: #fff;
     border-radius: .6rem;
     padding: 0 1.6rem 0;
@@ -23,20 +23,27 @@ const StyledButton = styled.button `
     font-family: 'Avenir';
     letter-spacing: 0.02rem;
     border: 2px solid ${(props)=>props.theme.colors[props.type][1]};
+     &.circle{
+          border-radius:1.9rem;
+        }
     &.big{
         height: 4.8rem;
+        &.circle{
+          border-radius:2.4rem;
+        }
     }
-    .icon{
-      margin-right: 1rem;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-
+    svg{
+      path{
+         transition: all 200ms ease-in-out;
+      }
     }
     &.small{
       height:3.2rem;
       font-size:1.4rem;
       font-family:'Avenir';
+       &.circle{
+          border-radius:1.6rem;
+        }
     }
     &.contained{
          color:${({theme,type})=>types.some((item)=>type===item) ? theme.colors.light[4] : theme.colors.dark[0] };
@@ -52,7 +59,6 @@ const StyledButton = styled.button `
          }
           &:focus{
            border-color:  ${({theme,type})=>theme.colors[type][4] || theme.colors[type][3]};
-           border-radius: .7rem;
          }
          .icon{
            svg{
@@ -67,8 +73,12 @@ const StyledButton = styled.button `
        color:${({theme,type})=>theme.colors[type][1]};
        border-color:  ${({theme,type})=>theme.colors[type][3]};
        &:hover{
+           color: ${({theme,type})=>type === 'light' ? theme.colors.dark[0] : theme.colors[type][1]};
            background: ${({theme,type})=>theme.colors[type][3]};
            border-color:  ${({theme,type})=>theme.colors[type][3]};
+           path{
+             stroke:${({theme,type})=>type === 'light' ? theme.colors.dark[0] : theme.colors[type][1]} !important;
+           }
          }
         
          &:active{
@@ -78,7 +88,6 @@ const StyledButton = styled.button `
          }
           &:focus{
            border-color:  ${({theme,type})=>theme.colors[type][0]};
-           border-radius: .7rem;
          }
 
         .icon{
@@ -132,7 +141,18 @@ const StyledButton = styled.button `
         border-color: ${({theme,type})=>theme.colors.light[0]} !important;
         cursor: normal !important;
     }
-}
+     .icon{
+      margin-left: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.flex{
+     display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
 `
 
 const donutSpin = keyframes`
@@ -168,12 +188,14 @@ const Button = ({
     loading,
     small,
     text,
+    color=null,
     icon=null,
     scale = true,
-    iconSize='2.4rem',
-    iconFill='#1c1c28',
+    iconsize='2.4rem',
+    iconfill='#1c1c28',
     ...rest
 }) => {
+  console.log(color)
     const classes = classNames(
         className,
         `${outlined ? "outlined":link ? "link" : "contained"}`,
@@ -185,19 +207,23 @@ const Button = ({
         loading && "loading",
         scale && 'scaling',
         disabled && 'disabled',
-        text && 'text'
+        text && 'text',
+        icon && 'flex',
+        color && 'color'
     );
 
     return <StyledButton
   style={style}
   className={classes}
   type={theme}
+  layer={color}
   disabled={disabled || loading}
   {...rest}
   >
-    {icon && <span className="icon" >{icon({iconSize,iconSize})}</span>}
+    {!loading ? (icon ? <>
+      {children} <span className="icon">{icon({iconsize,iconfill})}</span>
+      </> : children ) : <span className="center"> <LoadingState type={theme}/></span> } 
 
-  <span className="center"> {!loading  ? children : <LoadingState type={theme}/>} </span> 
   </StyledButton>
 }
 export default Button;

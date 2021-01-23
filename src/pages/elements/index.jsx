@@ -1,4 +1,4 @@
-import {BrowserRouter as Router , Route , Switch ,Link , useLocation} from 'react-router-dom';
+import {BrowserRouter as Router , Route  ,Link , useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 import Icons from '../../elements/icons/'
 import Elevation from '../../elements/elevation/'

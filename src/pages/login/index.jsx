@@ -2,7 +2,7 @@ import Text from "../../components/Text/";
 import styled from "styled-components";
 import { Form, TextInput, CheckBox, Divider } from "../../components/form/";
 import Button from "../../components/button/";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 
 const Wrapper = styled.div`
@@ -59,20 +59,15 @@ const Login = () => {
           style={{
             margin: "1rem 0",
             alignItems: "center",
-            display:'flex',
-            justifyContent:'space-between',
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
-          <Button link >
-            Forgot your password?
-          </Button>
-          <Button link>
-            Don't have an account
-          </Button>
-          </div>
-          <Divider />
-          <Button>Login with Google</Button>
-        
+          <Button link>Forgot your password?</Button>
+          <Button link>Don't have an account</Button>
+        </div>
+        <Divider />
+        <Button>Login with Google</Button>
       </Form>
     </Wrapper>
   );

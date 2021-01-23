@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Button from '../../components/button/';
 import Text from '../../components/Text/';
-import {TwoUser,Activity} from '../../assets/icons/';
+import {TwoUser} from '../../assets/icons/';
 
 const ButtonsContainer = styled.div`
 	padding:2rem;

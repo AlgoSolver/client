@@ -14,10 +14,10 @@ const IconContainer = styled.div`
     }
     &__search {
       margin-top: 2rem;
-      box-shadow: ${({theme})=>theme.shadow2};
-      padding:2rem;
+      box-shadow: ${({ theme }) => theme.shadow2};
+      padding: 2rem;
       text-align: center;
-      background:#fff;
+      background: #fff;
       border-radius: 10px;
     }
     &__svg {
@@ -26,17 +26,17 @@ const IconContainer = styled.div`
       justify-content: flex-start;
       align-items: center;
       &--icon {
-      	max-width: calc(100% / 4 - 2rem);
+        max-width: calc(100% / 4 - 2rem);
         flex: calc(100% / 3 - 4rem);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         margin: 1rem;
-        background:#fff;
+        background: #fff;
         border-radius: 10px;
         padding: 2rem;
-        box-shadow: ${({theme})=>theme.shadow2};
+        box-shadow: ${({ theme }) => theme.shadow2};
         transition: all 0.3s;
 
         &:hover {
@@ -78,7 +78,7 @@ const Icons = () => {
     setSearchedIcons(searchedIcons);
   }, []);
   useEffect(() => {
-    if(! (inputRef?.current))return;
+    if (!inputRef?.current) return;
     const timer = setTimeout(() => {
       if (keyword === inputRef.current.value) {
         setSearchedIcons(
@@ -87,8 +87,7 @@ const Icons = () => {
           )
         );
       }
-          }, 400);
-  
+    }, 400);
 
     return () => clearTimeout(timer);
   }, [keyword]);

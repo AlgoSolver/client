@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import classNames from 'classnames'
 export const Form = ({ children }) => {
   return (
     <FormWrapper>
@@ -8,15 +9,19 @@ export const Form = ({ children }) => {
   );
 };
 
-export const CheckBox = () => {
+export const CheckBox = ({
+  label,
+  register,
+  color
+}) => {
   return (
-    <Unit>
-      <label htmlFor="remember" class="checkbox">
+    <Unit color={color}>
+      <label htmlFor={label} class="checkbox">
         <input
-          id="remember"
+          id={label}
           type="checkbox"
           tabindex="0"
-          name="remember"
+          name={label}
           value=""
         />
         <div class="checkbox__input">
@@ -60,9 +65,14 @@ export const TextInput = ({
   register,
   children,
   icon,
+  big,
   ...rest
 }) => {
   let iconExist = icon ? true : false;
+  const classes = classNames(
+    error && 'input__error',
+    big && 'big'
+    )
   return (
     <Unit iconExist>
       {label && <Label htmlFor={name}>{label}</Label>}
@@ -70,12 +80,12 @@ export const TextInput = ({
           iconExist={iconExist}
           ref={register}
           id={name}
-          className={`${error ? "input__error" : ""}`}
+          className={classes}
           name={name}
           type={type}
           placeholder={placeholder}
          {...rest}
-        />
+        />  
          {iconExist && <Icon className="icon__wrapper">{icon()}</Icon>}
  
         {children ? children : null}
@@ -94,7 +104,20 @@ export const TextInput = ({
     </Unit>
   );
 };
-
+export const Toggle = ({children,color,name})=>{
+  return <Unit color={color}>
+    <div className="toggle">
+      <div className="toggle__content">
+        {children}
+      </div>
+      <div className="toggle__container">
+        <input type="checkbox" class="form__toggle" id={name} />
+          <label for={name} class="toggle__label ios">
+      </label>
+      </div>
+    </div>
+  </Unit>
+}
 const Unit = styled(motion.div)`
   position: relative;
   margin-bottom: 2rem;
@@ -116,8 +139,8 @@ const Unit = styled(motion.div)`
       position: absolute;
       opacity: 0;
       &:checked ~ .checkbox__input {
-        border-color: ${({ theme }) => theme.colors.primary[1]};
-        background-color: ${({ theme }) => theme.colors.primary[1]};
+        border-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
+        background-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
         svg {
           path {
             transition: stroke-dashoffset 0.2s ease-in;
@@ -130,9 +153,8 @@ const Unit = styled(motion.div)`
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      font-weight: 700;
-      color: ${({ theme }) => theme.text2};
-      font-size: 1.6rem;
+      font-weight: 400;
+      font-size: 1.5rem;
     }
     &__input {
       margin-top: 0.2rem;
@@ -182,10 +204,58 @@ const Unit = styled(motion.div)`
     }
     &:hover {
       .checkbox__input {
-        border-color: ${({ theme }) => theme.colors.primary[1]};
+        border-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
         &::after {
           opacity: 1;
         }
+      }
+    }
+  }
+  .toggle{
+    display:flex;
+    align-items:center;
+    &__content{
+      flex:1;
+      font-size:1.5rem;
+      font-weight:400;
+      padding-right:1rem;
+      color:${({theme})=>theme.colors.dark[1]};
+    }
+    &__container{
+      input{
+        display:none;
+         &:checked ~ label{
+        background: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
+        &::after{
+          background-color: white;
+          transform: translateX(1.9rem);
+        }
+      } 
+      }
+      label{
+      background:${({theme})=>theme.colors.dark[4]};
+      width:4.5rem;
+      height:2.6rem;
+      display:flex;
+      align-items:center;
+      border-radius:5.2rem;
+      transition:all .3s ease-in-out;
+      cursor:pointer;
+  
+      &::after{
+        content: "";
+        padding-top: 3px;
+        width: 20px;
+        height: 20px;
+        position: relative;
+       
+        left: 3px;
+        background-color: white;
+        display: block;
+        border-radius: 50%;
+        transition: all 0.15s ease 0s;
+        opacity: 1;
+      }
       }
     }
   }
@@ -212,7 +282,8 @@ const Input = styled.input`
     padding: 0 1.5rem;
     outline: none;
     transition: all 0.2s ease;
-    display: block;
+    display: inline-flex;
+    align-items:center;
     width: 100%;
     border-radius: .6rem;
     height: 3.8rem;
@@ -240,6 +311,9 @@ const Input = styled.input`
     }
     &.input__error {
       border-color: ${({ theme }) =>theme.colors.red[1]};
+    }
+    &.big{
+      height: 4.8rem;
     }
   
 `;
