@@ -2,9 +2,9 @@ name: Build and Deploy (CI/CD)
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
   pull_request:
-    branches: [ test ]
+    branches: [ main ]
     
 jobs:
   build:
@@ -41,15 +41,15 @@ jobs:
     # - name: Build
     #   run: npm run build
 
-    - name: Run the tests and generate coverage report
-      run: npm test -- --coverage
+#     - name: Run the tests and generate coverage report
+#       run: npm test -- --coverage
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{secrets.CODECOV_TOKEN}}
-        vflags: unittest
-        name: codecov-report
+#     - name: Upload coverage to Codecov
+#       uses: codecov/codecov-action@v1
+#       with:
+#         token: ${{secrets.CODECOV_TOKEN}}
+#         vflags: unittest
+#         name: codecov-report
 
     #- name: Eject
       #id: npm eject
