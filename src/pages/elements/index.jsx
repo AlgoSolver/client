@@ -6,6 +6,7 @@ import Colors from '../../elements/colors/'
 import Buttons from '../../elements/buttons'
 import Typography from '../../elements/typography'
 import Forms from '../../elements/form'
+import Messages from '../../elements/messages/'
 
 const PageContainer = styled.div`
 	width: 100%;
@@ -75,6 +76,7 @@ const Sidebar = ()=>{
 	   		<LinkItem name="buttons" active={active}/>
 	   		<LinkItem name="typography" active={active}/>
 	   	    <LinkItem name="forms" active={active}/>
+	   	    <LinkItem name="messages" active={active}/>
 	   	</ul>
 	   </div>
 	 </ElementsSidebar>
@@ -102,6 +104,9 @@ const Elements = ()=>{
 	  </Route>
 	  <Route path="/elements/forms">
 	   <Forms />
+	  </Route>
+	  <Route path="/elements/messages">
+	   <Messages />
 	  </Route>
 	 </ElementsBody>
 	  </>

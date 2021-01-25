@@ -329,10 +329,10 @@ const Navbar = () => {
         </ul>
         <ul className="nav__list">
           <li className="nav__item">
-            <Link to="/login" className="nav__link">Login</Link>
+            <Link to="/accounts/login" className="nav__link">Login</Link>
           </li>
           <li className="nav__item">
-            <Link to="/signup">
+            <Link to="/accounts/signup">
               <Button
                 big
                 outlined
@@ -393,10 +393,10 @@ const NavMenu = ()=>{
         </ul>
         <ul className="menu__list">
           <li className="menu__item">
-            <Link to="/login" className="menu__link">login</Link>
+            <Link to="/accounts/login" className="menu__link">login</Link>
           </li>
           <li className="menu__item">
-            <Link to="/signup" className="menu__link">signup</Link>
+            <Link to="/accounts/signup" className="menu__link">signup</Link>
           </li>
         </ul>
         </div>

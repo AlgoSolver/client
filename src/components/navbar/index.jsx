@@ -5,11 +5,25 @@ import { useMediaQuery } from "react-responsive";
 import {useState} from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 
+
+const AccountNavContainer = styled(motion.nav)`
+	.wrapper{
+	width: 100%;
+  	display: flex;
+	align-items: center;
+	padding: 0 2rem;
+	height:6.4rem;
+  }
+  .nav__brand{
+      color: ${({ theme }) => theme.colors.primary[0]};
+      font-size: 3.6rem;
+      font-family:'Avenir-bold';
+  }
+`
 const NavbarContainer = styled(motion.nav)`
   background: ${({ theme }) => theme.colors.light[4]};
-  box-shadow:{({ theme }) => theme.elevation[4].shadow}
-
-  .wrappe{
+  box-shadow:{({ theme }) => theme.elevation[4].shadow};
+  .wrapper{
   	display: flex;
 	align-items: center;
 	padding: 0 2rem;
@@ -160,8 +174,13 @@ const NavbarContainer = styled(motion.nav)`
   }
 `
 
-
-
+export const AccountsNav = ()=> {
+	return <AccountNavContainer>
+	  <div className="wrapper">
+	    <div ><Link className="nav__brand" to="/">algoSlover</Link></div>
+	  </div>
+	</AccountNavContainer>
+}
 const Navbar = () => {
   const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   return (
@@ -169,7 +188,7 @@ const Navbar = () => {
       initial={{ y: 300, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       >
-      <div className="wrappe">
+      <div className="wrapper">
       <div className="nav__brand"><Link to="/">algoSlover</Link></div>
       {isBigPhone ? <NavMenu />: <div className="nav__links">
         <ul className="nav__list list1">
@@ -188,10 +207,10 @@ const Navbar = () => {
         </ul>
         <ul className="nav__list">
           <li className="nav__item">
-            <Link to="/login" className="nav__link">Login</Link>
+            <Link to="/accounts/login" className="nav__link">Login</Link>
           </li>
           <li className="nav__item">
-            <Link to="/signup">
+            <Link to="/accounts/signup">
               <Button
                 big
                
@@ -252,10 +271,10 @@ const NavMenu = ()=>{
         </ul>
         <ul className="menu__list">
           <li className="menu__item">
-            <Link to="/login" className="menu__link">login</Link>
+            <Link to="/accounts/login" className="menu__link">login</Link>
           </li>
           <li className="menu__item">
-            <Link to="/signup" className="menu__link">signup</Link>
+            <Link to="/accounts/signup" className="menu__link">signup</Link>
           </li>
         </ul>
         </div>

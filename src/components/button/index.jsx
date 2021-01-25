@@ -1,13 +1,12 @@
 import styled,{keyframes} from 'styled-components';
 import classNames from "classnames";
 
-const types = ['primary', 'green', 'purple', 'teal', 'red','dark','blue']
+const types = ['primary', 'green', 'purple', 'teal','orange', 'red','dark','blue']
 
 const StyledButton = styled.button `
-    
     font-size: 1.6rem;
     line-height: 1.6;
-    background: ${({theme,type})=>type === 'light' ?theme.colors[type][4] :theme.colors[type][1]} ;
+    background: ${({theme,type,layer})=>type === 'light' ?theme.colors[type][4]:theme.colors[type][layer]} ;
     color: #fff;
     border-radius: .6rem;
     padding: 0 1.6rem 0;
@@ -22,7 +21,7 @@ const StyledButton = styled.button `
     transition: all 200ms ease-in-out;
     font-family: 'Avenir';
     letter-spacing: 0.02rem;
-    border: 2px solid ${(props)=>props.theme.colors[props.type][1]};
+    border: 2px solid ${(props)=>props.theme.colors[props.type][props.layer]};
      &.circle{
           border-radius:1.9rem;
         }
@@ -46,10 +45,10 @@ const StyledButton = styled.button `
         }
     }
     &.contained{
-         color:${({theme,type})=>types.some((item)=>type===item) ? theme.colors.light[4] : theme.colors.dark[0] };
+         color:${({theme,type,})=>types.some((item)=>type===item) ? theme.colors.light[4] : theme.colors.dark[0] };
          &:hover{
-           background: ${({theme,type})=>theme.colors[type][2]};
-           border-color:  ${({theme,type})=>theme.colors[type][2]};
+           background: ${({theme,type,layer})=>theme.colors[type][layer+1]};
+           border-color:  ${({theme,type,layer})=>theme.colors[type][layer+1]};
          }
         
          &:active{
@@ -103,10 +102,10 @@ const StyledButton = styled.button `
        border:0;
        text-decoration: underline;
        display: inline;
-       color:${({color,theme})=>color ? color : theme.colors.blue[1]};
+       color:${({color,theme})=>color ? theme.colors.[color][1] : theme.colors.blue[1]} !important;
        box-shadow: none;
        padding:0;
-       font-size:1.2rem;
+       font-size:1.4rem;
        &:hover{
         text-decoration: none;
        }
@@ -137,9 +136,12 @@ const StyledButton = styled.button `
       cursor: not-allowed !important;
     }
     &.loading{
-        background: ${({theme,type})=>theme.colors.light[0]} !important;
-        border-color: ${({theme,type})=>theme.colors.light[0]} !important;
-        cursor: normal !important;
+        background: ${({theme,type})=>theme.colors.[type][3]} !important;
+        border-color: ${({theme,type})=>theme.colors.[type][3]} !important;
+        cursor: not-allowed !important;
+        svg{
+
+        }
     }
      .icon{
       margin-left: 1.5rem;
@@ -166,7 +168,7 @@ const donutSpin = keyframes`
 
 const LoadingState = styled.span`
   display: inline-block;
-    border: 4px solid ${({theme,type})=>theme.colors.dark[4]};;
+    border: 4px solid ${({theme,type})=>theme.colors.dark[3]};;
     border-left-color: ${({theme,type})=>theme.colors.dark[1]};
     border-radius: 50%;
     width: 24px;
@@ -185,6 +187,7 @@ const Button = ({
     circle,
     style = {},
     className,
+    layer=1,
     loading,
     small,
     text,
@@ -195,7 +198,6 @@ const Button = ({
     iconfill='#1c1c28',
     ...rest
 }) => {
-  console.log(color)
     const classes = classNames(
         className,
         `${outlined ? "outlined":link ? "link" : "contained"}`,
@@ -216,7 +218,7 @@ const Button = ({
   style={style}
   className={classes}
   type={theme}
-  layer={color}
+  layer={layer}
   disabled={disabled || loading}
   {...rest}
   >

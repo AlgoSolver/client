@@ -2,13 +2,18 @@
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import { BrowserRouter as Router, Route, Switch,useLocation } from "react-router-dom";
+
+
 import Elements from "./pages/elements/";
 import Home from "./pages/home";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+import PasswordRecovery from "./pages/password-recover/";
+import NewPassword from "./pages/new-password";
+
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
- import Navbar from "./components/navbar/";
+import Navbar,{AccountsNav} from "./components/navbar/";
 
 export const theme = {
   colors: {
@@ -19,7 +24,7 @@ export const theme = {
     green: ["#05a660", "#06c270", "#39d9ba", "#57EBA1", "#E3FFF1"],
     blue: ["#004FC4", "#0063F7", "#5B8DEF", "#9DBFF9", "#E5F0FF"],
     yellow: ["#E5B800", "#FFCC00", "#FDDD48", "#FDED72", "#FFFEE5"],
-    orange: ["#E507A0", "#FF8800", "#FDAC42", "#FCCC75", "#FFF8E5"],
+    orange: ["#E57A00", "#FF8800", "#FDAC42", "#FCCC75", "#FFF8E5"],
     teal: ["#00B7C4", "#00CFDE", "#73DFE7", "#A9EFF2", "#E5FFFF"],
     purple: ["#4D0099", "#6600CC", "#AC5DD9", "#DDA5E9", "#FFE5FF"],
   },
@@ -97,16 +102,22 @@ function App() {
 const Routing = ()=>{
   const location = useLocation();
   return <>
-    {location.pathname !== '/' && <Navbar />}
+    {location.pathname !== '/' ?( !location.pathname?.includes('accounts')  ? <Navbar /> : <AccountsNav />) : null}
      <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/login">
+          <Route path="/accounts/login">
             <Login />
           </Route>
-          <Route path="/signup">
+          <Route path="/accounts/signup">
             <Signup />
+          </Route>
+          <Route path="/accounts/recover">
+            <PasswordRecovery />
+          </Route>
+           <Route path="/accounts/new-password/:token">
+            <NewPassword />
           </Route>
           <Route path="/blog">
             <Blog />
