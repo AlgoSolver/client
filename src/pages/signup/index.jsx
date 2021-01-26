@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 import signupImg from '../../assets/images/5.png';
 import { useMediaQuery } from "react-responsive";
 import {motion} from 'framer-motion'
+import axios from '../../api/'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,8 +31,17 @@ const Wrapper = styled.div`
 `;
 
 const SignupForm = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (e) => console.log(e);
+  const { register, handleSubmit, errors ,watch} = useForm();
+  const cp = watch("password");
+ const onSubmit = async (e) => {
+    console.log(e);
+    try{
+      const res = await axios.post('/user/signup',{...e});
+      console.log(res);
+    }catch(err){
+      console.log(err.response.data);
+    }
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
     	<TextInput
@@ -40,7 +50,8 @@ const SignupForm = () => {
         placeholder="Username"
         register={register({
           required: true,
-          pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+            minLength: 8,
+            maxLength: 32,
         })}
         error={checkErrors("username", errors)}
         big
@@ -66,10 +77,10 @@ const SignupForm = () => {
       />
       <TextInput
         type="password"
-        name="password"
+        name="confirmedPassword"
         placeholder="Confirm Password"
-        register={register({ required: true, minLength: 6, maxLength: 32 })}
-        error={checkErrors("password", errors)}
+        register={register({ required: true, validate: (value) => value === cp })}
+        error={checkErrors("confirmedPassword", errors)}
         big
       />
       <Button theme="dark" layer={0} block big>Signup</Button>
