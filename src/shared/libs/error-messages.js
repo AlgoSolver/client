@@ -43,17 +43,17 @@ export const checkErrors = (type,errors) => {
       return "Password is too long, password must be at max 32 characters";
     }
   }
-  if (type === "confirmPassword" && errors && errors.confirmPassword) {
-    if (errors.confirmPassword.type === "required") {
+  if (type === "confirmedPassword" && errors && errors.confirmedPassword) {
+    if (errors.confirmedPassword.type === "required") {
       return "Password is required";
     }
-    if (errors.confirmPassword.type === "minLength") {
+    if (errors.confirmedPassword.type === "minLength") {
       return "Password is too short, password must be at least 6 characters";
     }
-    if (errors.confirmPassword.type === "maxLength") {
+    if (errors.confirmedPassword.type === "maxLength") {
       return "Password is too long, password must be at max 32 characters";
     }
-    if (errors.confirmPassword.type === "validate") {
+    if (errors.confirmedPassword.type === "validate") {
       return "Password doesnot match";
     }
   }

@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 import signupImg from '../../assets/images/6.png';
 import { useMediaQuery } from "react-responsive";
 import {motion} from 'framer-motion'
+import axios from '../../api/'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -31,7 +32,15 @@ const Wrapper = styled.div`
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (e) => console.log(e);
+  const onSubmit = async (e) => {
+    console.log(e);
+    try{
+      const res = await axios.post('/user/login',{...e});
+      console.log(res);
+    }catch(err){
+      console.log(err.response.data);
+    }
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <TextInput
