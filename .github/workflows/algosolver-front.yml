@@ -38,9 +38,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Deploy to Firebase
-      run: |
-        npm run build
+    - name: Build Production
+      run: npm run build
+      env:
+         CI: false
 
 #     - name: Run the tests and generate coverage report
 #       run: npm test -- --coverage
