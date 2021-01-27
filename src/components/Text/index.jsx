@@ -2,13 +2,13 @@ import styled from "styled-components";
 //import { motion } from "framer-motion";
 import classNames from "classnames";
 
-
-
 const StyledText = styled.div`
   font-weight: 300;
   font-size: 1.6rem;
   color: ${(props) =>
-    props.color ? props.theme.colors[props.color][props.layer || 1] : props.theme.colors.dark[0]};
+    props.color
+      ? props.theme.colors[props.color][props.layer || 1]
+      : props.theme.colors.dark[0]};
   text-transform: ${({ transform }) => transform};
   font-family: ${({ family }) => family};
   &.h1 {
@@ -43,16 +43,15 @@ const StyledText = styled.div`
     margin: 1rem 0;
   }
   &.p {
-  
-      font-style: normal;
-      font-size: 1.6rem;
-      line-height:2.4rem;
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
-  &.lead{
+  &.lead {
     font-style: normal;
     font-weight: bold;
     font-size: 1.4rem;
-    line-height:2.4rem;
+    line-height: 2.4rem;
   }
   &.bold {
     font-family: ${({ family }) => family + "-Bold"};
@@ -66,8 +65,8 @@ const StyledText = styled.div`
   &.pd {
     margin: ${({ pd }) => pd};
   }
-  &.center{
-    text-align:center;
+  &.center {
+    text-align: center;
   }
 `;
 
@@ -83,7 +82,7 @@ const Text = ({
   pd,
   layer,
   transform = "initial",
-  center
+  center,
 }) => {
   const classes = classNames(
     className,
@@ -98,7 +97,7 @@ const Text = ({
   );
   return (
     <StyledText
-    layer={layer}
+      layer={layer}
       className={classes}
       as={type}
       family={family}

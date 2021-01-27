@@ -1,19 +1,28 @@
 // export { default as App } from './app';
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
-import { BrowserRouter as Router, Route, Switch,useLocation } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 
 import Elements from "./pages/elements/";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import ActivateAccount from "./pages/activate-account/";
+import Profile from "./pages/profile/";
+
 import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
 import NewPassword from "./pages/new-password";
 
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
-import Navbar,{AccountsNav} from "./components/navbar/";
+import Navbar, { AccountsNav } from "./components/navbar/";
+import AuthRoute from "./shared/authRoute";
+import WithAuth from "./shared/withAuth";
 
 export const theme = {
   colors: {
@@ -93,43 +102,75 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <Routing />
+        <WithAuth>
+          <Routing />
+        </WithAuth>
       </Router>
     </ThemeProvider>
   );
 }
 
-const Routing = ()=>{
+const Routing = () => {
   const location = useLocation();
-  return <>
-    {location.pathname !== '/' ?( !location.pathname?.includes('accounts')  ? <Navbar /> : <AccountsNav />) : null}
-     <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/accounts/login">
-            <Login />
-          </Route>
-          <Route path="/accounts/signup">
-            <Signup />
-          </Route>
-          <Route path="/accounts/recover">
-            <PasswordRecovery />
-          </Route>
-           <Route path="/accounts/new-password/:token">
-            <NewPassword />
-          </Route>
-          <Route path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/new-post">
-            <NewPost />
-          </Route>
-          <Route path="/elements">
-            <Elements />
-          </Route>
-        </Switch>
-        </>
-}
+  const fallbackForPublic = "/";
+  const fallbackForPrivate = "/profile";
+  return (
+    <>
+      {location.pathname !== "/" ? (
+        !location.pathname?.includes("accounts") ? (
+          <Navbar />
+        ) : (
+          <AccountsNav />
+        )
+      ) : null}
+      <Switch>
+        <AuthRoute fallback={fallbackForPrivate} exact path="/">
+          <Home />
+        </AuthRoute>
+        <AuthRoute fallback={fallbackForPrivate} path="/accounts/login">
+          <Login />
+        </AuthRoute>
+        <AuthRoute fallback={fallbackForPrivate} path="/accounts/signup">
+          <Signup />
+        </AuthRoute>
+        <AuthRoute fallback={fallbackForPrivate} path="/accounts/recover">
+          <PasswordRecovery />
+        </AuthRoute>
+        <AuthRoute
+          fallback={fallbackForPrivate}
+          path="/accounts/new-password/:token"
+        >
+          <NewPassword />
+        </AuthRoute>
+        <AuthRoute
+          fallback={fallbackForPrivate}
+          path="/accounts/activate-account/:token"
+        >
+          <ActivateAccount />
+        </AuthRoute>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+        <AuthRoute
+          privatePage={true}
+          fallback={fallbackForPublic}
+          path="/new-post"
+        >
+          <NewPost />
+        </AuthRoute>
+        <Route path="/elements">
+          <Elements />
+        </Route>
+        <AuthRoute
+          privatePage={true}
+          fallback={fallbackForPublic}
+          path="/profile"
+        >
+          <Profile />
+        </AuthRoute>
+      </Switch>
+    </>
+  );
+};
 
 export default App;
