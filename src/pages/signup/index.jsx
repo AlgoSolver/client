@@ -1,19 +1,17 @@
 import Text from "../../components/Text/";
 import styled from "styled-components";
-import { Form, TextInput, CheckBox, Divider } from "../../components/form/";
+import { Form, TextInput } from "../../components/form/";
 import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 import { Link } from "react-router-dom";
 import signupImg from "../../assets/images/5.png";
-import hand from "../../assets/images/Saly-8.png";
+//import hand from "../../assets/images/Saly-8.png";
+import {useSignup} from '../../hooks/user'
 
 import { useMediaQuery } from "react-responsive";
-import { motion, AnimatePresence } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { requestStatus } from "../../store/actions/user";
+import { motion } from "framer-motion";
 import Message from "../../components/message/";
-import { useEffect } from "react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -37,18 +35,16 @@ const Wrapper = styled.div`
 const ConfirmMessage = styled.div`
   width: 100%;
 `;
-const SignupForm = ({ signup }) => {
-  const user = useSelector((state) => state.user);
-  //console.log('user' , user);
+const SignupForm = () => {
+  const {isLoading,data,isError,error,mutate} = useSignup();
   const { register, handleSubmit, errors, watch } = useForm();
   const cp = watch("password");
 
   const onSubmit = async (e) => {
-    //console.log(e);
-    signup(e);
+    mutate(e);
   };
-  if (user?.data?.email) {
-    const text = ` An Email has been sent successfuly to ${user?.data?.email}, Follow
+  if (data?.email) {
+    const text = ` An Email has been sent successfuly to ${data?.email}, Follow
         instruction to you can login. Please note that the information in this
         email will be invalid in 30 minutes from now.`;
     return (
@@ -68,7 +64,7 @@ const SignupForm = ({ signup }) => {
         Create Your Account
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Message show={user.error} subTitle={user.data} type="red" />
+        <Message show={isError} subTitle={error?.message} type="red" />
         <TextInput
           type="text"
           name="username"
@@ -111,7 +107,7 @@ const SignupForm = ({ signup }) => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button theme="dark" loading={user?.loading} layer={0} block big>
+        <Button theme="dark" loading={isLoading} layer={0} block big>
           Signup
         </Button>
       </form>
@@ -131,7 +127,6 @@ const Switch = styled.div`
   }
 `;
 const ImgContainer = () => {
-  const user = useSelector((state) => state.user);
   const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   if (!isBigPhone)
     return (
@@ -140,30 +135,23 @@ const ImgContainer = () => {
         animate={{ x: 0, opacity: 1 }}
         className="img"
       >
-        <AnimatePresence>
-          {!user?.data?.email ? (
+        {/* <AnimatePresence> */}
+        {/*   {!user?.data?.email ? ( */}
             <motion.img exit={{ y: 100, opacity: 0 }} src={signupImg} alt="" />
-          ) : (
-            <motion.img
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              src={hand}
-              alt=""
-            />
-          )}
-        </AnimatePresence>
+        {/*   ) : ( */}
+        {/*     <motion.img */}
+        {/*       initial={{ y: -100, opacity: 0 }} */}
+        {/*       animate={{ y: 0, opacity: 1 }} */}
+        {/*       src={hand} */}
+        {/*       alt="" */}
+        {/*     /> */}
+        {/*   )} */}
+        {/* </AnimatePresence> */}
       </motion.div>
     );
   return null;
 };
 const Signup = () => {
-  const dispatch = useDispatch();
-  const handleSubmit = (data) => {
-    dispatch(requestStatus(data, "/user/signup"));
-  };
-  useEffect(() => {
-    return () => dispatch({ type: "user-go" });
-  });
   return (
     <Wrapper>
       <Switch>
@@ -177,7 +165,7 @@ const Signup = () => {
       <div className="container">
         <ImgContainer />
         <Form initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
-          <SignupForm signup={handleSubmit} />
+          <SignupForm />
         </Form>
       </div>
     </Wrapper>

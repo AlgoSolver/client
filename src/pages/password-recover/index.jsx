@@ -5,11 +5,8 @@ import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { requestStatus } from "../../store/actions/user";
 import Message from "../../components/message/";
-import { useEffect } from "react";
+import {usePasswordRecovery} from '../../hooks/user'
 const Wrapper = styled.div`
   width: 100%;
   max-width: 1118px;
@@ -26,12 +23,12 @@ const ConfirmMessage = styled.div`
   width: 100%;
 `;
 
-const RecoveryForm = ({ recover }) => {
-  const user = useSelector((state) => state.user);
+const RecoveryForm = () => {
+  const {data,isLoading,isError,error,mutate} = usePasswordRecovery()
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (e) => recover(e);
-  if (user?.data?.email) {
-    const text = ` An Email has been sent successfuly to ${user?.data?.email}, Follow
+  const onSubmit = (e) => mutate(e);
+  if (data?.email) {
+    const text = ` An Email has been sent successfuly to ${data?.email}, Follow
         instruction to you can login. Please note that the information in this
         email will be invalid in 30 minutes from now.`;
     return (
@@ -54,7 +51,7 @@ const RecoveryForm = ({ recover }) => {
         Enter your email and we'll email you a password recovery link
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Message show={user.error} subTitle={user.data} type="red" />
+        <Message show={isError} subTitle={error?.message} type="red" />
         <TextInput
           type="text"
           name="email"
@@ -66,7 +63,7 @@ const RecoveryForm = ({ recover }) => {
           error={checkErrors("email", errors)}
           big
         />
-        <Button loading={user?.loading} block big theme="green">
+        <Button loading={isLoading} block big theme="green">
           Reset Password
         </Button>
       </form>
@@ -87,13 +84,6 @@ const Switch = styled.div`
 `;
 
 const Recovery = () => {
-  const dispatch = useDispatch();
-  const handleSubmit = (data) => {
-    dispatch(requestStatus(data, "/user/email-verification"));
-  };
-  useEffect(() => {
-    return () => dispatch({ type: "user-go" });
-  });
   return (
     <Wrapper>
       <Switch>
@@ -106,7 +96,7 @@ const Recovery = () => {
       </Switch>
       <div className="container">
         <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-          <RecoveryForm recover={handleSubmit} />
+          <RecoveryForm />
         </Form>
       </div>
     </Wrapper>

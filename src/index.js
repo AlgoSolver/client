@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/style.css';
-import {Provider} from 'react-redux';
-import store from './store/'
+import {QueryClientProvider,QueryClient} from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+const client = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-  	<Provider store={store}>
+  	<QueryClientProvider client={client}>
+  	<ReactQueryDevtools initialIsOpen={false} />
     <App /> 
-    </Provider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

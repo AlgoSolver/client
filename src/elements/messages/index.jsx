@@ -1,7 +1,6 @@
 import Text from '../../components/Text/';
 import styled from 'styled-components';
 import Message from  '../../components/message/'
-import { motion, AnimatePresence } from "framer-motion"
 
 const TypographyContainer = styled.div`
 	padding:2rem;
@@ -22,12 +21,11 @@ const Typography = ()=>{
 			Typography
 		</Text>
 		<div className="body">
-			<AnimatePresence>
+			
            <Message closeble title="Informational" subTitle="Additional description and informations about copywriting."/>
            <Message type="green" title={"Success"} />
            <Message hooked type="red" subTitle="heloo there an error" />
            <Message type="orange" title="Warning" subTitle="AAdditional description and informations about copywriting." />
-		</AnimatePresence>
 		</div>
 	</TypographyContainer>
 }

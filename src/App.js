@@ -1,5 +1,5 @@
 // export { default as App } from './app';
-import styled, { ThemeProvider } from "styled-components";
+import  { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import {
   BrowserRouter as Router,

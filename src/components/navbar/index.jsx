@@ -4,11 +4,8 @@ import Button from "../button/";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { useFetch } from "../../shared/hooks/useFetch";
-import { auth } from "../../store/action-types/user";
 import Messgae from "../../components/message/";
-
+import {useAuth,useLogout} from '../../hooks/user'
 const AccountNavContainer = styled(motion.nav)`
   .wrapper {
     width: 100%;
@@ -25,34 +22,30 @@ const AccountNavContainer = styled(motion.nav)`
 `;
 
 const Logout = () => {
-  const dispatch = useDispatch();
-  const { res, error, loading, request } = useFetch();
-  const logout = async () => {
-    try {
-      await request("user/logout", "post");
-      dispatch({ type: auth, payload: { notAuth: true } });
-    } catch (err) {}
+ const {isLoading,isError,error,mutate} = useLogout()
+  const logout =  () => {
+     mutate();
   };
   return (
     <>
-      {error && (
-        <Messgae type="red" hooked={true} closeble={true} subTitle={error} />
+      {isError && (
+        <Messgae type="red" hooked={true} closeble={true} subTitle={error.message} />
       )}
-      <Button loading={loading} onClick={logout}>
+      <Button loading={isLoading} onClick={logout}>
         Logout
       </Button>
     </>
   );
 };
 const RenderAuth = ({ menu = "menu" }) => {
-  const user = useSelector((state) => state.auth);
-  if (user.username) {
+   const {data} = useAuth(false);
+  if (data?.username) {
     return (
       <>
         {" "}
         <li className={`${menu}__item`}>
           <Link to="/profile" className={`${menu}__link`}>
-            {user.username}
+            {data.username}
           </Link>
         </li>
         <li className={`${menu}__item`}>
@@ -318,7 +311,6 @@ const Navbar = () => {
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className="menu">
       <div className="menu__icon">

@@ -1,23 +1,15 @@
-import Text from "../../components/Text/";
 import styled from "styled-components";
-import { Form, TextInput } from "../../components/form/";
+import { Form } from "../../components/form/";
 import Button from "../../components/button/";
-import { useForm } from "react-hook-form";
-import { checkErrors } from "../../shared/libs/error-messages";
 import { Link, useParams } from "react-router-dom";
-import { motion } from "framer-motion";
 import LoadingPage from "../../shared/loading/";
-import { useSelector, useDispatch } from "react-redux";
-import { activateAccount } from "../../store/actions/user";
 import Message from "../../components/message/";
-import { useEffect } from "react";
-import { requestStatus } from "../../store/actions/user";
-
+import {useActivateAccount} from '../../hooks/user'
+import {useEffect} from 'react';
 const Wrapper = styled.div`
   width: 100%;
   max-width: 1118px;
   margin: 0 auto;
-
   .container {
     display: flex;
     align-items: center;
@@ -26,20 +18,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const ActivateEmail = ({ token, handleSubmit }) => {
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const checkToken = () => {
-    dispatch(requestStatus({ token }, `/user/activate-account`));
-  };
+const ActivateEmail = ({ token }) => {
+  const {data,mutate,isLoading,isError,error} = useActivateAccount();
   useEffect(() => {
-    checkToken();
-  }, [token]);
-  if (user?.loading) return <LoadingPage />;
-  if (user?.error)
+     mutate({token});
+  }, [token,mutate]);
+  if (isLoading) return <LoadingPage />;
+  if (isError)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <Message subTitle={user.data} type="red" />
+        <Message subTitle={error.message} type="red" />
         <Link to="/accounts/signup">
           <Button theme="red" circle>
             signup
@@ -47,13 +35,13 @@ const ActivateEmail = ({ token, handleSubmit }) => {
         </Link>
       </Form>
     );
-  if (user?.data?.email)
+  if (data?.email)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         {" "}
         <Message
           title="Account Verifycation Success"
-          subTitle={`conguratilation ${user.data.usename}, your accuout has been
+          subTitle={`conguratilation ${data.usename}, your accuout has been
         successfully activated. now go to`}
           type="green"
         />
@@ -69,10 +57,6 @@ const ActivateEmail = ({ token, handleSubmit }) => {
 
 const Activate = () => {
   const { token } = useParams();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    return () => dispatch({ type: "user-go" });
-  });
   return (
     <Wrapper>
       <div className="container">

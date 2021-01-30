@@ -8,13 +8,9 @@ import { Link } from "react-router-dom";
 import signupImg from "../../assets/images/6.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { requestStatus } from "../../store/actions/user";
 import Message from "../../components/message/";
-import { useEffect } from "react";
 import GoogleLogin from "react-google-login";
-import { useFetch } from "../../shared/hooks/useFetch";
-
+import {useLogin,useGoogleLogin} from '../../hooks/user'
 const Wrapper = styled.div`
   width: 100%;
   max-width: 1118px;
@@ -36,14 +32,14 @@ const Wrapper = styled.div`
 `;
 
 const LoginForm = ({ login }) => {
-  const user = useSelector((state) => state.user);
+  const {isLoading,isError,error,mutate} = useLogin();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (e) => {
-    if (!user.loading) login(e);
+  mutate(e);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Message show={user.error} subTitle={user.data} type="red" />
+     <Message show={isError} subTitle={error?.message} type="red" /> 
       <TextInput
         type="text"
         name="email"
@@ -66,7 +62,7 @@ const LoginForm = ({ login }) => {
       <CheckBox label="remember" register={register()}>
         remember me
       </CheckBox>
-      <Button block big loading={user.loading}>
+      <Button block big loading={isLoading}>
         Login
       </Button>
     </form>
@@ -100,13 +96,6 @@ const ImgContainer = () => {
 };
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const handleSubmit = (data) => {
-    dispatch(requestStatus(data, "/user/login"));
-  };
-  useEffect(() => {
-    return () => dispatch({ type: "user-go" });
-  });
   return (
     <Wrapper>
       <Switch>
@@ -128,7 +117,7 @@ const Login = () => {
           >
             Welcome Back!
           </Text>
-          <LoginForm login={handleSubmit} />
+          <LoginForm  />
           <div
             style={{
               alignItems: "center",
@@ -148,15 +137,16 @@ const Login = () => {
   );
 };
 
-const Google = ({ informParent = (f) => f }) => {
-  const { res, request, loading, error } = useFetch();
-  const responseGoogle = async (response) => {
-    console.log(response.tokenId);
-    try {
-      await request("/user/google-login", "post", {
-        idToken: response.tokenId,
-      });
-    } catch (err) {}
+const Google = () => {
+ // const { res, request, error } = useFetch();
+  const {mutate,isLoading,isError,error} = useGoogleLogin();
+  const responseGoogle =  (response) => {
+     mutate({idToken:response.tokenId});
+    // try {
+    //   await request("/user/google-login", "post", {
+    //     idToken: response.tokenId,
+    //   });
+    // } catch (err) {}
     // axios({
     //     method: 'POST',
     //     url: `${process.env.REACT_APP_API}/google-login`,
@@ -171,19 +161,21 @@ const Google = ({ informParent = (f) => f }) => {
     //         console.log('GOOGLE SIGNIN ERROR', error.response);
     //     });
   };
-  if (error) {
-    console.log(error);
-  }
-  console.log(res);
+  // if (error) {
+  //   console.log(error);
+  // }
+  // console.log(res);
   return (
+    <>
     <GoogleLogin
-      clientId={`AIzaSyBapguRvas6SHdZcVu9_hGd-EHiHokFw7c`}
+      clientId={`151428129813-nhg7fihrmv53ml959a4bfd2gq2rjsrr0.apps.googleusercontent.com`}
       onSuccess={responseGoogle}
-      onFailure={responseGoogle}
+      onFailure={()=>{}}
       render={(renderProps) => (
         <Button
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
+          loading={isLoading}
           big
           theme="light"
           block
@@ -191,8 +183,10 @@ const Google = ({ informParent = (f) => f }) => {
           Log in with Google
         </Button>
       )}
-      cookiePolicy={"single_host_origin"}
+      
     />
+    <Message show={isError} subTitle={error?.message} type="red" />
+    </>
   );
 };
 

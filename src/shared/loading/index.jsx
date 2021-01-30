@@ -26,9 +26,9 @@ const LoadingPage = styled.div`
   .bouncingLoader:before,
   .bouncingLoader:after {
     display: inline-block;
-    width: 13px;
-    height: 13px;
-    background: ${(props) => props.theme.primary};
+    width: 20px;
+    height: 20px;
+    background: ${({theme}) => theme.colors.primary[1]};
     border-radius: 50%;
     animation: ${Bouncing} 0.6s infinite alternate;
   }
@@ -38,7 +38,7 @@ const LoadingPage = styled.div`
     content: " ";
   }
   .bouncingLoader > div {
-    margin: 0 5px;
+    margin: 0 10px;
   }
   .bouncingLoader > div {
     animation-delay: 0.2s;
@@ -47,7 +47,7 @@ const LoadingPage = styled.div`
     animation-delay: 0.4s;
   }
 `;
-const LoadingModal = ({ loading }) => {
+const LoadingModal = ({ loading=true }) => {
   if (loading) {
     return (
       <LoadingPage>

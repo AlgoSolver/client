@@ -1,6 +1,6 @@
 import Text from "../../components/Text/";
 import styled from "styled-components";
-import { Form, TextInput, CheckBox, Divider } from "../../components/form/";
+import { Form, TextInput} from "../../components/form/";
 import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
@@ -8,12 +8,11 @@ import { Link, useParams } from "react-router-dom";
 import signupImg from "../../assets/images/1.png";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
-import { requestStatus } from "../../store/actions/user";
 import Message from "../../components/message/";
 import { useEffect } from "react";
 import LoadingPage from "../../shared/loading/";
-import { useFetch } from "../../shared/hooks/useFetch";
+import {useTokenVerification,usePassswordReset} from '../../hooks/user'
+
 const Wrapper = styled.div`
   width: 100%;
   max-width: 1118px;
@@ -46,25 +45,15 @@ const ConfirmMessage = styled(motion.div)`
 `;
 
 const RenderForm = ({ token }) => {
-  const { request, loading, error, res } = useFetch();
-  const dispatch = useDispatch();
-  const recover = (data) => {
-    dispatch(requestStatus({ ...data, token }, "/user/reset-password"));
-  };
-  const checkToken = async () => {
-    //dispatch(requestStatus({token},`/user/reset-password`));
-    try {
-      await request("/user/token-verification", "post", { token });
-    } catch (err) {}
-  };
+  const {data,isLoading,isError,error,mutate} = useTokenVerification(); 
   useEffect(() => {
-    checkToken();
-  }, [token]);
-  if (loading) return <LoadingPage />;
-  if (error)
+    mutate({token});
+  }, [token,mutate]);
+  if (isLoading) return <LoadingPage />;
+  if (isError)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        <Message subTitle={error} type="red" />
+        <Message subTitle={error.message} type="red" />
         <Link to="/accounts/recover">
           <Button theme="yellow" circle>
             reset password
@@ -72,25 +61,25 @@ const RenderForm = ({ token }) => {
         </Link>
       </Form>
     );
-  if (res?.email)
+  if (data?.email)
     return (
       <div className="container">
         <ImgContainer />
         <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-          <RestForm recover={recover} />
+          <RestForm token={token}/>
         </Form>
       </div>
     );
   else return null;
 };
 
-const RestForm = ({ recover }) => {
-  const user = useSelector((state) => state.user);
+const RestForm = ({ token }) => {
+  const {data,isLoading,isError,error,mutate} = usePassswordReset(); 
   const { register, handleSubmit, errors, watch } = useForm();
   const cp = watch("password");
-  const onSubmit = (e) => recover(e);
+  const onSubmit = (data) => mutate({ ...data, token });
 
-  if (user?.data?.email) {
+  if (data?.email) {
     const text = ` your password has been successfully updated, now go to login with the new password`;
     return (
       <ConfirmMessage
@@ -117,7 +106,7 @@ const RestForm = ({ recover }) => {
         Reset Your Password
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Message show={user.error} subTitle={user.data} type="red" />
+        <Message show={isError} subTitle={error?.message} type="red" />
         <TextInput
           type="password"
           name="password"
@@ -137,25 +126,14 @@ const RestForm = ({ recover }) => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button loading={user?.loading} block big>
+        <Button loading={isLoading} block big>
           Confirm
         </Button>
       </form>
     </>
   );
 };
-const Switch = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 2rem;
-  span {
-    font-size: 1.5rem;
-    font-weight: 300;
-    display: inline-block;
-    margin-right: 0.8rem;
-  }
-`;
+
 const ImgContainer = () => {
   const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   if (!isBigPhone)
@@ -173,13 +151,6 @@ const ImgContainer = () => {
 
 const Reset = () => {
   const { token } = useParams();
-  const dispatch = useDispatch();
-  const handleSubmit = (data) => {
-    dispatch(requestStatus(data, "/user/reset-password"));
-  };
-  useEffect(() => {
-    return () => dispatch({ type: "user-go" });
-  });
   return (
     <Wrapper>
       <div className="container">

@@ -58,6 +58,8 @@ const IconContainer = styled.div`
     }
   }
 `;
+
+
 const Icons = () => {
   const inputRef = useRef(null);
   const [keyword, setKeyword] = useState("");
@@ -75,8 +77,8 @@ const Icons = () => {
         return textA < textB ? -1 : textA > textB ? 1 : 0;
       })
     );
-    setSearchedIcons(searchedIcons);
-  }, []);
+     setSearchedIcons(searchedIcons);
+  }, [setIcons,searchedIcons,setSearchedIcons,]);
   useEffect(() => {
     if (!inputRef?.current) return;
     const timer = setTimeout(() => {
@@ -90,7 +92,7 @@ const Icons = () => {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [keyword]);
+  }, [keyword,icons]);
   return (
     <IconContainer>
       <div className="icons">

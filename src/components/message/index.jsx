@@ -52,12 +52,6 @@ const Messgae = ({
   show = true,
 }) => {
   const [open, setOpen] = useState(false);
-  const handleClose = () => {
-    if (timer) {
-      clearTimeout(timer);
-    }
-    setOpen(false);
-  };
   useEffect(() => {
     if (hooked && open) {
       timer = setTimeout(() => {
@@ -69,7 +63,7 @@ const Messgae = ({
         clearTimeout(timer);
       }
     };
-  }, []);
+  }, [setOpen,hooked,open]);
   useEffect(() => {
     setOpen(show);
   }, [show]);
