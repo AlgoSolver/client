@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import {TextInput} from './text-input';
 import {CheckBox} from './checkbox';
 import {Toggle} from './toggle';
+import {TextArea} from './textarea';
+import {Select} from './select';
+import {Draft} from './draft';
 
 
 const Form = ({ children,...rest }) => {
@@ -82,4 +85,4 @@ const DividerContainer = styled.div`
     padding: 0 17.5px;
   }
 `;
-export  {TextInput,Form,Toggle,CheckBox,Divider};
+export  {TextInput,Form,Toggle,CheckBox,Divider,TextArea,Select,Draft};

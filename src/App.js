@@ -20,6 +20,9 @@ import NewPassword from "./pages/new-password";
 
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
+
+import CreateProblem from './pages/create-problem/'
+
 import Navbar, { AccountsNav } from "./components/navbar/";
 import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
@@ -90,7 +93,7 @@ export const theme = {
   ],
   breakpoints: {
     phone: "max-width: 37.5em", // 600px
-    bigPhone: "max-width:46.0629em", // 769px;
+    bigPhone: "max-width:47.9375em", // 767px;
     tabPort: "max-width: 56.25em", //900px
     tabLAnd: "max-width: 75em", //1200px
     bigDesktop: "min-width: 112.5em", //1800px
@@ -157,6 +160,13 @@ const Routing = () => {
           path="/new-post"
         >
           <NewPost />
+        </AuthRoute>
+        <AuthRoute
+          // privatePage={true}
+          // fallback={fallbackForPublic}
+          path="/create-problem"
+        >
+          <CreateProblem />
         </AuthRoute>
         <Route path="/elements">
           <Elements />

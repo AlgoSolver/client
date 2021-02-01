@@ -30,7 +30,9 @@ export default createGlobalStyle`
       outline:none;
       color:inherit;
     }
-
+    form{
+      width:100%;
+    }
     button{
       border:none;
       cursor:pointer;
@@ -51,6 +53,6 @@ export default createGlobalStyle`
       max-width: 1200px;
       margin:0 auto;
       padding: 0px 2rem;
-      height:100%;
+      height:100%;      
     }
 `;

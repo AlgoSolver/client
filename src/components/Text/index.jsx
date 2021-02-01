@@ -5,10 +5,7 @@ import classNames from "classnames";
 const StyledText = styled.div`
   font-weight: 300;
   font-size: 1.6rem;
-  color: ${(props) =>
-    props.color
-      ? props.theme.colors[props.color][props.layer || 1]
-      : props.theme.colors.dark[0]};
+  color: ${({theme,color,layer}) => theme.colors[color][layer]};
   text-transform: ${({ transform }) => transform};
   font-family: ${({ family }) => family};
   &.h1 {
@@ -53,6 +50,21 @@ const StyledText = styled.div`
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
+  &.span{
+    font-size:1.5rem;
+    display:inline-block;
+  }
+  &.pre{
+    white-space: pre-wrap; 
+    overflow-x: auto;
+    font-size: 1.6rem;
+    font-family: MonoLisa;
+    padding: 2rem;
+    background:${({theme}) => theme.colors.light[0]};
+    color:${({theme}) => theme.colors.primary[0]};
+    border-radius:1rem;
+   
+  }
   &.bold {
     font-family: ${({ family }) => family + "-Bold"};
   }
@@ -75,12 +87,12 @@ const Text = ({
   type = "h3",
   className,
   bold,
-  color,
+  color="dark",
   size,
   family = "Avenir",
   mg,
   pd,
-  layer,
+  layer=0,
   transform = "initial",
   center,
 }) => {
