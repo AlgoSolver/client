@@ -12,6 +12,7 @@ import Buttons from "../../elements/buttons";
 import Typography from "../../elements/typography";
 import Forms from "../../elements/form";
 import Messages from "../../elements/messages/";
+import Modals from "../../elements/modals/";
 
 const PageContainer = styled.div`
   width: 100%;
@@ -90,6 +91,7 @@ const Sidebar = () => {
           <LinkItem name="typography" active={active} />
           <LinkItem name="forms" active={active} />
           <LinkItem name="messages" active={active} />
+          <LinkItem name="modals" active={active} />
         </ul>
       </div>
     </ElementsSidebar>
@@ -122,6 +124,9 @@ const Elements = () => {
             </Route>
             <Route path="/elements/messages">
               <Messages />
+            </Route>
+            <Route path="/elements/modals">
+              <Modals />
             </Route>
           </ElementsBody>
         </>

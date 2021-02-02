@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
-import {useAuth,useLogout} from '../../hooks/user'
+import { useAuth, useLogout } from "../../hooks/user";
 const AccountNavContainer = styled(motion.nav)`
   .wrapper {
     width: 100%;
@@ -22,14 +22,19 @@ const AccountNavContainer = styled(motion.nav)`
 `;
 
 const Logout = () => {
- const {isLoading,isError,error,mutate} = useLogout()
-  const logout =  () => {
-     mutate();
+  const { isLoading, isError, error, mutate } = useLogout();
+  const logout = () => {
+    mutate();
   };
   return (
     <>
       {isError && (
-        <Messgae type="red" hooked={true} closeble={true} subTitle={error.message} />
+        <Messgae
+          type="red"
+          hooked={true}
+          closeble={true}
+          subTitle={error.message}
+        />
       )}
       <Button loading={isLoading} onClick={logout}>
         Logout
@@ -37,14 +42,14 @@ const Logout = () => {
     </>
   );
 };
-const RenderAuth = ({ menu = "menu" }) => {
-   const {data} = useAuth(false);
+const RenderAuth = ({ menu = "menu", close = () => {} }) => {
+  const { data } = useAuth(false);
   if (data?.username) {
     return (
       <>
         {" "}
         <li className={`${menu}__item`}>
-          <Link to="/profile" className={`${menu}__link`}>
+          <Link onClick={close} to="/profile" className={`${menu}__link`}>
             {data.username}
           </Link>
         </li>
@@ -58,12 +63,12 @@ const RenderAuth = ({ menu = "menu" }) => {
     return (
       <>
         <li className="nav__item">
-          <Link to="/accounts/login" className="nav__link">
+          <Link onClick={close} to="/accounts/login" className="nav__link">
             Login
           </Link>
         </li>
         <li className="nav__item">
-          <Link to="/accounts/signup">
+          <Link onClick={close} to="/accounts/signup">
             <Button
               big
               circle
@@ -84,12 +89,12 @@ const RenderAuth = ({ menu = "menu" }) => {
     return (
       <>
         <li className="menu__item">
-          <Link to="/accounts/login" className="menu__link">
+          <Link onClick={close} to="/accounts/login" className="menu__link">
             login
           </Link>
         </li>
         <li className="menu__item">
-          <Link to="/accounts/signup" className="menu__link">
+          <Link onClick={close} to="/accounts/signup" className="menu__link">
             signup
           </Link>
         </li>
@@ -262,7 +267,7 @@ export const AccountsNav = () => {
     </AccountNavContainer>
   );
 };
-const Navbar = () => {
+const Navbar = ({ close }) => {
   const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   return (
     <NavbarContainer
@@ -311,6 +316,7 @@ const Navbar = () => {
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const close = () => setIsMenuOpen(false);
   return (
     <div className="menu">
       <div className="menu__icon">
@@ -342,28 +348,32 @@ const NavMenu = () => {
               <div className="menu__body">
                 <ul className="menu__list list1">
                   <li className="menu__item">
-                    <Link to="/playground" className="menu__link">
+                    <Link
+                      onClick={close}
+                      to="/playground"
+                      className="menu__link"
+                    >
                       playground
                     </Link>
                   </li>
                   <li className="menu__item">
-                    <Link to="/explore" className="menu__link">
+                    <Link onClick={close} to="/explore" className="menu__link">
                       explore
                     </Link>
                   </li>
                   <li className="menu__item">
-                    <Link to="/blog" className="menu__link">
+                    <Link onClick={close} to="/blog" className="menu__link">
                       Blog
                     </Link>
                   </li>
                   <li className="menu__item">
-                    <Link to="/elements" className="menu__link">
+                    <Link onClick={close} to="/elements" className="menu__link">
                       elements
                     </Link>
                   </li>
                 </ul>
                 <ul className="menu__list">
-                  <RenderAuth />
+                  <RenderAuth close={close} />
                 </ul>
               </div>
             </motion.nav>

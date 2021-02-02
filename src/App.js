@@ -31,7 +31,7 @@ export const theme = {
   colors: {
     primary: ["#3568d4", "#3e7bfa", "#6698fa", "#ccddff"],
     dark: ["#1c1c28", "#28293d", "#555770", "#8f90a6", "#c7c9d9"],
-    light: ["#e4e4eb", "#ebebf0", "#f3f2f5", "#fafafc", "#ffffff"],
+    light: ["#f9f9f9", "#ebebf0", "#f3f2f5", "#fafafc", "#ffffff"],
     red: ["#e53535", "#ff3b3b", "#ff5c5c", "#ff8080", "#ffe5e5"],
     green: ["#05a660", "#06c270", "#39d9ba", "#57EBA1", "#E3FFF1"],
     blue: ["#004FC4", "#0063F7", "#5B8DEF", "#9DBFF9", "#E5F0FF"],
