@@ -14,4 +14,4 @@
 ./run.sh
 ```
 ### Production
-  [AlgoSolver](https://algosolver-front.web.app) 
+  [AlgoSolver](https://algosolver.tech/) 
