@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import { useState } from "react";
-import { Hide, Show } from "../../assets/icons/";
+import { Hide , Show } from "../../assets/icons/";
 
 const Unit = styled(motion.div)`
   position: relative;
@@ -21,6 +21,14 @@ const Unit = styled(motion.div)`
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 2;
+  }
+  .input__container{
+    position: relative;
+    svg{
+      path{
+        stroke:${({ theme }) => theme.colors.dark[2]};
+      }
+    }
   }
 `;
 
@@ -109,7 +117,7 @@ export const TextInput = ({
   return (
     <Unit iconExist>
       {label && <Label htmlFor={name}>{label}</Label>}
-      <Input
+      <div className="input__container"><Input
         iconExist={iconExist}
         ref={register}
         id={name}
@@ -125,6 +133,7 @@ export const TextInput = ({
           {!show ? <Show /> : <Hide />}
         </div>
       )}
+      </div>
       {children ? children : null}
       <AnimatePresence exitBeforeEnter>
         {error && (

@@ -273,7 +273,6 @@ const Button = ({
         )
       ) : (
         <span className="center">
-          {" "}
           <LoadingState type={theme} />
         </span>
       )}

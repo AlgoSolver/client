@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Button from "../button/";
-import { ArrowRight } from "../../assets/icons/";
-import code from "../../assets/animations/code-lanch.json";
-import LottieAnimation from "../../shared/lottie";
+import Button from "../../../components/button";
+import { ArrowRight } from "../../../assets/icons/";
+import code from "../../../assets/animations/code-lanch.json";
+import LottieAnimation from "../../../shared/lottie";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -316,7 +316,7 @@ const Navbar = () => {
       initial={{ y: 300, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <div className="nav__brand">algoSlover</div>
+      <div className="nav__brand">AlgoSlover</div>
       {isBigPhone ? (
         <NavMenu />
       ) : (

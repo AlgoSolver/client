@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
-import { Close } from "../../assets/icons/";
+import { CloseSquare } from "../../assets/icons/";
 const ModalContainer = styled.div`
 	position: fixed;
 	top: 0;
@@ -118,7 +118,7 @@ const Modal = ({
 						className={classes}
 					>
 						<div onClick={onHide} className="modal__close">
-							<Close />
+							<CloseSquare />
 						</div>
 						{children}
 					</ModalBody>

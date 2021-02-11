@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Button from '../../components/button/';
 import Text from '../../components/Text/';
-import {TwoUser} from '../../assets/icons/';
+import {User2} from '../../assets/icons/';
 
 const ButtonsContainer = styled.div`
 	padding:2rem;
@@ -110,10 +110,10 @@ const Buttons = ()=>{
           </Button>
 		</div>
 		<div className="body">
-		  <Button icon={TwoUser}>
+		  <Button icon={User2}>
           	  two freinds
           </Button>
-          <Button icon={TwoUser} outlined theme="dark">
+          <Button icon={User2} outlined theme="dark">
           	  activity freinds
           </Button>
 		</div>

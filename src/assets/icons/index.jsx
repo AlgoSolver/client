@@ -1,622 +1,753 @@
-export function TwoUser(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M16.02 10.913a3.297 3.297 0 100-6.594M17.536 14.496a10.9 10.9 0 011.617.233c.74.147 1.63.45 1.945 1.113.202.425.202.92 0 1.345-.315.663-1.206.966-1.945 1.118"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M9.591 15.206c3.69 0 6.842.56 6.842 2.792 0 2.234-3.132 2.812-6.842 2.812-3.69 0-6.84-.558-6.84-2.792s3.13-2.812 6.84-2.812zM9.591 12.019a4.369 4.369 0 01-4.384-4.385A4.368 4.368 0 019.591 3.25a4.37 4.37 0 014.385 4.384 4.37 4.37 0 01-4.385 4.385z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function User2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.02 10.913a3.297 3.297 0 100-6.594M17.536 14.496a10.9 10.9 0 011.617.233c.74.147 1.63.45 1.945 1.113.202.425.202.92 0 1.345-.315.663-1.206.966-1.945 1.118" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.591 15.206c3.69 0 6.842.56 6.842 2.792 0 2.234-3.132 2.812-6.842 2.812-3.69 0-6.84-.558-6.84-2.792s3.13-2.812 6.84-2.812zM9.591 12.019a4.369 4.369 0 01-4.384-4.385A4.368 4.368 0 019.591 3.25a4.37 4.37 0 014.385 4.384 4.37 4.37 0 01-4.385 4.385z" clipRule="evenodd" /></svg>;
 }
-
-
-export function Search(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <circle
-        cx={11.767}
-        cy={11.767}
-        r={8.989}
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M18.018 18.485L21.542 22"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function User3(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.595 10.932a2.902 2.902 0 100-5.803M18.93 14.085c.478.033.953.1 1.422.206.65.127 1.433.394 1.712.978.178.374.178.81 0 1.184-.278.584-1.061.85-1.712.984M6.29 10.932a2.902 2.902 0 110-5.803M4.956 14.085c-.479.033-.954.1-1.423.206-.65.127-1.434.394-1.711.978-.18.374-.18.81 0 1.184.277.584 1.06.85 1.711.984" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.938 14.71c3.247 0 6.02.49 6.02 2.457 0 1.965-2.755 2.475-6.02 2.475-3.248 0-6.021-.491-6.021-2.457 0-1.967 2.756-2.475 6.02-2.475zM11.938 11.905a3.845 3.845 0 01-3.859-3.86 3.845 3.845 0 013.859-3.857 3.845 3.845 0 013.858 3.858 3.845 3.845 0 01-3.858 3.859z" clipRule="evenodd" /></svg>;
 }
-  
-export function ThreeUser(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M17.595 10.932a2.902 2.902 0 100-5.803M18.93 14.085c.478.033.953.1 1.422.206.65.127 1.433.394 1.712.978.178.374.178.81 0 1.184-.278.584-1.061.85-1.712.984M6.29 10.932a2.902 2.902 0 110-5.803M4.956 14.085c-.479.033-.954.1-1.423.206-.65.127-1.434.394-1.711.978-.18.374-.18.81 0 1.184.277.584 1.06.85 1.711.984"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M11.938 14.71c3.247 0 6.02.49 6.02 2.457 0 1.965-2.755 2.475-6.02 2.475-3.248 0-6.021-.491-6.021-2.457 0-1.967 2.756-2.475 6.02-2.475zM11.938 11.905a3.845 3.845 0 01-3.859-3.86 3.845 3.845 0 013.859-3.857 3.845 3.845 0 013.858 3.858 3.845 3.845 0 01-3.858 3.859z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-export function Activity(props) {
-  return (
-     <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M7.245 14.781l2.993-3.89 3.414 2.682 2.93-3.78"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle
-        cx={19.995}
-        cy={4.2}
-        r={1.922}
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14.925 3.12H7.657c-3.012 0-4.879 2.133-4.879 5.144v8.083c0 3.011 1.83 5.135 4.879 5.135h8.604c3.011 0 4.879-2.124 4.879-5.135v-7.04"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function AddUser(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M9.877 15.206c-3.844 0-7.127.581-7.127 2.91 0 2.326 3.262 2.93 7.127 2.93 3.844 0 7.127-.583 7.127-2.91s-3.262-2.93-7.127-2.93zM9.877 11.886a4.552 4.552 0 004.568-4.568A4.551 4.551 0 009.877 2.75 4.552 4.552 0 005.31 7.318a4.553 4.553 0 004.568 4.568z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M19.204 8.67v4.01M21.25 10.674h-4.09"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function ArrowDown2(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M19 8.5l-7 7-7-7"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowDown(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.274 19.75v-15M18.299 13.7l-6.024 6.05L6.25 13.7" /></svg>;
 }
 export function ArrowDown3(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M12.251 12.7V3.75"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M7.25 12.7l5.001 7.937 5.001-7.937H7.25z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.251 12.7V3.75" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.25 12.7l5.001 7.937 5.001-7.937H7.25z" clipRule="evenodd" /></svg>;
 }
-
-export function ArrowDownCircle(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M2.75 12a9.25 9.25 0 1018.5 0 9.25 9.25 0 00-18.5 0z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8.53 10.558L12 14.044l3.471-3.486"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function Activity(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.245 14.781l2.993-3.89 3.414 2.682 2.93-3.78" /><circle cx={19.995} cy={4.2} r={1.922} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.925 3.12H7.657c-3.012 0-4.879 2.133-4.879 5.144v8.083c0 3.011 1.83 5.135 4.879 5.135h8.604c3.011 0 4.879-2.124 4.879-5.135v-7.04" /></svg>;
 }
-
-export  function ArrowDownSquare(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M7.666 21.25h8.669c3.02 0 4.915-2.139 4.915-5.166V7.916c0-3.027-1.885-5.166-4.915-5.166h-8.67c-3.03 0-4.915 2.139-4.915 5.166v8.168c0 3.027 1.886 5.166 4.916 5.166z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 16.086V7.914M15.748 12.322L12 16.086l-3.748-3.764"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function AddUser(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.877 15.206c-3.844 0-7.127.581-7.127 2.91 0 2.326 3.262 2.93 7.127 2.93 3.844 0 7.127-.583 7.127-2.91s-3.262-2.93-7.127-2.93zM9.877 11.886a4.552 4.552 0 004.568-4.568A4.551 4.551 0 009.877 2.75 4.552 4.552 0 005.31 7.318a4.553 4.553 0 004.568 4.568z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.204 8.67v4.01M21.25 10.674h-4.09" /></svg>;
 }
-
-export function ArrowDown(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M12.274 19.75v-15M18.299 13.7l-6.024 6.05L6.25 13.7"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowDown2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 8.5l-7 7-7-7" /></svg>;
 }
-export function ArrowLeft2(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M15.5 19l-7-7 7-7"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function ArrowLeft3(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M11.3 12.251h8.95"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M11.3 7.25l-7.937 5.001 7.937 5.001V7.25z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function ArrowLeftCicle(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M12 2.75a9.25 9.25 0 100 18.5 9.25 9.25 0 000-18.5z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M13.442 8.529L9.956 12l3.486 3.471"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function ArrowLeftSquare(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M2.75 7.666v8.669c0 3.02 2.139 4.915 5.166 4.915h8.168c3.027 0 5.166-1.885 5.166-4.915v-8.67c0-3.03-2.139-4.915-5.166-4.915H7.916c-3.027 0-5.166 1.886-5.166 4.916z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M7.914 12h8.172M11.678 15.748L7.914 12l3.764-3.748"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowDownSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.666 21.25h8.669c3.02 0 4.915-2.139 4.915-5.166V7.916c0-3.027-1.885-5.166-4.915-5.166h-8.67c-3.03 0-4.915 2.139-4.915 5.166v8.168c0 3.027 1.886 5.166 4.916 5.166z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 16.086V7.914M15.748 12.322L12 16.086l-3.748-3.764" /></svg>;
 }
 export function ArrowLeft(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M4.25 12.274h15M10.3 18.299l-6.05-6.024L10.3 6.25"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.25 12.274h15M10.3 18.299l-6.05-6.024L10.3 6.25" /></svg>;
 }
-export function ArrowRight2(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M8.5 5l7 7-7 7"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowDownCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.75 12a9.25 9.25 0 1018.5 0 9.25 9.25 0 00-18.5 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.53 10.558L12 14.044l3.471-3.486" /></svg>;
 }
-
-export function ArrowRight3(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M12.7 11.749H3.75"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M12.7 16.75l7.937-5.001L12.7 6.748V16.75z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowLeft2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.5 19l-7-7 7-7" /></svg>;
 }
-
-export function ArrowRightCircle(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M12 21.25a9.25 9.25 0 100-18.5 9.25 9.25 0 000 18.5z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M10.558 15.471L14.044 12l-3.486-3.471"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function ArrowLeftCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2.75a9.25 9.25 0 100 18.5 9.25 9.25 0 000-18.5z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.442 8.529L9.956 12l3.486 3.471" /></svg>;
+}
+export function ArrowLeft3(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.3 12.251h8.95" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.3 7.25l-7.937 5.001 7.937 5.001V7.25z" clipRule="evenodd" /></svg>;
+}
+export function ArrowLeftSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.75 7.666v8.669c0 3.02 2.139 4.915 5.166 4.915h8.168c3.027 0 5.166-1.885 5.166-4.915v-8.67c0-3.03-2.139-4.915-5.166-4.915H7.916c-3.027 0-5.166 1.886-5.166 4.916z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.914 12h8.172M11.678 15.748L7.914 12l3.764-3.748" /></svg>;
+}
+export function ArrowUp3(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.749 11.3v8.95" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.75 11.3l-5.001-7.937L6.748 11.3H16.75z" clipRule="evenodd" /></svg>;
 }
 export function ArrowRightSquare(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M21.25 16.334V7.665c0-3.02-2.139-4.915-5.166-4.915H7.916c-3.027 0-5.166 1.885-5.166 4.915v8.67c0 3.03 2.139 4.915 5.166 4.915h8.168c3.027 0 5.166-1.886 5.166-4.916z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M16.086 12H7.914M12.322 8.252L16.086 12l-3.764 3.748"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.25 16.334V7.665c0-3.02-2.139-4.915-5.166-4.915H7.916c-3.027 0-5.166 1.885-5.166 4.915v8.67c0 3.03 2.139 4.915 5.166 4.915h8.168c3.027 0 5.166-1.886 5.166-4.916z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.086 12H7.914M12.322 8.252L16.086 12l-3.764 3.748" /></svg>;
 }
-
+export function ArrowRightCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21.25a9.25 9.25 0 100-18.5 9.25 9.25 0 000 18.5z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.558 15.471L14.044 12l-3.486-3.471" /></svg>;
+}
+export function ArrowUpSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.334 2.75H7.665c-3.02 0-4.915 2.139-4.915 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.67c3.03 0 4.915-2.139 4.915-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 7.914v8.172M8.252 11.678L12 7.914l3.748 3.764" /></svg>;
+}
+export function Bag(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.486 21.5h8.348c3.066 0 5.419-1.108 4.75-5.565l-.777-6.041c-.412-2.225-1.831-3.076-3.076-3.076H6.553c-1.264 0-2.6.915-3.076 3.076l-.778 6.04C2.132 19.89 4.42 21.5 7.486 21.5z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.349 6.598a4.32 4.32 0 014.32-4.32v0a4.32 4.32 0 014.339 4.32v0M8.704 11.102h.045M14.534 11.102h.046" /></svg>;
+}
+export function Bag2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.773 9.305V6.273A3.772 3.772 0 0012 2.5a3.773 3.773 0 00-3.79 3.756v3.049" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.742 21H7.258A4.256 4.256 0 013 16.745V11.23a4.256 4.256 0 014.258-4.255h9.484A4.256 4.256 0 0121 11.23v5.516A4.256 4.256 0 0116.742 21z" clipRule="evenodd" /></svg>;
+}
+export function Call(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.99 4.873c.317-.524 2.06-2.43 3.303-2.372.372.031.7.256.968.517.613.599 2.368 2.863 2.468 3.34.242 1.168-1.15 1.842-.724 3.02 1.086 2.659 2.958 4.53 5.618 5.616 1.177.427 1.851-.966 3.02-.723.475.1 2.74 1.855 3.34 2.468.26.266.485.596.516.967.046 1.31-1.977 3.077-2.371 3.303-.93.666-2.145.654-3.624-.034-4.13-1.718-10.73-8.193-12.48-12.478-.67-1.472-.716-2.694-.034-3.624z" clipRule="evenodd" /></svg>;
+}
+export function Calendar(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.093 9.404h17.824M16.442 13.31h.01M12.005 13.31h.009M7.558 13.31h.01M16.442 17.196h.01M12.005 17.196h.009M7.558 17.196h.01M16.044 2v3.29M7.965 2v3.29" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.238 3.58H7.771C4.834 3.58 3 5.214 3 8.221v9.05C3 20.326 4.834 22 7.771 22h8.458C19.175 22 21 20.355 21 17.348V8.222c.01-3.007-1.816-4.643-4.762-4.643z" clipRule="evenodd" /></svg>;
+}
 export function ArrowRight(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M19.75 11.726h-15M13.7 5.701l6.05 6.024-6.05 6.025"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.75 11.726h-15M13.7 5.701l6.05 6.024-6.05 6.025" /></svg>;
+}
+export function ArrowRight3(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.7 11.749H3.75" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.7 16.75l7.937-5.001L12.7 6.748V16.75z" clipRule="evenodd" /></svg>;
+}
+export function Calling(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.99 4.874c.316-.525 2.06-2.43 3.303-2.373.372.032.7.256.967.517h.001c.613.6 2.369 2.863 2.467 3.34.244 1.168-1.15 1.842-.724 3.02 1.087 2.658 2.96 4.53 5.62 5.616 1.176.427 1.85-.965 3.019-.723.476.1 2.74 1.855 3.34 2.468v0c.26.266.485.595.516.967.046 1.31-1.977 3.077-2.371 3.303-.93.666-2.145.654-3.625-.034-4.13-1.718-10.73-8.193-12.48-12.478-.669-1.472-.714-2.694-.033-3.623z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.565 2.75a7.97 7.97 0 017.041 7.032M14.565 6.293a4.426 4.426 0 013.498 3.498" /></svg>;
+}
+export function Bookmark(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.665 18.632L5.733 21.88a.989.989 0 01-1.318-.394v0a1.043 1.043 0 01-.119-.466V6.622c0-2.746 1.877-3.844 4.577-3.844h6.343c2.618 0 4.577 1.025 4.577 3.661v14.582a.98.98 0 01-.98.979 1.08 1.08 0 01-.476-.119l-5.967-3.25a.741.741 0 00-.705 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.37 9.323h7.295" /></svg>;
+}
+export function Buy(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.422 19.82a.766.766 0 010 1.53.764.764 0 110-1.53zM18.675 19.82a.766.766 0 11-.002 1.532.766.766 0 01.002-1.532z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.75 3.25l2.08.36.963 11.473a1.802 1.802 0 001.797 1.653h10.912c.896 0 1.656-.658 1.785-1.546l.949-6.558a1.34 1.34 0 00-1.327-1.533H5.164M14.125 10.795h2.773" /></svg>;
+}
+export function CallSilent(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.287 13.225C4.935 11.608 3.842 9.98 3.27 8.59c-.66-1.44-.7-2.63-.04-3.53.31-.51 2.01-2.37 3.22-2.31.36.03.68.25.94.5.3.29.88.99 1.39 1.67.51.68.97 1.35 1.01 1.58.24 1.14-1.12 1.8-.7 2.94.093.228.19.449.297.663M2.75 21.251l18.5-18.5M8.44 15.562c2.32 2.319 4.95 4.34 6.98 5.18 1.44.67 2.62.679 3.52.03.39-.221 2.36-1.94 2.31-3.221-.03-.36-.25-.68-.5-.94-.58-.6-2.79-2.31-3.25-2.4-1.14-.24-1.8 1.12-2.94.7-1.29-.53-2.4-1.25-3.31-2.16" /></svg>;
+}
+export function Camera(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.638 7.11v0a.962.962 0 01-.87-.551c-.287-.608-.652-1.385-.868-1.808-.32-.63-.836-.995-1.552-1H9.652c-.716.005-1.232.37-1.552 1-.215.423-.58 1.2-.867 1.808a.963.963 0 01-.87.55v0a3.612 3.612 0 00-3.613 3.613v5.936a3.613 3.613 0 003.613 3.612h11.275a3.612 3.612 0 003.612-3.612v-5.936a3.612 3.612 0 00-3.612-3.612z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.821 13.335a3.19 3.19 0 003.18 3.185 3.19 3.19 0 003.177-3.178 3.186 3.186 0 00-3.175-3.19c-1.762-.002-3.196 1.454-3.182 3.183z" clipRule="evenodd" /><path fill="#200E32" d="M16.902 10.995a1.009 1.009 0 01-.62-.3 1.02 1.02 0 01-.282-.694c0-.137.028-.272.082-.394.055-.124.12-.229.236-.342.089-.078.18-.14.304-.195a1.023 1.023 0 011.082.215.961.961 0 01.19.262l.023.058c.055.124.083.26.083.396 0 .261-.102.503-.292.705a.996.996 0 01-.609.29L17 11l-.098-.005z" /></svg>;
+}
+export function ArrowRight2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.5 5l7 7-7 7" /></svg>;
+}
+export function ArrowUpCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.25 12a9.25 9.25 0 10-18.5 0 9.25 9.25 0 0018.5 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.47 13.442L12 9.956l-3.471 3.486" /></svg>;
+}
+export function CallMissed(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.99 4.874c.317-.525 2.06-2.43 3.303-2.373.372.032.7.256.968.517.613.6 2.368 2.863 2.468 3.34.242 1.168-1.15 1.842-.724 3.02 1.086 2.658 2.958 4.53 5.618 5.616 1.177.427 1.851-.965 3.02-.723.475.1 2.74 1.855 3.34 2.468.26.266.485.595.516.967.046 1.31-1.977 3.077-2.371 3.303-.93.666-2.145.654-3.624-.034-4.13-1.718-10.73-8.193-12.48-12.478-.67-1.472-.716-2.694-.034-3.623z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.25 2.75l-6 6M15.25 2.75l6 6" /></svg>;
+}
+export function ArrowUp2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 15.5l7-7 7 7" /></svg>;
+}
+export function ArrowUp(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.726 4.25v15M5.701 10.3l6.024-6.05 6.025 6.05" /></svg>;
+}
+export function Category(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.285 2h3.267A2.46 2.46 0 0122 4.47v3.294c0 1.363-1.096 2.47-2.448 2.47h-3.267a2.46 2.46 0 01-2.448-2.47V4.47A2.46 2.46 0 0116.285 2zM4.449 2h3.265a2.46 2.46 0 012.45 2.47v3.294a2.46 2.46 0 01-2.45 2.47H4.45A2.46 2.46 0 012 7.764V4.47A2.46 2.46 0 014.449 2zM4.449 13.766h3.265a2.46 2.46 0 012.45 2.47v3.294A2.46 2.46 0 017.713 22H4.45A2.46 2.46 0 012 19.53v-3.293a2.46 2.46 0 012.449-2.471zM16.285 13.766h3.267c1.352 0 2.448 1.106 2.448 2.47v3.294A2.46 2.46 0 0119.552 22h-3.267a2.46 2.46 0 01-2.448-2.47v-3.293a2.46 2.46 0 012.448-2.471z" clipRule="evenodd" /></svg>;
+}
+export function Delete(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.325 9.468s-.543 6.735-.858 9.572c-.15 1.355-.987 2.15-2.358 2.174-2.61.047-5.221.05-7.83-.005-1.318-.027-2.141-.83-2.288-2.162-.317-2.862-.857-9.579-.857-9.579M20.708 6.24H3.75M17.44 6.24a1.648 1.648 0 01-1.614-1.324L15.583 3.7a1.28 1.28 0 00-1.237-.95h-4.233a1.28 1.28 0 00-1.237.95l-.243 1.216A1.648 1.648 0 017.018 6.24" /></svg>;
+}
+export function Chat(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.695 13.39a1.17 1.17 0 01-1.168-1.168 1.169 1.169 0 012.337 0 1.17 1.17 0 01-1.169 1.169zm4.543 0a1.17 1.17 0 01-1.168-1.168 1.169 1.169 0 012.337 0 1.17 1.17 0 01-1.169 1.169zm3.375-1.168a1.17 1.17 0 002.337 0 1.169 1.169 0 00-2.337 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.02 2C6.21 2 2 6.746 2 12.015c0 1.682.49 3.414 1.35 4.997.16.26.18.59.07.902l-.67 2.243c-.15.541.31.94.82.78l2.02-.6c.55-.18.98.05 1.49.361C8.54 21.558 10.36 22 12 22c4.96 0 10-3.836 10-10.015C22 6.656 17.7 2 12.02 2z" clipRule="evenodd" /></svg>;
+}
+export function CloseSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.396 9.595l-4.792 4.792M14.397 14.39L9.601 9.593" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.334 2.75H7.665c-3.02 0-4.915 2.14-4.915 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.669c3.03 0 4.916-2.139 4.916-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /></svg>;
+}
+export function Chart(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.371 10.202v6.86M12.038 6.92v10.142M16.629 13.827v3.235" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.686 2H7.314C4.048 2 2 4.312 2 7.585v8.83C2 19.688 4.038 22 7.314 22h9.372C19.962 22 22 19.688 22 16.415v-8.83C22 4.312 19.962 2 16.686 2z" clipRule="evenodd" /></svg>;
+}
+export function Danger(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M11.25 16.27c0-.414.336-.756.75-.756s.75.33.75.745v.01a.75.75 0 01-1.5 0z" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.796 20.418h14.482a2.08 2.08 0 001.819-2.86L13.82 4.824a2.078 2.078 0 00-3.64 0L2.905 17.559a2.08 2.08 0 001.819 2.859M11.99 13.396v-3.1" /></svg>;
+}
+export function Discount(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.794 7.056a2.262 2.262 0 012.261-2.262h1.03c.595 0 1.168-.236 1.592-.657l.72-.72a2.262 2.262 0 013.197-.008l.01.008.72.72c.422.42.995.657 1.592.657h1.028a2.262 2.262 0 012.262 2.262v1.027c0 .598.236 1.17.657 1.594l.72.72c.885.88.89 2.312.01 3.198l-.01.009-.72.72a2.256 2.256 0 00-.657 1.592v1.029a2.261 2.261 0 01-2.262 2.26h-1.028a2.26 2.26 0 00-1.593.659l-.72.719a2.26 2.26 0 01-3.198.009l-.009-.01-.719-.718a2.263 2.263 0 00-1.593-.658H7.055a2.261 2.261 0 01-2.26-2.261v-1.03c0-.595-.238-1.17-.659-1.591l-.719-.72a2.26 2.26 0 01-.009-3.198l.01-.01.718-.72c.421-.423.658-.995.658-1.593V7.056M9.43 14.57l5.14-5.14" /><path fill="#200E32" d="M14.567 15.322a.75.75 0 01-.53-.22.821.821 0 01-.16-.25.717.717 0 010-.57c.04-.09.09-.17.16-.24.28-.28.78-.28 1.06 0 .07.07.13.15.17.24.03.09.05.19.05.29 0 .101-.02.19-.05.28-.04.09-.1.18-.17.25a.75.75 0 01-.53.22zM9.427 10.183c-.1 0-.19-.021-.28-.061a.818.818 0 01-.25-.16.963.963 0 01-.16-.25.714.714 0 010-.57c.04-.09.09-.18.16-.24a.772.772 0 011.06 0c.14.14.22.33.22.53 0 .1-.01.19-.05.28-.04.09-.1.17-.17.25a.773.773 0 01-.53.22z" /></svg>;
+}
+export function Download(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.122 15.436V3.396M15.038 12.508l-2.916 2.928-2.916-2.928" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.755 8.128h.933a3.684 3.684 0 013.684 3.685v4.884a3.675 3.675 0 01-3.675 3.675H6.557a3.685 3.685 0 01-3.685-3.685v-4.885a3.675 3.675 0 013.675-3.674h.942" /></svg>;
+}
+export function Edit(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.7 19.898h6.377" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.855 4.956c.737-.94 1.928-.89 2.868-.153l1.39 1.09c.94.737 1.273 1.88.536 2.82L9.359 19.29a1.48 1.48 0 01-1.15.568l-3.196.04-.724-3.114c-.102-.437 0-.897.277-1.252l8.289-10.575z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.303 6.936l4.794 3.758" /></svg>;
+}
+export function Document(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.716 16.223h-7.22M15.716 12.037h-7.22M11.251 7.86H8.496" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.909 2.75l-7.69.004c-2.76.017-4.468 1.833-4.468 4.603v9.196c0 2.784 1.722 4.607 4.506 4.607l7.689-.003c2.76-.017 4.47-1.834 4.47-4.604V7.357c0-2.784-1.723-4.607-4.507-4.607z" clipRule="evenodd" /></svg>;
+}
+export function Discovery(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.27 14.952l1.593-5.09 5.089-1.592-1.593 5.09-5.089 1.592z" clipRule="evenodd" /><circle cx={11.611} cy={11.611} r={9.611} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /></svg>;
 }
 
-export function  Close(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M14.396 9.595l-4.792 4.792M14.397 14.39L9.601 9.593"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M16.334 2.75H7.665c-3.02 0-4.915 2.14-4.915 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.669c3.03 0 4.916-2.139 4.916-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function EditSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.492 2.789H7.753c-3.075 0-5.003 2.177-5.003 5.259v8.314c0 3.082 1.92 5.259 5.003 5.259h8.824c3.085 0 5.004-2.177 5.004-5.259v-4.028" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.828 10.92L16.3 3.449c.93-.93 2.44-.93 3.37 0l1.218 1.217a2.383 2.383 0 010 3.37l-7.51 7.51a2.17 2.17 0 01-1.534.636H8.099l.094-3.78a2.17 2.17 0 01.635-1.48z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.165 4.603l4.566 4.566" /></svg>;
 }
-
-export function Show(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        clipRule="evenodd"
-        d="M15.162 12.053a3.162 3.162 0 11-6.324-.001 3.162 3.162 0 016.324.001z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        clipRule="evenodd"
-        d="M11.998 19.355c3.808 0 7.291-2.738 9.252-7.302-1.961-4.564-5.444-7.302-9.252-7.302h.004c-3.808 0-7.291 2.738-9.252 7.302 1.961 4.564 5.444 7.302 9.252 7.302h-.004z"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+export function Folder(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.445 15.758c0 3.578-2.109 5.687-5.687 5.687H7.972c-3.588 0-5.696-2.109-5.696-5.687V7.963c0-3.579 1.314-5.687 4.892-5.687h2c.718 0 1.394.338 1.825.913l.913 1.214a2.291 2.291 0 001.825.912h2.83c3.587 0 4.911 1.826 4.911 5.477l-.027 4.966z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.059 14.49h9.593" /></svg>;
 }
-
+export function Filter2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.293 22l4.777-2.248V13.86l7.49-7.595c.282-.285.44-.676.44-1.085V3.518C22 2.678 21.342 2 20.53 2H3.47C2.658 2 2 2.679 2 3.518v1.7c0 .386.142.757.397 1.038l6.896 7.604V22z" clipRule="evenodd" /></svg>;
+}
+export function Game(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.848 12.314v3.745M10.759 14.187H6.938M15.366 12.428h-.107M17.18 16.003h-.107M8.072 2c0 .74.613 1.34 1.368 1.34h1.057c1.165.005 2.11.93 2.115 2.073v.675" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.428 21.963c-3.005.05-5.955.048-8.855 0C4.353 21.963 2 19.666 2 16.51v-4.65c0-3.154 2.354-5.45 5.573-5.45 2.916-.05 5.868-.05 8.855 0 3.22 0 5.572 2.297 5.572 5.45v4.65c0 3.155-2.352 5.452-5.572 5.452z" clipRule="evenodd" /></svg>;
+}
+export function Filter(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.117 17.987H2.883" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.118 17.987a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.883 6.262h7.235" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.883 6.262a2.88 2.88 0 105.76 0 2.88 2.88 0 10-5.76 0z" clipRule="evenodd" /></svg>;
+}
+export function Graph(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.524 9.753a8.311 8.311 0 00-7.963-6.975.714.714 0 00-.742.687v.064l.449 6.709c.03.452.417.795.87.769l6.727-.449a.714.714 0 00.659-.769v-.036z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.902 6.769a.915.915 0 011.043.522.824.824 0 01.082.302c.092 1.3.284 4.146.394 5.684a1.043 1.043 0 001.117.97v0l5.647-.348a.916.916 0 01.97.916v0A7.698 7.698 0 013.73 18.009a7.323 7.323 0 01-.915-2.8 4.725 4.725 0 01-.055-.916 7.707 7.707 0 016.132-7.524" /></svg>;
+}
 export function Hide(props) {
-  return (
-    <svg
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M9.76 14.367a3.123 3.123 0 01-.924-2.23A3.16 3.16 0 0112 8.973c.867 0 1.665.35 2.23.925M15.105 12.699a3.158 3.158 0 01-2.537 2.542"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6.655 17.472c-1.587-1.246-2.931-3.066-3.905-5.335.984-2.279 2.337-4.109 3.934-5.365C8.27 5.516 10.102 4.834 12 4.834c1.909 0 3.739.692 5.336 1.957M19.448 8.99a15.359 15.359 0 011.802 3.147c-1.967 4.557-5.443 7.302-9.25 7.302-.863 0-1.714-.14-2.532-.413M19.887 4.25L4.113 20.024"
-        stroke="#200E32"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.76 14.367a3.123 3.123 0 01-.924-2.23A3.16 3.16 0 0112 8.973c.867 0 1.665.35 2.23.925M15.105 12.699a3.158 3.158 0 01-2.537 2.542" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.655 17.472c-1.587-1.246-2.931-3.066-3.905-5.335.984-2.279 2.337-4.109 3.934-5.365C8.27 5.516 10.102 4.834 12 4.834c1.909 0 3.739.692 5.336 1.957M19.448 8.99a15.359 15.359 0 011.802 3.147c-1.967 4.557-5.443 7.302-9.25 7.302-.863 0-1.714-.14-2.532-.413M19.887 4.25L4.113 20.024" /></svg>;
+}
+export function Heart(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.761 20.854a34.845 34.845 0 01-6.022-4.689 11.99 11.99 0 01-2.866-4.57c-1.076-3.345.18-7.174 3.698-8.307a5.978 5.978 0 015.425.913 5.987 5.987 0 015.425-.913c3.517 1.133 4.783 4.962 3.707 8.307a11.99 11.99 0 01-2.866 4.57 34.844 34.844 0 01-6.022 4.689l-.235.146-.244-.146z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.74 7.053a2.782 2.782 0 011.916 2.422" /></svg>;
+}
+export function Image(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.21 7.9v8.15c0 3.02-1.89 5.15-4.91 5.15H7.65c-3.02 0-4.9-2.13-4.9-5.15V7.9c0-3.02 1.89-5.15 4.9-5.15h8.65c3.02 0 4.91 2.13 4.91 5.15z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.281 16.432l1.53-1.613a1.405 1.405 0 012.031-.008l.885.903c.597.61 1.59.565 2.131-.094l2.23-2.71a1.687 1.687 0 012.514-.105l2.076 2.142" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.313 9.134a1.754 1.754 0 11-3.506 0 1.754 1.754 0 013.506 0z" clipRule="evenodd" /></svg>;
+}
+export function InfoCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2.75a9.25 9.25 0 110 18.5 9.25 9.25 0 010-18.5z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.995 8.204v4.42M11.995 15.796h.01" /></svg>;
+}
+export function Image2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.303 2.75H7.654C4.64 2.75 2.75 4.884 2.75 7.904v8.15c0 3.02 1.881 5.153 4.904 5.153h8.648c3.024 0 4.905-2.134 4.905-5.154V7.904c0-3.02-1.88-5.154-4.904-5.154z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.703 8.786a1.847 1.847 0 11-3.693-.002 1.847 1.847 0 013.693.002z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.207 14.95c-.994-.864-1.86-1.905-3-2.592-1.141-.688-2.368-.264-3.16.761-.765.992-1.243 2.325-2.398 2.95-1.423.77-2.26-.472-3.446-.97-1.325-.556-2.331.442-3.105 1.401-.775.96-1.56 1.91-2.348 2.86" /></svg>;
+}
+export function Location(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.24 10.391a7.678 7.678 0 1115.356.053v.086c-.052 2.757-1.592 5.305-3.479 7.296a20.187 20.187 0 01-3.59 2.957.93.93 0 01-1.218 0 19.82 19.82 0 01-5.052-4.73 9.826 9.826 0 01-2.018-5.636v-.026z" clipRule="evenodd" /><circle cx={11.917} cy={10.539} r={2.461} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /></svg>;
+}
+export function Home(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.157 20.771v-3.066c0-.78.636-1.414 1.424-1.42h2.886c.792 0 1.433.636 1.433 1.42v3.076c0 .662.534 1.204 1.203 1.219h1.924c1.918 0 3.473-1.54 3.473-3.438v0-8.724a2.44 2.44 0 00-.962-1.905l-6.58-5.248a3.18 3.18 0 00-3.945 0L3.462 7.943A2.42 2.42 0 002.5 9.847v8.715C2.5 20.46 4.055 22 5.973 22h1.924c.685 0 1.241-.55 1.241-1.229v0" /></svg>;
+}
+export function Lock(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.423 9.448V7.3a4.552 4.552 0 00-4.55-4.551 4.55 4.55 0 00-4.57 4.53v2.168" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.683 21.25h-7.64a3.792 3.792 0 01-3.793-3.792v-4.29a3.792 3.792 0 013.792-3.791h7.641a3.792 3.792 0 013.792 3.792v4.289a3.792 3.792 0 01-3.792 3.792z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.863 14.203v2.22" /></svg>;
+}
+export function InfoSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.99 15.796v-4.419M11.99 8.204H12" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.335 2.75h-8.67c-3.02 0-4.914 2.14-4.914 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.668c3.03 0 4.917-2.139 4.917-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /></svg>;
+}
+export function Login(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.813 12.022H3.77M12.885 9.106l2.928 2.916-2.928 2.916" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.504 7.389v-.933a3.684 3.684 0 013.685-3.684h4.884a3.675 3.675 0 013.675 3.675v11.14a3.685 3.685 0 01-3.685 3.685h-4.885a3.675 3.675 0 01-3.674-3.675v-.942" /></svg>;
+}
+export function Logout(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.016 7.39v-.933a3.685 3.685 0 00-3.685-3.685H6.456a3.685 3.685 0 00-3.684 3.685v11.13a3.685 3.685 0 003.684 3.684h4.885a3.675 3.675 0 003.675-3.674v-.943M21.81 12.021H9.768M18.881 9.106l2.928 2.915-2.928 2.916" /></svg>;
+}
+export function Message(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.268 9.061l-4.266 3.434a2.223 2.223 0 01-2.746 0L5.954 9.061" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.888 3.5h9.428c1.36.015 2.653.59 3.58 1.59a5.017 5.017 0 011.326 3.704v6.528a5.017 5.017 0 01-1.326 3.704 4.957 4.957 0 01-3.58 1.59H6.888C3.968 20.616 2 18.241 2 15.322V8.794C2 5.875 3.968 3.5 6.888 3.5z" clipRule="evenodd" /></svg>;
+}
+export function MoreCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2.75A9.25 9.25 0 1112 21.252 9.25 9.25 0 0112 2.75z" clipRule="evenodd" /><path fill="#200E32" d="M7.52 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395zM12 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395zM16.48 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395z" /></svg>;
+}
+export function PaperNegative(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.736 2.762H8.084c-2.06 0-3.834 1.669-3.834 3.729V17.34c0 2.176 1.658 3.775 3.834 3.775h7.989c2.06 0 3.73-1.715 3.73-3.775V8.038l-5.067-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.575 2.575 0 002.569 2.574c1.316.003 2.663.004 2.754-.002M14.294 13.747h-4.9" /></svg>;
+}
+export function ShieldFail(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.865 5.124c.437.153.73.565.73 1.028v6.773c0 1.893-.69 3.7-1.904 5.1-.612.705-1.384 1.254-2.205 1.698l-3.558 1.922-3.564-1.923c-.823-.444-1.596-.992-2.208-1.698A7.783 7.783 0 014.25 12.92V6.15c0-.462.292-.874.73-1.027L11.56 2.81a1.09 1.09 0 01.722 0l6.582 2.313z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.801 13.846l-3.758-3.758M10.043 13.846l3.758-3.758" /></svg>;
+}
+export function Show(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.162 12.053a3.162 3.162 0 11-6.324-.001 3.162 3.162 0 016.324.001z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.998 19.355c3.808 0 7.291-2.738 9.252-7.302-1.961-4.564-5.444-7.302-9.252-7.302h.004c-3.808 0-7.291 2.738-9.252 7.302 1.961 4.564 5.444 7.302 9.252 7.302h-.004z" clipRule="evenodd" /></svg>;
+}
+export function TicketStar(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.857 20.417a3.392 3.392 0 003.393-3.393v-2.7c-1.24 0-2.24-1-2.24-2.24 0-1.24 1-2.238 2.24-2.238l-.002-2.703a3.392 3.392 0 00-3.392-3.393H6.144a3.393 3.393 0 00-3.393 3.393v2.79c1.238 0 2.238.912 2.238 2.152 0 1.239-1 2.239-2.239 2.239v2.7a3.392 3.392 0 003.392 3.393h11.715z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 13.854l1.74.915a.223.223 0 00.323-.234l-.333-1.939 1.409-1.37a.222.222 0 00-.123-.38l-1.946-.283-.871-1.764a.222.222 0 00-.398 0l-.871 1.764-1.945.283a.222.222 0 00-.123.38l1.408 1.37-.333 1.94a.223.223 0 00.323.233l1.74-.915z" clipRule="evenodd" /></svg>;
+}
+export function PaperPlus(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.736 2.762H8.084C6.025 2.762 4.25 4.43 4.25 6.49V17.34c0 2.176 1.658 3.775 3.834 3.775h7.988c2.06 0 3.73-1.715 3.73-3.775V8.038l-5.066-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.575 2.575 0 002.569 2.574c1.316.003 2.663.004 2.754-.002M14.294 12.914h-4.9M11.844 15.365v-4.9" /></svg>;
+}
+export function Star(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.714 3.44L15.03 8.1c.116.235.34.399.6.437l5.185.749c.21.028.4.138.528.306a.77.77 0 01-.085 1.032L17.5 14.258a.762.762 0 00-.226.7l.9 5.129a.787.787 0 01-.652.892.868.868 0 01-.516-.08l-4.618-2.421a.776.776 0 00-.742 0l-4.652 2.434a.812.812 0 01-1.077-.33.796.796 0 01-.08-.5l.9-5.128a.788.788 0 00-.227-.7L2.732 10.62a.785.785 0 01-.003-1.112l.003-.004a.91.91 0 01.452-.222l5.186-.75a.812.812 0 00.6-.437l2.314-4.655a.787.787 0 01.458-.4.798.798 0 01.61.044.82.82 0 01.362.356z" clipRule="evenodd" /></svg>;
+}
+export function MoreSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.335 2.75h-8.67c-3.02 0-4.914 2.14-4.914 5.166v8.168c0 3.027 1.884 5.166 4.915 5.166h8.668c3.03 0 4.917-2.139 4.917-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /><path fill="#200E32" d="M7.52 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395zM12 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395zM16.48 13.197a1.199 1.199 0 010-2.395 1.199 1.199 0 010 2.395z" /></svg>;
+}
+export function ShieldDone(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.865 5.124c.437.153.729.565.729 1.028v6.773c0 1.893-.688 3.7-1.903 5.1-.611.705-1.384 1.254-2.205 1.698l-3.558 1.922-3.564-1.923c-.822-.444-1.596-.992-2.208-1.698A7.783 7.783 0 014.25 12.92V6.15c0-.462.292-.874.729-1.027l6.582-2.313a1.09 1.09 0 01.722 0l6.582 2.313z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.323 11.918l1.891 1.893 3.899-3.898" /></svg>;
+}
+export function PaperDownload(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.736 2.762H8.084C6.025 2.762 4.25 4.43 4.25 6.49v10.737c0 2.176 1.658 3.887 3.834 3.887h7.988c2.06 0 3.73-1.827 3.73-3.887v-9.19l-5.066-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.575 2.575 0 002.569 2.574c1.316.003 2.663.004 2.754-.002M11.64 16.014V9.44M8.802 13.163l2.838 2.851 2.84-2.85" /></svg>;
+}
+export function Paper(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.737 2.762H8.084c-2.06 0-3.834 1.669-3.834 3.729v10.713c0 2.176 1.659 3.91 3.834 3.91h7.989c2.06 0 3.729-1.85 3.729-3.91V8.038l-5.065-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.574 2.574 0 002.568 2.574c1.317.003 2.664.004 2.755-.002M14.284 15.558H8.887M12.242 10.606H8.887" /></svg>;
+}
+export function Setting(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.807 7.624l-.623-1.08a1.913 1.913 0 00-2.608-.705v0a1.904 1.904 0 01-2.61-.678 1.832 1.832 0 01-.255-.915v0a1.913 1.913 0 00-1.914-1.968h-1.254A1.904 1.904 0 009.64 4.191v0a1.913 1.913 0 01-1.913 1.886 1.83 1.83 0 01-.916-.257v0a1.913 1.913 0 00-2.608.705l-.669 1.099a1.913 1.913 0 00.696 2.608v0a1.913 1.913 0 010 3.314v0a1.904 1.904 0 00-.696 2.6v0l.632 1.089a1.913 1.913 0 002.609.741v0a1.894 1.894 0 012.6.696c.164.277.252.593.255.915v0c0 1.056.857 1.913 1.913 1.913h1.255c1.053 0 1.908-.85 1.912-1.904v0a1.904 1.904 0 011.914-1.913c.321.009.636.097.915.256v0a1.913 1.913 0 002.609-.695v0l.659-1.099a1.904 1.904 0 00-.696-2.608v0a1.904 1.904 0 01-.696-2.61c.166-.289.406-.529.696-.695v0a1.913 1.913 0 00.696-2.6v0-.008z" clipRule="evenodd" /><circle cx={12.175} cy={11.889} r={2.636} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /></svg>;
+}
+export function PaperUpload(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.736 2.762H8.084C6.025 2.762 4.25 4.43 4.25 6.49v10.737c0 2.176 1.658 3.887 3.834 3.887h7.988c2.06 0 3.73-1.827 3.73-3.887v-9.19l-5.066-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.575 2.575 0 002.569 2.574c1.316.003 2.663.004 2.754-.002M11.64 9.44v6.574M8.802 12.291l2.838-2.85 2.84 2.85" /></svg>;
+}
+export function PaperFail(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.737 2.762H7.979a3.729 3.729 0 00-3.73 3.729V17.34c0 2.176 1.765 3.775 3.94 3.775h7.884c2.06 0 3.729-1.715 3.729-3.775V8.038l-5.065-5.276z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.474 2.75v2.91a2.574 2.574 0 002.568 2.574c1.317.003 2.664.004 2.755-.002M13.576 14.648l-3.466-3.466M10.11 14.648l3.467-3.466" /></svg>;
+}
+export function Scan(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M22.631 13.014H1.5M20.75 8.778V6.825A3.335 3.335 0 0017.425 3.5h-1.644M3.382 8.778V6.82a3.32 3.32 0 013.316-3.32l1.68-.001M20.75 13.014v4.531a3.335 3.335 0 01-3.325 3.325h-1.644M3.382 13.014v4.535a3.32 3.32 0 003.316 3.32l1.68.002" /></svg>;
+}
+export function Play(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.05 12.467c-.729.786-2.713 2.116-3.728 2.543-.162.068-.575.212-.664.214a.504.504 0 01-.459-.27c-.034-.066-.134-.497-.166-.69-.095-.583-.144-1.49-.143-2.402 0-.957.052-1.907.158-2.485.028-.156.11-.515.134-.573a.498.498 0 01.226-.246.494.494 0 01.25-.06c.09.002.451.129.575.178.978.38 3.047 1.758 3.807 2.568.068.073.255.269.286.309a.497.497 0 01.011.602c-.033.045-.224.245-.287.312z" clipRule="evenodd" /></svg>;
+}
+export function Password(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.334 2.75H7.665c-3.02 0-4.915 2.14-4.915 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.668c3.031 0 4.917-2.139 4.917-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.692 12a1.852 1.852 0 11-3.705 0 1.852 1.852 0 013.705 0z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.692 12h6.318v1.852M14.182 13.852V12" /></svg>;
+}
+export function Search(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><circle cx={11.767} cy={11.767} r={8.989} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.018 18.485L21.542 22" /></svg>;
+}
+export function Send(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.855 8.121l-5.663 5.702L3.56 9.74c-.87-.534-.693-1.854.286-2.138l15.655-4.556c.89-.257 1.714.577 1.447 1.472l-4.645 15.64c-.291.978-1.596 1.147-2.123.274l-3.99-6.61" /></svg>;
+}
+export function Ticket(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.85 4.25v2.42M13.85 17.76v2.024M13.85 14.325V9.504" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.702 20C20.524 20 22 18.543 22 16.743v-2.592A2.159 2.159 0 0119.823 12c0-1.19.971-2.15 2.177-2.15l-.001-2.594c0-1.8-1.477-3.257-3.298-3.257H5.3C3.478 4 2 5.457 2 7.257L2 9.935c1.206 0 2.177.875 2.177 2.066 0 1.19-.971 2.15-2.177 2.15v2.592C2 18.543 3.476 20 5.298 20h13.404z" clipRule="evenodd" /></svg>;
+}
+export function TimeCircle(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.25 12A9.25 9.25 0 0112 21.25 9.25 9.25 0 012.75 12 9.25 9.25 0 0112 2.75 9.25 9.25 0 0121.25 12z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.431 14.943l-3.77-2.25V7.848" /></svg>;
+}
+export function Swap(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.84 20.164V6.546M20.917 16.068l-4.078 4.097-4.077-4.097M6.911 3.833V17.45M2.833 7.929l4.078-4.097L10.99 7.93" /></svg>;
+}
+export function TimeSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.335 2.75h-8.67c-3.02 0-4.914 2.14-4.914 5.166v8.168c0 3.027 1.884 5.166 4.915 5.166h8.668c3.03 0 4.917-2.139 4.917-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.391 14.018l-3.39-2.023V7.634" /></svg>;
+}
+export function Profile(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><circle cx={11.579} cy={7.278} r={4.778} stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 18.701a2.215 2.215 0 01.22-.97c.457-.915 1.748-1.4 2.819-1.62a16.778 16.778 0 012.343-.33 25.04 25.04 0 014.385 0c.787.056 1.57.166 2.343.33 1.07.22 2.361.659 2.82 1.62a2.27 2.27 0 010 1.95c-.459.96-1.75 1.4-2.82 1.61-.772.172-1.555.286-2.343.34-1.188.1-2.38.118-3.57.054-.275 0-.54 0-.815-.055a15.417 15.417 0 01-2.334-.338c-1.08-.21-2.361-.65-2.828-1.611A2.28 2.28 0 014 18.7z" clipRule="evenodd" /></svg>;
+}
+export function TickSquare(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.334 2.75H7.665c-3.02 0-4.915 2.14-4.915 5.166v8.168c0 3.027 1.885 5.166 4.915 5.166h8.668c3.031 0 4.917-2.139 4.917-5.166V7.916c0-3.027-1.886-5.166-4.916-5.166z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.44 12l2.374 2.373 4.746-4.746" /></svg>;
+}
+export function Plus(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8.327v7.327M15.667 11.99H8.333" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.686 2H7.314C4.048 2 2 4.312 2 7.585v8.83C2 19.688 4.038 22 7.314 22h9.372C19.962 22 22 19.688 22 16.415v-8.83C22 4.312 19.962 2 16.686 2z" clipRule="evenodd" /></svg>;
+}
+export function Notification(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.5 13.787v-.219a3.6 3.6 0 01.602-1.818 4.87 4.87 0 001.194-2.314c0-.666 0-1.342.058-2.009C5.654 4.218 8.827 2 11.96 2h.078c3.133 0 6.306 2.218 6.617 5.427.058.667 0 1.343.048 2.009a4.955 4.955 0 001.193 2.323c.365.538.573 1.164.602 1.81v.209c.022.87-.278 1.719-.844 2.39a4.505 4.505 0 01-2.853 1.37c-3.195.343-6.419.343-9.614 0a4.554 4.554 0 01-2.853-1.37 3.604 3.604 0 01-.834-2.38z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.555 20.852a3.088 3.088 0 004.288.505c.196-.146.372-.316.524-.505" /></svg>;
+}
+export function Upload(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.39 8.984h-.934a3.685 3.685 0 00-3.685 3.685v4.875a3.685 3.685 0 003.685 3.684h11.13a3.685 3.685 0 003.686-3.684v-4.885a3.675 3.675 0 00-3.674-3.675h-.944M12.021 2.19v12.042M9.106 5.119l2.915-2.928 2.916 2.928" /></svg>;
+}
+export function Unlock(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.424 5.562A4.554 4.554 0 0012.122 2.5a4.551 4.551 0 00-4.57 4.531v2.167" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.933 21H8.292A3.793 3.793 0 014.5 17.207V12.92a3.793 3.793 0 013.792-3.793h7.641a3.793 3.793 0 013.792 3.793v4.288A3.793 3.793 0 0115.933 21z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.113 13.953v2.222" /></svg>;
+}
+export function Work(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.804 15.477s.142 1.738.175 2.286c.044.735.328 1.556.802 2.126.67.808 1.457 1.093 2.51 1.095 1.236.002 10.231.002 11.468 0 1.052-.002 1.84-.287 2.51-1.095.473-.57.757-1.391.802-2.126.032-.548.174-2.286.174-2.286M8.496 5.33v-.372c0-1.22.988-2.208 2.208-2.208h2.582c1.219 0 2.208.988 2.208 2.208l.001.371M11.995 16.678v-1.294" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.75 8.39v3.466c1.918 1.265 4.216 2.151 6.738 2.502a2.584 2.584 0 012.502-1.908c1.188 0 2.2.807 2.483 1.918 2.532-.35 4.839-1.237 6.767-2.512V8.39a3.05 3.05 0 00-3.057-3.058H5.817A3.06 3.06 0 002.75 8.39z" clipRule="evenodd" /></svg>;
+}
+export function Wallet(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.639 14.396H17.59a2.692 2.692 0 010-5.383h4.048M18.049 11.643h-.312" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.748 3h8.643a5.248 5.248 0 015.248 5.248v7.177a5.248 5.248 0 01-5.248 5.247H7.748A5.248 5.248 0 012.5 15.425V8.248A5.248 5.248 0 017.748 3z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.036 7.538h5.399" /></svg>;
+}
+export function Voice2(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.714 10.932a7.403 7.403 0 007.404 7.404 7.404 7.404 0 007.405-7.404M12.119 21.147v-2.81" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.245 14.584h-.253a3.66 3.66 0 01-3.66-3.66v-4.55a3.66 3.66 0 013.66-3.66h.253a3.66 3.66 0 013.66 3.66v4.55a3.66 3.66 0 01-3.66 3.66z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.002 6.877h1.902M13.05 10.049h2.854" /></svg>;
+}
+export function Video(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.816 15.62c0 1.993-1.358 3.401-3.53 3.401H6.07c-2.17 0-3.519-1.408-3.519-3.4V8.66c0-1.993 1.35-3.41 3.53-3.41h6.206c2.172 0 3.53 1.417 3.53 3.41v6.96z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.816 11.277l4.097-3.354c.65-.535 1.637-.07 1.637.777v6.872c0 .848-.987 1.31-1.637.777l-4.097-3.354" /></svg>;
+}
+export function Voice(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.714 10.932a7.403 7.403 0 007.404 7.404 7.403 7.403 0 007.404-7.404M12.119 21.147v-2.81" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.245 14.584h-.253a3.66 3.66 0 01-3.66-3.66v-4.55a3.66 3.66 0 013.66-3.66h.253a3.66 3.66 0 013.66 3.66v4.55a3.66 3.66 0 01-3.66 3.66z" clipRule="evenodd" /></svg>;
+}
+export function VolumeDown(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.871 16.892c-.071.586-.092 1.162-.252 1.759-.255.85-.92 1.37-1.639 1.348-.34.009-.82-.199-1.143-.47l-3.767-3.06H5.97c-1.01 0-1.693-.69-1.83-1.825-.197-1.398-.179-3.924 0-5.35.137-.986.82-1.762 1.83-1.762H8.07l3.689-3.007c.323-.274.88-.532 1.221-.524.719-.021 1.384.5 1.639 1.348.142.543.18 1.174.252 1.76.172 1.37.172 8.413 0 9.783z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.717 6.574c.961 1.383 1.538 3.238 1.538 5.303 0 2.064-.577 3.918-1.538 5.301" /></svg>;
+}
+export function VolumeUp(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.471 17.142c-.071.586-.092 1.162-.252 1.759-.255.85-.92 1.37-1.639 1.348-.34.009-.82-.199-1.143-.47l-3.767-3.06H3.572c-1.012 0-1.694-.69-1.831-1.825-.197-1.398-.178-3.924 0-5.35.137-.986.819-1.762 1.83-1.762h2.1l3.688-3.007c.323-.274.88-.532 1.221-.524.719-.021 1.384.5 1.639 1.348.142.543.18 1.174.252 1.76.172 1.37.172 8.413 0 9.783z" clipRule="evenodd" /><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.443 7.06c.908 1.306 1.453 3.058 1.453 5.009 0 1.95-.545 3.7-1.453 5.007M19.875 4c1.462 2.104 2.34 4.926 2.34 8.068 0 3.142-.878 5.965-2.34 8.069" /></svg>;
+}
+export function VolumeOff(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path stroke="#200E32" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.89 16.383H5.779c-1.017 0-1.703-.696-1.842-1.844-.198-1.412-.179-3.964 0-5.406.139-.996.825-1.779 1.842-1.779h2.113l3.713-3.038c.325-.276.887-.537 1.23-.53.723-.021 1.393.505 1.65 1.363.142.548.181 1.186.253 1.777.072.575.114.523.126 2.257M14.86 14.191c-.02 1.337-.065 2.15-.123 2.619-.072.59-.093 1.174-.253 1.776-.257.86-.928 1.385-1.65 1.362-.343.009-.827-.2-1.152-.475l-1.396-1.14M20.996 3.294L3.848 20.442" /></svg>;
+}
+
+export function User2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M14.212 7.762c0 2.644-2.163 4.763-4.863 4.763-2.698 0-4.863-2.119-4.863-4.763C4.486 5.12 6.651 3 9.35 3c2.7 0 4.863 2.119 4.863 4.762zM2 17.917c0-2.447 3.386-3.06 7.35-3.06 3.985 0 7.349.634 7.349 3.083 0 2.448-3.386 3.06-7.35 3.06C5.364 21 2 20.367 2 17.917zM16.173 7.85a6.368 6.368 0 01-1.137 3.646c-.075.107-.008.252.123.275.182.03.369.048.56.052 1.898.048 3.601-1.148 4.072-2.95.697-2.675-1.35-5.077-3.957-5.077a4.16 4.16 0 00-.818.082c-.036.008-.075.025-.095.055-.025.04-.007.09.019.124a6.414 6.414 0 011.233 3.793zm3.144 5.853c1.276.245 2.115.742 2.462 1.467a2.107 2.107 0 010 1.878c-.531 1.123-2.245 1.485-2.912 1.578a.207.207 0 01-.234-.232c.34-3.113-2.367-4.588-3.067-4.927-.03-.017-.036-.04-.034-.055.002-.01.015-.025.038-.028 1.515-.028 3.145.176 3.747.32z" clipRule="evenodd" /></svg>;
+}
+export function User3Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.158 8.233a4.207 4.207 0 01-4.209 4.234 4.207 4.207 0 01-4.21-4.234A4.206 4.206 0 0111.95 4a4.206 4.206 0 014.21 4.233zM11.95 20c-3.431 0-6.36-.544-6.36-2.72 0-2.177 2.91-2.74 6.36-2.74 3.431 0 6.361.544 6.361 2.72S15.399 20 11.949 20zm6.008-11.69a5.765 5.765 0 01-.984 3.24.158.158 0 00.107.245 3.4 3.4 0 00.483.046c1.643.044 3.118-1.02 3.525-2.621.604-2.379-1.168-4.514-3.425-4.514-.245 0-.48.026-.708.073-.031.007-.064.021-.082.05-.022.034-.006.08.016.11a5.807 5.807 0 011.068 3.37zm2.721 5.203c1.104.217 1.83.66 2.131 1.304a1.923 1.923 0 010 1.67c-.46.998-1.944 1.319-2.52 1.402-.12.018-.215-.086-.203-.206.295-2.767-2.048-4.08-2.654-4.381-.026-.014-.032-.034-.03-.047.003-.009.013-.023.033-.026 1.312-.024 2.722.156 3.243.284zM6.438 11.84c.164-.004.325-.019.483-.046a.158.158 0 00.106-.245 5.765 5.765 0 01-.984-3.24c0-1.25.39-2.416 1.068-3.372.022-.03.037-.075.016-.11-.017-.027-.051-.042-.082-.05a3.52 3.52 0 00-.71-.072c-2.255 0-4.027 2.135-3.423 4.514.407 1.6 1.882 2.664 3.525 2.621zm.159 1.414c.003.013-.003.033-.028.047-.607.302-2.95 1.614-2.656 4.38.013.121-.082.224-.201.207-.577-.083-2.06-.404-2.52-1.402a1.917 1.917 0 010-1.67c.3-.644 1.026-1.087 2.13-1.305.522-.127 1.93-.307 3.244-.283.02.003.03.017.03.026z" clipRule="evenodd" /></svg>;
+}
+export function ActivityBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.18 4.41c0-1.33 1.08-2.41 2.41-2.41S22 3.08 22 4.41s-1.08 2.41-2.41 2.41-2.41-1.08-2.41-2.41zm-3.85 10.35l2.89-3.73-.04.02c.16-.22.19-.5.08-.75a.737.737 0 00-.61-.44.768.768 0 00-.7.31l-2.42 3.13-2.77-2.18a.79.79 0 00-.57-.16.775.775 0 00-.5.3l-2.96 3.85-.06.09a.747.747 0 00.21.95c.14.09.29.15.46.15.23.01.45-.11.59-.3l2.51-3.23 2.85 2.14.09.06c.32.17.72.09.95-.21zm2.12-10.98c-.04.25-.06.5-.06.75 0 2.25 1.82 4.07 4.06 4.07.25 0 .49-.03.74-.07v8.07c0 3.39-2 5.4-5.4 5.4H7.4C4 22 2 19.99 2 16.6V9.2c0-3.4 2-5.42 5.4-5.42h8.05z" clipRule="evenodd" /></svg>;
+}
+export function AddUserBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M9.5 12.554c2.755 0 4.963-2.237 4.963-5.027S12.255 2.5 9.5 2.5 4.537 4.737 4.537 7.527s2.208 5.027 4.963 5.027zm0 2.461c-4.046 0-7.5.647-7.5 3.231C2 20.83 5.433 21.5 9.5 21.5c4.045 0 7.5-.647 7.5-3.231 0-2.585-3.433-3.254-7.5-3.254zm10.398-5.427H21.1c.495 0 .899.41.899.912a.907.907 0 01-.899.911h-1.203v1.177a.906.906 0 01-.899.912.907.907 0 01-.899-.912v-1.177h-1.201A.906.906 0 0116 10.5c0-.502.403-.911.899-.911H18.1V8.412c0-.503.404-.912.899-.912.496 0 .899.41.899.912v1.176z" clipRule="evenodd" /></svg>;
+}
+export function ArrowDownBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M10.482 4.503l.328 3.7c0 .65.532 1.179 1.19 1.179.658 0 1.191-.528 1.191-1.18l.327-3.699C13.518 3.673 12.838 3 12 3a1.51 1.51 0 00-1.518 1.503zm.268 16.011c.056.051.1.09.12.11.322.246.715.376 1.138.376.379 0 .758-.116 1.064-.347.212-.148.554-.49.554-.49 1.327-1.214 3.324-4.231 3.966-5.762.014 0 .394-.91.408-1.343v-.057c0-.665-.379-1.286-.991-1.603-.254-.131-.874-.254-1.168-.313a1.723 1.723 0 01-.16-.034c-.874-.13-2.216-.216-3.688-.216-1.546 0-2.945.086-3.805.244-.015 0-.802.16-1.064.261-.38.16-.701.447-.905.809a2 2 0 00-.219.91c.015.332.234.953.336 1.198.642 1.617 2.74 4.707 4.024 5.891.133.132.285.27.39.366z" clipRule="evenodd" /></svg>;
+}
+export function ArrowDown2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M10.869 16.63c-.058-.056-.306-.27-.51-.468-1.283-1.165-3.383-4.204-4.024-5.795-.103-.242-.321-.853-.335-1.179 0-.313.072-.61.218-.895.204-.355.525-.64.904-.795.263-.1 1.05-.256 1.064-.256.861-.156 2.26-.242 3.806-.242 1.473 0 2.815.086 3.689.213.014.015.992.17 1.327.341.612.313.992.924.992 1.578v.056c-.015.426-.395 1.321-.409 1.321-.642 1.505-2.639 4.474-3.966 5.668 0 0-.341.336-.554.482a1.783 1.783 0 01-1.064.341c-.423 0-.817-.128-1.138-.37z" /></svg>;
+}
+export function ArrowDown3Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M17.41 12.142a.715.715 0 00-.627-.38h-4.066V3.734A.726.726 0 0012 3a.726.726 0 00-.717.734v8.028H7.217a.712.712 0 00-.627.38.748.748 0 00.02.745l4.783 7.77c.132.214.36.343.607.343s.475-.13.607-.343l4.783-7.77a.754.754 0 00.02-.745z" /></svg>;
+}
+export function ArrowDownCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12 22C6.48 22 2 17.51 2 12 2 6.48 6.48 2 12 2c5.51 0 10 4.48 10 10 0 5.51-4.49 10-10 10zm4-11.98a.745.745 0 00-1.06.01L12 12.98l-2.94-2.95c-.29-.3-.77-.3-1.06-.01-.3.3-.3.77 0 1.06l3.47 3.49a.75.75 0 001.06 0L16 11.08c.15-.14.22-.33.22-.52 0-.2-.07-.39-.22-.54z" clipRule="evenodd" /></svg>;
+}
+export function ArrowDownSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 16.08V7.91C2 4.38 4.27 2 7.66 2h8.67C19.72 2 22 4.38 22 7.91v8.17c0 3.54-2.28 5.92-5.67 5.92H7.66C4.27 22 2 19.62 2 16.08zm10.75-1.81V7.92c0-.42-.34-.75-.75-.75-.42 0-.75.33-.75.75v6.35l-2.47-2.48a.767.767 0 00-.53-.22c-.19 0-.38.08-.53.22-.29.29-.29.77 0 1.06l3.75 3.77c.28.28.78.28 1.06 0l3.75-3.77c.29-.29.29-.77 0-1.06a.767.767 0 00-1.07 0l-2.46 2.48z" clipRule="evenodd" /></svg>;
+}
+export function ArrowLeftBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M13.165 11.993l-.002-.354c-.012-1.404-.096-2.657-.242-3.451 0-.015-.16-.802-.261-1.064-.16-.38-.447-.701-.809-.905a2 2 0 00-.91-.219c-.249.012-.66.137-.954.242l-.244.094c-1.617.642-4.707 2.74-5.891 4.024l-.087.09-.39.42A1.856 1.856 0 003 12.008c0 .379.116.758.347 1.064.07.099.18.226.28.334l.379.397c1.304 1.321 4.129 3.175 5.593 3.79 0 .013.91.393 1.343.407h.057c.665 0 1.286-.379 1.603-.991.087-.168.17-.496.233-.784l.114-.544c.13-.874.216-2.216.216-3.688zm6.332 1.525c.83 0 1.503-.68 1.503-1.518a1.51 1.51 0 00-1.503-1.518l-3.7.328c-.65 0-1.179.532-1.179 1.19 0 .658.528 1.191 1.18 1.191l3.699.327z" clipRule="evenodd" /></svg>;
+}
+export function ArrowLeft2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M7.37 10.869c.056-.058.27-.306.468-.51 1.165-1.283 4.204-3.383 5.795-4.024.242-.103.853-.321 1.179-.335.313 0 .61.072.895.218.355.204.64.525.795.904.1.263.256 1.05.256 1.064.156.861.242 2.26.242 3.806 0 1.473-.086 2.815-.213 3.689-.015.014-.17.992-.341 1.327a1.785 1.785 0 01-1.578.992h-.056c-.426-.015-1.321-.395-1.321-.409-1.505-.642-4.474-2.639-5.668-3.966 0 0-.336-.341-.482-.554A1.783 1.783 0 017 12.007c0-.423.128-.817.37-1.138z" /></svg>;
+}
+export function ArrowLeft3Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M11.858 17.41a.715.715 0 00.38-.627v-4.066h8.028A.726.726 0 0021 12a.726.726 0 00-.734-.717h-8.028V7.217a.712.712 0 00-.38-.627.748.748 0 00-.745.02l-7.77 4.783A.714.714 0 003 12c0 .247.13.475.343.607l7.77 4.783a.754.754 0 00.745.02z" /></svg>;
+}
+export function ArrowRightBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M10.835 12.007l.002.354c.012 1.404.096 2.657.242 3.451 0 .015.16.802.261 1.064.16.38.447.701.809.905a2 2 0 00.91.219c.249-.012.66-.137.954-.242l.244-.094c1.617-.642 4.707-2.74 5.891-4.024l.087-.09.39-.42c.245-.322.375-.715.375-1.138 0-.379-.116-.758-.347-1.064-.07-.099-.18-.226-.28-.334l-.379-.397c-1.305-1.321-4.129-3.175-5.593-3.79 0-.013-.91-.393-1.343-.407h-.057c-.665 0-1.286.379-1.603.991-.087.168-.17.496-.233.784l-.114.544c-.13.874-.216 2.216-.216 3.688zm-6.332-1.525C3.673 10.482 3 11.162 3 12a1.51 1.51 0 001.503 1.518l3.7-.328c.65 0 1.179-.532 1.179-1.19 0-.658-.528-1.191-1.18-1.191l-3.699-.327z" clipRule="evenodd" /></svg>;
+}
+export function ArrowLeftCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12C2 6.48 6.49 2 12 2l.28.004C17.67 2.152 22 6.574 22 12c0 5.51-4.48 10-10 10-5.51 0-10-4.49-10-10zm11.98 4c.29-.3.29-.77-.01-1.06L11.02 12l2.95-2.94c.3-.29.3-.77.01-1.06-.3-.3-.77-.3-1.06 0l-3.49 3.47a.75.75 0 000 1.06L12.92 16c.14.15.33.22.52.22.2 0 .39-.07.54-.22z" clipRule="evenodd" /></svg>;
+}
+export function ArrowRight2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M16.63 13.131c-.056.058-.27.306-.468.51-1.165 1.283-4.204 3.383-5.795 4.024-.242.103-.853.321-1.179.335-.313 0-.61-.072-.895-.218a1.874 1.874 0 01-.795-.904c-.1-.263-.256-1.05-.256-1.064-.156-.861-.242-2.26-.242-3.806 0-1.473.086-2.815.213-3.689.015-.014.17-.992.341-1.327A1.785 1.785 0 019.132 6h.056c.426.015 1.321.395 1.321.409 1.505.642 4.474 2.639 5.668 3.966 0 0 .336.341.482.554.228.306.341.685.341 1.064 0 .423-.128.817-.37 1.138z" /></svg>;
+}
+export function ArrowRight3Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M12.142 6.59a.715.715 0 00-.38.627v4.066H3.734A.726.726 0 003 12c0 .396.329.717.734.717h8.028v4.066c0 .262.146.502.38.627.234.127.52.119.745-.02l7.77-4.783A.714.714 0 0021 12a.714.714 0 00-.343-.607l-7.77-4.783a.754.754 0 00-.745-.02z" /></svg>;
+}
+export function ArrowRightCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M22 12c0 5.52-4.49 10-10 10l-.28-.004C6.33 21.848 2 17.426 2 12 2 6.49 6.48 2 12 2c5.51 0 10 4.49 10 10zM10.02 8c-.29.3-.29.77.01 1.06L12.98 12l-2.95 2.94c-.3.29-.3.77-.01 1.06.3.3.77.3 1.06 0l3.49-3.47a.75.75 0 000-1.06L11.08 8a.704.704 0 00-.52-.22c-.2 0-.39.07-.54.22z" clipRule="evenodd" /></svg>;
+}
+export function ArrowRightSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.08 22H7.91C4.38 22 2 19.729 2 16.34V7.67C2 4.28 4.38 2 7.91 2h8.17C19.62 2 22 4.28 22 7.67v8.67c0 3.389-2.38 5.66-5.92 5.66zm-1.81-10.75H7.92c-.42 0-.75.34-.75.75 0 .42.33.75.75.75h6.35l-2.48 2.47c-.14.14-.22.34-.22.53 0 .189.08.38.22.53.29.29.77.29 1.06 0l3.77-3.75c.28-.28.28-.78 0-1.06l-3.77-3.75a.754.754 0 00-1.06 0c-.29.3-.29.77 0 1.07l2.48 2.46z" clipRule="evenodd" /></svg>;
+}
+export function ArrowUpBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.007 13.165l.354-.002c1.404-.012 2.657-.096 3.451-.242.015 0 .802-.16 1.064-.261.38-.16.701-.447.905-.809a2 2 0 00.219-.91c-.012-.249-.137-.66-.242-.954l-.094-.244c-.642-1.617-2.74-4.707-4.024-5.891l-.09-.087-.42-.39A1.856 1.856 0 0011.992 3c-.379 0-.758.116-1.064.347-.099.07-.226.18-.334.28l-.397.379C8.876 5.31 7.022 8.135 6.407 9.599c-.013 0-.393.91-.407 1.343v.057c0 .665.379 1.286.991 1.603.168.087.496.17.784.233l.544.114c.874.13 2.216.216 3.688.216zm-1.525 6.332c0 .83.68 1.503 1.518 1.503a1.51 1.51 0 001.518-1.503l-.328-3.7c0-.65-.532-1.179-1.19-1.179-.658 0-1.191.528-1.191 1.18l-.327 3.699z" clipRule="evenodd" /></svg>;
+}
+export function ArrowUp2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M13.131 7.37c.058.056.306.27.51.468 1.283 1.165 3.383 4.204 4.024 5.795.103.242.321.853.335 1.179 0 .313-.072.61-.218.895a1.874 1.874 0 01-.904.795c-.263.1-1.05.256-1.064.256-.861.156-2.26.242-3.806.242-1.473 0-2.815-.086-3.689-.213-.014-.015-.992-.17-1.327-.341A1.785 1.785 0 016 14.868v-.056c.015-.426.395-1.321.409-1.321.642-1.505 2.639-4.474 3.966-5.668 0 0 .341-.336.554-.482A1.783 1.783 0 0111.993 7c.423 0 .817.128 1.138.37z" /></svg>;
+}
+export function ArrowUp3Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M6.59 11.858c.126.234.366.38.627.38h4.066v8.028c0 .405.321.734.717.734a.726.726 0 00.717-.734v-8.028h4.066a.713.713 0 00.627-.38.748.748 0 00-.02-.745l-4.783-7.77A.714.714 0 0012 3a.714.714 0 00-.607.343l-4.783 7.77a.754.754 0 00-.02.745z" /></svg>;
+}
+export function BagBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.93 7a.502.502 0 00.044-.226H17A4.992 4.992 0 0012.005 2 4.992 4.992 0 007.01 6.774a.649.649 0 000 .226h-.078c-1.282 0-2.652.846-3.05 3.12l-.777 6.195C2.469 20.863 4.81 22 7.869 22h8.29c3.049 0 5.32-1.646 4.754-5.685l-.769-6.195C19.676 7.91 18.35 7 17.087 7h-.157zm-1.437 0a.648.648 0 01-.043-.226 3.478 3.478 0 00-3.484-3.472 3.478 3.478 0 00-3.484 3.472.649.649 0 010 .226h7.011zm-6.396 5.149a.897.897 0 01-.884-.91c0-.502.396-.91.884-.91s.884.408.884.91-.396.91-.884.91zm4.905-.91c0 .502.396.91.884.91a.897.897 0 00.884-.91.897.897 0 00-.884-.91.897.897 0 00-.884.91z" clipRule="evenodd" /></svg>;
+}
+export function ArrowUpSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M22 7.92v8.17c0 3.53-2.271 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2h8.67C19.729 2 22 4.38 22 7.92zM11.25 9.73v6.35c0 .42.34.75.75.75.42 0 .75-.33.75-.75V9.73l2.47 2.48c.14.14.34.22.53.22.189 0 .38-.08.53-.22.29-.29.29-.77 0-1.06l-3.75-3.77a.774.774 0 00-1.06 0l-3.75 3.77c-.29.29-.29.77 0 1.06.3.29.77.29 1.07 0l2.46-2.48z" clipRule="evenodd" /></svg>;
+}
+export function Bag2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.418 6.47h.205c2.692 0 4.877 2.25 4.877 5.01V17c0 2.76-2.185 5-4.877 5H7.377C4.685 22 2.5 19.76 2.5 17v-5.52c0-2.76 2.185-5.01 4.877-5.01h.205c.02-1.2.478-2.32 1.307-3.16.838-.85 1.911-1.28 3.12-1.31 2.42 0 4.38 2 4.41 4.47zM9.913 4.38c-.546.56-.849 1.3-.868 2.09h5.91C14.926 4.83 13.62 3.5 12.01 3.5c-.751 0-1.532.31-2.097.88zm5.793 5.94a.74.74 0 00.732-.75V8.41a.74.74 0 00-.732-.75c-.4 0-.731.34-.731.75v1.16c0 .41.332.75.731.75zm-6.769-.75a.74.74 0 01-.731.75c-.4 0-.732-.34-.732-.75V8.41c0-.41.332-.75.732-.75.41 0 .731.34.731.75v1.16z" clipRule="evenodd" /></svg>;
+}
+export function ArrowLeftSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.92 2h8.17C19.62 2 22 4.271 22 7.66v8.67c0 3.39-2.38 5.67-5.91 5.67H7.92C4.38 22 2 19.72 2 16.33V7.66C2 4.271 4.38 2 7.92 2zm1.81 10.75h6.35c.42 0 .75-.34.75-.75 0-.42-.33-.75-.75-.75H9.73l2.48-2.47c.14-.14.22-.34.22-.53 0-.189-.08-.38-.22-.53a.754.754 0 00-1.06 0l-3.77 3.75c-.28.28-.28.78 0 1.06l3.77 3.75c.29.29.77.29 1.06 0 .29-.3.29-.77 0-1.07l-2.48-2.46z" clipRule="evenodd" /></svg>;
+}
+export function BuyBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M14.121 11.233h2.768c.42 0 .75-.347.75-.765a.75.75 0 00-.75-.766h-2.768a.75.75 0 00-.75.766c0 .418.33.765.75.765zm6.056-5.306c.61 0 1.009.215 1.409.684.4.47.47 1.143.38 1.754l-.95 6.695c-.18 1.287-1.26 2.235-2.528 2.235H7.586c-1.329 0-2.428-1.04-2.538-2.387L4.13 3.783 2.62 3.518a.767.767 0 01.26-1.51l2.383.367c.34.062.59.347.62.694l.19 2.286c.03.328.29.572.61.572h13.494zm-12.75 12.98c-.84 0-1.52.695-1.52 1.552 0 .847.68 1.541 1.52 1.541.829 0 1.508-.694 1.508-1.541 0-.857-.68-1.551-1.509-1.551zm11.24 0c-.839 0-1.518.695-1.518 1.552 0 .847.68 1.541 1.519 1.541.829 0 1.508-.694 1.508-1.541 0-.857-.68-1.551-1.508-1.551z" clipRule="evenodd" /></svg>;
+}
+export function ArrowUpCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12 2c5.52 0 10 4.49 10 10l-.004.28C21.848 17.67 17.426 22 12 22 6.49 22 2 17.52 2 12 2 6.49 6.49 2 12 2zM8 13.98c.3.29.77.29 1.06-.01L12 11.02l2.94 2.95c.29.3.77.3 1.06.01.3-.3.3-.77 0-1.06l-3.47-3.49a.75.75 0 00-1.06 0L8 12.92c-.15.14-.22.33-.22.52 0 .2.07.39.22.54z" clipRule="evenodd" /></svg>;
+}
+export function BookmarkBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.9 2h6.17c2.71 0 4.9 1.07 4.93 3.79v15.18c0 .17-.04.34-.12.49-.13.24-.35.42-.62.5-.26.08-.55.04-.79-.1l-6.48-3.24-6.49 3.24c-.149.079-.32.13-.49.13-.56 0-1.01-.46-1.01-1.02V5.79C4 3.07 6.2 2 8.9 2zm-.68 7.62h7.53c.43 0 .78-.351.78-.79 0-.44-.35-.79-.78-.79H8.22c-.43 0-.78.35-.78.79 0 .439.35.79.78.79z" clipRule="evenodd" /></svg>;
+}
+export function CallSilentBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M9.827 10.801l-2.686 2.755C5.396 11.574 3.959 9.52 3.275 7.803c-.713-1.606-.723-2.937-.01-3.933.278-.468 1.894-2.43 3.33-2.369.387.03.764.234 1.12.6.556.56 2.122 2.582 2.24 3.171.137.656-.145 1.167-.399 1.626l-.016.03a8.054 8.054 0 01-.204.327c-.313.488-.74 1.152-.59 1.575.278.68.645 1.341 1.081 1.971zm12.122 6.272c.05 1.514-1.953 3.232-2.32 3.445a2.787 2.787 0 01-1.684.539c-.645 0-1.368-.183-2.151-.56-1.854-.792-4.143-2.48-6.274-4.481l-6.076 6.23a.856.856 0 01-.595.254.898.898 0 01-.604-.254.898.898 0 01-.129-1.057l.03-.04a.518.518 0 01.07-.092l17.96-18.428a.816.816 0 01.594-.265c.228 0 .446.103.605.265a.893.893 0 010 1.23v.01l-9.417 9.646-1.372 1.408 1.6-1.64c.823.649 1.715 1.188 2.627 1.565.397.15 1.022-.27 1.497-.59.129-.086.247-.166.346-.225l.03-.017c.448-.26.946-.549 1.576-.41.585.123 2.557 1.759 3.102 2.328.357.376.545.762.585 1.139z" clipRule="evenodd" /></svg>;
+}
+export function CallingBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M14.356 2.008a.817.817 0 00-.626.176.853.853 0 00-.322.584.86.86 0 00.757.95 6.912 6.912 0 016.125 6.139.857.857 0 101.704-.192c-.454-4.058-3.594-7.206-7.638-7.657zm.062 3.482a.854.854 0 00-1.004.68.862.862 0 00.677 1.01 3.462 3.462 0 012.744 2.75.86.86 0 001.006.681.865.865 0 00.677-1.01 5.174 5.174 0 00-4.1-4.111zM16 15.09c.451-.26.962-.554 1.605-.417.582.123 2.568 1.735 3.112 2.293.356.366.555.744.585 1.122.054 1.482-1.96 3.174-2.326 3.384a2.825 2.825 0 01-1.69.528c-.65 0-1.375-.185-2.166-.554-4.29-1.79-10.844-8.215-12.577-12.472-.72-1.585-.724-2.892-.012-3.874.284-.461 1.902-2.387 3.35-2.326.386.033.76.231 1.128.59.556.545 2.128 2.537 2.249 3.122.134.65-.16 1.166-.422 1.62a7.681 7.681 0 01-.214.34c-.313.48-.73 1.121-.582 1.53 1.057 2.594 3.498 4.858 6.093 5.921.401.146 1.042-.274 1.521-.588a7.89 7.89 0 01.335-.212L16 15.09z" clipRule="evenodd" /></svg>;
+}
+export function CalendarBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.41 2.769l.002.75c2.755.215 4.574 2.092 4.577 4.97L21 16.917c.004 3.138-1.968 5.069-5.128 5.074l-7.72.01c-3.14.004-5.137-1.973-5.141-5.12L3 8.553c-.004-2.898 1.752-4.77 4.506-5.023v-.75a.746.746 0 01.758-.77.747.747 0 01.762.769v.7l5.865-.009v-.7A.747.747 0 0115.65 2a.753.753 0 01.76.769zM4.522 8.862l14.949-.02v-.35c-.043-2.15-1.121-3.277-3.056-3.445v.77c0 .43-.334.77-.758.77a.752.752 0 01-.762-.768v-.81l-5.865.008v.81c0 .43-.324.77-.759.77a.752.752 0 01-.76-.769l-.002-.77c-1.925.193-2.99 1.325-2.988 3.493l.001.31zm10.719 4.542v.011c.01.46.385.809.84.799a.823.823 0 00.789-.852.83.83 0 00-.82-.797.828.828 0 00-.81.84zm.815 4.488a.848.848 0 01-.821-.848.833.833 0 01.809-.852h.01c.463 0 .84.379.84.849a.844.844 0 01-.838.851zm-4.883-4.472c.02.46.396.819.85.799a.823.823 0 00.78-.86.816.816 0 00-.821-.8c-.454.02-.81.402-.809.861zm.854 4.427a.823.823 0 01-.85-.799c0-.46.354-.84.809-.86a.815.815 0 01.82.797c.02.461-.335.841-.779.862zm-4.922-4.392c.02.46.396.82.85.799.445-.02.8-.4.778-.86a.815.815 0 00-.82-.8.852.852 0 00-.808.861zm.854 4.397a.822.822 0 01-.85-.799.853.853 0 01.809-.86.815.815 0 01.82.798c.021.46-.333.841-.779.861z" clipRule="evenodd" /></svg>;
+}
+export function CallMissedBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M21.74 3.505l-2.403 2.413 2.404 2.412c.167.168.259.391.259.627a.884.884 0 01-1.508.628L18.088 7.17l-2.404 2.414a.903.903 0 01-1.249 0 .886.886 0 010-1.255l2.404-2.412-2.404-2.413a.886.886 0 010-1.254.903.903 0 011.249 0l2.404 2.413 2.404-2.413a.903.903 0 011.249 0c.167.168.259.39.259.627a.884.884 0 01-.26.627zm-5.55 11.49c.458-.265.974-.563 1.626-.424.59.124 2.605 1.759 3.155 2.325.362.371.562.754.595 1.137.053 1.503-1.987 3.218-2.36 3.432a2.862 2.862 0 01-1.713.535c-.659 0-1.393-.188-2.195-.561-4.349-1.816-10.992-8.33-12.749-12.648-.728-1.606-.733-2.931-.012-3.927.288-.467 1.93-2.42 3.397-2.358.39.034.771.234 1.143.599.563.552 2.156 2.572 2.28 3.164.135.659-.163 1.183-.428 1.643-.056.098-.132.215-.215.342-.318.488-.742 1.14-.592 1.555 1.07 2.63 3.545 4.925 6.175 6.003.408.148 1.056-.277 1.542-.596.127-.083.242-.159.34-.215l.01-.007z" clipRule="evenodd" /></svg>;
+}
+export function CameraBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.44 6.236c.04.07.11.12.2.12 2.4 0 4.36 1.958 4.36 4.355v5.934A4.368 4.368 0 0117.64 21H6.36A4.361 4.361 0 012 16.645V10.71a4.361 4.361 0 014.36-4.355c.08 0 .16-.04.19-.12l.06-.12.106-.222a97.79 97.79 0 01.714-1.486C7.89 3.51 8.67 3.01 9.64 3h4.71c.97.01 1.76.51 2.22 1.408.157.315.397.822.629 1.31l.141.299.1.22zm-.73 3.836c0 .5.4.9.9.9s.91-.4.91-.9-.41-.909-.91-.909-.9.41-.9.91zm-6.44 1.548c.47-.47 1.08-.719 1.73-.719.65 0 1.26.25 1.72.71.46.459.71 1.068.71 1.717A2.438 2.438 0 0112 15.756c-.65 0-1.26-.25-1.72-.71a2.408 2.408 0 01-.71-1.717v-.01c-.01-.63.24-1.24.7-1.699zm4.5 4.485a3.91 3.91 0 01-2.77 1.15 3.921 3.921 0 01-3.93-3.926 3.865 3.865 0 011.14-2.767A3.921 3.921 0 0112 9.402c1.05 0 2.04.41 2.78 1.15.74.749 1.15 1.738 1.15 2.777a3.958 3.958 0 01-1.16 2.776z" clipRule="evenodd" /></svg>;
+}
+export function CallBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M18.167 14.38c-.672-.145-1.204.167-1.674.44-.482.28-1.398 1.023-1.923.833-2.69-1.107-5.218-3.46-6.313-6.16-.193-.536.547-1.459.826-1.946.27-.472.575-1.008.436-1.685-.126-.608-1.754-2.68-2.33-3.247-.38-.374-.768-.58-1.168-.613C4.52 1.938 2.843 3.941 2.55 4.42c-.736 1.022-.732 2.382.013 4.03 1.795 4.429 8.585 11.112 13.03 12.975.82.383 1.57.575 2.244.575a2.92 2.92 0 001.751-.548c.381-.22 2.466-1.98 2.412-3.521-.033-.393-.239-.786-.608-1.167-.562-.58-2.62-2.257-3.224-2.384z" /></svg>;
+}
+export function CategoryBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M4.54 2h3.38c1.41 0 2.54 1.15 2.54 2.561V7.97c0 1.42-1.13 2.56-2.54 2.56H4.54C3.14 10.53 2 9.39 2 7.97V4.561C2 3.15 3.14 2 4.54 2zm0 11.47h3.38c1.41 0 2.54 1.14 2.54 2.56v3.41c0 1.41-1.13 2.56-2.54 2.56H4.54C3.14 22 2 20.85 2 19.44v-3.41c0-1.42 1.14-2.56 2.54-2.56zM19.46 2h-3.38c-1.41 0-2.54 1.15-2.54 2.561V7.97c0 1.42 1.13 2.56 2.54 2.56h3.38c1.4 0 2.54-1.14 2.54-2.56V4.561C22 3.15 20.86 2 19.46 2zm-3.38 11.47h3.38c1.4 0 2.54 1.14 2.54 2.56v3.41c0 1.41-1.14 2.56-2.54 2.56h-3.38c-1.41 0-2.54-1.15-2.54-2.56v-3.41c0-1.42 1.13-2.56 2.54-2.56z" clipRule="evenodd" /></svg>;
+}
+export function ChartBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.33 2h9.34c3.4 0 5.32 1.93 5.33 5.33v9.34c0 3.4-1.93 5.33-5.33 5.33H7.33C3.93 22 2 20.07 2 16.67V7.33C2 3.93 3.93 2 7.33 2zm4.72 15.86c.43 0 .79-.32.83-.75V6.92a.815.815 0 00-.38-.79.84.84 0 00-1.28.79v10.19c.05.43.41.75.83.75zm4.6 0c.42 0 .78-.32.83-.75v-3.28a.839.839 0 00-1.28-.79.806.806 0 00-.38.79v3.28c.04.43.4.75.83.75zm-8.43-.75a.827.827 0 01-.83.75c-.43 0-.79-.32-.83-.75V10.2a.84.84 0 01.39-.79c.27-.17.61-.17.88 0s.42.48.39.79v6.91z" clipRule="evenodd" /></svg>;
+}
+export function CloseSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.67 2h8.67C19.73 2 22 4.38 22 7.92v8.17c0 3.53-2.27 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2zm7.34 13a.868.868 0 000-1.23l-1.78-1.78 1.78-1.78a.88.88 0 000-1.24.88.88 0 00-1.24 0L12 10.75l-1.78-1.78a.88.88 0 00-1.24 0 .88.88 0 000 1.24l1.78 1.78-1.78 1.77a.88.88 0 00.62 1.5c.23 0 .45-.09.62-.26L12 13.23 13.78 15c.17.18.39.26.61.26.23 0 .45-.09.62-.26z" clipRule="evenodd" /></svg>;
+}
+export function ChatBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12.015C2 6.747 6.21 2 12.02 2 17.7 2 22 6.657 22 11.985 22 18.165 16.96 22 12 22c-1.64 0-3.46-.44-4.92-1.302-.51-.31-.94-.54-1.49-.36l-2.02.6c-.51.16-.97-.24-.82-.78l.67-2.244c.11-.31.09-.641-.07-.902C2.49 15.43 2 13.697 2 12.015zm8.7 0c0 .711.57 1.282 1.28 1.292.71 0 1.28-.58 1.28-1.282 0-.711-.57-1.282-1.28-1.282-.7-.01-1.28.571-1.28 1.272zm4.61.01c0 .701.57 1.282 1.28 1.282.71 0 1.28-.58 1.28-1.282 0-.711-.57-1.282-1.28-1.282-.71 0-1.28.571-1.28 1.282zm-7.94 1.282c-.7 0-1.28-.58-1.28-1.282 0-.711.57-1.282 1.28-1.282.71 0 1.28.571 1.28 1.282a1.29 1.29 0 01-1.28 1.282z" clipRule="evenodd" /></svg>;
+}
+export function DangerBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M14.477 4.442l7.269 12.615c.16.377.23.683.25 1.001a2.76 2.76 0 01-.73 2.021c-.51.554-1.2.881-1.95.921H4.68c-.31-.019-.62-.09-.91-.198-1.45-.585-2.15-2.23-1.56-3.656L9.53 4.433a2.73 2.73 0 011.099-1.08 2.85 2.85 0 013.85 1.09zm-1.61 8.314c0 .475-.39.873-.87.873a.885.885 0 01-.88-.873V9.952c0-.476.4-.862.88-.862s.87.386.87.862v2.804zm-.87 4.262a.884.884 0 01-.88-.872c0-.477.4-.873.88-.873s.87.387.87.862c0 .485-.39.883-.87.883z" clipRule="evenodd" /></svg>;
+}
+export function DeleteBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M20.287 5.243c.39 0 .713.323.713.734v.38a.73.73 0 01-.713.734H3.714A.73.73 0 013 6.357v-.38c0-.411.324-.734.714-.734H6.63c.592 0 1.107-.421 1.24-1.015l.153-.682C8.261 2.617 9.041 2 9.935 2h4.13c.884 0 1.674.617 1.902 1.497l.163.73a1.28 1.28 0 001.241 1.016h2.916zm-1.481 13.891c.304-2.837.837-9.577.837-9.645a.746.746 0 00-.18-.558.726.726 0 00-.524-.234H5.07c-.2 0-.391.087-.524.234a.79.79 0 00-.19.558l.053.647c.142 1.763.537 6.674.793 8.998.18 1.712 1.304 2.788 2.931 2.827 1.256.029 2.55.039 3.872.039 1.246 0 2.51-.01 3.805-.039 1.684-.029 2.806-1.086 2.997-2.827z" clipRule="evenodd" /></svg>;
+}
+export function DiscountBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M20.4 9.146l.72.72c.57.56.88 1.32.88 2.12a2.975 2.975 0 01-.88 2.15l-.01.01-.71.71c-.281.28-.441.66-.441 1.061v1.029c0 1.66-1.35 3.011-3.011 3.011h-1.03c-.4 0-.78.159-1.06.439l-.721.72c-.59.591-1.36.88-2.131.88a3.03 3.03 0 01-2.13-.869l-.731-.731c-.28-.28-.66-.439-1.06-.439h-1.03a3.014 3.014 0 01-3.012-3.011v-1.029c0-.401-.16-.781-.44-1.071l-.72-.71a3.022 3.022 0 01-.01-4.259l.73-.731c.28-.28.44-.66.44-1.07v-1.02c0-1.66 1.35-3.009 3.011-3.009h1.03c.4 0 .78-.161 1.061-.441l.72-.72a3.018 3.018 0 014.262-.009l.73.729c.28.28.66.441 1.06.441h1.03a3.013 3.013 0 013.012 3.009v1.031c0 .399.16.779.44 1.059zm-10.975 6.3c.24 0 .46-.09.62-.26l5.142-5.139a.882.882 0 000-1.241.872.872 0 00-1.23 0l-5.142 5.14c-.34.34-.34.9 0 1.24.16.17.38.26.61.26zm4.272-.88a.875.875 0 101.75.01.875.875 0 00-1.75-.01zm-4.262-6.01c.48 0 .87.39.87.87 0 .491-.39.88-.87.88a.88.88 0 01-.88-.88c0-.48.4-.87.88-.87z" clipRule="evenodd" /></svg>;
+}
+export function DiscoveryBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12C2 6.48 6.47 2 12 2c5.52 0 10 4.48 10 10 0 5.53-4.48 10-10 10-5.53 0-10-4.47-10-10zm12.23 1.83l1.62-5.12a.45.45 0 00-.56-.57l-5.12 1.6c-.21.07-.38.23-.44.44l-1.6 5.13c-.11.34.22.67.56.56l5.1-1.6c.21-.06.38-.23.44-.44z" clipRule="evenodd" /></svg>;
+}
+export function DocumentBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.81 2h8.381C19.28 2 21 3.78 21 6.83v10.33c0 3.1-1.72 4.84-4.809 4.84H7.81C4.77 22 3 20.26 3 17.16V6.83C3 3.78 4.77 2 7.81 2zm.27 4.66v-.01h2.989c.431 0 .781.35.781.779 0 .441-.35.791-.781.791H8.08a.78.78 0 010-1.56zm0 6.08h7.84a.781.781 0 000-1.561H8.08a.781.781 0 000 1.561zm0 4.57h7.84c.399-.04.7-.381.7-.78 0-.41-.301-.75-.7-.79H8.08a.795.795 0 00-.75 1.21c.16.25.45.4.75.36z" clipRule="evenodd" /></svg>;
+}
+export function DownloadBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M11.23 7.29V3.283c0-.427.34-.782.77-.782.385 0 .711.298.763.677l.007.104v4.01h4.78c2.38 0 4.335 1.949 4.445 4.38l.005.215v5.04c0 2.447-1.887 4.456-4.232 4.569l-.208.005H6.44c-2.38 0-4.326-1.94-4.435-4.379L2 16.905v-5.03c0-2.447 1.878-4.466 4.222-4.58l.208-.004h4.8v6.402l-1.6-1.652a.755.755 0 00-1.09 0 .81.81 0 00-.22.568c0 .157.045.32.14.459l.08.099 2.91 3.015c.14.155.34.237.55.237a.735.735 0 00.465-.166l.075-.071 2.91-3.015c.3-.31.3-.816 0-1.126a.755.755 0 00-1.004-.077l-.086.077-1.59 1.652V7.291h-1.54z" /></svg>;
+}
+export function EditBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M9.376 20.028l8.787-11.363c.477-.612.647-1.32.488-2.042-.138-.656-.541-1.28-1.146-1.752L16.03 3.699c-1.284-1.021-2.876-.914-3.789.258l-.986 1.28a.378.378 0 00.063.526l2.547 2.042c.17.162.297.377.33.635a.945.945 0 01-.818 1.042.846.846 0 01-.647-.182l-2.621-2.086a.313.313 0 00-.425.054L3.455 15.33c-.403.505-.541 1.161-.403 1.795l.796 3.451a.4.4 0 00.392.312l3.502-.043a2.104 2.104 0 001.634-.817zm4.904-1.075h5.71c.557 0 1.01.46 1.01 1.024 0 .565-.453 1.023-1.01 1.023h-5.71c-.557 0-1.01-.458-1.01-1.023s.453-1.024 1.01-1.024z" clipRule="evenodd" /></svg>;
+}
+export function EditSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.665 2.01A5.323 5.323 0 0120.591 3.4a5.381 5.381 0 011.399 3.936v9.33a5.373 5.373 0 01-1.389 3.936 5.347 5.347 0 01-3.936 1.389h-9.33A5.332 5.332 0 013.399 20.6a5.332 5.332 0 01-1.389-3.936v-9.33A5.332 5.332 0 013.4 3.399 5.332 5.332 0 017.335 2.01h9.33zm-5.684 14.835l6.723-6.743c.61-.62.61-1.618 0-2.228l-1.298-1.298a1.58 1.58 0 00-2.238 0l-.67.679c-.1.1-.1.27 0 .37 0 0 1.589 1.578 1.619 1.618.11.12.18.28.18.46 0 .359-.29.659-.66.659-.17 0-.33-.07-.44-.18L12.53 8.524a.217.217 0 00-.3 0l-4.765 4.765c-.33.33-.52.769-.53 1.238l-.06 2.368c0 .13.04.25.13.34.09.09.21.14.34.14h2.347c.48 0 .94-.19 1.29-.53z" clipRule="evenodd" /></svg>;
+}
+export function FilterBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.878 6.379c0 1.866-1.54 3.38-3.44 3.38C3.54 9.758 2 8.244 2 6.378 2 4.513 3.54 3 5.439 3c1.9 0 3.439 1.513 3.439 3.379zm11.615-1.48c.831 0 1.507.663 1.507 1.48s-.676 1.48-1.507 1.48h-6.575c-.832 0-1.508-.663-1.508-1.48s.676-1.48 1.508-1.48h6.575zM3.508 15.957h6.575c.832 0 1.508.664 1.508 1.481 0 .817-.675 1.482-1.508 1.482H3.508C2.676 18.92 2 18.256 2 17.439s.676-1.481 1.508-1.481zm15.053 4.82c1.9 0 3.439-1.513 3.439-3.379 0-1.867-1.539-3.38-3.439-3.38-1.899 0-3.439 1.514-3.439 3.38 0 1.866 1.54 3.379 3.44 3.379z" clipRule="evenodd" /></svg>;
+}
+export function Filter2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M4.128 2h15.744C21.048 2 22 2.981 22 4.192v1.532c0 .587-.23 1.152-.637 1.563l-6.505 6.58a.586.586 0 01-.423.177l-5.446-.017a.591.591 0 01-.437-.195L2.575 7.257A2.23 2.23 0 012 5.757V4.194C2 2.983 2.952 2 4.128 2zM9.28 15.824l4.855.015a.558.558 0 01.547.565v2.731a.799.799 0 01-.453.725l-4.406 2.069a.76.76 0 01-.739-.055.802.802 0 01-.355-.67V16.39c0-.312.247-.566.551-.565z" clipRule="evenodd" /></svg>;
+}
+export function FolderBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M13.45 4.88h3.07c3.69 0 5.49 1.97 5.48 6.01v4.87c0 3.86-2.38 6.24-6.25 6.24H8.24C4.39 22 2 19.62 2 15.75V8.24C2 4.1 3.84 2 7.47 2h1.58c.93-.01 1.8.42 2.37 1.15l.88 1.17c.28.35.7.56 1.15.56zM7.37 15.29h9.26c.41 0 .74-.34.74-.75a.74.74 0 00-.74-.75H7.37c-.42 0-.75.33-.75.75 0 .41.33.75.75.75z" clipRule="evenodd" /></svg>;
+}
+export function GameBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M15.164 6.083l.948.011c3.405 0 5.888 2.428 5.888 5.78v4.307c0 3.353-2.483 5.78-5.888 5.78A193.5 193.5 0 0112.01 22c-1.374 0-2.758-.01-4.122-.038-3.405 0-5.888-2.428-5.888-5.78v-4.307c0-3.353 2.483-5.78 5.898-5.78 1.286-.02 2.6-.04 3.935-.04v-.163c0-.665-.56-1.204-1.226-1.204h-.972c-1.109 0-2.012-.886-2.012-1.965 0-.395.334-.723.736-.723.412 0 .736.328.736.723 0 .289.246.52.54.52h.972c1.481.01 2.688 1.194 2.698 2.64v.183c.619 0 1.238.008 1.859.017zm-4.312 8.663h-1.03v1.02a.735.735 0 01-.737.723.728.728 0 01-.736-.722v-1.021H7.31a.728.728 0 01-.736-.723c0-.395.334-.722.736-.722h1.04v-1.012c0-.395.324-.723.736-.723.403 0 .736.328.736.723v1.012h1.03c.403 0 .737.327.737.722a.728.728 0 01-.736.723zm4.17-1.629h.099a.728.728 0 00.736-.722.735.735 0 00-.736-.723h-.098a.722.722 0 100 1.445zm1.679 3.315h.098a.728.728 0 00.736-.723.735.735 0 00-.736-.723H16.7a.722.722 0 100 1.445z" clipRule="evenodd" /></svg>;
+}
+export function GraphBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.326 2.21a.824.824 0 01.588-.21c4.57.138 8.39 3.456 9.083 7.89a.244.244 0 010 .08.781.781 0 01-.197.576.811.811 0 01-.555.269l-7.68.506a.917.917 0 01-.693-.23.88.88 0 01-.293-.658l-.517-7.544v-.124a.793.793 0 01.264-.555zM11.8 13.294l6.656-.427.045.018c.286.005.558.12.757.322.199.202.308.473.303.753-.263 3.822-3.065 7.015-6.878 7.838-3.814.823-7.723-.923-9.595-4.284a8.215 8.215 0 01-1.024-3.136 5.956 5.956 0 01-.063-.987C2.014 9.327 4.907 5.82 8.956 4.96c.49-.092.982.152 1.196.595.053.08.095.167.126.257.076 1.172.155 2.333.233 3.488.062.913.124 1.822.184 2.732-.003.214.03.427.1.63.162.4.566.654 1.005.632z" clipRule="evenodd" /></svg>;
+}
+export function HeartBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M15.85 2.5c.63 0 1.26.09 1.86.29 3.69 1.2 5.02 5.25 3.91 8.79a12.728 12.728 0 01-3.01 4.81 38.456 38.456 0 01-6.33 4.96l-.25.15-.26-.16a38.094 38.094 0 01-6.37-4.96 12.933 12.933 0 01-3.01-4.8c-1.13-3.54.2-7.59 3.93-8.81.29-.1.59-.17.89-.21h.12c.28-.04.56-.06.84-.06h.11c.63.02 1.24.13 1.83.33h.06c.04.02.07.04.09.06.22.07.43.15.63.26l.38.17c.092.05.195.125.284.19.056.04.107.077.146.1l.05.03c.085.05.175.102.25.16a6.263 6.263 0 013.85-1.3zm2.66 7.2c.41-.01.76-.34.79-.76v-.12a3.3 3.3 0 00-2.11-3.16.8.8 0 00-1.01.5c-.14.42.08.88.5 1.03.64.24 1.07.87 1.07 1.57v.03a.86.86 0 00.19.62c.14.17.35.27.57.29z" clipRule="evenodd" /></svg>;
+}
+export function HideBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M9.803 15.253c.625.423 1.386.679 2.196.679 2.146 0 3.893-1.762 3.893-3.928 0-.817-.254-1.585-.673-2.215l-1.064 1.073c.176.334.273.728.273 1.142 0 1.348-1.093 2.451-2.43 2.451-.41 0-.8-.098-1.131-.275l-1.064 1.073zM18.43 6.55c1.415 1.3 2.615 3.051 3.513 5.158a.75.75 0 010 .581c-2.089 4.903-5.806 7.837-9.943 7.837h-.01c-1.883 0-3.688-.62-5.279-1.753l-1.893 1.91a.72.72 0 01-.517.217.705.705 0 01-.517-.217.736.736 0 01-.088-.925l.03-.04 14.43-14.56c.02-.02.04-.04.05-.06.019-.02.038-.039.048-.058l.917-.926a.731.731 0 011.035 0 .73.73 0 010 1.044L18.429 6.55zm-10.33 5.458c0 .256.029.512.068.748l-3.61 3.642c-.976-1.142-1.825-2.52-2.498-4.105a.75.75 0 010-.58c2.088-4.904 5.805-7.828 9.933-7.828h.01c1.395 0 2.75.335 4 .965l-3.26 3.288a4.515 4.515 0 00-.74-.069c-2.157 0-3.904 1.763-3.904 3.938z" clipRule="evenodd" /></svg>;
+}
+export function HomeBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M9.135 20.773v-3.057c0-.78.637-1.414 1.423-1.414h2.875c.377 0 .74.15 1.006.414.267.265.417.625.417 1v3.057c-.002.325.126.637.356.867.23.23.544.36.87.36h1.962a3.46 3.46 0 002.443-1 3.41 3.41 0 001.013-2.422V9.867c0-.735-.328-1.431-.895-1.902l-6.671-5.29a3.097 3.097 0 00-3.949.072L3.467 7.965A2.474 2.474 0 002.5 9.867v8.702C2.5 20.464 4.047 22 5.956 22h1.916c.68 0 1.231-.544 1.236-1.218l.027-.009z" /></svg>;
+}
+export function ImageBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.666 22h8.667C19.723 22 22 19.622 22 16.083V7.917C22 4.378 19.723 2 16.334 2H7.666C4.276 2 2 4.378 2 7.917v8.166C2 19.622 4.277 22 7.666 22zM8.5 11A2.502 2.502 0 016 8.5C6 7.122 7.12 6 8.499 6a2.503 2.503 0 012.499 2.5c0 1.378-1.121 2.5-2.5 2.5zm11.322 3.934c.335.859.16 1.89-.197 2.74-.425 1.012-1.237 1.778-2.26 2.112a4.525 4.525 0 01-1.408.214H7.53c-.839 0-1.581-.201-2.19-.576-.38-.235-.448-.778-.165-1.13.472-.588.939-1.178 1.41-1.774.896-1.14 1.5-1.47 2.172-1.18.273.12.546.3.828.49.75.51 1.793 1.21 3.167.45.94-.527 1.485-1.43 1.96-2.216l.008-.013.1-.166c.16-.264.317-.524.495-.764.223-.3 1.05-1.24 2.123-.57.682.42 1.257.99 1.871 1.6.234.233.401.498.513.783z" clipRule="evenodd" /></svg>;
+}
+export function Image2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.637 3.395c-2.577 0-4.242 1.767-4.242 4.493v8.214c0 .765.142 1.448.385 2.04l.538-.656c.584-.71 1.433-1.746 1.44-1.752.691-.79 1.99-1.968 3.695-1.255.374.155.706.368 1.012.563l.088.056c.573.383.91.563 1.26.533.145-.02.281-.063.41-.143.487-.3 1.749-2.087 2.126-2.622l.104-.147c1.09-1.42 2.77-1.8 4.17-.96.188.112 1.535 1.053 1.981 1.431V7.888c0-2.726-1.665-4.493-4.25-4.493H7.636zM16.353 2C19.73 2 22 4.362 22 7.888v8.214c0 .09-.009.172-.018.255a3.044 3.044 0 00-.02.287c-.002.048-.004.097-.008.145-.002.02-.005.038-.01.056a.554.554 0 00-.009.055 6.805 6.805 0 01-.155.905c-.016.073-.036.143-.055.214l-.005.015c-.08.282-.174.551-.287.808l-.061.128a5.397 5.397 0 01-.448.783c-.029.04-.059.078-.09.116l-.059.075a5.073 5.073 0 01-.513.582c-.037.036-.078.069-.118.101l-.076.062a5.05 5.05 0 01-.607.461c-.047.03-.097.055-.147.08-.033.016-.065.032-.097.05a5.316 5.316 0 01-.687.332c-.058.023-.12.039-.183.055a2.488 2.488 0 00-.132.036l-.064.02a5.13 5.13 0 01-.668.175c-.135.024-.279.033-.422.042a9.312 9.312 0 00-.187.013c-.066.005-.13.013-.196.021a2.594 2.594 0 01-.324.026H7.637c-.376 0-.735-.038-1.082-.095l-.037-.006c-1.353-.233-2.476-.886-3.263-1.87-.005 0-.007-.004-.01-.01a.046.046 0 00-.008-.01C2.447 19.013 2 17.674 2 16.102V7.888C2 4.362 4.27 2 7.637 2h8.716zM11 8.515C11 9.87 9.866 11 8.505 11a2.52 2.52 0 01-2.446-2.006A2.409 2.409 0 016 8.469 2.472 2.472 0 018.479 6c.697 0 1.33.293 1.782.761.454.452.739 1.075.739 1.754z" clipRule="evenodd" /></svg>;
+}
+export function InfoCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12C2 6.48 6.48 2 12 2c5.53 0 10 4.48 10 10s-4.47 10-10 10C6.48 22 2 17.52 2 12zm9.12-3.79c0-.48.4-.88.88-.88s.87.4.87.88v4.42a.87.87 0 01-.87.87.879.879 0 01-.88-.87V8.21zm.89 8.47c-.49 0-.88-.4-.88-.88s.39-.87.87-.87c.49 0 .88.39.88.87s-.39.88-.87.88z" clipRule="evenodd" /></svg>;
+}
+export function InfoSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.67 2h8.67C19.73 2 22 4.38 22 7.92v8.17c0 3.53-2.27 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2zm4.32 7.06a.87.87 0 01-.86-.87.875.875 0 11.86.87zm.88 6.72c0 .48-.39.87-.88.87a.87.87 0 01-.87-.87v-4.42c0-.48.39-.88.87-.88.49 0 .88.4.88.88v4.42z" clipRule="evenodd" /></svg>;
+}
+export function LocationBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M3.5 10.318C3.5 5.718 7.344 2 11.993 2c4.663 0 8.507 3.718 8.507 8.318 0 2.318-.843 4.47-2.23 6.294a22.063 22.063 0 01-5.541 5.14c-.486.318-.925.342-1.459 0a21.64 21.64 0 01-5.54-5.14c-1.388-1.824-2.23-3.976-2.23-6.294zm5.694.259c0 1.54 1.258 2.753 2.8 2.753 1.542 0 2.812-1.212 2.812-2.753 0-1.53-1.27-2.8-2.813-2.8a2.814 2.814 0 00-2.799 2.8z" clipRule="evenodd" /></svg>;
+}
+export function LockBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.523 7.396v1.533c1.722.538 2.977 2.097 2.977 3.96v4.936c0 2.306-1.911 4.175-4.268 4.175H7.77C5.41 22 3.5 20.13 3.5 17.825v-4.937c0-1.862 1.256-3.421 2.977-3.959V7.396C6.487 4.415 8.957 2 11.985 2c3.069 0 5.538 2.415 5.538 5.396zm-5.518-3.657c2.063 0 3.74 1.64 3.74 3.657v1.318h-7.49V7.376c.01-2.007 1.687-3.637 3.75-3.637zm.884 12.716a.88.88 0 01-.894.874.877.877 0 01-.884-.874v-2.206c0-.477.396-.865.884-.865.498 0 .894.388.894.865v2.206z" clipRule="evenodd" /></svg>;
+}
+export function LoginBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M11.886 2h5.04C19.444 2 21.5 4 21.5 6.44v11.12c0 2.45-2.055 4.44-4.595 4.44h-5.03c-2.519 0-4.584-1.99-4.584-4.43v-4.8h6.402l-1.652 1.6c-.31.3-.31.79 0 1.09a.81.81 0 00.568.22c.196 0 .403-.07.558-.22l3.015-2.91a.736.736 0 00.237-.55c0-.2-.082-.4-.237-.54l-3.015-2.91a.816.816 0 00-1.126 0c-.31.3-.31.79 0 1.09l1.652 1.59H7.291V6.45C7.29 4 9.356 2 11.886 2zM2.5 12c0-.42.355-.77.781-.77h4.01v1.54H3.28A.776.776 0 012.5 12z" clipRule="evenodd" /></svg>;
+}
+export function LogoutBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M9.895 11.23a.77.77 0 00-.783.77c0 .42.346.77.783.77H16v4.78C16 20 13.975 22 11.472 22H6.517C4.025 22 2 20.01 2 17.56V6.45C2 3.99 4.035 2 6.528 2h4.965C13.975 2 16 3.99 16 6.44v4.79H9.895zm9.735-2.69l2.92 2.91a.764.764 0 010 1.09l-2.92 2.91c-.15.15-.35.23-.54.23a.773.773 0 01-.55-1.32l1.6-1.59H16v-1.54h4.14l-1.6-1.59c-.3-.3-.3-.79 0-1.09.3-.31.79-.31 1.09-.01z" clipRule="evenodd" /></svg>;
+}
+export function MessageBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M16.94 3A5.057 5.057 0 0122 8.05v7.9c0 2.79-2.27 5.05-5.06 5.05H7.06A5.057 5.057 0 012 15.95v-7.9A5.05 5.05 0 017.06 3h9.88zm1.59 6.54l.08-.08a.773.773 0 00-.01-1 .84.84 0 00-.53-.26.76.76 0 00-.56.2L13 12a1.566 1.566 0 01-2 0L6.5 8.4a.76.76 0 00-1 .07c-.27.27-.3.7-.07 1l.13.13 4.55 3.55a3.143 3.143 0 003.91 0l4.51-3.61z" clipRule="evenodd" /></svg>;
+}
+export function MoreCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12C2 6.48 6.47 2 12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10C6.47 22 2 17.52 2 12zm5.52 1.2c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2.66 0 1.19.54 1.19 1.2 0 .66-.53 1.2-1.19 1.2zM10.8 12c0 .66.54 1.2 1.2 1.2.66 0 1.19-.54 1.19-1.2a1.194 1.194 0 10-2.39 0zm4.48 0a1.195 1.195 0 102.39 0 1.194 1.194 0 10-2.39 0z" clipRule="evenodd" /></svg>;
+}
+export function MoreSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.67 2h8.67C19.73 2 22 4.38 22 7.92v8.17c0 3.53-2.27 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2zm-.15 11.2c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2.66 0 1.2.54 1.2 1.2 0 .66-.54 1.2-1.2 1.2zM10.8 12c0 .66.54 1.2 1.2 1.2.66 0 1.2-.54 1.2-1.2 0-.66-.54-1.2-1.2-1.2-.66 0-1.2.54-1.2 1.2zm4.48 0c0 .66.54 1.2 1.2 1.2.66 0 1.19-.54 1.19-1.2a1.194 1.194 0 10-2.39 0z" clipRule="evenodd" /></svg>;
+}
+export function NotificationBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M18.707 8.796c0 1.256.332 1.997 1.063 2.85.553.628.73 1.435.73 2.31 0 .874-.287 1.704-.863 2.378a4.537 4.537 0 01-2.9 1.413c-1.571.134-3.143.247-4.736.247-1.595 0-3.166-.068-4.737-.247a4.532 4.532 0 01-2.9-1.413 3.616 3.616 0 01-.864-2.378c0-.875.178-1.682.73-2.31.754-.854 1.064-1.594 1.064-2.85V8.37c0-1.682.42-2.781 1.283-3.858C7.861 2.942 9.919 2 11.956 2h.09c2.08 0 4.204.987 5.466 2.625.82 1.054 1.195 2.108 1.195 3.745v.426zM9.074 20.061c0-.504.462-.734.89-.833.5-.106 3.545-.106 4.045 0 .428.099.89.33.89.833-.025.48-.306.904-.695 1.174a3.635 3.635 0 01-1.713.731 3.795 3.795 0 01-1.008 0 3.618 3.618 0 01-1.714-.732c-.39-.269-.67-.694-.695-1.173z" clipRule="evenodd" /></svg>;
+}
+export function PaperBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.926 16.39h5.386c.406 0 .743-.34.743-.75s-.337-.74-.743-.74H8.926a.743.743 0 00-.743.74c0 .41.337.75.743.75zm3.346-6.49H8.926a.752.752 0 00-.743.75c0 .41.337.74.743.74h3.346c.406 0 .743-.33.743-.74s-.337-.75-.743-.75zm7.066-.874c.233-.003.486-.006.716-.006.248 0 .446.2.446.45v8.04c0 2.48-1.99 4.49-4.445 4.49H8.173C5.6 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.5 2 7.965 2h5.287c.258 0 .456.21.456.46v3.22c0 1.83 1.495 3.33 3.307 3.34.423 0 .796.003 1.123.006.254.002.48.004.679.004.14 0 .323-.002.521-.004zm.273-1.46c-.814.003-1.773 0-2.463-.007-1.095 0-1.997-.911-1.997-2.017V2.906c0-.431.518-.645.814-.334l2.005 2.106 1.98 2.081a.477.477 0 01-.339.807z" clipRule="evenodd" /></svg>;
+}
+export function PaperDownloadBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.153 16.64l2.842-2.87a.75.75 0 00-.01-1.06.73.73 0 00-1.04 0l-1.574 1.6V9.49a.737.737 0 10-1.475 0v4.82l-1.574-1.6a.73.73 0 00-1.04 0 .76.76 0 000 1.06l2.832 2.87a.768.768 0 00.525.22.767.767 0 00.515-.22zm7.175-7.614c.233-.003.486-.006.717-.006.257 0 .455.2.455.45v8.04c0 2.48-2 4.49-4.455 4.49H8.173C5.59 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.49 2 7.965 2h5.287c.248 0 .456.21.456.46v3.22c0 1.83 1.485 3.33 3.307 3.34.418 0 .793.003 1.12.006.253.002.477.004.672.004.14 0 .324-.002.521-.004zm.277-1.46c-.813.003-1.773 0-2.463-.007-1.095 0-1.997-.91-1.997-2.017V2.906c0-.43.518-.645.813-.334l2.916 3.062 1.071 1.125a.477.477 0 01-.34.807z" clipRule="evenodd" /></svg>;
+}
+export function PaperFailBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M14.055 15.26a.748.748 0 000-1.05l-1.208-1.22 1.208-1.22a.748.748 0 000-1.05.724.724 0 00-1.05 0l-1.208 1.22-1.208-1.22a.713.713 0 00-1.04 0 .748.748 0 000 1.05l1.208 1.22-1.207 1.22a.748.748 0 000 1.05c.138.15.326.22.514.22s.386-.07.525-.22l1.208-1.22 1.208 1.22a.73.73 0 00.525.22c.188 0 .376-.07.525-.22zm5.28-6.234c.234-.003.486-.006.71-.006.257 0 .455.2.455.45v8.04c0 2.48-1.99 4.49-4.455 4.49H8.173C5.59 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.5 2 7.965 2h5.287c.248 0 .456.21.456.46v3.22c0 1.83 1.495 3.33 3.307 3.34.418 0 .793.003 1.12.006.253.002.477.004.672.004.142 0 .328-.002.528-.004zm.27-1.46c-.813.003-1.772 0-2.462-.007-1.095 0-1.997-.91-1.997-2.017V2.906c0-.43.518-.645.813-.334a8159.641 8159.641 0 013.987 4.187.477.477 0 01-.34.807z" clipRule="evenodd" /></svg>;
+}
+export function PaperNegativeBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.629 12.99c0 .41.336.74.742.74h4.891a.745.745 0 000-1.49h-4.89a.745.745 0 00-.743.75zm10.71-3.964c.232-.003.485-.006.716-.006.247 0 .445.2.445.45v8.04c0 2.48-1.99 4.49-4.455 4.49H8.173C5.6 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.5 2 7.965 2h5.287c.258 0 .456.21.456.46v3.22c0 1.83 1.495 3.33 3.307 3.34.423 0 .796.003 1.123.006.254.002.48.004.679.004.14 0 .323-.002.521-.004zm.271-1.46c-.814.003-1.773 0-2.463-.007-1.095 0-1.997-.91-1.997-2.017V2.906c0-.43.517-.645.813-.334L17.97 4.68l1.98 2.08a.477.477 0 01-.339.807z" clipRule="evenodd" /></svg>;
+}
+export function PaperPlusBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.55 13.73h1.712a.745.745 0 000-1.49H12.55v-1.73c0-.41-.326-.74-.732-.74a.743.743 0 00-.743.74v1.73H9.371a.745.745 0 000 1.49h1.703v1.73c0 .41.337.74.743.74.406 0 .732-.33.732-.74v-1.73zm6.788-4.704c.233-.003.486-.006.716-.006.248 0 .446.2.446.45v8.04c0 2.48-1.99 4.49-4.455 4.49H8.173C5.6 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.5 2 7.965 2h5.287c.258 0 .456.21.456.46v3.22c0 1.83 1.495 3.33 3.307 3.34.423 0 .796.003 1.123.006.254.002.48.004.679.004.14 0 .323-.002.521-.004zm.272-1.46c-.814.003-1.773 0-2.463-.007-1.095 0-1.997-.91-1.997-2.017V2.906c0-.43.517-.645.813-.334L17.97 4.68l1.98 2.08a.477.477 0 01-.339.807z" clipRule="evenodd" /></svg>;
+}
+export function PaperUploadBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M13.945 12.89a.73.73 0 001.04 0 .739.739 0 00.01-1.05l-2.841-2.88a.767.767 0 00-.515-.22.768.768 0 00-.525.22l-2.832 2.88a.748.748 0 000 1.05.73.73 0 001.04 0l1.574-1.6v4.83a.737.737 0 101.475 0v-4.83l1.574 1.6zm5.383-3.864c.233-.003.486-.006.717-.006.247 0 .455.2.455.45v8.04c0 2.48-2 4.49-4.455 4.49H8.173C5.59 22 3.5 19.89 3.5 17.29V6.51C3.5 4.03 5.49 2 7.965 2h5.287c.248 0 .456.21.456.46v3.22c0 1.83 1.485 3.33 3.307 3.34.416 0 .786.003 1.11.006.255.002.482.004.682.004.14 0 .324-.002.521-.004zm.277-1.46c-.814.003-1.773 0-2.463-.007-1.095 0-1.997-.911-1.997-2.017V2.906c0-.431.517-.645.813-.334l2.916 3.061 1.071 1.126a.477.477 0 01-.34.807z" clipRule="evenodd" /></svg>;
+}
+export function PasswordBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.01 14.601a.75.75 0 00.75-.75V12a.75.75 0 00-.75-.75H11.32A2.596 2.596 0 008.84 9.4a2.604 2.604 0 00-2.601 2.6 2.604 2.604 0 002.6 2.602 2.596 2.596 0 002.479-1.852h2.112v1.102a.75.75 0 001.5 0V12.75h1.33v1.102c0 .414.336.75.75.75zM7.667 2h8.669C19.723 2 22 4.377 22 7.916v8.167C22 19.623 19.723 22 16.334 22H7.666C4.276 22 2 19.622 2 16.083V7.916C2 4.377 4.277 2 7.666 2zM7.739 12c0-.608.495-1.102 1.102-1.102.607 0 1.102.494 1.102 1.102a1.103 1.103 0 01-2.204 0z" clipRule="evenodd" /></svg>;
+}
+export function PlayBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 12.006C2 6.486 6.488 2 12 2s10 4.486 10 10.006C22 17.514 17.512 22 12 22S2 17.514 2 12.006zm13.668 1.012c.106-.106.241-.27.27-.309.155-.202.232-.453.232-.703 0-.281-.087-.542-.251-.754a3.722 3.722 0 01-.074-.08c-.064-.069-.157-.17-.245-.257-.791-.85-2.857-2.239-3.938-2.663-.164-.067-.579-.212-.801-.222-.212 0-.415.048-.608.145a1.251 1.251 0 00-.54.598c-.068.173-.174.694-.174.704-.107.57-.164 1.495-.164 2.518 0 .976.057 1.862.144 2.441.003.002.011.044.024.108.04.196.12.603.208.77.212.405.627.656 1.071.656h.039c.29-.01.898-.26.898-.27 1.023-.425 3.04-1.746 3.851-2.624l.058-.058z" clipRule="evenodd" /></svg>;
+}
+export function PlusBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.33 2h9.33C20.06 2 22 3.92 22 7.33v9.34c0 3.39-1.93 5.33-5.33 5.33H7.33C3.92 22 2 20.06 2 16.67V7.33C2 3.92 3.92 2 7.33 2zm5.49 10.83h2.84c.46-.01.83-.38.83-.84 0-.46-.37-.83-.83-.83h-2.84V8.34c0-.46-.37-.83-.83-.83-.46 0-.83.37-.83.83v2.82H8.33c-.22 0-.43.09-.59.24a.866.866 0 00-.24.59c0 .46.37.83.83.84h2.83v2.83c0 .46.37.83.83.83.46 0 .83-.37.83-.83v-2.83z" clipRule="evenodd" /></svg>;
+}
+export function ProfileBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.294 7.291A5.274 5.274 0 0112 12.583a5.275 5.275 0 01-5.294-5.292A5.274 5.274 0 0112 2a5.273 5.273 0 015.294 5.291zM12 22c-4.338 0-8-.705-8-3.425 0-2.721 3.685-3.401 8-3.401 4.339 0 8 .705 8 3.425C20 21.32 16.315 22 12 22z" clipRule="evenodd" /></svg>;
+}
+export function ScanBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.428 3c.42 0 .76.334.76.747 0 .412-.34.746-.76.746l-1.63.001c-1.351.002-2.451 1.082-2.451 2.409v1.859a.756.756 0 01-.762.747.755.755 0 01-.761-.747v-1.86c0-2.149 1.783-3.9 3.974-3.901L8.427 3zM15.6 3h1.593c2.197 0 3.983 1.752 3.983 3.906v1.856c0 .412-.34.748-.761.748a.755.755 0 01-.761-.748V6.906c0-1.33-1.104-2.413-2.461-2.413H15.6a.753.753 0 01-.761-.745c0-.413.34-.748.76-.748zm-.839 3.743H9.238c-1.263.012-2.28 1.025-2.268 2.266v1.245a.278.278 0 00.27.269h9.52a.28.28 0 00.272-.269V9.01a2.266 2.266 0 00-.66-1.603 2.272 2.272 0 00-1.61-.663zm-13 5.298h20.477c.42 0 .761.335.761.748a.753.753 0 01-.761.745h-1.062v3.56c0 2.155-1.787 3.906-3.983 3.906h-1.593a.755.755 0 01-.762-.747c0-.412.341-.747.762-.747h1.593c1.357 0 2.461-1.081 2.461-2.413v-3.56h-2.623v.992c.01 1.24-1.005 2.254-2.27 2.266H9.238c-1.264-.012-2.279-1.025-2.269-2.266v-.991H4.346v3.563c0 1.327 1.101 2.407 2.454 2.409h1.628c.42 0 .761.335.761.747a.755.755 0 01-.762.747l-1.629-.001c-2.191-.002-3.975-1.752-3.975-3.902v-3.563H1.762A.754.754 0 011 12.789c0-.413.342-.748.762-.748z" clipRule="evenodd" /></svg>;
+}
+export function SearchBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M2 10.67C2 5.882 5.84 2 10.578 2c2.275 0 4.456.913 6.065 2.54a8.717 8.717 0 012.512 6.13c0 4.788-3.84 8.67-8.577 8.67C5.84 19.34 2 15.458 2 10.67zm17.013 6.984l2.555 2.062h.044c.517.523.517 1.37 0 1.892a1.314 1.314 0 01-1.871 0l-2.12-2.43a1.082 1.082 0 010-1.524.986.986 0 011.392 0z" clipRule="evenodd" /></svg>;
+}
+export function SendBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M21.435 2.582a1.933 1.933 0 00-1.93-.503L3.408 6.759a1.92 1.92 0 00-1.384 1.522c-.142.75.355 1.704 1.003 2.102l5.033 3.094a1.304 1.304 0 001.61-.194l5.763-5.799a.734.734 0 011.06 0c.29.292.29.765 0 1.067l-5.773 5.8c-.428.43-.508 1.1-.193 1.62l3.075 5.083c.36.604.98.946 1.66.946.08 0 .17 0 .251-.01.78-.1 1.4-.634 1.63-1.39l4.773-16.075c.21-.685.02-1.43-.48-1.943z" /></svg>;
+}
+export function SettingBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M20.402 13.58c.358.19.634.49.828.79.378.62.348 1.38-.02 2.05l-.716 1.2a2.13 2.13 0 01-1.809 1.04c-.357 0-.756-.1-1.083-.3-.266-.17-.572-.23-.9-.23-1.011 0-1.86.83-1.89 1.82 0 1.15-.94 2.05-2.115 2.05h-1.39c-1.186 0-2.126-.9-2.126-2.05-.02-.99-.869-1.82-1.88-1.82-.338 0-.644.06-.9.23-.327.2-.735.3-1.083.3-.736 0-1.44-.4-1.819-1.04l-.705-1.2c-.378-.65-.399-1.43-.02-2.05.163-.3.47-.6.817-.79.286-.14.47-.37.644-.64.51-.86.204-1.99-.664-2.5a2.044 2.044 0 01-.757-2.83L3.5 6.43a2.124 2.124 0 012.882-.76c.89.48 2.044.16 2.565-.69.164-.28.256-.58.235-.88-.02-.39.092-.76.286-1.06A2.195 2.195 0 0111.277 2h1.44c.756 0 1.441.42 1.82 1.04.183.3.306.67.275 1.06-.02.3.072.6.235.88.521.85 1.676 1.17 2.575.69a2.112 2.112 0 012.872.76l.685 1.18c.593.99.266 2.26-.756 2.83-.869.51-1.176 1.64-.654 2.5.163.27.347.5.633.64zM9.11 12.01c0 1.57 1.298 2.82 2.902 2.82s2.872-1.25 2.872-2.82c0-1.57-1.268-2.83-2.872-2.83-1.604 0-2.902 1.26-2.902 2.83z" clipRule="evenodd" /></svg>;
+}
+export function ShieldDoneBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M11.728 21.914a.765.765 0 00.717-.004l3.568-1.907c1.011-.54 1.804-1.143 2.422-1.845a8.245 8.245 0 002.065-5.495l-.043-6.641a1.81 1.81 0 00-1.249-1.695L12.571 2.1a1.889 1.889 0 00-1.23.006L4.728 4.413A1.812 1.812 0 003.5 6.124l.042 6.636a8.248 8.248 0 002.139 5.473c.624.693 1.423 1.287 2.446 1.817l3.601 1.864zm-.944-7.805a.759.759 0 00.535.212.76.76 0 00.533-.219l3.899-3.844a.722.722 0 00-.006-1.04.77.77 0 00-1.068.007l-3.369 3.32-1.38-1.326a.77.77 0 00-1.067.007.721.721 0 00.007 1.04l1.916 1.843z" clipRule="evenodd" /></svg>;
+}
+export function ShieldFailBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M19.201 4.329a1.8 1.8 0 011.248 1.697l.05 6.638a8.245 8.245 0 01-2.072 5.492c-.614.706-1.41 1.304-2.416 1.844l-3.573 1.912a.749.749 0 01-.352.088.789.789 0 01-.363-.088L8.12 20.049c-1.016-.53-1.812-1.118-2.436-1.814a8.224 8.224 0 01-2.143-5.472l-.04-6.64c-.01-.765.492-1.45 1.227-1.706l6.613-2.313a1.87 1.87 0 011.228 0L19.2 4.329zm-4.78 9.758a.726.726 0 000-1.04l-1.36-1.325 1.36-1.322a.727.727 0 000-1.04.774.774 0 00-1.067 0l-1.359 1.324-1.359-1.325a.774.774 0 00-1.067 0 .727.727 0 000 1.04l1.36 1.323-1.36 1.325a.726.726 0 000 1.04.756.756 0 00.534.214.723.723 0 00.533-.214l1.359-1.324 1.359 1.324c.15.147.342.214.533.214a.739.739 0 00.534-.214z" clipRule="evenodd" /></svg>;
+}
+export function ShowBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.098 12c0 2.133 1.746 3.87 3.902 3.87 2.146 0 3.893-1.737 3.893-3.87A3.888 3.888 0 0012 8.121c-2.156 0-3.902 1.736-3.902 3.879zm9.639-5.954c1.707 1.319 3.16 3.249 4.205 5.663a.729.729 0 010 .572C19.854 17.111 16.137 20 12 20h-.01c-4.127 0-7.844-2.89-9.931-7.719a.728.728 0 010-.572C4.146 6.88 7.863 4 11.99 4H12c2.068 0 4.03.718 5.737 2.046zM12 14.412a2.428 2.428 0 002.43-2.414A2.43 2.43 0 0012 9.574c-.117 0-.234.01-.341.029a1.997 1.997 0 01-2 1.92h-.05c-.028.155-.048.31-.048.475 0 1.328 1.093 2.414 2.44 2.414z" clipRule="evenodd" /></svg>;
+}
+export function StarBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" d="M17.919 14.32a1.1 1.1 0 00-.32.97l.89 4.92a1.08 1.08 0 01-.45 1.08 1.1 1.1 0 01-1.17.08l-4.43-2.31a1.13 1.13 0 00-.5-.13h-.27a.812.812 0 00-.27.09l-4.43 2.32c-.22.11-.467.15-.71.11a1.112 1.112 0 01-.89-1.27l.89-4.92a1.119 1.119 0 00-.32-.98l-3.61-3.5a1.08 1.08 0 01-.27-1.13c.135-.396.477-.685.89-.75l4.97-.72c.378-.04.71-.27.88-.61l2.19-4.49c.051-.1.118-.192.2-.27l.09-.07a.671.671 0 01.16-.13l.11-.04.17-.07h.42c.377.04.708.264.88.6l2.22 4.47c.16.327.47.554.83.61l4.97.72c.42.06.77.35.91.75.13.401.017.841-.29 1.13l-3.74 3.54z" /></svg>;
+}
+export function SwapBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.546 3.278c.166.12.434.395.434.395 1.04.976 2.608 3.4 3.111 4.631.01 0 .31.732.32 1.08v.046c0 .534-.298 1.033-.777 1.288-.198.105-.68.203-.912.25-.076.016-.126.026-.129.029-.686.105-1.738.173-2.893.173-1.212 0-2.31-.068-2.985-.197-.012 0-.629-.127-.835-.209a1.49 1.49 0 01-.71-.65 1.627 1.627 0 01-.17-.73c.01-.267.183-.766.262-.963.503-1.3 2.15-3.784 3.157-4.736.104-.106.223-.217.306-.294.044-.042.078-.073.094-.09.251-.196.56-.301.893-.301.296 0 .593.093.834.278zm10.683 6.884a.94.94 0 01-.934.948.94.94 0 01-.934-.948l-.258-4.58a1.2 1.2 0 011.192-1.207c.657 0 1.19.54 1.19 1.208l-.256 4.579zm2.89 3.074c.298.128.55.36.71.65.115.23.171.476.171.731-.01.266-.183.766-.263.963-.502 1.3-2.15 3.783-3.155 4.736-.103.103-.22.212-.303.29l-.098.092c-.253.197-.56.302-.892.302a1.36 1.36 0 01-.835-.28c-.166-.118-.434-.393-.434-.393-1.042-.974-2.608-3.401-3.111-4.632-.012 0-.31-.73-.32-1.078v-.046c0-.535.296-1.034.777-1.29.198-.103.678-.201.91-.25.078-.015.128-.025.13-.028.687-.105 1.739-.174 2.894-.174 1.212 0 2.31.07 2.985.197.011 0 .629.128.835.21zM6.707 12.89a.94.94 0 00-.934.948l-.258 4.58a1.2 1.2 0 001.192 1.207c.657 0 1.19-.54 1.19-1.208l-.257-4.579a.94.94 0 00-.933-.947z" clipRule="evenodd" /></svg>;
+}
+export function TicketBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M21.787 10.539a.735.735 0 01-.512.207c-.716 0-1.296.563-1.296 1.25 0 .69.573 1.25 1.282 1.258.4.004.739.275.739.663v2.41C22 18.354 20.308 20 18.219 20h-3.153a.582.582 0 01-.59-.573v-2.03a.708.708 0 00-.726-.704.714.714 0 00-.725.704v2.03a.581.581 0 01-.589.573H5.781C3.702 20 2 18.356 2 16.326v-2.41c0-.387.34-.658.739-.662.71-.007 1.282-.568 1.282-1.259 0-.667-.56-1.174-1.296-1.174a.736.736 0 01-.512-.207.694.694 0 01-.213-.498V7.683C2 5.657 3.706 4 5.791 4h6.645c.325 0 .59.256.59.573v2.405a.72.72 0 00.725.705c.406 0 .725-.32.725-.705V4.573c0-.317.264-.573.59-.573h3.153C20.307 4 22 5.644 22 7.674v2.367a.694.694 0 01-.213.498zm-8.036 4.331c.406 0 .725-.32.725-.704v-3.758a.714.714 0 00-.726-.705.72.72 0 00-.725.705v3.758a.72.72 0 00.726.704z" clipRule="evenodd" /></svg>;
+}
+export function TicketStarBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M19.761 12.001c0 .814.668 1.475 1.489 1.475.414 0 .75.333.75.743v2.677C22 19.159 20.142 21 17.858 21H6.143C3.859 21 2 19.159 2 16.896v-2.677c0-.41.336-.743.75-.743.822 0 1.49-.662 1.49-1.475 0-.793-.641-1.39-1.49-1.39a.752.752 0 01-.53-.217.74.74 0 01-.22-.525l.002-2.764C2.002 4.842 3.86 3 6.144 3h11.712c2.284 0 4.143 1.842 4.143 4.105L22 9.782a.741.741 0 01-.219.526.753.753 0 01-.531.218c-.821 0-1.489.662-1.489 1.475zm-5.509.647l1.179-1.137a.73.73 0 00-.409-1.25l-1.629-.236-.729-1.462a.737.737 0 00-.662-.41H12a.74.74 0 00-.663.409l-.729 1.463-1.626.235a.735.735 0 00-.6.498.724.724 0 00.187.753l1.179 1.137-.278 1.608a.727.727 0 00.295.719.742.742 0 00.777.054L12 14.27l1.455.757a.733.733 0 00.78-.053.723.723 0 00.296-.718l-.279-1.608z" clipRule="evenodd" /></svg>;
+}
+export function TickSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.67 2h8.67C19.73 2 22 4.38 22 7.92v8.17c0 3.53-2.27 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2zm3.76 12.99l4.75-4.75c.34-.34.34-.89 0-1.24a.881.881 0 00-1.24 0l-4.13 4.13-1.75-1.75a.881.881 0 00-1.24 0c-.34.34-.34.89 0 1.24l2.38 2.37c.17.17.39.25.61.25.23 0 .45-.08.62-.25z" clipRule="evenodd" /></svg>;
+}
+export function TimeCircleBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12 22C6.48 22 2 17.53 2 12 2 6.48 6.48 2 12 2c5.53 0 10 4.48 10 10 0 5.53-4.47 10-10 10zm3.19-6.29a.742.742 0 001.03-.26c.21-.35.1-.81-.26-1.03L12.4 12.3V7.68a.749.749 0 10-1.5 0v5.05c0 .26.14.5.37.64l3.92 2.34z" clipRule="evenodd" /></svg>;
+}
+export function TimeSquareBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M7.67 2h8.67C19.73 2 22 4.38 22 7.92v8.17c0 3.53-2.27 5.91-5.66 5.91H7.67C4.28 22 2 19.62 2 16.09V7.92C2 4.38 4.28 2 7.67 2zm7.91 13.81c.25 0 .5-.13.64-.37a.744.744 0 00-.26-1.03l-3.56-2.12V7.67a.75.75 0 10-1.5 0v5.05c0 .26.14.51.37.64l3.92 2.34c.12.08.26.11.39.11z" clipRule="evenodd" /></svg>;
+}
+export function UnlockBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.226 8.711h8.005c2.358 0 4.269 1.87 4.269 4.176v4.938C20.5 20.13 18.589 22 16.231 22H7.768C5.41 22 3.5 20.13 3.5 17.825v-4.938c0-1.897 1.3-3.48 3.07-3.99l-.11.014V7.387C6.48 4.417 8.95 2 11.979 2c2.367 0 4.46 1.462 5.232 3.628a.844.844 0 01-.04.666.846.846 0 01-.509.438.906.906 0 01-1.138-.537c-.518-1.472-1.94-2.456-3.525-2.456-2.074 0-3.75 1.631-3.76 3.628V8.71l-.013.002zm3.769 8.617a.88.88 0 00.894-.874v-2.207a.878.878 0 00-.894-.864.875.875 0 00-.884.864v2.207c0 .487.396.874.884.874z" clipRule="evenodd" /></svg>;
+}
+export function UploadBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M8.466 5.236A.764.764 0 008.55 6.24c.3.3.79.3 1.09 0l1.59-1.6v4.14h1.54V4.64l1.59 1.6.086.074a.773.773 0 001.234-.624c0-.19-.08-.39-.23-.54l-2.91-2.92-.09-.082a.764.764 0 00-1 .082L8.54 5.15l-.074.086zM6.23 8.786C3.878 8.895 2 10.875 2 13.287v4.965l.005.212c.11 2.395 2.055 4.315 4.445 4.315h11.11l.209-.005c2.353-.11 4.231-2.09 4.231-4.512v-4.955l-.005-.213c-.11-2.404-2.065-4.315-4.445-4.315h-4.78v6.105l-.007.107a.775.775 0 01-.763.676.77.77 0 01-.77-.783V8.78H6.44l-.209.005z" clipRule="evenodd" /></svg>;
+}
+export function VideoBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M6.113 4.5h5.792c2.422 0 4.113 1.669 4.113 4.06v6.88c0 2.391-1.69 4.06-4.113 4.06H6.113C3.691 19.5 2 17.831 2 15.44V8.56C2 6.17 3.691 4.5 6.113 4.5zm13.845 2.379c.439-.223.954-.2 1.373.064.419.263.669.72.669 1.22v7.675c0 .5-.25.957-.669 1.22a1.385 1.385 0 01-1.374.063l-1.481-.748a1.623 1.623 0 01-.888-1.457V9.083c0-.621.34-1.18.888-1.456l1.482-.748z" clipRule="evenodd" /></svg>;
+}
+export function VoiceBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.175 15.217h-.35c-2.403 0-4.351-1.924-4.351-4.297V6.297C7.474 3.924 9.422 2 11.825 2h.35c2.403 0 4.352 1.924 4.352 4.297v4.623c0 2.373-1.949 4.297-4.352 4.297zm6.388-4.434c0-.53.434-.957.968-.957.535 0 .969.428.969.957 0 4.304-3.3 7.857-7.53 8.335v1.925A.963.963 0 0112 22a.962.962 0 01-.968-.957v-1.925C6.799 18.64 3.5 15.087 3.5 10.783c0-.53.434-.957.969-.957.534 0 .968.428.968.957 0 3.573 2.944 6.48 6.564 6.48 3.618 0 6.562-2.907 6.562-6.48z" clipRule="evenodd" /></svg>;
+}
+export function Voice2Bold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M12.175 15.216h-.35c-2.403 0-4.351-1.923-4.351-4.296V6.297C7.474 3.924 9.422 2 11.825 2h.35a4.345 4.345 0 014.19 3.131.388.388 0 01-.376.494h-1.133a.616.616 0 00-.62.61v.002c0 .338.278.612.62.612H15.9c.346 0 .627.277.627.618 0 .342-.28.618-.627.618h-1.044a.617.617 0 00-.62.613c0 .338.278.612.62.612H15.9c.346 0 .627.277.627.62 0 .34-.28.616-.627.616h-1.044a.617.617 0 00-.62.614c0 .337.278.61.62.61h1.077c.266 0 .456.257.372.506a4.347 4.347 0 01-4.13 2.94zm6.388-4.433c0-.53.434-.957.968-.957.535 0 .969.428.969.957 0 4.304-3.3 7.857-7.53 8.335v1.925A.963.963 0 0112 22a.962.962 0 01-.968-.957v-1.925C6.799 18.64 3.5 15.087 3.5 10.783c0-.53.434-.957.969-.957.534 0 .968.428.968.957 0 3.573 2.944 6.48 6.564 6.48 3.618 0 6.562-2.907 6.562-6.48z" clipRule="evenodd" /></svg>;
+}
+export function VolumeDownBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M15.14 4.956c.129.504.181 1.008.232 1.495l.047.442c.18 1.476.18 8.728 0 10.215l-.047.459-.001.008c-.045.46-.092.936-.224 1.444-.352 1.202-1.29 1.981-2.354 1.981l-.105-.001c-.588 0-1.227-.36-1.59-.675l-3.53-2.941H5.755c-1.4 0-2.424-1.012-2.61-2.579-.214-1.566-.172-4.253 0-5.677.203-1.483 1.276-2.51 2.61-2.51h1.813l3.464-2.898c.417-.363 1.154-.721 1.737-.719 1.045 0 2.019.752 2.37 1.956zm3.008 1.302a.91.91 0 011.278.237C20.44 7.988 21 9.943 21 12s-.56 4.012-1.574 5.505a.915.915 0 01-.754.404.902.902 0 01-.524-.167.955.955 0 01-.23-1.308c.803-1.183 1.245-2.758 1.245-4.434 0-1.677-.442-3.25-1.245-4.434a.955.955 0 01.23-1.308z" clipRule="evenodd" /></svg>;
+}
+export function VolumeOffBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M20.42 3.27a.926.926 0 111.309 1.311L4.579 21.73a.947.947 0 01-.654.271.963.963 0 01-.651-.268.93.93 0 01-.004-1.313l2.827-2.827h-.029c-1.409 0-2.435-.995-2.625-2.54-.213-1.545-.17-4.192 0-5.6.2-1.46 1.28-2.465 2.625-2.465h1.83l3.494-2.858c.425-.36 1.176-.7 1.758-.709 1.058 0 2.032.74 2.381 1.926.138.498.192.994.234 1.472l.084.676c.014.104.026.204.037.31L20.42 3.27zm-5.54 10.461c.144-.14.463-.24.607-.203.389.099.465.656.459 1.095-.018 1.272-.06 2.157-.128 2.704l-.048.451v.008c-.046.454-.093.923-.227 1.424-.353 1.184-1.298 1.952-2.373 1.952l-.106-.001c-.594 0-1.237-.356-1.603-.666l-1.3-1.006c-.495-.368-.349-.954-.072-1.294.208-.253 2.697-2.538 4.005-3.738.443-.407.75-.69.787-.726z" clipRule="evenodd" /></svg>;
+}
+export function VolumeUpBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M13.357 6.45c-.05-.486-.103-.99-.232-1.494C12.775 3.752 11.801 3 10.758 3c-.582-.002-1.318.356-1.736.72l-3.46 2.897h-1.81c-1.333 0-2.404 1.027-2.607 2.51-.172 1.424-.214 4.11 0 5.677.186 1.567 1.21 2.579 2.607 2.579h1.81l3.527 2.94c.362.315 1 .676 1.588.676l.105.001c1.063 0 2-.78 2.35-1.98.133-.509.18-.985.224-1.445l.001-.008.047-.459c.18-1.487.18-8.739 0-10.215l-.047-.442zm4.05.045a.907.907 0 00-1.279-.237.957.957 0 00-.228 1.308c.802 1.182 1.243 2.756 1.243 4.434 0 1.677-.441 3.252-1.243 4.434a.956.956 0 00.23 1.308.905.905 0 001.277-.237c1.012-1.492 1.571-3.447 1.571-5.505s-.559-4.013-1.571-5.505zM19.29 3.22a.905.905 0 011.277.236C22.136 5.767 23 8.802 23 12c0 3.2-.864 6.234-2.433 8.544a.902.902 0 01-1.276.236.957.957 0 01-.23-1.308c1.356-1.999 2.104-4.653 2.104-7.472 0-2.818-.748-5.472-2.105-7.471a.958.958 0 01.23-1.308z" clipRule="evenodd" /></svg>;
+}
+export function WalletBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M17.769 8.382H22C22 4.985 19.964 3 16.516 3H7.484C4.036 3 2 4.985 2 8.338v7.324C2 19.015 4.036 21 7.484 21h9.032C19.964 21 22 19.015 22 15.662v-.313h-4.231c-1.964 0-3.556-1.552-3.556-3.466 0-1.915 1.592-3.467 3.556-3.467v-.034zm0 1.49h3.484c.413 0 .747.326.747.728v2.531a.746.746 0 01-.747.728H17.85c-.994.013-1.864-.65-2.089-1.595a1.982 1.982 0 01.433-1.652 2.091 2.091 0 011.576-.74zm.151 2.661h.329a.755.755 0 00.764-.745.755.755 0 00-.764-.746h-.329a.766.766 0 00-.54.213.727.727 0 00-.224.524c0 .413.34.75.764.754zM6.738 8.382h5.644a.755.755 0 00.765-.746.755.755 0 00-.765-.745H6.738a.755.755 0 00-.765.737c0 .413.341.75.765.754z" clipRule="evenodd" /></svg>;
+}
+export function WorkBold(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" viewBox="0 0 24 24" {...props}><path fill="#200E32" fillRule="evenodd" d="M10.704 3.519c-.67 0-1.24.466-1.4 1.094h5.382a1.453 1.453 0 00-1.4-1.094h-2.582zm5.503 1.094h1.981C20.29 4.613 22 6.344 22 8.47c0 0-.06.9-.08 2.154a.33.33 0 01-.13.255c-.48.355-.92.65-.96.67-1.661 1.113-3.591 1.897-5.647 2.287a.318.318 0 01-.335-.163 3.296 3.296 0 00-2.853-1.649 3.35 3.35 0 00-2.872 1.643.319.319 0 01-.333.16 15.49 15.49 0 01-5.62-2.269l-.96-.668a.286.286 0 01-.13-.243C2.05 10.132 2 8.471 2 8.471c0-2.127 1.71-3.858 3.812-3.858h1.97C7.974 3.144 9.205 2 10.705 2h2.582c1.5 0 2.731 1.144 2.921 2.613zm5.453 8.202l-.04.02c-2.021 1.357-4.452 2.259-7.004 2.633a.753.753 0 01-.82-.546 1.816 1.816 0 00-1.781-1.378h-.03c-.85 0-1.56.547-1.78 1.378a.753.753 0 01-.821.546c-2.552-.374-4.983-1.276-7.004-2.633-.01-.01-.11-.07-.19-.02-.09.05-.09.172-.09.172l.07 5.165C2.17 20.279 3.87 22 5.972 22h12.046c2.101 0 3.802-1.721 3.802-3.848l.08-5.165s0-.121-.09-.172c-.05-.03-.11-.02-.15 0zm-8.915 4.243c0 .426-.33.76-.75.76a.754.754 0 01-.75-.76v-1.306c0-.415.34-.76.75-.76.42 0 .75.345.75.76v1.306z" clipRule="evenodd" /></svg>;
+}
+
+export function cloudcomputing001(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -93 512 511" {...props}><path d="M264.871 324.555c-79.64 0-161.992 0-166.004-.016l-.387-.008C43.258 322.863 0 278.273 0 223.016c0-42.758 26.852-80.965 66.96-95.5.099-35.317 28.868-64.02 64.216-64.02a63.954 63.954 0 0141.586 15.309C193.934 31.152 240.972.5 293.3.5c72.715 0 131.87 59.156 131.87 131.867 0 1.278-.026 2.613-.081 4.196 48.883 3.722 86.91 44.617 86.91 93.882 0 50.942-39.867 92.27-90.762 94.082l-.664.012c-2.066.008-62.222.016-155.703.016zm-165.676-30.04c5.996.02 90.77.02 165.676.02 89.406 0 152.016-.012 155.54-.02 34.546-1.355 61.566-29.452 61.566-64.07 0-33.965-26.528-62.086-60.399-64.027-15.316-.879-27.226-14.055-26.555-29.371.086-1.961.125-3.402.125-4.68 0-56.156-45.687-101.844-101.847-101.844-41.07 0-77.926 24.45-93.887 62.29a28.27 28.27 0 01-19.992 16.59 28.246 28.246 0 01-25.09-6.821 34.043 34.043 0 00-23.156-9.062c-18.742 0-34.008 15.152-34.192 33.843.012.371.024.754.024 1.13a28.147 28.147 0 01-18.914 26.929c-28.758 9.996-48.07 37.16-48.07 67.594 0 38.859 30.367 70.226 69.171 71.5zm0 0" /></svg>;
+}
+export function worldwide002(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}><path d="M511.996 256.402c0-.136.004-.27.004-.402 0-68.379-26.629-132.668-74.98-181.02C388.668 26.63 324.379 0 256 0S123.332 26.629 74.98 74.98C26.63 123.332 0 187.621 0 256c0 .133.004.266.004.402 0 .032-.004.063-.004.098 0 .055.008.105.008.16.172 68.133 26.777 132.164 74.972 180.36C123.332 485.37 187.621 512 256 512a259.876 259.876 0 0020.566-.824c60.625-4.785 116.98-30.684 160.454-74.156 48.195-48.196 74.8-112.227 74.972-180.36 0-.055.008-.105.008-.16 0-.031-.004-.066-.004-.098zm-49.039 90.715h-86.676c8.543-28.851 12.246-54.488 13.43-75.62h91.766c-1.774 26.39-8.067 51.898-18.52 75.62zM49.063 164.84h86.433c-8.668 29.355-12.266 55.37-13.308 76.664H30.46c1.684-26.762 8.008-52.633 18.602-76.664zm221.933-29.992V33.422c12.914 15.008 41.656 51.52 63.047 101.426zm74.328 29.992c7.637 23.57 13.074 49.344 14.485 76.664h-88.813V164.84zm-104.32-29.992h-62.777c6.847-15.938 14.261-30.118 21.246-42.094 16.222-27.813 32.617-48.32 41.53-58.684zm0 29.992v76.664H152.21c1.46-27.512 7.09-53.375 14.687-76.664zM30.524 271.496h91.761c1.469 26.922 6.504 52.36 13.445 75.621H49.043c-10.453-23.722-16.746-49.23-18.52-75.62zm121.792 0h88.688v75.621h-73.89c-7.657-23.312-13.184-48.738-14.798-75.62zm88.688 105.61v100.789c-12.863-15.118-41.184-51.47-62.488-100.79zm29.992 0h62.559c-6.778 15.816-14.098 29.906-21 41.84-16.242 28.085-32.66 48.831-41.559 59.292zm0-29.989v-75.62h88.672c-1.648 27.093-7.273 52.605-14.793 75.62zM389.84 241.504c-1.168-25.469-5.531-51.07-13.074-76.664h86.172c10.593 24.031 16.917 49.902 18.601 76.664zm57.043-106.656h-80.418c-6.567-16.77-14.48-33.512-23.75-50.184a447.35 447.35 0 00-30.625-47.687c38.91 9.89 74.594 30.082 103.723 59.21a227.773 227.773 0 0131.07 38.66zM96.188 96.188c29.269-29.27 65.156-49.52 104.28-59.36a447.45 447.45 0 00-26.445 40.035c-11.796 20.133-21.027 39.551-28.242 57.985H65.117a227.773 227.773 0 0131.07-38.66zM65.09 377.105h81c8.707 22.18 18.652 41.633 27.914 57.532a454.211 454.211 0 0026.652 40.586c-39.199-9.825-75.152-30.094-104.468-59.41-11.887-11.887-22.282-24.864-31.098-38.708zm350.723 38.708c-29.247 29.25-65.102 49.488-104.196 59.34a454.646 454.646 0 0026.453-40.423c11.625-20.011 20.754-39.304 27.91-57.62h80.93c-8.816 13.84-19.21 26.816-31.097 38.703zm0 0" /></svg>;
+}
+export function rss003(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512.002" {...props}><path d="M333.176 496.832c-.028-84.941-33.117-164.793-93.18-224.855-60.09-60.09-139.98-93.18-224.957-93.18h-.043C6.715 178.797 0 185.512 0 193.793v95.34c0 8.281 6.715 14.996 14.996 14.996 106.313 0 192.809 86.492 192.809 192.808 0 6.266 3.847 11.63 9.308 13.872 1.801.765 3.785 1.195 5.867 1.195h.02l94.043-.129c.379.027.754.055 1.14.055 8.282 0 14.993-6.711 14.993-14.993v-.066-.016-.023zm-160.64-157.437c-38.524-38.528-88.677-61.192-142.544-64.75v-65.473c71.348 3.621 137.914 33.125 188.797 84.012 50.867 50.863 80.367 117.398 84.008 188.718l-65.508.09c-3.547-53.887-26.215-104.058-64.754-142.597zm0 0" /><path d="M67.047 377.914c-36.969 0-67.043 30.074-67.043 67.043S30.078 512 67.047 512s67.043-30.074 67.043-67.043-30.074-67.043-67.043-67.043zm0 104.098c-20.43 0-37.055-16.625-37.055-37.055 0-20.434 16.625-37.055 37.055-37.055s37.055 16.621 37.055 37.055c0 20.43-16.622 37.055-37.055 37.055zm0 0M511.559 496.438v-.016c-.016-66.977-13.149-131.961-39.028-193.149-25.011-59.132-60.812-112.234-106.41-157.832C320.523 99.84 267.418 64.04 208.285 39.027 147.06 13.133 82.023 0 14.996 0 6.715 0 0 6.715 0 14.996v94.242c0 8.282 6.715 14.996 14.996 14.996 50.27 0 99.031 9.844 144.922 29.254 44.336 18.75 84.156 45.598 118.355 79.801 34.2 34.195 61.047 74.016 79.797 118.352 19.414 45.894 29.254 94.652 29.254 144.921 0 5.708 3.192 10.672 7.883 13.204a14.914 14.914 0 007.375 1.949h.04l92.378-.238c.516.054 1.035.082 1.563.082 8.28 0 14.996-6.715 14.996-14.996v-.11-.015zM385.695 339.957c-20.265-47.91-49.273-90.934-86.215-127.875-36.945-36.945-79.968-65.953-127.878-86.215-45.032-19.047-92.598-29.57-141.61-31.347V30.234c57.696 1.805 113.676 14.024 166.61 36.414 55.558 23.5 105.457 57.145 148.312 100 42.852 42.852 76.496 92.75 99.996 148.309 22.383 52.922 34.606 108.887 36.414 166.566l-64.281.165c-1.766-49.055-12.29-96.665-31.348-141.731zm0 0" /></svg>;
+}
+export function twitter004(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -45 512 512" {...props}><path d="M194.816 422.71c-85.453 0-152.992-14.929-185.304-40.952l-.63-.508-.57-.57C.638 373-1.877 362.926 1.418 353.043l.3-.82c4-10.004 13.802-16.739 24.423-16.801 21.859-.379 40.984-2.985 58.34-8.043-27.684-12.875-46.915-35.168-58.356-67.434-3.848-10.062-.527-21.218 8.34-27.87 2.187-1.645 4.66-2.887 7.277-3.72-15.383-17.757-26.746-37.964-33.11-59.335l-.198-.665-.137-.68c-2.16-10.808 2.672-21.921 11.527-26.706 3.715-2.133 7.75-3.239 11.801-3.332-4.367-9.407-7.543-19.063-9.426-28.778-5.226-26.921-.914-53.91 12.813-80.214l3.175-6.352a17.759 17.759 0 0113.004-9.563 17.76 17.76 0 0115.356 4.958l5.785 5.792c45.703 47.915 86.64 70.649 157.418 86.204 3.16-27.168 14.906-52.422 33.855-72.297C286.156 13.738 316.27.469 348.398.016h.211c23.442 0 52.52 13.382 70.106 22.82 15.086-4.938 33.262-12.582 52.12-20.664 8.825-4.14 19.704-2.246 26.642 4.691 6.8 6.801 8.687 16.39 5.078 25.711a126.223 126.223 0 01-4.657 11.227c2.582 1.183 4.946 2.789 6.942 4.785 6.035 6.035 8.55 15.48 6.406 24.066l-.23.817c-7.227 23.289-21.11 42.258-39.47 54.164C468.48 290.918 345.52 422.71 194.817 422.71zM38.305 365.036c30.449 17.227 88.476 27.649 156.511 27.649 65.41 0 127.137-28.082 173.805-79.075 47.05-51.41 72.961-119.68 72.961-192.234v-.816c0-6.57 3.617-12.567 9.438-15.653C462.828 98.652 472.39 88 478.61 74.38c-6.415 1.012-12.934-1.563-16.93-6.93a17.621 17.621 0 01-.13-20.957 97.453 97.453 0 006.692-10.59c-16.285 6.84-31.75 12.973-45.176 17.047-4.878 1.477-10.316.899-14.773-1.59-23.902-13.316-46.164-21.277-59.586-21.316-49.527.758-89.797 43.176-89.797 94.605 0 5.317-2.36 10.301-6.465 13.68a17.646 17.646 0 01-14.672 3.695c-81.609-16.078-129.968-40.187-180.257-90.722-7.207 17.27-9.176 34.664-5.844 51.84 3.379 17.398 12.367 34.832 25.996 50.414 5.18 5.914 5.867 14.375 1.71 21.05-4.14 6.653-12.01 9.762-19.577 7.735-5.914-1.586-11.352-3.668-16.508-6.344 10.504 22.816 28.57 43.918 51.281 59.48 6.582 4.512 9.332 12.922 6.692 20.454-2.645 7.543-10.032 12.398-18.016 11.804-8.7-.644-16.406-2.296-23.5-5.082 12.734 25.934 33.082 40.203 64.43 45.657a17.72 17.72 0 0114.465 14.668 17.714 17.714 0 01-9.2 18.43c-26.718 14.163-55.922 21.765-91.14 23.628zm0 0" /></svg>;
+}
+export function pin006(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-76 1 511 512" {...props}><path d="M180.473 512l-10.836-11.64c-1.559-1.673-38.578-41.606-77.903-98.133C38.36 325.497 8.172 258.215 2.016 202.242.996 194.152.5 186.867.5 179.972.5 80.739 81.238 0 180.477 0c99.207 0 179.945 80.723 179.976 179.941 0 6.704-.484 13.895-1.484 21.98-6.02 55.993-36.168 123.34-89.614 200.173-39.375 56.597-76.484 96.594-78.043 98.27zm.004-482.383c-82.907 0-150.36 67.453-150.36 150.36 0 5.671.426 11.78 1.301 18.671l.027.25c11.239 102.73 114.89 229.715 149.035 269.086 34.192-39.398 138.075-166.586 149.051-269.34l.031-.25c.868-7.007 1.274-12.87 1.274-18.449-.027-82.886-67.48-150.328-150.36-150.328zm0 271.41c-66.747 0-121.051-54.304-121.051-121.05 0-66.747 54.304-121.051 121.05-121.051 66.731 0 121.02 54.304 121.02 121.05 0 66.747-54.289 121.051-121.02 121.051zm0-212.48c-50.415 0-91.43 41.015-91.43 91.43 0 50.414 41.016 91.43 91.43 91.43 50.398 0 91.402-41.016 91.402-91.43 0-50.415-41.004-91.43-91.402-91.43zm0 0" /></svg>;
+}
+export function heart007(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -28 512.001 512" {...props}><path d="M256 455.516c-7.29 0-14.316-2.641-19.793-7.438-20.684-18.086-40.625-35.082-58.219-50.074l-.09-.078c-51.582-43.957-96.125-81.918-127.117-119.313C16.137 236.81 0 197.172 0 153.871c0-42.07 14.426-80.883 40.617-109.293C67.121 15.832 103.488 0 143.031 0c29.555 0 56.621 9.344 80.446 27.77C235.5 37.07 246.398 48.453 256 61.73c9.605-13.277 20.5-24.66 32.527-33.96C312.352 9.344 339.418 0 368.973 0c39.539 0 75.91 15.832 102.414 44.578C497.578 72.988 512 111.801 512 153.871c0 43.3-16.133 82.938-50.777 124.738-30.993 37.399-75.532 75.356-127.106 119.309-17.625 15.016-37.597 32.039-58.328 50.168a30.046 30.046 0 01-19.789 7.43zM143.031 29.992c-31.066 0-59.605 12.399-80.367 34.914-21.07 22.856-32.676 54.45-32.676 88.965 0 36.418 13.535 68.988 43.883 105.606 29.332 35.394 72.961 72.574 123.477 115.625l.093.078c17.66 15.05 37.68 32.113 58.516 50.332 20.961-18.254 41.012-35.344 58.707-50.418 50.512-43.051 94.137-80.223 123.469-115.617 30.344-36.618 43.879-69.188 43.879-105.606 0-34.516-11.606-66.11-32.676-88.965-20.758-22.515-49.3-34.914-80.363-34.914-22.758 0-43.653 7.235-62.102 21.5-16.441 12.719-27.894 28.797-34.61 40.047-3.452 5.785-9.53 9.238-16.261 9.238s-12.809-3.453-16.262-9.238c-6.71-11.25-18.164-27.328-34.61-40.047-18.448-14.265-39.343-21.5-62.097-21.5zm0 0" /></svg>;
+}
+export function paypal008(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512" {...props}><path d="M487.16 115.148c-10.973-13.02-25.71-23.843-43.867-32.246-4.066-10.394-9.672-19.863-16.828-28.355-28.61-33.95-82.91-52.645-152.91-52.645-20.957 0-103.813-.875-150.43-1.894-18.91-.399-35.574 12.668-39.703 31.094L.977 401.988c-2.66 11.856.171 24.098 7.77 33.586 7.593 9.485 18.921 14.926 31.07 14.926h24.546l-2.687 12.09c-2.66 11.855.172 24.097 7.77 33.586 7.593 9.484 18.921 14.926 31.074 14.926h99.796c18.918 0 35.332-13.465 39.036-32.012l17.683-88.547 93.422-1.074.77-.086c6.207-.715 38.941-5.48 73.988-29.211 19.988-13.531 36.96-30.758 50.45-51.203 16.444-24.918 27.722-54.696 33.51-88.496 7.485-43.672.079-79.11-22.015-105.325zM32.184 416.808c-1.098-1.37-2.805-4.265-1.907-8.28l82.446-370.876c1.02-4.52 5.12-7.746 9.75-7.625 46.789 1.02 130.02 1.899 151.082 1.899 60.11 0 107.476 15.297 129.949 41.969 16.125 19.136 21.3 46.359 15.383 80.902-9.227 53.82-33.18 94.164-71.207 119.91-28.203 19.098-55.203 23.512-59.907 24.156l-92.812 1.067c-14.152 0-24.906 8.14-27.387 20.71l-18.363 91.97c-.91 4.558-4.945 7.867-9.594 7.867h-99.8c-4.087 0-6.54-2.301-7.633-3.668zm447.398-201.41c-9.223 53.82-33.176 94.164-71.203 119.91-28.203 19.098-55.203 23.512-59.906 24.157l-92.813 1.066c-14.152 0-24.906 8.14-27.387 20.711l-18.363 91.969c-.91 4.559-4.945 7.867-9.594 7.867H100.52c-4.09 0-6.54-2.297-7.637-3.668-1.098-1.37-2.805-4.265-1.906-8.281L95.12 450.5h44.5c18.914 0 35.332-13.465 39.035-32.012l17.68-88.55 93.422-1.07.77-.087c6.206-.715 38.94-5.48 73.988-29.21 19.988-13.536 36.96-30.762 50.453-51.204 16.441-24.922 27.719-54.695 33.508-88.5 2.28-13.312 3.171-25.855 2.691-37.61 4.977 3.766 9.336 7.848 13.035 12.235 16.125 19.14 21.3 46.363 15.379 80.906zm0 0" /></svg>;
+}
+export function xing009(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-37 0 512 512" {...props}><path d="M82.285 342.906H29.93c-10.79 0-20.457-5.578-25.864-14.918-5.406-9.336-5.421-20.5-.046-29.855l72.343-125.899-33.152-70.441c-4.383-9.309-3.707-20.05 1.805-28.738s14.941-13.871 25.23-13.871h54.004c11.48 0 22.082 6.703 27 17.078l39.531 83.351a29.866 29.866 0 01-1.144 27.79L108.14 328.007c-5.329 9.187-15.235 14.898-25.856 14.898zm-52.02-30.082l51.91.004 81.388-140.422-39.434-83.144H70.555l33.441 71.054a27.712 27.712 0 01-.933 25.82zm0 0M359.492 512h-52.308c-10.582 0-20.47-5.676-25.805-14.813L182.473 327.84c-8.84-15.133-9.012-34.035-.453-49.332h.003L329.41 15.285A29.902 29.902 0 01355.48 0h53.477c10.719 0 20.36 5.52 25.781 14.77 5.422 9.246 5.532 20.351.297 29.707L290.191 303.293l95.141 163.816c5.438 9.356 5.457 20.54.059 29.918-5.399 9.375-15.079 14.973-25.899 14.973zm-52.195-30.078h51.86l-95.641-164.676c-4.903-8.445-4.985-18.976-.215-27.484L408.629 30.078h-53.035L208.266 293.203c-3.38 6.035-3.309 13.496.18 19.469zm0 0" /></svg>;
+}
+export function star010(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 512 512" {...props}><path d="M387.531 491.145c-8.816 0-17.633-2.793-25.324-8.383l-98.508-71.57a13.073 13.073 0 00-15.398 0l-98.508 71.57c-15.387 11.18-35.266 11.18-50.652 0-15.383-11.18-21.528-30.086-15.653-48.176l37.625-115.8a13.061 13.061 0 00-4.758-14.645l-98.503-71.567c-15.387-11.18-21.532-30.09-15.657-48.176 5.88-18.086 21.965-29.773 40.98-29.773h121.763c5.69 0 10.699-3.637 12.457-9.05L215.02 29.772C220.898 11.687 236.984 0 256 0s35.102 11.687 40.98 29.773l37.625 115.801a13.064 13.064 0 0012.457 9.051h121.762c19.016 0 35.102 11.687 40.98 29.773 5.876 18.086-.269 36.997-15.656 48.176l-98.503 71.567a13.061 13.061 0 00-4.758 14.644l37.625 115.8c5.875 18.09-.27 36.997-15.653 48.177-7.691 5.59-16.511 8.383-25.328 8.383zM256 378.675c8.875 0 17.754 2.755 25.328 8.259l98.504 71.566c7.148 5.191 13.594 1.313 15.398 0 1.81-1.313 7.489-6.246 4.758-14.645l-37.625-115.8a42.978 42.978 0 0115.653-48.172l98.507-71.57c7.145-5.192 5.446-12.524 4.758-14.645-.691-2.125-3.629-9.05-12.457-9.05H347.062a42.978 42.978 0 01-40.976-29.774L268.457 39.039c-2.727-8.394-10.223-9.05-12.457-9.05s-9.73.656-12.457 9.05l-37.629 115.805a42.978 42.978 0 01-40.976 29.773H43.175c-8.828 0-11.766 6.926-12.457 9.051-.692 2.121-2.387 9.453 4.758 14.644l98.507 71.567a42.986 42.986 0 0115.653 48.176l-37.63 115.8c-2.726 8.399 2.954 13.332 4.763 14.645 1.804 1.313 8.253 5.191 15.398 0l98.504-71.566c7.574-5.504 16.45-8.258 25.328-8.258zm0 0" /></svg>;
+}
+export function windows011(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}><path d="M491.746 512c-.914 0-1.832-.063-2.75-.191l-238.055-33.496c-9.668-1.356-16.957-9.747-16.957-19.508V285.832c0-10.863 8.84-19.703 19.704-19.703H491.8c5.262 0 10.21 2.05 13.933 5.773a19.585 19.585 0 015.77 13.934l-.059 206.465A19.705 19.705 0 01491.746 512zm-227.77-62.14l217.477 30.597.05-184.332H263.978zM196 473.265c-.89 0-1.785-.063-2.68-.184L17.238 448.945C7.535 447.613.215 439.227.211 429.43L.203 285.832c0-5.262 2.047-10.207 5.77-13.93s8.668-5.773 13.933-5.773h176.09c10.863 0 19.703 8.84 19.703 19.703v167.73a19.707 19.707 0 01-19.7 19.703zm1.387-29.903l.011.004c-.003 0-.007-.004-.011-.004zM30.207 420.45l155.5 21.313V296.125H30.199zm165.727-172.672l-176.235-.035c-10.847 0-19.687-8.828-19.699-19.68V86.024c-.012-9.804 7.32-18.207 17.055-19.527L193.28 42.563a19.7 19.7 0 0122.352 19.523v165.988c0 10.867-8.836 19.703-19.7 19.703zM29.996 217.75l155.645.031V73.871L29.996 95.008zm461.746 28.094H253.688c-10.864 0-19.704-8.836-19.704-19.703V54.34c0-9.715 7.25-18.094 16.864-19.496h.004L488.902.204A19.7 19.7 0 01504.63 4.8a19.682 19.682 0 016.812 14.902v206.438c0 10.867-8.836 19.703-19.699 19.703zm-227.765-29.992h217.472V31.598L263.977 63.242zm0 0" /></svg>;
+}
+export function network012(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -45 512 512" {...props}><path d="M473.66 119.762h-27.273C414.082 52.426 349.004 7.504 275.082.859a14.992 14.992 0 00-4.969-.382A211.546 211.546 0 00256 0C174.324 0 100.672 46.684 65.61 119.762H38.34C17.2 119.762 0 136.96 0 158.102v106.09c0 21.14 17.2 38.34 38.34 38.34h27.265a210.982 210.982 0 00190.391 119.757c5.633 0 11.219-.226 16.766-.664l.3-.023c74.754-6 140.723-51.122 173.325-119.07h27.273c21.14 0 38.34-17.2 38.34-38.34v-106.09c0-21.141-17.2-38.34-38.34-38.34zm-61.187 0H351.55c-12.164-33.965-28.934-62.086-42.938-82.012a180.825 180.825 0 01103.86 82.012zm-171.47 0h-48.335c15.137-37.356 35.996-66.274 48.336-81.52zm29.99-82.055c12.335 15.23 33.28 44.281 48.476 82.055h-48.477zm-67.196-.078c-14.059 19.875-30.973 48.05-43.246 82.133H99.52a180.825 180.825 0 01104.277-82.133zM99.53 302.53h61.254c12.309 34.063 29.192 62.274 43.192 82.168A180.983 180.983 0 0199.53 302.531zm171.461 0h48.137c-15.121 37.367-35.86 66.38-48.137 81.703zm-29.988 81.477c-12.281-15.266-32.961-44.117-48.106-81.477h48.106zm67.21.648c13.958-19.914 30.763-48.105 43.024-82.125h61.235a180.791 180.791 0 01-104.258 82.125zm173.798-120.465c0 4.602-3.746 8.348-8.352 8.348H38.34c-4.606 0-8.352-3.746-8.352-8.348v-106.09c0-4.605 3.746-8.351 8.352-8.351h435.32c4.606 0 8.352 3.746 8.352 8.352zm0 0" /><path d="M180.48 173.02c-3.882-2.133-7.68-3.208-11.394-3.208-3.824 0-6.188 1.352-7.086 4.051l-15.023 42.871-10.801-36.285c-1.012-3.375-3.883-5.066-8.606-5.066-4.726 0-7.597 1.687-8.61 5.066l-10.8 36.285-15.023-42.87c-.903-2.7-3.32-4.052-7.258-4.052-3.711 0-7.508 1.043-11.39 3.125-3.884 2.083-5.825 4.532-5.825 7.34 0 .903.281 2.086.844 3.547L95.5 248.801c1.238 3.039 4.559 4.554 9.957 4.554 6.188 0 9.844-1.515 10.973-4.554l11.136-29.367 11.141 29.367c1.121 3.039 4.727 4.554 10.8 4.554 5.513 0 8.888-1.515 10.126-4.554l25.992-64.977c.45-.902.676-1.969.676-3.207 0-2.926-1.942-5.457-5.82-7.597zm0 0M309.086 173.02c-3.883-2.133-7.68-3.208-11.395-3.208-3.824 0-6.187 1.352-7.086 4.051l-15.023 42.871-10.8-36.285c-1.012-3.375-3.884-5.066-8.61-5.066-4.723 0-7.594 1.687-8.606 5.066l-10.8 36.285-15.02-42.87c-.902-2.7-3.32-4.052-7.258-4.052-3.715 0-7.511 1.043-11.394 3.125-3.88 2.083-5.82 4.532-5.82 7.34 0 .903.277 2.086.843 3.547l25.988 64.977c1.239 3.039 4.56 4.554 9.958 4.554 6.187 0 9.847-1.515 10.972-4.554l11.137-29.367 11.14 29.367c1.125 3.039 4.727 4.554 10.801 4.554 5.512 0 8.887-1.515 10.13-4.554l25.987-64.977c.45-.902.676-1.969.676-3.207 0-2.926-1.937-5.457-5.82-7.597zm0 0M437.691 173.02c-3.882-2.133-7.68-3.208-11.394-3.208-3.824 0-6.188 1.352-7.086 4.051l-15.024 42.871-10.8-36.285c-1.012-3.375-3.883-5.066-8.61-5.066-4.722 0-7.593 1.687-8.605 5.066l-10.8 36.285-15.02-42.87c-.903-2.7-3.32-4.052-7.258-4.052-3.715 0-7.512 1.043-11.395 3.125-3.879 2.083-5.82 4.532-5.82 7.34 0 .903.277 2.086.844 3.547l25.988 64.977c1.238 3.039 4.559 4.554 9.957 4.554 6.187 0 9.848-1.515 10.973-4.554l11.136-29.367 11.141 29.367c1.125 3.039 4.727 4.554 10.8 4.554 5.512 0 8.887-1.515 10.13-4.554l25.988-64.977c.45-.902.676-1.969.676-3.207 0-2.926-1.938-5.457-5.82-7.597zm0 0" /></svg>;
+}
+export function facebook013(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 1 511 512" {...props}><path d="M180 512H98.008c-13.695 0-24.836-11.14-24.836-24.836V302.227H25.336C11.64 302.227.5 291.082.5 277.39v-79.246c0-13.696 11.14-24.836 24.836-24.836h47.836v-39.684c0-39.348 12.355-72.824 35.726-96.805C132.375 12.73 165.184 0 203.778 0l62.53.102c13.672.023 24.794 11.164 24.794 24.835v73.579c0 13.695-11.137 24.836-24.829 24.836l-42.101.015c-12.84 0-16.11 2.574-16.809 3.363-1.152 1.31-2.523 5.008-2.523 15.223v31.352h58.27c4.386 0 8.636 1.082 12.288 3.12 7.88 4.403 12.778 12.727 12.778 21.723l-.031 79.247c0 13.687-11.141 24.828-24.836 24.828h-58.47v184.941C204.84 500.86 193.696 512 180 512zm-76.813-30.016h71.633V288.79c0-9.144 7.442-16.582 16.582-16.582h66.727l.027-68.883h-66.758c-9.14 0-16.578-7.437-16.578-16.582v-44.789c0-11.726 1.192-25.062 10.043-35.086 10.696-12.117 27.551-13.515 39.301-13.515l36.922-.016V30.109l-57.332-.093c-62.024 0-100.566 39.703-100.566 103.609v53.117c0 9.14-7.438 16.582-16.579 16.582H30.516v68.883h56.093c9.141 0 16.579 7.438 16.579 16.582zM266.25 30.117h.004zm0 0" /></svg>;
+}
+export function instagram014(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" {...props}><path d="M373.406 0H138.594C62.172 0 0 62.172 0 138.594V373.41C0 449.828 62.172 512 138.594 512H373.41C449.828 512 512 449.828 512 373.41V138.594C512 62.172 449.828 0 373.406 0zm108.578 373.41c0 59.867-48.707 108.574-108.578 108.574H138.594c-59.871 0-108.578-48.707-108.578-108.574V138.594c0-59.871 48.707-108.578 108.578-108.578H373.41c59.867 0 108.574 48.707 108.574 108.578zm0 0" /><path d="M256 116.004c-77.195 0-139.996 62.8-139.996 139.996S178.804 395.996 256 395.996 395.996 333.196 395.996 256 333.196 116.004 256 116.004zm0 249.976c-60.64 0-109.98-49.335-109.98-109.98 0-60.64 49.34-109.98 109.98-109.98 60.645 0 109.98 49.34 109.98 109.98 0 60.645-49.335 109.98-109.98 109.98zm0 0M399.344 66.285c-22.813 0-41.367 18.559-41.367 41.367 0 22.813 18.554 41.371 41.367 41.371s41.37-18.558 41.37-41.37-18.558-41.368-41.37-41.368zm0 52.719c-6.258 0-11.352-5.094-11.352-11.352 0-6.261 5.094-11.351 11.352-11.351 6.261 0 11.355 5.09 11.355 11.351 0 6.258-5.094 11.352-11.355 11.352zm0 0" /></svg>;
+}
+export function linkedin015(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-28 0 512 512.001" {...props}><path d="M104.36 151.625H18.046C8.37 151.625.5 159.496.5 169.172v325.285C.5 504.129 8.371 512 18.047 512h86.312c9.672 0 17.543-7.871 17.543-17.543V169.172c0-9.676-7.87-17.547-17.543-17.547zm-12.5 330.332H30.542V181.668h61.316zm0 0M61.203 0C27.453 0 0 27.453 0 61.2c0 33.75 27.453 61.202 61.203 61.202 33.742 0 61.2-27.453 61.2-61.203C122.402 27.453 94.948 0 61.202 0zm0 92.36c-17.183 0-31.16-13.977-31.16-31.16 0-17.18 13.977-31.157 31.16-31.157 17.18 0 31.156 13.977 31.156 31.156 0 17.18-13.976 31.16-31.156 31.16zm0 0M401.047 189.762c-20.633-17.223-46.863-26.434-73.832-25.934a113.183 113.183 0 00-47.95 11.66v-7.101c0-9.254-7.503-16.758-16.757-16.758h-87.883c-9.254 0-16.758 7.504-16.758 16.758v326.855c0 9.258 7.504 16.758 16.758 16.758h89.617c8.297 0 15.024-6.727 15.024-15.02V302.102c0-16.684 13.054-30.801 29.726-31.297 17.328-.512 31.586 13.43 31.586 30.644v195.844c0 8.121 6.586 14.707 14.707 14.707h86.13c8.12 0 14.706-6.586 14.706-14.707V307.406c0-45.547-20.074-88.43-55.074-117.644zm25.031 292.195h-55.453V301.449c0-33.469-27.23-60.699-60.703-60.699-33.469 0-60.7 27.23-60.7 60.7v180.507H187.91V181.668h61.313V203.5h.02a14.948 14.948 0 003.757 9.957c5.496 6.211 14.992 6.79 21.203 1.29a83.224 83.224 0 0153.567-20.884c19.761-.375 38.94 6.367 54.027 18.961 28.144 23.492 44.281 57.965 44.281 94.582zm0 0" /></svg>;
+}
+export function like016(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-26 1 511 512" {...props}><path d="M344.023 512c-.02 0-41.105-.05-54.351-.05-68.348 0-117.324-5.938-154.125-18.688-7.84-2.75-14.692-5.805-20.734-8.496-10.7-4.766-19.145-8.528-27.907-8.528H51.207c-10.809 0-26.46-1.156-37.508-11.156C1.867 454.375.5 438.848.5 428.102L.508 264.89c0-14.985 4.601-27.637 13.312-36.586 6.258-6.438 17.828-14.11 37.387-14.11.957 0 2.016.012 3.164.024 11.156.125 29.512.32 41.387-9.989a267.362 267.362 0 012.058-3.855c.426-.848.829-1.543 1.13-2.07.105-.18.214-.36.316-.559.82-1.95 1.793-3.676 2.941-5.207 6.328-10.59 13.45-20.465 19.64-27.219 13.677-14.96 26.352-22.699 37.536-29.53 13.129-8.02 22.617-13.813 30.875-29.938l.578-1.122c12.363-24.105 17.48-34.082 20.574-46.05 1.047-4.059 1.508-8.325 1.367-12.676-1.12-16.89 7.227-42.816 34.97-45.91L248.57 0h.832c16.887 0 31.024 4 42.024 11.883 16.37 11.734 24.672 30.8 24.672 56.664 0 46.133-11.282 83.043-21.016 106.3l115.856 14.548c27.753 1.601 49.19 26.738 47.917 56.375-.675 15.714-7.19 29.882-17.109 39.777 9.375 9.203 14.36 21.648 13.813 35.969-.18 14.351-4.582 25.82-13.086 34.09-3.286 3.195-6.961 5.671-10.848 7.585 6.578 8.696 10.129 19.282 10.129 30.489 0 15.285-5.785 29.234-16.293 39.273-8.563 8.18-19.762 13.305-31.633 14.645 1.848 5.113 2.703 10.675 2.473 16.53-.024 2.333-.246 6.638-.582 8.68-1.531 9.235-5.25 16.551-11.375 22.376-11.559 11-25.504 16.816-40.32 16.816zM51.207 244.195c-14.512 0-20.7 6.188-20.7 20.7l-.007 163.21c0 5.348.578 12.247 3.328 14.739 1.402 1.265 5.527 3.394 17.379 3.394h35.7c15.14 0 27.269 5.407 40.113 11.125 5.789 2.582 11.773 5.246 18.402 7.574 33.035 11.442 80.234 17.016 144.25 17.016 13.254 0 54.371.05 54.371.05 7.05 0 13.66-2.878 19.629-8.554.758-.722 1.785-1.699 2.414-5.328.086-.89.2-3.152.219-4.078l-.016-.324.031-.696c.262-5.84-2.617-10.132-8.554-12.77a17.78 17.78 0 01-10.5-17.98c.925-9.66 9.558-16.855 19.23-16.043l20.168 1.707c6.797.243 13.375-2.183 18.074-6.671 4.59-4.387 7.02-10.47 7.02-17.586 0-9.633-7.028-20.543-22.453-21.743a16.304 16.304 0 01-11.301-5.882 16.278 16.278 0 01-3.578-12.203c.988-8.325 8.078-14.497 16.437-14.313 9.211.172 24.625.469 30.696-5.437.972-.942 3.921-3.813 4.003-13.102l.012-.508c.567-13.246-9.98-18.414-18.93-20.426h-.007c-7.43-1.671-12.54-8.652-11.89-16.234.651-7.582 6.874-13.586 14.48-13.965 10.253-.52 19.078-11.91 19.66-25.387.574-13.355-8.367-24.636-19.93-25.144l-1.21-.106-117.981-14.812c-9.047-1.137-16.84-6.32-21.38-14.223-4.542-7.902-5.097-17.246-1.523-25.633 7.184-16.855 19.235-51.738 19.235-96.011 0-33.543-18.903-38.38-35.758-38.543-3.305.523-4.985 2.004-6.262 5.406-1.289 3.434-1.426 7.406-1.363 8.762l.031.36-.008.128c.274 7.336-.496 14.578-2.293 21.523-3.925 15.192-9.879 26.801-22.922 52.235l-.574 1.117c-12.105 23.637-27.273 32.898-41.937 41.856-9.942 6.074-20.227 12.351-31.04 24.183-4.964 5.414-11.128 14.067-16.495 23.156l-.942 1.5c-.598 1.309-1.172 2.305-1.57 3-.11.196-.23.387-.336.598l-.32.629a184.202 184.202 0 00-2.98 5.656l-1.09 2.164-1.716 1.715c-20.695 20.695-50.27 20.375-64.48 20.223a187.954 187.954 0 00-2.836-.024zm314.926 223.653l-.024.136c.004-.023.008-.05.016-.074zm.012-.059l-.012.059zm.175-3.484c0 .039.004.074.004.105zm25.297-122.278h.024-.024zm19.145-42.203h-.028zm0 0" /></svg>;
+}
+export function dislike017(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-26 1 511 512" {...props}><path d="M249.402 512h-.832l-.828-.094c-15.433-1.719-27.187-11.265-32.25-26.183-3.078-9.067-2.86-17.371-2.722-19.688.144-4.367-.313-8.644-1.368-12.715-3.09-11.965-8.207-21.941-20.57-46.043l-.574-1.12c-8.262-16.13-17.75-21.927-30.88-29.946-11.183-6.828-23.858-14.57-37.546-29.54-6.18-6.745-13.305-16.624-19.629-27.21-1.137-1.516-2.105-3.234-2.941-5.207-.102-.195-.211-.375-.317-.559-.3-.527-.703-1.222-1.125-2.07a265.518 265.518 0 01-2.062-3.855c-11.875-10.31-30.23-10.11-41.39-9.989-1.145.012-2.204.024-3.161.024-19.559 0-31.129-7.672-37.387-14.106C5.113 274.746.508 262.094.508 247.11L.5 83.9c0-22.442 7.535-31.852 13.2-36.981 11.046-10 26.698-11.156 37.507-11.156h35.7c8.761 0 17.21-3.762 27.906-8.528 6.042-2.691 12.894-5.746 20.675-8.476C172.348 5.988 221.324.05 289.672.05 302.918.05 344.004 0 344.004 0c14.836 0 28.781 5.816 40.348 16.824 6.117 5.817 9.84 13.133 11.367 22.367.336 2.043.558 6.348.582 8.68.234 5.856-.625 11.418-2.469 16.531 11.871 1.34 23.066 6.465 31.633 14.649 10.504 10.035 16.293 23.984 16.293 39.273 0 11.207-3.555 21.79-10.13 30.485 3.884 1.918 7.563 4.39 10.845 7.586 8.507 8.27 12.91 19.738 13.086 34.09.55 14.32-4.438 26.769-13.813 35.968 9.922 9.895 16.434 24.067 17.113 39.781 1.274 29.633-20.168 54.774-47.921 56.371l-115.852 14.547c9.734 23.258 21.012 60.168 21.012 106.301 0 25.863-8.297 44.93-24.668 56.664C280.426 508.004 266.29 512 249.402 512zm-6.687-44.152c-.059 1.375.082 5.328 1.363 8.742 1.277 3.398 2.957 4.883 6.258 5.406 10.043-.121 17.984-2.226 23.613-6.262 8.063-5.777 12.153-16.64 12.153-32.28 0-44.274-12.055-79.157-19.235-96.013-3.574-8.386-3.023-17.726 1.52-25.628 4.539-7.907 12.332-13.09 21.383-14.227l118.582-14.89.605-.024c11.563-.508 20.504-11.79 19.93-25.149-.582-13.476-9.403-24.867-19.668-25.386-7.594-.38-13.82-6.383-14.469-13.965-.652-7.582 4.457-14.563 11.887-16.234 8.957-2.008 19.508-7.18 18.941-20.426l-.015-.508c-.083-9.29-3.032-12.16-4.004-13.102-6.07-5.906-21.485-5.609-30.696-5.437-8.355.195-15.449-5.988-16.437-14.309A16.292 16.292 0 01378 145.953a16.335 16.335 0 0111.3-5.89c10.817-.836 22.458-7.997 22.458-21.739 0-7.117-2.43-13.199-7.02-17.586-4.699-4.492-11.27-6.918-18.074-6.672l-20.168 1.707c-9.672.82-18.305-6.378-19.23-16.05a17.779 17.779 0 0110.504-17.977c5.933-2.633 8.812-6.93 8.55-12.766l-.027-.695.016-.328c-.024-.926-.137-3.184-.22-4.074-.632-3.633-1.66-4.606-2.413-5.32C357.703 32.879 351.094 30 344.023 30c.02 0-41.097.047-54.351.047-64.016 0-111.215 5.574-144.305 17.039-6.57 2.305-12.558 4.973-18.347 7.55-12.844 5.72-24.973 11.126-40.114 11.126H51.207c-11.852 0-15.977 2.129-17.375 3.398-2.754 2.492-3.332 9.39-3.332 14.738l.008 163.207c0 14.508 6.187 20.7 20.699 20.7.856 0 1.809-.012 2.836-.02 14.219-.148 43.785-.476 64.484 20.223l1.715 1.715 1.086 2.168a183.755 183.755 0 002.98 5.652l.325.633c.105.21.222.398.332.594.406.707.988 1.722 1.574 3.003l.149.16.789 1.337c5.367 9.085 11.53 17.738 16.484 23.144 10.824 11.84 21.105 18.121 31.05 24.195 14.665 8.957 29.833 18.22 41.942 41.864l.57 1.113c13.047 25.43 19 37.035 22.922 52.227 1.797 6.945 2.567 14.187 2.293 21.527zm168.012-255.672h.027-.027zM366.324 47.59c0 .031-.004.066-.004.105zm-.215-3.574l.024.125-.008-.051c-.008-.024-.012-.05-.016-.074zm0 0" /></svg>;
+}
+export function hashtag005(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.999" {...props}><path d="M374.328 512c-11.426 0-22.937-4.879-32.676-14.21-4.636-4.442-7.632-11.47-7.632-17.895v-65.688H178.906v57.43a40.281 40.281 0 01-24.508 37.097c-16.07 6.86-34.203 2.766-48.511-10.945-4.637-4.441-7.633-11.469-7.633-17.894v-65.688h-57.39a40.286 40.286 0 01-37.102-24.508c-6.856-16.066-2.766-34.203 10.949-48.508 4.437-4.636 11.465-7.632 17.894-7.632h65.649V178.44h-57.39a40.283 40.283 0 01-37.102-24.503c-6.856-16.07-2.766-34.208 10.949-48.512 4.437-4.637 11.465-7.633 17.894-7.633h65.649v-57.43a40.28 40.28 0 0124.508-37.101C138.832-3.594 156.965.5 171.27 14.21c4.64 4.441 7.636 11.469 7.636 17.894v65.688H334.02v-57.43a40.286 40.286 0 0124.507-37.101C374.594-3.594 392.73.5 407.035 14.21c4.637 4.437 7.633 11.465 7.633 17.894v65.688h57.469a40.281 40.281 0 0137.097 24.508c6.86 16.066 2.766 34.203-10.945 48.508-4.445 4.636-11.469 7.632-17.898 7.632h-65.723V333.56h65.723c6.43 0 13.453 2.996 17.898 7.632 13.711 14.305 17.805 32.442 10.945 48.512a40.278 40.278 0 01-37.097 24.504h-57.469v57.43a40.278 40.278 0 01-24.504 37.097c-5.133 2.192-10.477 3.266-15.836 3.266zm-10.3-34.434c4.988 4.145 10.03 5.414 14.359 3.57a10.31 10.31 0 006.273-9.5v-69.84c0-9.702 7.895-17.597 17.602-17.597h69.875c4.144 0 7.87-2.465 9.496-6.277 1.847-4.324.578-9.367-3.567-14.356h-75.804c-9.707 0-17.602-7.894-17.602-17.597V166.03c0-9.703 7.895-17.597 17.602-17.597h75.804c4.145-4.989 5.414-10.032 3.567-14.36a10.315 10.315 0 00-9.496-6.273h-69.875c-9.707 0-17.602-7.895-17.602-17.602V34.434c-4.988-4.145-10.031-5.414-14.355-3.57a10.318 10.318 0 00-6.278 9.5v69.84c0 9.702-7.894 17.597-17.597 17.597H166.492c-9.703 0-17.597-7.895-17.597-17.598v-75.77c-4.989-4.144-10.036-5.413-14.36-3.57a10.315 10.315 0 00-6.273 9.5v69.84c0 9.703-7.895 17.598-17.598 17.598h-75.73c-4.149 4.992-5.418 10.031-3.57 14.36a10.32 10.32 0 009.5 6.273h69.8c9.703 0 17.598 7.894 17.598 17.601V345.97c0 9.703-7.895 17.597-17.598 17.597h-75.73c-4.149 4.993-5.418 10.036-3.57 14.36a10.318 10.318 0 009.5 6.277h69.8c9.703 0 17.598 7.895 17.598 17.598v75.765c4.992 4.149 10.031 5.414 14.36 3.57a10.31 10.31 0 006.273-9.5v-69.835c0-9.703 7.898-17.598 17.601-17.598H346.43c9.703 0 17.597 7.895 17.597 17.598zm-17.598-114H166.492c-9.703 0-17.597-7.894-17.597-17.597V166.03c0-9.703 7.894-17.597 17.597-17.597H346.43c9.703 0 17.597 7.894 17.597 17.597V345.97c0 9.703-7.894 17.597-17.597 17.597zM178.906 333.56H334.02V178.44H178.906zm0 0" /></svg>;
+}
+export function youtube018(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -62 512.002 512" {...props}><path d="M334.809 170.992l-113.114-61.89c-6.504-3.559-14.191-3.426-20.566.351-6.379 3.781-10.184 10.461-10.184 17.875v122.719c0 7.379 3.782 14.047 10.118 17.832 3.308 1.976 6.976 2.969 10.652 2.969a20.74 20.74 0 009.848-2.504L334.68 207.52a20.772 20.772 0 0010.937-18.223 20.763 20.763 0 00-10.808-18.305zm-113.86 63.617v-91.718l84.54 46.257zm0 0" /><path d="M508.234 91.527l-.023-.234c-.434-4.121-4.75-40.777-22.57-59.422C465.043 9.941 441.69 7.277 430.46 6a135.45 135.45 0 01-2.543-.305l-.895-.093C359.336.68 257.113.008 256.09.004L256 0l-.09.004C254.887.008 152.664.68 84.367 5.602l-.902.093c-.727.098-1.528.188-2.399.29-11.101 1.28-34.203 3.949-54.859 26.671C9.234 51.102 4.328 86.973 3.824 91.004l-.058.523C3.613 93.242 0 134.067 0 175.051v38.312c0 40.985 3.613 81.809 3.766 83.528l.027.257c.434 4.055 4.746 40.04 22.484 58.692 19.368 21.195 43.856 24 57.028 25.508 2.082.238 3.875.441 5.097.656l1.184.164c39.082 3.719 161.617 5.55 166.812 5.625l.157.004.156-.004c1.023-.004 103.242-.676 170.93-5.598l.894-.093c.856-.114 1.817-.215 2.871-.325 11.04-1.172 34.016-3.605 54.387-26.02 16.973-18.448 21.883-54.32 22.383-58.347l.058-.523c.153-1.719 3.77-42.54 3.77-83.524v-38.312c-.004-40.985-3.617-81.805-3.77-83.524zm-26.238 121.836c0 37.934-3.312 77-3.625 80.586-1.273 9.88-6.45 32.574-14.719 41.563-12.75 14.027-25.847 15.418-35.41 16.43a164.16 164.16 0 00-3.195.359c-65.469 4.734-163.832 5.46-168.363 5.488-5.082-.074-125.825-1.922-163.715-5.441-1.942-.317-4.04-.559-6.25-.809-11.215-1.285-26.567-3.043-38.371-16.027l-.278-.297c-8.125-8.465-13.152-29.688-14.43-41.149-.238-2.71-3.636-42.238-3.636-80.703v-38.312c0-37.89 3.305-76.914 3.625-80.574 1.52-11.637 6.793-32.957 14.719-41.575 13.14-14.453 26.996-16.054 36.16-17.113.875-.102 1.691-.195 2.445-.293 66.422-4.758 165.492-5.465 169.047-5.492 3.555.023 102.59.734 168.422 5.492.808.102 1.691.203 2.64.313 9.426 1.074 23.672 2.699 36.747 16.644l.12.129c8.126 8.465 13.153 30.059 14.43 41.75.227 2.559 3.637 42.172 3.637 80.719zm0 0" /></svg>;
+}
+export function messenger019(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}><path d="M511.945 245.64c-1.53-66.98-29.011-129.398-77.382-175.753-48.301-46.29-111.747-71.082-178.59-69.84-66.871-1.254-130.286 23.555-178.586 69.84C29.016 116.242 1.535 178.66.004 245.637l-.004.21v.212a241.633 241.633 0 0080.32 178.64v61.887c0 12.012 8.387 22.476 19.942 24.883 1.71.355 3.433.531 5.148.531a24.92 24.92 0 0013.242-3.813l49.739-31.07c28.05 9.82 57.32 14.797 87.078 14.797h.375c1.644.031 3.277.047 4.918.047 65.105-.004 126.656-24.707 173.8-69.887 48.372-46.355 75.852-108.77 77.383-175.75l.008-.344zm-98.16 154.755c-41.515 39.785-95.707 61.539-153.039 61.539a245 245 0 01-4.476-.043l-.165-.004h-.16a233.044 233.044 0 01-80.918-14.29c-6.433-2.359-13.441-1.636-19.222 1.977l-45.457 28.395v-56.926c0-6.348-2.762-12.39-7.575-16.578-45.867-39.871-72.37-97.578-72.742-158.352 1.395-58.898 25.586-113.773 68.133-154.547 42.594-40.816 98.559-62.644 157.512-61.492l.297.004.297-.004C315.262 28.91 371.19 50.75 413.785 91.566c42.508 40.739 66.695 95.57 68.13 154.414-1.43 58.848-25.618 113.676-68.13 154.415zm0 0" /><path d="M394.566 163.723L299.25 215.69l-57.098-48.96c-9.879-8.47-24.824-7.895-34.02 1.304L87.623 288.547c-4.72 4.75-7.31 11.047-7.286 17.738.02 6.695 2.644 12.98 7.39 17.695 4.84 4.81 11.172 7.317 17.61 7.317 4.086 0 8.21-1.008 12.027-3.078l95.32-51.969 57.157 48.98c9.879 8.47 24.824 7.895 34.02-1.304l120.53-120.531c8.688-8.77 9.645-22.805 2.239-32.672-7.41-9.914-21.192-12.922-32.063-7zm-108.683 135.71l-57.895-49.613c-4.047-3.468-9.164-5.258-14.312-5.258-3.594 0-7.203.872-10.469 2.653l-69.895 38.105 92.793-92.793 57.829 49.59c6.875 5.895 16.836 6.945 24.793 2.61l70.066-38.204zm0 0" /></svg>;
+}
+export function telegram020(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -60 512 511" {...props}><path d="M507.773 7.293c-5.015-6.11-13.332-8.375-20.726-5.656L17.39 171.359C8.008 174.77 1.42 183.04.199 192.941c-1.21 9.856 3.133 19.418 11.281 24.922l67.133 45.828a21.13 21.13 0 0021.832 1.243L246.07 188.14l-113.496 84.746c-5.328 3.98-8.512 10.328-8.512 16.976v78.5c0 8.098 4.442 15.516 11.59 19.367a22.028 22.028 0 0022.61-1.015l51.004-33.832 50.156 34.199c4.394 3.012 9.629 4.598 14.91 4.598 1.785 0 3.578-.184 5.344-.551 7.043-1.469 13.273-5.82 17.097-11.938L509.262 28.81c4.136-6.746 3.543-15.38-1.489-21.516zM273.211 360.156l-51.941-35.418a21.134 21.134 0 00-11.938-3.703c-4.07 0-8.144 1.184-11.71 3.55l-43.544 28.884v-59.176l200.41-149.645c8.95-6.683 11.203-18.847 5.239-28.293-5.97-9.445-17.918-12.636-27.797-7.425L91.148 235.902l-56.78-38.761L466.854 40.85zm0 0" /></svg>;
+}
+export function chat021(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.998" {...props}><path d="M512.441 245.64c-1.527-66.98-29.011-129.398-77.379-175.753-48.3-46.285-111.73-71.078-178.59-69.84-66.882-1.254-130.288 23.555-178.585 69.84C29.516 116.242 2.035 178.66.504 245.637l-.004.21v.212c.352 68.257 29.578 133.156 80.32 178.64v61.887c0 12.012 8.387 22.473 19.938 24.879 1.71.355 3.433.535 5.148.535 4.649 0 9.219-1.3 13.242-3.813l49.739-31.074c28.05 9.824 57.32 14.801 87.078 14.801h.375c1.648.031 3.277.047 4.922.047 65.105-.004 126.656-24.711 173.8-69.887 48.368-46.355 75.852-108.773 77.38-175.75l.007-.344zm-98.156 154.755c-42.594 40.82-98.535 62.66-157.515 61.496l-.165-.004h-.164c-27.675.062-54.914-4.754-80.918-14.29-6.43-2.355-13.433-1.636-19.218 1.977l-45.457 28.395v-56.926a21.96 21.96 0 00-7.578-16.578c-45.864-39.871-72.368-97.582-72.739-158.352C31.93 187.215 56.117 132.34 98.664 91.566c42.59-40.816 98.547-62.648 157.512-61.492l.297.004.297-.004C315.738 28.93 371.69 50.75 414.285 91.566c42.508 40.739 66.695 95.57 68.13 154.414-1.435 58.848-25.622 113.676-68.13 154.415zm0 0" /><path d="M366.477 174.273H146.469c-8.29 0-15.012 6.72-15.012 15.012 0 8.293 6.723 15.016 15.012 15.016h220.008c8.293 0 15.015-6.723 15.015-15.016s-6.722-15.012-15.015-15.012zm0 0M366.477 240.688H146.469c-8.29 0-15.012 6.722-15.012 15.011 0 8.293 6.723 15.016 15.012 15.016h220.008c8.293 0 15.015-6.723 15.015-15.016 0-8.289-6.722-15.012-15.015-15.012zm0 0M366.477 307.102H258.305c-8.29 0-15.012 6.722-15.012 15.015 0 8.29 6.723 15.012 15.012 15.012h108.172c8.293 0 15.015-6.723 15.015-15.012 0-8.293-6.722-15.015-15.015-15.015zm0 0" /></svg>;
+}
+export function happy022(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512" {...props}><path d="M437.02 74.98C388.668 26.63 324.379 0 256 0S123.332 26.629 74.98 74.98C26.63 123.332 0 187.621 0 256s26.629 132.668 74.98 181.02C123.332 485.37 187.621 512 256 512s132.668-26.629 181.02-74.98C485.37 388.668 512 324.379 512 256s-26.629-132.668-74.98-181.02zm-21.235 340.805c-42.68 42.68-99.426 66.188-159.785 66.188s-117.105-23.504-159.785-66.188C53.535 373.105 30.027 316.36 30.027 256S53.535 138.895 96.215 96.215C138.895 53.535 195.64 30.03 256 30.03s117.105 23.504 159.785 66.184c42.68 42.68 66.188 99.426 66.188 159.785s-23.508 117.105-66.188 159.785zm0 0" /><path d="M199.71 196.219c0 8.293 6.724 15.015 15.017 15.015s15.011-6.722 15.011-15.015c0-33.633-27.363-60.996-60.996-60.996s-60.996 27.363-60.996 60.996c0 8.293 6.723 15.015 15.016 15.015s15.015-6.722 15.015-15.015c0-17.074 13.891-30.969 30.965-30.969 17.078 0 30.969 13.895 30.969 30.969zm0 0M347.95 135.223c-33.634 0-60.997 27.363-60.997 60.996 0 8.293 6.723 15.015 15.016 15.015 8.289 0 15.011-6.722 15.011-15.015 0-17.074 13.895-30.969 30.97-30.969 17.077 0 30.968 13.895 30.968 30.969 0 8.293 6.723 15.015 15.016 15.015 8.289 0 15.011-6.722 15.011-15.015 0-33.633-27.363-60.996-60.996-60.996zm0 0M347.227 258.215c-8.293 0-15.016 6.723-15.016 15.015 0 40.54-32.98 73.52-73.52 73.52-40.539 0-73.52-32.98-73.52-73.52 0-8.293-6.722-15.015-15.01-15.015-8.294 0-15.016 6.722-15.016 15.015 0 57.098 46.453 103.547 103.546 103.547 57.098 0 103.551-46.449 103.551-103.547 0-8.293-6.722-15.015-15.015-15.015zm0 0" /></svg>;
+}
+export function sad023(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 512 512" {...props}><path d="M437.02 74.98C388.668 26.63 324.379 0 256 0S123.332 26.629 74.98 74.98C26.63 123.332 0 187.621 0 256s26.629 132.668 74.98 181.02C123.332 485.37 187.621 512 256 512s132.668-26.629 181.02-74.98C485.37 388.668 512 324.379 512 256s-26.629-132.668-74.98-181.02zm-21.235 340.805c-42.68 42.68-99.426 66.188-159.785 66.188s-117.105-23.508-159.785-66.188C53.535 373.105 30.027 316.36 30.027 256S53.535 138.895 96.215 96.215C138.895 53.535 195.64 30.027 256 30.027s117.105 23.508 159.785 66.188c42.68 42.68 66.188 99.426 66.188 159.785s-23.508 117.105-66.188 159.785zm0 0" /><path d="M199.71 196.219c0 8.293 6.724 15.011 15.017 15.011s15.011-6.718 15.011-15.011c0-33.637-27.36-60.996-60.996-60.996-33.633 0-60.996 27.359-60.996 60.996 0 8.293 6.723 15.011 15.016 15.011s15.015-6.718 15.015-15.011c0-17.078 13.891-30.969 30.965-30.969 17.078 0 30.969 13.89 30.969 30.969zm0 0M347.95 135.223c-33.634 0-60.997 27.359-60.997 60.996 0 8.293 6.723 15.011 15.016 15.011 8.289 0 15.011-6.718 15.011-15.011 0-17.078 13.895-30.969 30.97-30.969 17.077 0 30.968 13.89 30.968 30.969 0 8.293 6.723 15.011 15.016 15.011 8.289 0 15.011-6.718 15.011-15.011 0-33.633-27.36-60.996-60.996-60.996zm0 0M258.691 258.215c-57.097 0-103.546 46.453-103.546 103.55 0 8.29 6.722 15.012 15.015 15.012 8.29 0 15.012-6.722 15.012-15.011 0-40.54 32.98-73.52 73.52-73.52 40.538 0 73.519 32.98 73.519 73.52 0 8.289 6.723 15.011 15.016 15.011 8.289 0 15.011-6.722 15.011-15.011 0-57.098-46.449-103.551-103.547-103.551zm0 0" /></svg>;
+}
+export function file024(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-54 0 512 512.001" {...props}><path d="M398.914 123.762L280.313 5.156a17.465 17.465 0 00-8.641-4.73c-.059-.016-.117-.035-.176-.047A17.736 17.736 0 00267.867 0H18.2C8.164 0 0 8.164 0 18.203v475.598C0 503.836 8.164 512 18.203 512h367.66c10.04 0 18.203-8.164 18.203-18.2V136.196c0-4.699-1.832-9.117-5.152-12.433zm-115.418-72.95l70.371 70.372h-70.37zM30.031 481.973V30.033H253.47v106.163c0 8.293 6.722 15.016 15.015 15.016h105.551v330.762zm0 0" /><path d="M327.242 235.762h-191.8c-8.294 0-15.016 6.722-15.016 15.015s6.722 15.012 15.015 15.012h191.801c8.29 0 15.012-6.719 15.012-15.012s-6.723-15.015-15.012-15.015zm0 0M327.242 304.629h-191.8c-8.294 0-15.016 6.723-15.016 15.012 0 8.293 6.722 15.015 15.015 15.015h191.801c8.29 0 15.012-6.722 15.012-15.015 0-8.29-6.723-15.012-15.012-15.012zm0 0M327.242 373.492h-191.8c-8.294 0-15.016 6.723-15.016 15.016s6.722 15.015 15.015 15.015h191.801c8.29 0 15.012-6.722 15.012-15.015s-6.723-15.016-15.012-15.016zm0 0M91.547 247.844c-.102-.48-.223-.961-.36-1.422-.14-.473-.312-.942-.5-1.39a17.78 17.78 0 00-.62-1.325 15.37 15.37 0 00-2.626-3.55 15.68 15.68 0 00-1.101-.993c-.38-.309-.77-.601-1.18-.871s-.832-.52-1.262-.75c-.43-.23-.882-.441-1.332-.629-.449-.191-.921-.351-1.379-.504a20.232 20.232 0 00-1.433-.36 15.42 15.42 0 00-1.45-.21 14.92 14.92 0 00-2.952 0c-.493.043-.98.12-1.465.21-.477.102-.961.223-1.418.36a16.152 16.152 0 00-2.715 1.133 15.24 15.24 0 00-2.453 1.621 15.784 15.784 0 00-2.09 2.094c-.3.379-.602.777-.871 1.18-.27.41-.52.832-.75 1.269-.23.434-.442.871-.633 1.324-.187.45-.348.918-.5 1.39-.14.462-.258.942-.36 1.423-.09.48-.167.969-.21 1.46a14.132 14.132 0 000 2.954c.043.48.12.969.21 1.449.102.48.223.961.36 1.434.152.46.313.93.5 1.379a15.997 15.997 0 001.383 2.593c.27.41.57.801.87 1.18a15.784 15.784 0 002.09 2.094c.384.308.782.601 1.192.87.403.27.832.532 1.262.75.433.231.871.442 1.332.634.45.187.91.347 1.383.5.457.14.937.257 1.418.359.48.09.972.168 1.465.219.488.05.98.07 1.472.07.489 0 .989-.02 1.48-.07.481-.051.97-.13 1.45-.219.48-.102.96-.219 1.433-.36.458-.152.93-.312 1.38-.5.449-.19.902-.402 1.331-.632a13.4 13.4 0 001.262-.75c.41-.27.8-.563 1.18-.871a15.68 15.68 0 001.101-.992c.34-.348.684-.72.993-1.102.308-.379.601-.77.87-1.18.27-.41.532-.832.762-1.261.22-.43.438-.88.621-1.332.188-.45.36-.918.5-1.38.141-.472.258-.953.36-1.433s.172-.969.219-1.45c.05-.491.07-.991.07-1.48 0-.492-.02-.992-.07-1.472-.051-.493-.121-.98-.22-1.461zm0 0M91.547 316.707c-.102-.48-.223-.96-.36-1.418-.14-.473-.312-.941-.5-1.394-.183-.45-.402-.891-.62-1.32-.231-.442-.493-.86-.762-1.27-.27-.403-.563-.801-.871-1.184-.309-.379-.653-.75-.993-1.098a14.765 14.765 0 00-1.101-.992c-.38-.312-.77-.601-1.18-.87-.41-.27-.832-.52-1.262-.75a16.61 16.61 0 00-1.332-.634c-.449-.187-.921-.347-1.379-.5-.472-.14-.953-.257-1.433-.359a16.86 16.86 0 00-1.45-.219 14.35 14.35 0 00-2.952 0c-.493.047-.98.13-1.465.219-.477.102-.961.219-1.418.36-.473.152-.934.312-1.383.5-.461.19-.898.402-1.332.632-.43.23-.86.48-1.262.75a13.856 13.856 0 00-2.281 1.863c-.352.348-.68.72-1 1.098-.3.383-.602.781-.871 1.184-.27.41-.52.828-.75 1.27-.23.429-.442.87-.633 1.32-.187.453-.348.921-.5 1.394-.14.457-.258.938-.36 1.418-.09.48-.167.973-.21 1.465a14.115 14.115 0 000 2.953c.043.48.12.969.21 1.45.102.48.223.96.36 1.433.152.457.313.93.5 1.379.191.449.402.89.633 1.32.23.441.48.863.75 1.273.27.399.57.801.87 1.18a15.574 15.574 0 002.09 2.094 15.24 15.24 0 002.454 1.621c.433.23.871.441 1.332.629.45.191.91.351 1.383.5.457.14.937.262 1.418.363.48.09.972.168 1.465.219.488.05.98.07 1.472.07.489 0 .989-.02 1.48-.07.481-.05.97-.129 1.45-.219.48-.101.96-.222 1.433-.363.458-.149.93-.309 1.38-.5a15.334 15.334 0 002.593-1.379c.41-.27.8-.562 1.18-.871.383-.313.754-.652 1.101-.992.34-.352.684-.719.993-1.102.308-.379.601-.781.87-1.18.27-.41.532-.832.762-1.273.22-.43.438-.871.621-1.32.188-.45.36-.922.5-1.38.141-.472.258-.952.36-1.433s.172-.969.219-1.449c.05-.492.07-.992.07-1.484 0-.489-.02-.989-.07-1.47-.051-.491-.121-.983-.22-1.464zm0 0M91.547 385.574a19.61 19.61 0 00-.36-1.43c-.14-.46-.312-.93-.5-1.382-.183-.45-.402-.899-.62-1.332a16.566 16.566 0 00-1.633-2.442c-.309-.379-.653-.75-.993-1.101a15.628 15.628 0 00-3.543-2.621c-.43-.22-.882-.442-1.332-.621a14.237 14.237 0 00-2.812-.86c-.48-.09-.969-.172-1.45-.223a14.92 14.92 0 00-2.952 0c-.493.051-.98.133-1.465.223-.477.098-.961.219-1.418.36-.473.14-.934.308-1.383.5-.461.18-.898.402-1.332.62-.43.231-.86.489-1.262.762-.41.27-.808.559-1.191.871-.38.309-.75.649-1.09.989-.352.351-.68.722-1 1.101-.3.383-.602.77-.871 1.184-.27.41-.52.828-.75 1.258-.23.433-.442.883-.633 1.332-.187.453-.348.922-.5 1.383-.14.468-.258.949-.36 1.43-.09.48-.167.972-.21 1.452-.051.489-.078.993-.078 1.48 0 .493.027.981.078 1.473.043.489.12.98.21 1.461.102.48.223.961.36 1.422.152.469.313.942.5 1.39.191.45.402.892.633 1.321.23.442.48.864.75 1.274.27.398.57.8.87 1.18a15.574 15.574 0 002.09 2.094c.384.308.782.597 1.192.866.403.274.832.524 1.262.754a15.398 15.398 0 002.715 1.13c.457.14.937.26 1.418.35.48.102.972.18 1.465.22.488.05.98.081 1.472.081.489 0 .989-.03 1.48-.082.481-.039.97-.117 1.45-.218.48-.09.96-.211 1.433-.352.458-.148.93-.308 1.38-.5.449-.191.902-.398 1.331-.629a15.361 15.361 0 002.442-1.62c.383-.313.754-.653 1.101-.993.34-.352.684-.723.993-1.102s.601-.78.87-1.18c.27-.41.532-.831.762-1.273.22-.43.438-.87.621-1.32.188-.45.36-.922.5-1.39.141-.462.258-.942.36-1.423.101-.48.172-.972.219-1.46.05-.493.07-.981.07-1.473a14.445 14.445 0 00-.29-2.934zm0 0" /></svg>;
+}
+export function file1025(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-53 1 511 512" {...props}><path d="M399.414 123.762L280.801 5.145a17.494 17.494 0 00-8.621-4.72c-.063-.01-.121-.034-.184-.046A17.794 17.794 0 00268.367 0H18.703C8.664 0 .5 8.164.5 18.203v475.594C.5 503.836 8.664 512 18.703 512h367.66c10.035 0 18.203-8.164 18.203-18.203V136.195a17.494 17.494 0 00-5.152-12.433zM283.996 50.809l70.371 70.375h-70.37zM30.527 481.973V30.027H253.97v106.168c0 8.293 6.722 15.016 15.015 15.016h105.551v330.762zm0 0" /><path d="M330.922 209.195H75.043c-9.402 0-17.055 7.653-17.055 17.059V425.64c0 9.402 7.653 17.054 17.055 17.054h255.879c9.406 0 17.058-7.652 17.058-17.054V226.254c0-9.406-7.652-17.059-17.058-17.059zM88.016 306.066h43.316v39.758H88.016zm73.347 0H317.95v39.758H161.363zM317.95 276.04H161.363v-36.816H317.95zm-186.617-36.816v36.816H88.016v-36.816zM88.016 375.852h43.316v36.816H88.016zm73.347 36.816v-36.816H317.95v36.816zm0 0" /></svg>;
+}
+export function playstore026(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-28 0 512 512.001" {...props}><path d="M432.32 215.121L70.805 6.398c-14.778-8.53-32.422-8.53-47.203 0-.122.07-.23.149-.352.22-.21.124-.422.253-.629.39C8.445 15.645 0 30.602 0 47.278v417.445c0 17.066 8.824 32.347 23.602 40.879 7.39 4.265 15.496 6.398 23.601 6.398s16.215-2.133 23.602-6.398l361.52-208.723c14.777-8.531 23.6-23.813 23.6-40.879s-8.823-32.348-23.605-40.879zM30.38 468.273a18.054 18.054 0 01-.352-3.55V47.277c0-2.246.38-4.203.985-5.906l204.324 213.121zM74.203 43.031l234.219 135.227-52.285 54.539zm-6.48 429.68l188.41-196.527 54.152 56.484zm349.586-201.836l-80.25 46.332-60.125-62.715 58.261-60.773 82.114 47.406c7.75 4.477 8.59 11.895 8.59 14.875s-.84 10.398-8.59 14.875zm0 0" /></svg>;
+}
+export function skype028(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 0 511.999 511" {...props}><path d="M487.875 299.984c2.688-14.75 4.047-29.375 4.047-43.5 0-31.793-6.262-62.644-18.613-91.691-12.305-28.938-29.22-54.285-50.266-75.34-21.035-21.039-46.383-37.953-75.344-50.266-29.043-12.351-59.894-18.613-91.695-18.613-14.106 0-28.73 1.363-43.5 4.051C189.53 8.613 163.64.5 135.512.5c-37.23 0-69.465 13.355-95.809 39.695C13.36 66.531 0 98.765 0 136c0 28.152 8.113 54.043 24.125 76.992-2.688 14.754-4.047 29.375-4.047 43.496 0 31.805 6.262 62.657 18.613 91.7 12.309 28.937 29.22 54.289 50.266 75.34 21.035 21.042 46.387 37.952 75.344 50.269 29.043 12.351 59.894 18.613 91.695 18.613 14.098 0 28.719-1.363 43.496-4.05 22.973 16.011 48.863 24.124 77 24.124 37.227 0 69.461-13.355 95.809-39.695C498.64 446.445 512 414.211 512 376.984c0-28.136-8.113-54.03-24.125-77zm-36.8 151.575c-20.802 20.796-45.196 30.906-74.583 30.906-22.816 0-42.894-6.488-61.387-19.836a24.567 24.567 0 00-14.34-4.629c-1.515 0-3.035.145-4.538.434-13.73 2.625-27.266 3.957-40.23 3.957-27.743 0-54.642-5.457-79.946-16.22-25.403-10.8-47.559-25.558-65.863-43.866-18.317-18.32-33.075-40.48-43.868-65.864-10.761-25.308-16.218-52.207-16.218-79.953 0-12.988 1.328-26.523 3.949-40.222 1.258-6.57-.274-13.457-4.203-18.895C36.504 178.906 30.02 158.832 30.02 136c0-29.39 10.109-53.785 30.906-74.578 20.8-20.793 45.199-30.902 74.586-30.902 22.8 0 42.867 6.484 61.355 19.816 5.453 3.937 12.348 5.469 18.91 4.219 13.72-2.63 27.254-3.961 40.227-3.961 27.742 0 54.64 5.457 79.945 16.219 25.403 10.8 47.563 25.562 65.864 43.867 18.316 18.32 33.074 40.48 43.867 65.863 10.765 25.309 16.218 52.207 16.218 79.945 0 12.992-1.328 26.528-3.949 40.23-1.258 6.56.281 13.45 4.215 18.907 13.332 18.48 19.816 38.555 19.816 61.363 0 29.383-10.109 53.774-30.906 74.57zm0 0" /><path d="M320.75 242.586c-9.09-6.14-19.074-11.914-29.68-17.156-10.437-5.153-20.27-9.493-29.226-12.899-6.82-2.594-12.504-5.902-16.899-9.844-3.261-2.921-3.703-5.242-3.703-7.128 0-3.793 1.153-6.004 4.25-8.157 4.473-3.105 11.98-4.75 21.711-4.75 9.535 0 18.23 1.828 25.824 5.434 14.754 7.016 19.895 8.344 24.211 8.344 11.14 0 20.625-5.684 26.719-16.02 4.742-8.066 7.145-16.246 7.145-24.316 0-10.133-4.395-19.23-12.72-26.328-6.702-5.696-15.198-9.875-25.265-12.426-8.418-2.125-16.531-3.68-24.133-4.625-7.605-.942-14.933-1.418-21.78-1.418-12.321 0-24.204 1.46-35.325 4.348a113.29 113.29 0 00-32.176 13.996c-10.922 6.925-19.703 16.648-26.11 28.898-6.308 12.055-9.507 25.973-9.507 41.371 0 13.762 2.61 26.328 7.754 37.344 5.203 11.16 12.262 20.309 20.98 27.191 7.594 5.996 16.07 11.45 25.203 16.211 8.696 4.54 17.41 8.672 25.887 12.281 7.75 3.31 14.945 6.762 21.375 10.254 5.004 2.727 8.871 5.977 11.813 9.918 2.304 3.098 3.379 6.418 3.379 10.442 0 6.762-2.45 9.379-5.094 11.195-5.227 3.59-11.934 5.336-20.504 5.336-6.465 0-12.113-1.078-17.281-3.3-6.586-2.833-9.942-5.344-11.61-6.97-4.203-4.07-8.578-7.835-13.004-11.18-6.632-5.015-13.277-7.554-19.746-7.554-7.078 0-17.398 2.524-26.36 14.563-6.183 8.304-9.316 16.992-9.316 25.828 0 16.836 10.833 31.586 32.196 43.84 18.664 10.703 41.058 16.129 66.57 16.129 29.41 0 53.723-8 72.27-23.782 19.265-16.386 29.035-39.543 29.035-68.82 0-17.137-3.512-32.484-10.438-45.621-6.941-13.149-15.836-23.453-26.445-30.63zm-11.605 122.207c-13.149 11.187-30.426 16.625-52.817 16.625-20.207 0-37.578-4.086-51.637-12.152-10.875-6.235-17.113-12.723-17.113-17.797 0-2.23 1.137-4.89 3.379-7.899.93-1.25 1.64-1.906 2.063-2.23.43.238 1.05.629 1.863 1.242 3.449 2.606 6.883 5.563 10.187 8.766 5.114 4.98 11.88 9.234 20.668 13.011 8.86 3.813 18.66 5.743 29.137 5.743 14.64 0 27.262-3.57 37.508-10.614 11.847-8.144 18.113-20.57 18.113-35.937 0-10.508-3.133-20.047-9.324-28.371-5.516-7.403-12.762-13.578-21.543-18.36-7.27-3.949-15.32-7.816-23.945-11.496-7.77-3.308-15.77-7.105-23.778-11.281-7.468-3.898-14.36-8.324-20.484-13.16-5.078-4.008-9.125-9.344-12.379-16.32-3.273-7.02-4.938-15.313-4.938-24.653 0-10.5 2.051-19.738 6.09-27.457 3.989-7.629 9.086-13.34 15.586-17.46a83.204 83.204 0 0123.649-10.294c8.652-2.246 17.996-3.383 27.773-3.383 5.621 0 11.711.399 18.086 1.188 6.367.793 13.258 2.121 20.473 3.941 5.566 1.41 10 3.493 13.164 6.18 2.156 1.84 2.156 2.86 2.156 3.469 0 2.648-1.012 5.707-2.996 9.082a8.61 8.61 0 01-.582.875c-1.781-.653-5.262-2.07-11.598-5.082-11.656-5.531-24.68-8.336-38.703-8.336-16.11 0-29.18 3.402-38.84 10.117-11.215 7.793-17.14 19.137-17.14 32.809 0 11.27 4.738 21.468 13.691 29.488 7.149 6.406 15.98 11.637 26.258 15.543 8.074 3.07 17.023 7.027 26.601 11.754 9.391 4.64 18.196 9.726 26.16 15.113 6.477 4.379 12.098 11.031 16.708 19.766 4.625 8.77 6.968 19.41 6.968 31.613 0 20.355-6.039 35.387-18.464 45.957zm0 0" /></svg>;
+}
+export function whatsapp027(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}><path d="M439.277 72.723C392.38 25.824 330.04 0 263.711 0h-.023c-32.805.004-64.774 6.355-95.012 18.883-30.242 12.527-57.336 30.64-80.535 53.84-46.895 46.894-72.72 109.246-72.72 175.566 0 39.55 9.544 78.856 27.626 113.875L1.313 481.391c-2.942 8.41-.86 17.55 5.445 23.851C11.168 509.656 16.973 512 22.94 512c2.559 0 5.145-.43 7.668-1.313l119.227-41.73c35.02 18.082 74.324 27.625 113.875 27.625 66.32 0 128.668-25.828 175.566-72.723C486.172 376.965 512 314.613 512 248.293c0-66.324-25.824-128.676-72.723-175.57zm-21.234 329.902c-41.223 41.227-96.035 63.926-154.332 63.926-35.664 0-71.094-8.82-102.461-25.516-5.687-3.023-12.41-3.543-18.445-1.43l-108.32 37.91 37.913-108.32c2.114-6.043 1.59-12.765-1.433-18.449-16.692-31.36-25.516-66.789-25.516-102.457 0-58.297 22.703-113.11 63.926-154.332 41.219-41.219 96.023-63.922 154.316-63.93h.02c58.3 0 113.11 22.703 154.332 63.93 41.227 41.223 63.93 96.031 63.93 154.332 0 58.3-22.703 113.113-63.93 154.336zm0 0" /><path d="M355.984 270.469c-11.421-11.422-30.007-11.422-41.43 0l-12.491 12.492c-31.02-16.902-56.122-42.004-73.028-73.024l12.492-12.492c11.426-11.422 11.426-30.007 0-41.43l-33.664-33.663c-11.422-11.422-30.008-11.422-41.43 0l-26.93 26.93c-15.425 15.425-16.194 41.945-2.167 74.675 12.18 28.418 34.469 59.652 62.762 87.945 28.293 28.293 59.527 50.582 87.945 62.762 15.55 6.664 29.695 9.988 41.918 9.988 13.504 0 24.66-4.058 32.758-12.156l26.93-26.934v.004c5.535-5.535 8.581-12.89 8.581-20.714 0-7.829-3.046-15.184-8.582-20.715zm-14.5 80.793c-4.402 4.402-17.941 5.945-41.609-4.196-24.992-10.71-52.887-30.742-78.543-56.398s-45.684-53.547-56.394-78.54c-10.145-23.667-8.602-37.21-4.2-41.612l26.414-26.414 32.625 32.628-15.636 15.641c-7.07 7.07-8.778 17.793-4.243 26.684 20.559 40.312 52.735 72.488 93.047 93.047 8.895 4.535 19.618 2.832 26.688-4.243l15.637-15.636 32.628 32.629zm0 0" /></svg>;
+}
+export function retweet029(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -55 512 512" {...props}><path d="M349.883 355.098l-62.27-72.422a28.941 28.941 0 00-21.957-10.078h-85.648v-64.743h20.367c9.57 0 18.508-4.539 23.91-12.136 7.77-10.934 7.082-25.64-1.672-35.766l-85.867-99.316a28.936 28.936 0 00-21.906-10.02 28.95 28.95 0 00-21.91 10.02L7.062 159.953c-8.753 10.125-9.437 24.832-1.671 35.762 5.402 7.601 14.343 12.14 23.918 12.14h20.363v129.91c0 35.938 29.234 65.173 65.168 65.173h212.75c9.555 0 18.484-4.524 23.89-12.106 7.774-10.906 7.118-25.605-1.597-35.734zM114.84 372.96c-19.406 0-35.195-15.79-35.195-35.195V199.59c0-11.973-9.739-21.711-21.711-21.711l-26.743-.004 83.645-96.746 83.652 96.75h-26.746c-11.972 0-21.71 9.738-21.71 21.71v81.274c0 11.969 9.738 21.711 21.71 21.711h93.446l60.523 70.387zm0 0M506.605 207.219v-.004c-5.406-7.598-14.343-12.133-23.914-12.133h-20.359V65.172C462.332 29.234 433.094 0 397.16 0H184.414c-9.555 0-18.484 4.523-23.89 12.102-7.778 10.91-7.122 25.605 1.593 35.738l62.27 72.418a28.922 28.922 0 0021.96 10.082h85.645v64.742H311.63c-9.57 0-18.508 4.54-23.914 12.137-7.77 10.933-7.082 25.64 1.672 35.761l85.867 99.32a28.946 28.946 0 0021.91 10.016 28.932 28.932 0 0021.906-10.015l85.868-99.32c8.753-10.126 9.44-24.833 1.667-35.762zm-109.44 114.59l-83.653-96.754h26.75c11.968 0 21.707-9.739 21.707-21.707v-81.274c0-11.972-9.739-21.71-21.707-21.71h-93.45L186.29 29.976h210.875c19.406 0 35.195 15.785 35.195 35.195v138.176c0 11.968 9.735 21.707 21.707 21.707l26.747.004zm0 0" /></svg>;
+}
+export function chat1030(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.999" {...props}><path d="M512.445 245.637c-1.527-66.98-29.011-129.395-77.383-175.75C386.762 23.597 323.34-1.191 256.477.043c-66.856-1.234-130.29 23.555-178.59 69.844C29.516 116.242 2.035 178.657.504 245.637l-.004.21v.212a241.618 241.618 0 0080.32 178.64v61.887c0 12.012 8.387 22.476 19.942 24.879a24.959 24.959 0 0018.39-3.277l49.739-31.07c28.046 9.82 57.324 14.796 87.082 14.796h.37c1.645.031 3.274.047 4.919.047 65.105-.004 126.656-24.711 173.8-69.887 48.372-46.355 75.852-108.773 77.383-175.75l.008-.344zm-98.16 154.758c-42.594 40.816-98.52 62.652-157.515 61.496l-.325-.004h-.472a232.97 232.97 0 01-80.442-14.285c-6.433-2.36-13.437-1.641-19.222 1.972l-45.461 28.395v-56.926c0-6.348-2.758-12.39-7.575-16.578-45.863-39.871-72.367-97.578-72.742-158.352C31.93 187.215 56.121 132.34 98.664 91.57 141.258 50.75 197.2 28.914 256.18 30.074l.297.008.293-.008c59.007-1.156 114.925 20.676 157.515 61.496 42.512 40.739 66.7 95.567 68.13 154.414-1.43 58.844-25.618 113.672-68.13 154.41zm0 0" /><path d="M405.73 177.195a14.57 14.57 0 00-1.042-2.097c-24.961-49.754-74.348-85.211-132.333-90.547a15.014 15.014 0 00-4.515-.352c-3.547-.23-7.117-.36-10.719-.36-64.492 0-120.453 37.204-147.57 91.27a14.763 14.763 0 00-1.035 2.082c-10.496 21.676-16.383 45.98-16.383 71.637 0 .082.004.164.004.25 0 .02-.004.04-.004.063 0 .035.008.066.008.101.062 25.535 5.953 49.723 16.41 71.301.265.644.578 1.258.926 1.855 27.09 54.145 83.093 91.418 147.644 91.418 4.438 0 8.828-.183 13.176-.527.078-.008.156-.012.234-.02 58.832-4.757 109.035-40.507 134.23-90.863.352-.597.665-1.222.93-1.87 10.457-21.579 16.348-45.763 16.41-71.294 0-.035.008-.066.008-.101 0-.024-.004-.043-.004-.063 0-.086.004-.168.004-.25 0-25.652-5.886-49.953-16.379-71.633zM382.06 299.848h-42.512c2.941-11.301 5.09-23.239 6.101-35.692h45.555a133.975 133.975 0 01-9.144 35.692zM132.195 197.785h42.371c-2.972 11.488-5.12 23.64-6.07 36.34h-45.531a133.9 133.9 0 019.23-36.34zm139.942-30.031v-41.14c7.406 10.019 16.633 24.085 24.73 41.14zm36.375 30.031c3.437 11.39 5.996 23.57 7.12 36.34h-43.495v-36.34zm-66.407-30.031H217.59c8.043-16.824 17.168-30.738 24.515-40.695zm0 30.031v36.34h-43.48c1.145-12.758 3.738-24.941 7.21-36.34zm-119.07 66.367h45.555c1.008 12.457 3.164 24.395 6.11 35.692h-42.516a134.052 134.052 0 01-9.149-35.692zm75.707 0h43.367v35.692h-36.171c-3.422-11.203-5.989-23.164-7.196-35.692zm43.363 65.723v40.676c-7.324-9.965-16.402-23.871-24.421-40.676zm30.032 0h24.386c-8.011 16.824-17.078 30.777-24.386 40.781zm0-30.027v-35.692h43.351c-1.215 12.508-3.793 24.473-7.222 35.692zm73.617-65.723c-.938-12.7-3.07-24.852-6.027-36.344h42.32a133.928 133.928 0 019.23 36.344zm19.191-66.371h-35.203c-7.066-17.32-15.496-32.39-23.406-44.594 23.43 9.207 43.68 24.79 58.61 44.594zm-156.742-44.707c-7.96 12.207-16.465 27.312-23.598 44.707h-35.308c14.992-19.887 35.351-35.516 58.906-44.707zm-58.926 206.828h35.5c7.16 17.43 15.668 32.574 23.621 44.809-23.648-9.188-44.085-24.852-59.12-44.809zm156.707 44.754c7.918-12.23 16.387-27.36 23.508-44.754h35.473c-15.004 19.918-35.39 35.563-58.98 44.754zm0 0" /></svg>;
+}
+export function photocamera031(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -48 512 511" {...props}><path d="M448.777 72.793h-57.832c-1.496 0-4.304-2.023-4.777-3.441l-14.953-44.875C366.648 10.805 352.335.5 337.93.5H174.07c-14.425 0-28.742 10.316-33.289 23.992l-14.945 44.852c-.477 1.418-3.29 3.445-4.781 3.445H63.223C28.363 72.793 0 101.152 0 136.012v216.875c0 34.863 28.363 63.226 63.223 63.226h385.554c34.86 0 63.223-28.363 63.223-63.226V136.012c0-34.86-28.363-63.219-63.223-63.219zm33.164 280.094c0 18.289-14.875 33.168-33.164 33.168H63.223c-18.29 0-33.164-14.88-33.164-33.168V136.012c0-18.285 14.875-33.164 33.164-33.164h57.832c14.41 0 28.718-10.309 33.293-23.989l14.949-44.87c.469-1.41 3.281-3.43 4.773-3.43h163.86c1.492 0 4.304 2.027 4.773 3.433l14.95 44.856c4.55 13.68 18.863 24 33.292 24h57.832c18.29 0 33.164 14.879 33.164 33.164zm0 0" /><path d="M260.656 112.684c-67.523 0-122.46 54.937-122.46 122.46 0 67.524 54.937 122.461 122.46 122.461s122.461-54.937 122.461-122.46c0-67.524-54.933-122.461-122.46-122.461zm0 214.867c-50.953 0-92.402-41.453-92.402-92.406 0-50.95 41.45-92.403 92.402-92.403s92.403 41.453 92.403 92.403c0 50.953-41.45 92.406-92.403 92.406zm0 0" /><path d="M260.656 169.45c-36.222 0-65.695 29.472-65.695 65.695 0 36.222 29.473 65.695 65.695 65.695 36.227 0 65.696-29.473 65.696-65.695 0-36.223-29.47-65.696-65.696-65.696zm0 101.335c-19.652 0-35.636-15.988-35.636-35.64 0-19.649 15.984-35.637 35.636-35.637s35.637 15.988 35.637 35.637c0 19.652-15.984 35.64-35.637 35.64zm0 0M439.785 151.61c-.09-.481-.21-.965-.36-1.426-.14-.47-.3-.93-.491-1.391a16.451 16.451 0 00-1.383-2.586c-.27-.41-.57-.812-.871-1.191-.32-.38-.653-.75-.993-1.094a19.11 19.11 0 00-1.101-1c-.383-.3-.781-.602-1.184-.871-.41-.27-.84-.524-1.273-.754-.43-.227-.871-.438-1.32-.629-.461-.191-.922-.352-1.395-.492-.46-.149-.941-.27-1.422-.36-.48-.101-.972-.171-1.46-.222a14.96 14.96 0 00-2.958 0c-.48.05-.972.12-1.453.222-.48.09-.96.211-1.434.36-.46.14-.93.3-1.382.492-.45.191-.899.398-1.332.629-.43.23-.852.484-1.262.754-.41.27-.813.57-1.18.87-.383.321-.754.653-1.105 1-.348.345-.68.716-.992 1.095-.309.379-.598.78-.872 1.191-.269.402-.53.832-.761 1.262a15.578 15.578 0 00-1.121 2.715 15.527 15.527 0 00-.582 2.886 15.144 15.144 0 004.328 12.102c.351.344.722.683 1.105.992.367.313.77.602 1.18.875.41.27.832.527 1.262.758.433.223.882.441 1.332.621.453.191.922.363 1.382.504.473.14.954.258 1.434.36a14.521 14.521 0 002.938.29c.488-.002.98-.021 1.472-.072.489-.047.98-.117 1.461-.219.48-.101.961-.222 1.422-.36.473-.14.934-.312 1.395-.503a15.046 15.046 0 004.878-3.246c2.797-2.793 4.399-6.672 4.399-10.629 0-.488-.031-.98-.082-1.473-.04-.492-.117-.98-.219-1.46zm0 0M439.785 193.688c-.09-.481-.21-.961-.36-1.422-.14-.473-.312-.934-.491-1.395-.192-.45-.403-.89-.633-1.32-.23-.43-.48-.863-.75-1.262-.27-.414-.57-.812-.883-1.195a12.48 12.48 0 00-.992-1.09c-3.133-3.149-7.653-4.781-12.102-4.34-.48.05-.972.133-1.453.223-.48.101-.96.218-1.434.37-.46.141-.93.302-1.382.49-.45.19-.899.401-1.332.632-.43.23-.852.48-1.262.75-.41.273-.813.57-1.18.883-.383.312-.754.64-1.105.992a15.119 15.119 0 00-4.328 12.101c.05.48.12.973.222 1.454.098.48.22.96.36 1.433.14.461.312.934.5 1.383.183.45.39.902.62 1.332.231.43.493.852.762 1.262.274.41.563.812.872 1.183.312.38.644.75.992 1.102.351.351.722.684 1.105.992.367.313.77.602 1.18.871.41.27.832.531 1.262.762.433.223.882.441 1.332.621.453.191.922.36 1.382.5.473.14.954.262 1.434.363a14.521 14.521 0 002.938.29c.488 0 .98-.02 1.472-.071.489-.05.98-.121 1.461-.219.48-.101.961-.222 1.422-.363.473-.14.934-.309 1.383-.5.453-.18.902-.398 1.332-.621.433-.23.863-.492 1.266-.762.41-.27.808-.562 1.19-.87.38-.31.75-.642 1.09-.993.352-.352.684-.723.993-1.102.312-.37.613-.773.883-1.183s.52-.832.75-1.262c.23-.43.441-.883.633-1.332.18-.45.351-.922.492-1.383.148-.472.27-.953.36-1.433.1-.48.171-.973.218-1.454.05-.492.082-.992.082-1.48 0-.492-.031-.984-.082-1.477-.047-.488-.117-.98-.219-1.46zm0 0" /></svg>;
+}
+export function network1032(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" {...props}><path d="M469.43 211.207c-18.27 0-33.887 11.574-39.91 27.773h-81.832c-2.356-14.37-8.036-27.632-16.22-38.976l56.887-56.887a42.446 42.446 0 0018.473 4.2c11.371 0 22.063-4.43 30.102-12.47 8.039-8.038 12.468-18.73 12.468-30.1s-4.43-22.06-12.468-30.102c-16.598-16.594-43.602-16.594-60.2 0h-.003c-8.04 8.043-12.465 18.73-12.465 30.101a42.44 42.44 0 003.363 16.625l-57.426 57.426c-11.289-8.09-24.469-13.707-38.738-16.047V82.219c15.848-6.2 27.11-21.63 27.11-39.649C298.57 19.098 279.472 0 256 0s-42.57 19.094-42.57 42.57c0 18.352 11.68 34.032 27.992 39.996v80.184c-14.266 2.34-27.445 7.953-38.738 16.047l-57.739-57.738c2-4.98 3.055-10.344 3.055-15.871 0-11.372-4.43-22.063-12.469-30.102-8.039-8.043-18.73-12.469-30.101-12.469-11.371 0-22.059 4.426-30.102 12.469-8.039 8.039-12.465 18.727-12.465 30.098s4.426 22.062 12.465 30.101c8.3 8.297 19.203 12.45 30.102 12.45a42.637 42.637 0 0019.164-4.548l56.82 56.817c-8.187 11.344-13.863 24.605-16.223 38.976H82.305c-6.14-15.968-21.633-27.332-39.735-27.332-23.472 0-42.57 19.098-42.57 42.57s19.098 42.571 42.57 42.571c18.27 0 33.887-11.574 39.91-27.773h82.711a92.027 92.027 0 0016.051 38.738l-59.77 59.77c-15.406-6.305-33.78-3.215-46.269 9.269H75.2c-16.597 16.598-16.597 43.605.004 60.203 8.297 8.297 19.2 12.45 30.098 12.45 10.902 0 21.804-4.153 30.101-12.45 13.227-13.226 15.903-33.058 8.047-48.973l58.996-58.996c11.344 8.184 24.61 13.864 38.977 16.22v84.358c-16.082 6.086-27.55 21.637-27.55 39.825 0 23.472 19.097 42.57 42.57 42.57s42.57-19.094 42.57-42.57c0-18.188-11.469-33.739-27.551-39.825v-84.359c14.367-2.36 27.629-8.035 38.973-16.223l58.937 58.942c-7.781 15.887-5.086 35.652 8.106 48.844 8.3 8.3 19.199 12.449 30.101 12.449s21.8-4.149 30.102-12.45c16.597-16.597 16.597-43.601 0-60.199-12.524-12.523-30.97-15.593-46.403-9.218l-59.636-59.637c8.093-11.29 13.707-24.469 16.046-38.738h82.008c6.14 15.968 21.633 27.332 39.735 27.332 23.476 0 42.57-19.098 42.57-42.57s-19.098-42.571-42.57-42.571zM256.44 316.434c-34.425 0-62.433-28.004-62.437-62.43v-.012c.004-34.418 27.996-62.414 62.41-62.43h.055c34.414.016 62.41 28.016 62.41 62.438-.004 34.426-28.012 62.434-62.438 62.434zM397.965 95.883c4.887-4.883 12.836-4.887 17.723 0 2.367 2.367 3.671 5.515 3.671 8.863s-1.304 6.492-3.671 8.86c-2.368 2.367-5.512 3.671-8.86 3.671s-6.496-1.304-8.863-3.672a12.439 12.439 0 01-3.672-8.859 12.47 12.47 0 013.672-8.863zM256 30.035c6.91 0 12.531 5.621 12.531 12.535 0 6.91-5.62 12.532-12.531 12.532s-12.531-5.622-12.531-12.532c0-6.914 5.62-12.535 12.531-12.535zM96.57 114.047c-2.367-2.367-3.672-5.516-3.672-8.863s1.305-6.493 3.672-8.86a12.446 12.446 0 018.86-3.672c3.347 0 6.496 1.305 8.863 3.672a12.446 12.446 0 013.672 8.86 12.46 12.46 0 01-2.285 7.203c-.114.105-.23.195-.34.304a14.604 14.604 0 00-1.469 1.739c-4.914 4.484-12.555 4.367-17.3-.383zm-54 152.703c-6.91 0-12.535-5.621-12.535-12.531 0-6.914 5.625-12.535 12.535-12.535s12.532 5.62 12.532 12.535c0 6.91-5.622 12.531-12.532 12.531zm71.594 149.004c-4.887 4.887-12.836 4.887-17.723 0-4.886-4.887-4.886-12.836 0-17.723 4.887-4.886 12.836-4.886 17.723 0 4.887 4.887 4.887 12.84 0 17.723zm142.277 66.207c-6.91 0-12.535-5.621-12.535-12.531s5.625-12.532 12.535-12.532 12.532 5.622 12.532 12.532-5.621 12.53-12.532 12.53zm151.137-87.785c3.348 0 6.496 1.304 8.863 3.672 4.887 4.886 4.887 12.836 0 17.722-2.367 2.368-5.515 3.672-8.863 3.672s-6.492-1.304-8.86-3.672c-4.886-4.886-4.886-12.836 0-17.722a12.446 12.446 0 018.86-3.672zm61.852-127.867c-6.91 0-12.532-5.621-12.532-12.532s5.622-12.53 12.532-12.53 12.535 5.62 12.535 12.53-5.625 12.532-12.535 12.532zm0 0" /></svg>;
+}
+export function image033(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512.001" {...props}><path d="M373.41 0H138.594C62.172 0 0 62.172 0 138.594v234.812C0 449.828 62.172 512 138.594 512H373.41C449.828 512 512 449.828 512 373.406V138.594C512 62.172 449.828 0 373.41 0zm108.574 373.406c0 59.871-48.707 108.578-108.578 108.578H138.594c-59.871 0-108.578-48.707-108.578-108.578v-1.316l86.09-79.25c2.437-2.242 6.257-2.242 8.695-.004l65.875 60.477a36.487 36.487 0 0028.27 9.414 36.484 36.484 0 0025.847-14.829l116.25-159.847c1.543-2.117 3.656-2.559 4.777-2.633 1.121-.066 3.274.086 5.078 1.988L481.98 304.457v68.95zm0-112.55l-89.312-94.11c-7.473-7.875-17.961-11.984-28.809-11.277a36.337 36.337 0 00-27.093 14.93L220.516 330.245c-1.473 2.024-3.489 2.508-4.559 2.613-1.066.106-3.137.036-4.98-1.66l-65.875-60.472c-13.84-12.711-35.504-12.692-49.325.03l-65.761 60.536v-192.7c0-59.87 48.707-108.577 108.578-108.577H373.41c59.867 0 108.574 48.707 108.574 108.578zm0 0" /><path d="M142.91 86.734c-29.082 0-52.746 23.664-52.746 52.75 0 29.082 23.664 52.746 52.746 52.746 29.086 0 52.746-23.664 52.746-52.746.004-29.086-23.66-52.75-52.746-52.75zm0 75.477c-12.531 0-22.73-10.195-22.73-22.73 0-12.532 10.199-22.731 22.73-22.731 12.535 0 22.73 10.195 22.73 22.73 0 12.536-10.195 22.73-22.73 22.73zm0 0" /></svg>;
+}
+export function myspace034(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -100 512.001 512" {...props}><path d="M430.555 151.55c41.89 0 75.972-33.991 75.972-75.773C506.527 33.992 472.445 0 430.555 0c-41.903 0-75.996 33.992-75.996 75.777 0 41.782 34.09 75.774 75.996 75.774zm0-121.55c25.347 0 45.972 20.535 45.972 45.773 0 25.243-20.625 45.774-45.972 45.774-25.364 0-45.996-20.531-45.996-45.774C384.559 50.535 405.19 30 430.555 30zm0 0M430.55 168.781c-48.722 0-81.452 43.051-81.452 83.254v32.93c0 14.492 11.797 26.281 26.297 26.281H485.69c14.508 0 26.309-11.789 26.309-26.281v-32.93c0-40.203-32.73-83.254-81.45-83.254zM482 281.246H379.098v-29.21c0-31.856 26.605-53.255 51.453-53.255 24.844 0 51.449 21.399 51.449 53.254zm0 0M239.262 166.473c37.773 0 68.508-30.653 68.508-68.332s-30.735-68.336-68.508-68.336c-37.785 0-68.528 30.656-68.528 68.336s30.743 68.332 68.528 68.332zm0-106.668c21.23 0 38.508 17.199 38.508 38.336s-17.274 38.332-38.508 38.332c-21.246 0-38.528-17.196-38.528-38.332s17.282-38.336 38.528-38.336zm0 0M239.258 182.55c-43.86 0-73.317 38.731-73.317 74.9v28.894c0 13.73 11.176 24.902 24.914 24.902h96.79c13.746 0 24.93-11.172 24.93-24.902v-28.895c-.005-36.172-29.462-74.898-73.317-74.898zm43.312 98.696h-86.632V257.45c0-26.855 22.398-44.898 43.316-44.898 20.922 0 43.316 18.043 43.316 44.898zm0 0M64.352 182.96c33.238 0 60.277-26.976 60.277-60.132S97.589 62.7 64.352 62.7c-33.247 0-60.297 26.973-60.297 60.13s27.05 60.132 60.297 60.132zm0-90.26c16.695 0 30.277 13.515 30.277 30.128 0 16.617-13.582 30.133-30.277 30.133-16.704 0-30.297-13.516-30.297-30.133 0-16.613 13.59-30.129 30.297-30.129zm0 0M64.348 197.73C25.855 197.73 0 231.695 0 263.414v24.453c0 12.895 10.492 23.38 23.39 23.38h81.903c12.902 0 23.398-10.485 23.398-23.38v-24.453c0-31.719-25.855-65.684-64.343-65.684zm34.343 83.516H30v-17.832c0-21.344 17.758-35.684 34.348-35.684 16.586 0 34.343 14.34 34.343 35.684zm0 0" /></svg>;
+}
+export function user035(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-42 0 512 512.001" {...props}><path d="M210.352 246.633c33.882 0 63.218-12.153 87.195-36.13 23.969-23.972 36.125-53.304 36.125-87.19 0-33.876-12.152-63.211-36.129-87.192C273.566 12.152 244.23 0 210.352 0c-33.887 0-63.22 12.152-87.192 36.125s-36.129 53.309-36.129 87.188c0 33.886 12.156 63.222 36.13 87.195 23.98 23.969 53.316 36.125 87.19 36.125zM144.379 57.34c18.394-18.395 39.973-27.336 65.973-27.336 25.996 0 47.578 8.941 65.976 27.336 18.395 18.398 27.34 39.98 27.34 65.972 0 26-8.945 47.579-27.34 65.977-18.398 18.399-39.98 27.34-65.976 27.34-25.993 0-47.57-8.945-65.973-27.34-18.399-18.394-27.344-39.976-27.344-65.976 0-25.993 8.945-47.575 27.344-65.973zm0 0M426.129 393.703c-.692-9.976-2.09-20.86-4.149-32.351-2.078-11.579-4.753-22.524-7.957-32.528-3.312-10.34-7.808-20.55-13.375-30.336-5.77-10.156-12.55-19-20.16-26.277-7.957-7.613-17.699-13.734-28.965-18.2-11.226-4.44-23.668-6.69-36.976-6.69-5.227 0-10.281 2.144-20.043 8.5a2711.03 2711.03 0 01-20.879 13.46c-6.707 4.274-15.793 8.278-27.016 11.903-10.949 3.543-22.066 5.34-33.043 5.34-10.968 0-22.086-1.797-33.043-5.34-11.21-3.622-20.3-7.625-26.996-11.899-7.77-4.965-14.8-9.496-20.898-13.469-9.754-6.355-14.809-8.5-20.035-8.5-13.313 0-25.75 2.254-36.973 6.7-11.258 4.457-21.004 10.578-28.969 18.199-7.609 7.281-14.39 16.12-20.156 26.273-5.558 9.785-10.058 19.992-13.371 30.34-3.2 10.004-5.875 20.945-7.953 32.524-2.063 11.476-3.457 22.363-4.149 32.363C.343 403.492 0 413.668 0 423.949c0 26.727 8.496 48.363 25.25 64.32C41.797 504.017 63.688 512 90.316 512h246.532c26.62 0 48.511-7.984 65.062-23.73 16.758-15.946 25.254-37.59 25.254-64.325-.004-10.316-.351-20.492-1.035-30.242zm-44.906 72.828c-10.934 10.406-25.45 15.465-44.38 15.465H90.317c-18.933 0-33.449-5.059-44.379-15.46-10.722-10.208-15.933-24.141-15.933-42.587 0-9.594.316-19.066.95-28.16.616-8.922 1.878-18.723 3.75-29.137 1.847-10.285 4.198-19.937 6.995-28.675 2.684-8.38 6.344-16.676 10.883-24.668 4.332-7.618 9.316-14.153 14.816-19.418 5.145-4.926 11.63-8.957 19.27-11.98 7.066-2.798 15.008-4.329 23.629-4.56 1.05.56 2.922 1.626 5.953 3.602 6.168 4.02 13.277 8.606 21.137 13.625 8.86 5.649 20.273 10.75 33.91 15.152 13.941 4.508 28.16 6.797 42.273 6.797 14.114 0 28.336-2.289 42.27-6.793 13.648-4.41 25.058-9.507 33.93-15.164 8.043-5.14 14.953-9.593 21.12-13.617 3.032-1.973 4.903-3.043 5.954-3.601 8.625.23 16.566 1.761 23.636 4.558 7.637 3.024 14.122 7.059 19.266 11.98 5.5 5.262 10.484 11.798 14.816 19.423 4.543 7.988 8.208 16.289 10.887 24.66 2.801 8.75 5.156 18.398 7 28.675 1.867 10.434 3.133 20.239 3.75 29.145v.008c.637 9.058.957 18.527.961 28.148-.004 18.45-5.215 32.38-15.937 42.582zm0 0" /></svg>;
+}
+export function network2036(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-67 0 511 511.998" {...props}><path d="M159.148 272.785h135.13a42.236 42.236 0 009.706 15.063c8.032 8.03 18.711 12.457 30.067 12.457 11.36 0 22.039-4.426 30.07-12.457 16.578-16.578 16.578-43.555 0-60.137-8.031-8.031-18.71-12.453-30.066-12.453-11.36 0-22.04 4.422-30.07 12.453a42.24 42.24 0 00-9.704 15.066H159.148A79.63 79.63 0 00147 213.227l68.125-67.977c13.086 9.324 29.07 14.828 46.324 14.828 44.137 0 80.043-35.902 80.043-80.039C341.492 35.906 305.586 0 261.45 0S181.41 35.906 181.41 80.04c0 16.054 4.766 31.01 12.938 43.554l-68.442 68.293c-12.902-8.91-28.531-14.149-45.367-14.149C36.406 177.738.5 213.645.5 257.781c0 44.133 35.906 80.04 80.04 80.04 17.042 0 32.847-5.372 45.843-14.485l64.586 63.168c-8.95 12.922-14.207 28.582-14.207 45.453 0 44.137 35.902 80.04 80.039 80.04s80.039-35.903 80.039-80.04c0-44.133-35.906-80.039-80.04-80.039a79.579 79.579 0 00-44.456 13.52l-65.028-63.598a79.536 79.536 0 0011.832-29.055zM325.2 248.93a12.449 12.449 0 018.856-3.668c3.343 0 6.484 1.304 8.851 3.668 4.88 4.879 4.88 12.824 0 17.703a12.449 12.449 0 01-8.855 3.668 12.447 12.447 0 01-8.852-3.668c-4.879-4.88-4.879-12.824 0-17.703zM261.45 30.004c27.59 0 50.035 22.445 50.035 50.035 0 27.59-22.445 50.035-50.035 50.035-27.59 0-50.035-22.445-50.035-50.035 0-27.59 22.445-50.035 50.035-50.035zM30.504 257.78c0-27.59 22.445-50.035 50.035-50.035 27.59 0 50.035 22.445 50.035 50.035s-22.445 50.035-50.035 50.035c-27.59 0-50.035-22.445-50.035-50.035zm276.332 174.18c0 27.59-22.445 50.035-50.035 50.035-27.59 0-50.035-22.445-50.035-50.035 0-27.59 22.445-50.035 50.035-50.035 27.59 0 50.035 22.445 50.035 50.035zm0 0" /></svg>;
+}
+export function information037(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 512" {...props}><path d="M512.445 245.637c-1.53-66.977-29.011-129.395-77.383-175.75-48.3-46.29-111.703-71.082-178.59-69.844C189.59-1.199 126.188 23.602 77.888 69.887 29.516 116.242 2.035 178.66.504 245.637l-.004.21v.212c.352 68.261 29.574 133.156 80.32 178.64v61.887c0 12.012 8.387 22.476 19.942 24.883 1.71.355 3.433.531 5.144.531 4.653 0 9.223-1.3 13.242-3.813l49.739-31.07c28.05 9.82 57.328 14.797 87.086 14.797h.367c1.648.031 3.281.047 4.922.047 65.105-.004 126.656-24.707 173.8-69.887 48.372-46.355 75.852-108.773 77.383-175.75l.008-.344zm-98.16 154.758c-42.594 40.816-98.558 62.656-157.515 61.496l-.325-.004c-27.675.023-54.918-4.754-80.918-14.29-6.43-2.359-13.433-1.64-19.222 1.973l-45.457 28.399v-56.926c0-6.348-2.762-12.39-7.578-16.578-45.864-39.871-72.368-97.578-72.739-158.352C31.93 187.215 56.121 132.34 98.664 91.57c42.59-40.82 98.566-62.633 157.516-61.496l.293.008.297-.008c58.98-1.16 114.921 20.672 157.515 61.492 42.508 40.739 66.695 95.567 68.13 154.414-1.435 58.848-25.622 113.676-68.13 154.415zm0 0" /><path d="M297.754 314.406V210.77c0-15.204-12.371-27.575-27.574-27.575h-50.73c-15.208 0-27.579 12.371-27.579 27.575v26.09c0 13.546 9.816 24.84 22.711 27.144v51.035c-12.894 2.305-22.71 13.598-22.71 27.145v26.09c0 15.203 12.37 27.574 27.577 27.574h74.403c15.207 0 27.578-12.371 27.578-27.575v-26.09c0-14.12-10.313-25.843-23.676-27.777zm-6.356 51.414h-69.496v-21.183h4.5c10.04 0 18.207-8.168 18.207-18.207v-73.813c0-10.039-8.168-18.207-18.207-18.207h-4.5v-21.183h45.825v112.718c0 10.04 8.168 18.207 18.207 18.207h5.464zm0 0M254.348 174.21c24.058 0 43.632-19.573 43.632-43.632 0-24.062-19.574-43.637-43.632-43.637-24.063 0-43.637 19.575-43.637 43.637 0 24.059 19.574 43.633 43.637 43.633zm0-57.241c7.5 0 13.605 6.105 13.605 13.61s-6.105 13.605-13.605 13.605c-7.504 0-13.61-6.102-13.61-13.606s6.106-13.61 13.61-13.61zm0 0" /></svg>;
+}
+export function happy1039(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 512" {...props}><path d="M512.445 245.637c-1.53-66.977-29.011-129.395-77.383-175.75-48.3-46.29-111.746-71.078-178.59-69.844-66.87-1.242-130.288 23.559-178.585 69.844C29.516 116.242 2.035 178.66.504 245.637l-.004.21v.212a241.612 241.612 0 0080.32 178.64v61.887c0 12.012 8.387 22.476 19.942 24.883a24.959 24.959 0 0018.39-3.281l49.739-31.07c28.05 9.82 57.324 14.796 87.082 14.796h.37c1.645.031 3.278.047 4.919.047 65.105-.004 126.656-24.707 173.8-69.887 48.372-46.355 75.852-108.773 77.383-175.75l.008-.344zm-98.16 154.758c-42.594 40.816-98.531 62.64-157.515 61.496l-.325-.004h-.472a232.92 232.92 0 01-80.446-14.29c-6.43-2.359-13.433-1.64-19.222 1.973l-45.457 28.399v-56.926c0-6.348-2.758-12.39-7.575-16.578a211.57 211.57 0 01-72.742-158.352c1.395-58.898 25.59-113.773 68.133-154.543 42.594-40.82 98.559-62.668 157.516-61.496l.293.008.297-.008c59.007-1.16 114.925 20.676 157.515 61.496 42.508 40.739 66.7 95.567 68.13 154.414-1.43 58.844-25.622 113.672-68.13 154.41zm0 0" /><path d="M189.184 173.977c5.816 5.878 9 13.671 8.957 21.945-.04 8.289 6.648 15.047 14.937 15.09h.078c8.258 0 14.973-6.672 15.016-14.942.082-16.289-6.188-31.64-17.649-43.218-11.46-11.579-26.75-18-43.039-18.082h-.316c-16.176 0-31.402 6.257-42.906 17.648-11.578 11.46-18 26.746-18.082 43.039-.04 8.293 6.648 15.047 14.941 15.09h.078c8.254 0 14.969-6.672 15.012-14.942.086-17.074 14.059-30.906 31.121-30.808 8.27.043 16.031 3.3 21.852 9.18zm0 0M346.684 135.676c-.102 0-.207-.004-.313-.004-33.488 0-60.82 27.164-60.992 60.691-.04 8.29 6.648 15.047 14.941 15.09h.078c8.254 0 14.97-6.672 15.012-14.941.086-17.02 13.961-30.809 30.965-30.809h.16c8.27.043 16.031 3.3 21.848 9.18 5.82 5.879 9.004 13.672 8.96 21.945-.042 8.29 6.65 15.047 14.938 15.09h.078c8.258 0 14.97-6.676 15.012-14.941.082-16.293-6.184-31.641-17.648-43.22-11.461-11.577-26.743-18-43.04-18.081zm0 0M345.34 258.66h-.078c-8.254 0-14.969 6.672-15.012 14.942-.102 19.636-7.84 38.058-21.797 51.875-13.863 13.726-32.215 21.273-51.707 21.27h-.383c-19.64-.099-38.062-7.84-51.879-21.794-13.816-13.957-21.367-32.457-21.27-52.094.044-8.293-6.644-15.046-14.937-15.09h-.078c-8.254 0-14.969 6.672-15.012 14.938-.14 27.66 10.5 53.715 29.958 73.371s45.406 30.559 73.066 30.7h.539c27.457 0 53.305-10.63 72.832-29.962 19.656-19.457 30.559-45.406 30.695-73.062.043-8.293-6.644-15.05-14.937-15.094zm0 0" /></svg>;
+}
+export function like1038(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 512" {...props}><path d="M512.445 245.637c-1.53-66.977-29.011-129.395-77.383-175.75-48.3-46.29-111.726-71.078-178.59-69.844-66.886-1.242-130.285 23.559-178.585 69.844C29.516 116.242 2.035 178.66.504 245.637l-.004.21v.212c.352 68.261 29.574 133.156 80.32 178.64v61.887c0 12.012 8.387 22.476 19.942 24.883 1.71.355 3.433.531 5.144.531 4.653 0 9.223-1.3 13.242-3.813l49.739-31.07c28.05 9.82 57.328 14.797 87.086 14.797h.367c1.648.031 3.281.047 4.922.047 65.105-.004 126.656-24.707 173.8-69.887 48.372-46.355 75.852-108.773 77.383-175.75l.008-.344zm-98.16 154.758c-42.594 40.816-98.547 62.64-157.515 61.496l-.325-.004h-.472a232.905 232.905 0 01-80.446-14.29c-6.43-2.359-13.437-1.64-19.222 1.973l-45.457 28.399v-56.926c0-6.348-2.762-12.39-7.578-16.578-45.864-39.871-72.368-97.578-72.739-158.352C31.926 187.215 56.117 132.34 98.664 91.57c42.59-40.82 98.563-62.633 157.512-61.496l.297.008.297-.008c59.007-1.16 114.921 20.676 157.515 61.496 42.508 40.739 66.695 95.567 68.13 154.414-1.43 58.844-25.622 113.672-68.13 154.41zm0 0" /><path d="M307.715 144.184c-15.27 0-29.235 4.816-41.512 14.312a79.211 79.211 0 00-9.73 8.938 78.872 78.872 0 00-9.727-8.938c-12.281-9.496-26.246-14.312-41.512-14.312-20.257 0-38.898 8.12-52.492 22.867-13.281 14.406-20.594 33.988-20.594 55.137 0 45.726 35.055 75.597 83.575 116.945 7.968 6.793 17.004 14.496 26.363 22.676 3.98 3.488 9.09 5.406 14.387 5.406s10.406-1.918 14.382-5.399c9.434-8.253 18.434-15.921 26.375-22.687 48.516-41.344 83.57-71.215 83.57-116.941 0-21.153-7.316-40.731-20.597-55.141-13.594-14.742-32.234-22.863-52.488-22.863zm-29.961 172.09c-6.488 5.53-13.68 11.66-21.281 18.246-7.555-6.551-14.766-12.696-21.274-18.243-45.539-38.804-73.023-62.226-73.023-94.09 0-27.8 18.11-47.976 43.058-47.976 8.579 0 16.149 2.629 23.141 8.035 6.441 4.984 10.988 11.383 13.672 15.879 3.016 5.055 8.543 8.191 14.426 8.191 5.882 0 11.414-3.136 14.43-8.195 2.683-4.492 7.23-10.89 13.671-15.875 6.992-5.406 14.559-8.035 23.14-8.035 24.95 0 43.06 20.176 43.06 47.976 0 31.864-27.485 55.286-73.02 94.086zm0 0" /></svg>;
+}
+export function deviantart040(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-88 1 511 511.999" {...props}><path d="M334.61 88.98V35.437C334.61 15.898 318.714 0 299.171 0h-58.746c-16.738 0-31.91 9.238-39.594 24.113l-31.777 61.504a13.114 13.114 0 01-11.692 7.117H45.066C20.492 92.734.5 112.73.5 137.304v63.973c0 24.575 19.992 44.57 44.566 44.57h41.207l-80.8 156.4A44.729 44.729 0 00.5 422.702v44.727C.5 492.008 20.492 512 45.066 512h49.45c16.742 0 31.914-9.238 39.597-24.113l31.778-61.504a13.108 13.108 0 0111.687-7.117h112.465c24.574 0 44.566-19.996 44.566-44.57v-63.973c0-24.575-19.992-44.57-44.566-44.57h-41.371l80.965-156.716a44.753 44.753 0 004.972-20.457zm-30.028 0c0 2.313-.562 4.618-1.621 6.672L219.23 257.72c-4.258 8.242-3.922 17.89.902 25.812 4.824 7.922 13.242 12.653 22.515 12.653h47.395c8.016 0 14.539 6.523 14.539 14.539v63.972c0 8.016-6.523 14.54-14.539 14.54H177.578c-16.219 0-30.922 8.952-38.363 23.363l-31.777 61.504a14.484 14.484 0 01-12.918 7.867H45.07c-8.02 0-14.539-6.52-14.539-14.54v-44.726c0-2.312.559-4.621 1.621-6.672l83.563-161.754c4.258-8.238 3.922-17.886-.902-25.808s-13.243-12.653-22.516-12.653H45.07c-8.02 0-14.539-6.523-14.539-14.539v-63.972c0-8.02 6.52-14.54 14.54-14.54h112.292c16.223 0 30.926-8.953 38.367-23.367l31.778-61.503a14.491 14.491 0 0112.918-7.868h58.746a5.42 5.42 0 015.41 5.41zm0 0" /></svg>;
+}
+export function vimeo041(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 511.998 511" {...props}><path d="M497.793 34.047C475.727 1.145 440.153.512 438.648.5h-.109c-33.137 0-64.676 10.379-91.215 30.02-20.39 15.09-37.922 35.957-48.101 57.25-3.297 6.894-2.727 14.808 1.527 21.168s11.355 9.91 18.977 9.492c16.152-.887 27.214 2.855 33.816 11.398 5.668 7.344 6.547 16.766 6.281 23.375-.176 4.477-1.152 9.043-2.902 13.563l-.719 1.851c-.34.887-.34.887-.422 1.09l-.058.148c-37.489 95.032-63.016 114.98-77.828 114.98-1.426 0-2.18-.304-2.211-.32l-.25-.097c-2.727-1.078-17.141-9.605-33.024-72.066-10.25-40.309-16.75-86.325-19.715-110.164l-.027-.22c-1.926-13.84-4.617-26.413-8-37.374-5.828-18.871-18.746-34.23-36.375-43.246-17.734-9.067-37.895-10.547-56.766-4.172-3.34 1.129-6.332 2.375-9.148 3.804C75.945 39.438 28.945 86.223 6.363 108.703c-7.957 7.918-8.52 20.379-1.308 28.985 7.527 8.98 20.629 10.296 29.828 2.992 9.082-7.215 17.39-10.871 24.695-10.871 12.742 0 18.172 11.55 18.227 11.668l.21.441c29.536 59.36 49.102 142.902 49.294 143.742l.035.137c15.594 64.441 34.785 110.73 57.039 137.582 19.183 23.148 35.344 24.95 39.84 24.95h1.129l.933-.122c112.195-14.2 216.203-182.934 255.711-254.816 11.738-21.356 20.223-43.668 25.219-66.329 8.695-39.425 5.523-70.722-9.422-93.015zm-19.828 86.57c-4.383 19.867-11.856 39.5-22.219 58.348-16.332 29.722-50.129 87.293-92.922 138.898-23.453 28.285-46.554 51.067-68.668 67.707-24.566 18.485-48.004 29.465-69.707 32.66-5.18-1.722-38.433-17.359-67.98-139.421-.75-3.188-20.938-88.442-51.54-150.036C98.216 114.34 81.646 99.86 59.58 99.86c-.36 0-.716.004-1.071.012 21.332-19.867 47.176-41.918 67.41-52.172 1.531-.777 3.234-1.476 5.203-2.144 11.149-3.766 23.059-2.89 33.531 2.465 10.375 5.304 17.973 14.332 21.391 25.41 2.902 9.402 5.238 20.36 6.941 32.566 3.727 29.973 10.29 73.992 20.395 113.738 13.937 54.809 30.133 84.211 50.953 92.504 2.879 1.18 7.531 2.551 13.563 2.551 19.558 0 37.738-11.605 55.582-35.488 16.054-21.488 32.437-53.672 50.078-98.375.093-.235.133-.328.586-1.504l.714-1.844c2.942-7.605 4.59-15.406 4.899-23.183.66-16.598-3.664-31.422-12.504-42.875-10.34-13.387-25.187-21.012-44.258-22.774 6.309-9.75 16.602-22.64 32.153-34.148 21.601-15.989 46.234-24.11 73.218-24.145h.18-.168c1.734.067 21.793 1.266 34.543 20.274 10.07 15.023 11.816 39.191 5.047 69.89zm0 0" /></svg>;
+}
+export function behance042(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512.001" {...props}><path d="M373.41 0H138.594C62.172 0 0 62.172 0 138.594v234.812C0 449.828 62.172 512 138.594 512H373.41C449.828 512 512 449.828 512 373.406V138.594C512 62.172 449.828 0 373.41 0zm108.574 373.406c0 59.871-48.707 108.578-108.574 108.578H138.594c-59.871 0-108.578-48.707-108.578-108.578V138.594c0-59.871 48.707-108.578 108.578-108.578H373.41c59.867 0 108.574 48.707 108.574 108.578zm0 0" /><path d="M219.152 248.273c16.438-7.156 24.664-22.535 24.664-46.136 0-34.043-19.441-51.067-58.324-51.067h-56c-4.453 0-8.32 1.063-11.605 3.192-3.293 2.129-4.934 5.031-4.934 8.703v188.601c0 3.098 1.547 5.805 4.645 8.125 3.09 2.32 7.058 3.48 11.894 3.48h61.516c17.793 0 31.914-4.882 42.363-14.651 10.445-9.766 15.668-25.387 15.668-46.86v-6.094c0-13.539-2.52-23.84-7.547-30.902-5.031-7.059-12.476-12.52-22.34-16.39zm-68.77-64.125h32.208c7.351 0 13.105 2.176 17.265 6.528 4.157 4.351 6.239 10.3 6.239 17.844 0 7.738-1.985 13.832-5.95 18.28-3.964 4.45-9.718 6.673-17.261 6.673h-32.5zm60.934 114.32c0 21.087-9.382 31.63-28.144 31.63h-32.79V263.07h32.79c9.285 0 16.293 2.422 21.035 7.254 4.738 4.836 7.11 12.672 7.11 23.504zm0 0M381.64 303.98c4.06 0 7.348-.19 9.864-.574 2.512-.383 5.27-1.344 8.27-2.875 2.996-1.531 5.222-4.168 6.671-7.902 1.453-3.734 2.18-8.473 2.18-14.223 0-15.738-5.855-28.808-17.555-39.203-11.707-10.394-25.78-15.598-42.218-15.598-17.606 0-32.598 5.711-44.977 17.122-12.379 11.414-18.57 25.054-18.57 40.914v24.66c0 17.8 6.53 32.164 19.586 43.09 13.058 10.93 29.933 16.394 50.632 16.394 14.508 0 26.645-2.656 36.415-7.98 9.765-5.317 14.656-10.688 14.656-16.106 0-3.48-1.356-7.11-4.063-10.879-2.71-3.773-6.093-5.66-10.156-5.66-2.133 0-6.773 1.844-13.93 5.516-7.156 3.676-14.41 5.512-21.761 5.512-10.254 0-18.473-2.563-24.66-7.688-6.196-5.125-9.286-11.848-9.286-20.168v-4.352zm-58.902-29.64c0-6.32 2.512-11.426 7.543-15.309 5.028-3.883 10.926-5.828 17.7-5.828 7.152 0 13.203 1.992 18.136 5.961 4.93 3.977 7.399 9.129 7.399 15.45 0 2.89-.633 4.831-1.887 5.824-1.262.996-3.438 1.492-6.527 1.492h-42.364zm0 0M394.387 177.863H300.52c-8.29 0-15.012 6.723-15.012 15.008 0 8.29 6.722 15.012 15.012 15.012h93.867c8.289 0 15.011-6.723 15.011-15.012 0-8.285-6.722-15.008-15.011-15.008zm0 0" /></svg>;
+}
+export function email043(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -100 512 512" {...props}><path d="M494.535 0H17.465C7.835 0 0 7.836 0 17.465v276.453c0 9.629 7.836 17.46 17.465 17.46h477.07c9.63 0 17.465-7.831 17.465-17.46V17.465C512 7.835 504.164 0 494.535 0zM30.031 43.027L173.54 138.41 30.031 263.332zM256 157.157L64.734 30.03h382.532zm-56.523-1.512l46.855 31.144a17.433 17.433 0 009.668 2.93c3.363 0 6.73-.98 9.668-2.93l46.855-31.144 144.403 125.703H55.074zm138.984-17.239l143.508-95.383v220.309zm0 0" /></svg>;
+}
+export function flickr044(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 511 512" {...props}><path d="M167.727 179.164c-41.918 0-76.028 34.106-76.028 76.027 0 42.004 34.11 76.176 76.028 76.176 42.003 0 76.18-34.172 76.18-76.176 0-41.921-34.177-76.027-76.18-76.027zm0 122.23c-25.391 0-46.051-20.726-46.051-46.203 0-25.394 20.66-46.05 46.05-46.05 25.477 0 46.204 20.656 46.204 46.05 0 25.477-20.727 46.204-46.203 46.204zm0 0" /><path d="M437.484 74.926C389.117 26.609 324.81 0 256.406 0 115.296 0 .5 114.797.5 255.906.5 397.117 115.297 512 256.406 512c68.399 0 132.707-26.64 181.082-75.012 48.371-48.37 75.012-112.683 75.012-181.082 0-68.379-26.64-132.652-75.016-180.98zm-21.191 340.867c-42.711 42.707-99.492 66.23-159.887 66.23-124.578 0-225.93-101.437-225.93-226.117 0-124.578 101.352-225.93 225.93-225.93 60.403 0 117.188 23.497 159.89 66.157 42.708 42.668 66.227 99.406 66.227 159.77 0 60.398-23.52 117.179-66.23 159.89zm0 0" /><path d="M345.836 179.164c-42.004 0-76.176 34.106-76.176 76.027 0 42.004 34.172 76.176 76.176 76.176 41.941 0 76.066-34.172 76.066-76.176 0-41.921-34.125-76.027-76.066-76.027zm0 122.23c-25.477 0-46.2-20.726-46.2-46.203 0-25.394 20.723-46.05 46.2-46.05 25.414 0 46.09 20.656 46.09 46.05 0 25.477-20.676 46.204-46.09 46.204zm0 0" /></svg>;
+}
+export function suitcase045(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -44 511.999 511" {...props}><path d="M494.535 91.844H327.051V71.57C327.05 32.383 295.164.5 255.977.5s-71.07 31.883-71.07 71.07v20.274H17.464C7.835 91.844 0 99.68 0 109.309V405.78c0 9.633 7.836 17.465 17.465 17.465h477.07c9.63 0 17.465-7.832 17.465-17.465V109.31c0-9.63-7.836-17.465-17.465-17.465zM214.937 71.57c0-22.629 18.41-41.039 41.04-41.039 22.628 0 41.043 18.41 41.043 41.04v20.273h-82.082zM67.918 393.215H30.031V121.879h37.887zm66.383 0H97.949V121.879h36.352zm213.32 0H164.332V121.879h183.29zm66.383 0h-36.352V121.879h36.352zm67.965 0h-37.934V121.879h37.934zm0 0" /></svg>;
+}
+export function network3046(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.002 512" {...props}><path d="M83.043 401.898c14.492 0 27.035-5.199 37.285-15.449s15.45-22.797 15.45-37.285c0-14.488-5.2-27.035-15.45-37.285-10.254-10.25-22.797-15.445-37.285-15.445-14.492 0-27.035 5.195-37.285 15.445s-15.45 22.793-15.45 37.285c0 14.492 5.2 27.035 15.454 37.285 10.25 10.25 22.793 15.45 37.281 15.45zM66.988 333.11c4.54-4.539 9.64-6.652 16.055-6.652 6.414 0 11.516 2.113 16.055 6.652 4.539 4.54 6.656 9.641 6.656 16.055 0 6.41-2.113 11.512-6.656 16.055-4.54 4.539-9.641 6.652-16.055 6.652-6.41 0-11.512-2.113-16.055-6.656-4.539-4.54-6.652-9.637-6.652-16.05 0-6.415 2.113-11.517 6.652-16.056zm0 0" /><path d="M166.375 447.746c-.797-4.453-1.836-8.687-3.082-12.582a65.899 65.899 0 00-5.469-12.418c-2.48-4.363-5.43-8.191-8.77-11.39-3.687-3.528-8.14-6.34-13.245-8.364-5.063-2.004-10.606-3.02-16.48-3.02-4.93 0-8.79 2.247-12.329 4.551a854.323 854.323 0 01-7.188 4.637c-1.12.715-3.269 1.828-7.152 3.082-5.762 1.867-11.222 1.867-16.992 0-3.879-1.254-6.031-2.367-7.145-3.078a890.394 890.394 0 01-7.207-4.648c-3.53-2.297-7.39-4.543-12.316-4.543-5.875 0-11.422 1.02-16.48 3.023-5.102 2.02-9.56 4.832-13.258 8.367-3.332 3.196-6.278 7.024-8.754 11.383a65.789 65.789 0 00-5.469 12.418c-1.246 3.89-2.281 8.125-3.082 12.578-.781 4.348-1.312 8.492-1.578 12.324A164.14 164.14 0 000 471.273c0 15.059 6.434 24.348 11.836 29.489 7.64 7.277 17.535 10.965 29.402 10.965h85.856c11.867 0 21.761-3.692 29.406-10.965 5.398-5.137 11.836-14.422 11.836-29.492 0-3.813-.133-7.586-.383-11.208-.27-3.816-.797-7.96-1.578-12.316zm-30.574 31.266c-1.211 1.152-3.434 2.687-8.707 2.687H41.238c-5.273 0-7.496-1.531-8.703-2.683-1.168-1.114-2.508-3-2.508-7.743 0-3.113.102-6.183.305-9.128.191-2.754.586-5.813 1.176-9.094.57-3.16 1.281-6.102 2.125-8.735a35.799 35.799 0 012.98-6.738c1.035-1.824 2.188-3.351 3.41-4.523.875-.836 2.07-1.559 3.551-2.145a12.164 12.164 0 012.266-.64 949.29 949.29 0 006.531 4.203c3.84 2.449 8.441 4.523 14.063 6.336 11.66 3.773 23.804 3.773 35.457.003 5.629-1.816 10.23-3.89 14.078-6.347 2.386-1.524 4.562-2.926 6.52-4.195.812.148 1.57.363 2.265.636 1.48.59 2.676 1.313 3.547 2.145 1.226 1.176 2.379 2.699 3.418 4.527a35.91 35.91 0 012.98 6.738c.844 2.637 1.559 5.575 2.125 8.727.59 3.293.985 6.355 1.176 9.102v.007c.203 2.93.309 6 .309 9.121 0 4.743-1.34 6.63-2.508 7.739zm0 0M373.977 349.164c0 14.492 5.195 27.035 15.449 37.285 10.254 10.25 22.797 15.45 37.285 15.45 14.488 0 27.035-5.2 37.285-15.45s15.445-22.797 15.445-37.285c0-14.488-5.195-27.035-15.449-37.285-10.25-10.25-22.793-15.445-37.285-15.445-14.488 0-27.035 5.195-37.281 15.445-10.254 10.25-15.45 22.797-15.45 37.285zm36.68-16.055c4.538-4.539 9.64-6.652 16.054-6.652 6.41 0 11.516 2.113 16.055 6.652 4.539 4.543 6.652 9.645 6.652 16.055 0 6.414-2.113 11.516-6.652 16.055s-9.641 6.652-16.055 6.652-11.516-2.113-16.055-6.652c-4.543-4.54-6.656-9.64-6.656-16.055 0-6.414 2.117-11.516 6.656-16.055zm0 0" /><path d="M511.617 460.063c-.265-3.817-.793-7.961-1.574-12.317-.8-4.453-1.836-8.687-3.086-12.582a65.4 65.4 0 00-5.469-12.418c-2.476-4.363-5.426-8.191-8.765-11.39-3.688-3.528-8.145-6.34-13.25-8.364-5.063-2.004-10.606-3.02-16.477-3.02-4.93 0-8.789 2.247-12.328 4.551a923.026 923.026 0 01-7.188 4.637c-1.12.715-3.273 1.828-7.152 3.082-5.766 1.867-11.223 1.867-16.996 0-3.879-1.254-6.027-2.367-7.14-3.078-2.672-1.707-5.07-3.254-7.208-4.644-3.53-2.301-7.39-4.547-12.316-4.547-5.879 0-11.422 1.02-16.48 3.023-5.102 2.02-9.56 4.832-13.258 8.367-3.336 3.196-6.282 7.024-8.758 11.383a65.789 65.789 0 00-5.469 12.418c-1.242 3.89-2.281 8.125-3.078 12.578-.781 4.348-1.313 8.492-1.578 12.324a164.14 164.14 0 00-.379 11.207c0 15.059 6.434 24.348 11.836 29.489 7.64 7.277 17.535 10.965 29.402 10.965h85.856c11.867 0 21.761-3.692 29.406-10.965 5.398-5.137 11.836-14.422 11.836-29.492a163.381 163.381 0 00-.387-11.208zm-32.152 18.949c-1.211 1.152-3.434 2.687-8.707 2.687h-85.852c-5.273 0-7.496-1.531-8.703-2.683-1.168-1.114-2.512-3-2.512-7.743 0-3.109.106-6.183.309-9.128.191-2.754.586-5.813 1.176-9.094.566-3.16 1.281-6.102 2.125-8.73.726-2.278 1.73-4.544 2.976-6.743 1.04-1.824 2.192-3.351 3.414-4.523.875-.836 2.067-1.559 3.551-2.145.695-.273 1.45-.488 2.266-.64a893.367 893.367 0 006.527 4.203c3.84 2.449 8.445 4.523 14.063 6.34 11.664 3.769 23.804 3.769 35.46 0 5.626-1.817 10.227-3.891 14.075-6.344 2.387-1.528 4.562-2.926 6.52-4.2.816.153 1.57.364 2.265.637 1.48.59 2.676 1.313 3.547 2.145 1.23 1.18 2.379 2.703 3.422 4.527 1.246 2.2 2.25 4.465 2.976 6.738.844 2.637 1.559 5.575 2.125 8.727.59 3.293.985 6.355 1.176 9.102v.007c.207 2.93.309 6 .313 9.121-.004 4.743-1.344 6.63-2.512 7.739zm0 0M254.875 105.465c14.492 0 27.035-5.195 37.285-15.445s15.45-22.797 15.45-37.286-5.196-27.035-15.45-37.289C281.91 5.2 269.363 0 254.875 0c-14.492 0-27.035 5.2-37.285 15.45s-15.45 22.796-15.45 37.284c0 14.493 5.2 27.036 15.454 37.286 10.25 10.25 22.793 15.445 37.281 15.445zm-16.05-68.785c4.534-4.54 9.636-6.653 16.05-6.653s11.516 2.114 16.055 6.653c4.543 4.543 6.656 9.644 6.656 16.054 0 6.414-2.113 11.516-6.656 16.055-4.54 4.54-9.64 6.652-16.055 6.652-6.41 0-11.512-2.113-16.055-6.652-4.539-4.539-6.652-9.64-6.652-16.055s2.113-11.515 6.656-16.054zm0 0" /><path d="M339.785 163.625c-.265-3.816-.797-7.957-1.574-12.309-.8-4.453-1.84-8.687-3.086-12.586a65.865 65.865 0 00-5.469-12.414c-2.476-4.363-5.43-8.195-8.765-11.39-3.688-3.524-8.145-6.34-13.254-8.364-5.063-2.003-10.606-3.019-16.477-3.019-4.933 0-8.793 2.246-12.328 4.55a861.106 861.106 0 01-7.187 4.634c-1.122.718-3.274 1.832-7.153 3.085-5.758 1.864-11.222 1.868-16.996-.003-3.875-1.25-6.027-2.364-7.14-3.075a974.987 974.987 0 01-7.204-4.644c-3.53-2.3-7.39-4.547-12.32-4.547-5.875 0-11.418 1.016-16.48 3.02-5.102 2.023-9.559 4.835-13.254 8.37-3.336 3.192-6.286 7.024-8.758 11.38a65.98 65.98 0 00-5.473 12.421c-1.242 3.895-2.281 8.125-3.078 12.578-.781 4.348-1.312 8.493-1.578 12.325a164.14 164.14 0 00-.379 11.207c0 15.058 6.434 24.344 11.836 29.488 7.64 7.273 17.535 10.961 29.402 10.961h85.856c11.867 0 21.762-3.688 29.406-10.961 5.398-5.137 11.832-14.426 11.832-29.492 0-3.82-.125-7.594-.379-11.215zm-32.152 18.957c-1.211 1.152-3.434 2.688-8.707 2.688h-85.852c-5.277 0-7.496-1.536-8.703-2.684-1.172-1.113-2.512-3-2.512-7.742 0-3.114.102-6.184.305-9.133.191-2.75.59-5.809 1.176-9.094.57-3.156 1.285-6.097 2.125-8.73a35.689 35.689 0 012.98-6.739c1.04-1.828 2.188-3.351 3.414-4.523.875-.84 2.07-1.559 3.547-2.145a12.12 12.12 0 012.27-.64c1.96 1.273 4.136 2.672 6.527 4.203 3.844 2.45 8.45 4.523 14.063 6.336 11.656 3.77 23.816 3.77 35.457.004 5.625-1.817 10.226-3.89 14.078-6.348a990.839 990.839 0 006.52-4.195c.816.148 1.57.363 2.265.637 1.48.585 2.676 1.308 3.55 2.148 1.227 1.172 2.376 2.695 3.419 4.527a35.825 35.825 0 012.976 6.73c.844 2.641 1.559 5.579 2.125 8.731.59 3.293.985 6.356 1.176 9.102v.008c.203 2.93.309 6 .309 9.12 0 4.743-1.34 6.626-2.508 7.739zm0 0M301.824 446.762h-93.898c-8.29 0-15.012 6.718-15.012 15.011 0 8.29 6.723 15.012 15.012 15.012h93.898c8.293 0 15.016-6.722 15.016-15.012 0-8.293-6.723-15.011-15.016-15.011zm0 0M164.016 225.98c-6.739-4.832-16.118-3.28-20.946 3.458l-25.738 35.914c-4.828 6.742-3.277 16.117 3.461 20.949a14.938 14.938 0 008.73 2.812c4.676 0 9.286-2.18 12.22-6.27l25.734-35.917c4.828-6.738 3.28-16.117-3.461-20.946zm0 0M380.23 289.11c3.024 0 6.083-.91 8.73-2.81 6.743-4.831 8.29-14.206 3.462-20.948l-25.738-35.915c-4.832-6.742-14.211-8.289-20.95-3.46-6.738 4.832-8.285 14.207-3.457 20.949l25.735 35.914c2.933 4.094 7.539 6.27 12.218 6.27zm0 0" /></svg>;
+}
+export function chat2047(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511 511.999" {...props}><path d="M512.16 246.188l.008-.344-.008-.34c-1.527-66.945-28.996-129.324-77.34-175.656C386.547 23.586 323.18-1.2 256.332.043 189.484-1.164 126.117 23.586 77.844 69.848 29.5 116.18 2.03 178.558.504 245.5l-.004.21v.212c.352 68.226 29.559 133.082 80.273 178.543v61.855c0 12.004 8.383 22.461 19.934 24.864 1.707.355 3.43.53 5.14.53 4.65 0 9.22-1.296 13.235-3.808l49.711-31.054a262.631 262.631 0 0087.035 14.793c.125 0 .246-.004.371-.004 30.414.586 60.117-4.22 88.461-14.246C362 498.508 388.297 512 417.688 512c52.093 0 94.476-42.383 94.476-94.477 0-25.257-9.965-48.234-26.168-65.203 16.309-32.816 25.324-69.261 26.164-106.133zM256.63 461.632l-.328-.004c-27.656.086-54.887-4.746-80.867-14.277-6.43-2.36-13.43-1.641-19.215 1.972l-45.43 28.38v-56.891a21.959 21.959 0 00-7.574-16.57c-45.84-39.852-72.328-97.528-72.703-158.263C31.91 187.11 56.09 132.266 98.609 91.52c42.567-40.797 98.512-62.602 157.426-61.461l.297.004.297-.004c58.945-1.149 114.86 20.664 157.426 61.46 42.488 40.715 66.66 95.512 68.093 154.329-.742 30.468-7.835 60.578-20.597 88.02-13.117-6.903-28.04-10.821-43.863-10.821-52.094 0-94.477 42.383-94.477 94.476 0 11.754 2.16 23.008 6.101 33.395-23.37 7.594-47.757 11.2-72.683 10.715zm161.059 20.355c-35.547 0-64.465-28.918-64.465-64.465 0-35.546 28.918-64.464 64.465-64.464s64.464 28.918 64.464 64.464c0 35.547-28.918 64.465-64.465 64.465zm0 0" /><path d="M146.39 204.188h219.883c8.29 0 15.008-6.72 15.008-15.008 0-8.285-6.719-15.004-15.008-15.004H146.391c-8.29 0-15.008 6.719-15.008 15.004 0 8.289 6.719 15.007 15.008 15.007zm0 0M381.281 255.559c0-8.286-6.719-15.004-15.008-15.004H146.391c-8.29 0-15.008 6.718-15.008 15.004 0 8.289 6.719 15.007 15.008 15.007h219.882c8.29 0 15.008-6.718 15.008-15.007zm0 0M224.488 306.934h-78.097c-8.29 0-15.008 6.718-15.008 15.004 0 8.289 6.719 15.007 15.008 15.007h78.097c8.29 0 15.008-6.718 15.008-15.007 0-8.286-6.719-15.004-15.008-15.004zm0 0M417.688 375.875c-8.29 0-15.008 6.719-15.008 15.008v52.09c0 8.285 6.718 15.004 15.007 15.004s15.008-6.72 15.008-15.004v-52.09c0-8.29-6.718-15.008-15.007-15.008zm0 0" /></svg>;
+}
+export function notification048(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 0 511 511.998" {...props}><path d="M426.566 418.09l-.007-.008c-61.7-53.594-88.164-122.957-88.485-231.914-.097-33.043-13.707-65.395-37.336-88.758-10.113-10-21.597-18.004-33.98-23.84V52.246C266.758 23.438 243.32 0 214.508 0c-28.809 0-52.246 23.438-52.246 52.246v22.61C122.008 94.84 94.21 136.421 94.21 184.14c0 56.16-6.941 101.644-21.219 139.05-14.039 36.786-36.031 67.82-67.23 94.875-4.797 4.157-6.528 10.95-4.309 16.895 2.223 5.945 7.977 9.937 14.32 9.937l122.168.004c2.88 37.477 34.27 67.094 72.47 67.094 38.198 0 69.589-29.613 72.468-67.086l133.668.004c6.344 0 12.098-3.992 14.316-9.937 2.219-5.942.492-12.727-4.297-16.887zM192.332 52.246c0-12.226 9.95-22.176 22.176-22.176 12.23 0 22.18 9.95 22.18 22.176v11.785a119.435 119.435 0 00-21.579-1.8c-7.785.066-15.398.878-22.777 2.355zM210.41 481.93c-21.605 0-39.496-16.157-42.254-37.024l84.512.004c-2.758 20.863-20.652 37.02-42.258 37.02zM51.883 414.832c21.46-24.008 37.676-50.723 49.199-80.914 15.61-40.895 23.195-89.883 23.195-149.773 0-50.223 40.864-91.422 91.086-91.848 23.953-.242 46.75 9.21 64.235 26.496 17.976 17.777 28.332 42.367 28.406 67.465.176 59.23 7.86 107.754 23.492 148.344 11.512 29.898 27.656 56.394 48.961 80.246zm0 0" /></svg>;
+}
+export function agenda049(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512.002" {...props}><path d="M511.82 93.344c0-25.028-20.363-45.39-45.39-45.39h-3.817V18.136c0-10-8.136-18.137-18.133-18.137H75.035c-10 0-18.137 8.137-18.137 18.137V79.55H14.996C6.715 79.55 0 86.266 0 94.547s6.715 14.996 14.996 14.996h41.902v34.992H14.996C6.715 144.535 0 151.25 0 159.531c0 8.285 6.715 14.996 14.996 14.996h41.902v35.801H14.996C6.715 210.328 0 217.04 0 225.324c0 8.281 6.715 14.996 14.996 14.996h41.902v34.993H14.996C6.715 275.313 0 282.026 0 290.308s6.715 14.996 14.996 14.996h41.902v33.953H14.996C6.715 339.258 0 345.973 0 354.254s6.715 14.996 14.996 14.996h41.902v34.992H14.996C6.715 404.242 0 410.957 0 419.238s6.715 14.996 14.996 14.996h41.902v59.633c0 10 8.137 18.137 18.137 18.137h369.442c10 0 18.136-8.137 18.136-18.137v-94.254h3.817c25.027 0 45.386-20.36 45.386-45.386v-46.438c0-11.68-4.433-22.34-11.707-30.394 7.274-8.051 11.707-18.711 11.707-30.391v-46.438c0-11.68-4.433-22.34-11.707-30.39 7.274-8.055 11.707-18.715 11.707-30.395V93.344zm-79.199 388.664H86.891v-47.774h21.906c8.281 0 14.996-6.714 14.996-14.996s-6.715-14.996-14.996-14.996H86.89V369.25h21.906c8.281 0 14.996-6.715 14.996-14.996 0-8.285-6.715-15-14.996-15H86.89v-33.95h21.906c8.281 0 14.996-6.714 14.996-14.995s-6.715-14.996-14.996-14.996H86.89V240.32h21.906c8.281 0 14.996-6.715 14.996-15 0-8.28-6.715-14.996-14.996-14.996H86.89v-35.797h21.906c8.281 0 14.996-6.714 14.996-14.996s-6.715-14.996-14.996-14.996H86.89v-34.992h21.906c8.281 0 14.996-6.715 14.996-14.996 0-8.285-6.715-15-14.996-15H86.89V29.992h345.73zm49.203-127.785c0 8.488-6.906 15.394-15.394 15.394h-3.817v-77.226h3.817c8.488 0 15.394 6.906 15.394 15.394zm0-107.223c0 8.492-6.906 15.398-15.394 15.398h-3.817v-77.23h3.817c8.488 0 15.394 6.906 15.394 15.398zm0-107.219c0 8.489-6.906 15.395-15.394 15.395h-3.817V77.949h3.817c8.488 0 15.394 6.906 15.394 15.395zm0 0" /><path d="M259.594 252.414c17.48 0 32.613-6.27 44.976-18.633 12.364-12.367 18.637-27.496 18.637-44.976 0-17.477-6.27-32.61-18.637-44.977-12.367-12.363-27.5-18.633-44.976-18.633s-32.61 6.27-44.977 18.633c-12.363 12.367-18.633 27.5-18.633 44.977 0 17.48 6.27 32.613 18.637 44.976 12.367 12.364 27.5 18.633 44.973 18.633zm-23.766-87.375c6.719-6.723 14.27-9.851 23.766-9.851 9.492 0 17.047 3.132 23.765 9.847 6.723 6.723 9.852 14.274 9.852 23.77 0 9.492-3.129 17.047-9.848 23.765-6.722 6.72-14.273 9.848-23.77 9.848-9.491 0-17.046-3.129-23.769-9.852-6.719-6.718-9.847-14.265-9.847-23.765 0-9.492 3.132-17.043 9.851-23.762zm0 0" /><path d="M362.71 306.613c-.995-5.547-2.288-10.812-3.835-15.656-1.66-5.184-3.91-10.293-6.688-15.18-2.984-5.254-6.523-9.855-10.523-13.683-4.344-4.156-9.613-7.48-15.668-9.88-6.012-2.378-12.617-3.581-19.637-3.581-4.68 0-8.496 1.89-13.511 5.156a1122.388 1122.388 0 01-9.301 5.996c-1.66 1.059-4.781 2.688-10.223 4.445-8.187 2.649-16.383 2.649-24.578 0-5.434-1.757-8.555-3.39-10.207-4.44-3.46-2.212-6.562-4.212-9.32-6.005-5.008-3.265-8.824-5.152-13.5-5.152-7.024 0-13.63 1.203-19.637 3.582-6.047 2.394-11.32 5.719-15.676 9.887-3.992 3.824-7.531 8.425-10.515 13.675-2.774 4.887-5.024 9.993-6.688 15.184-1.547 4.836-2.836 10.105-3.832 15.652-.976 5.446-1.64 10.633-1.973 15.414-.316 4.582-.476 9.34-.476 14.145 0 14.344 4.676 26.07 13.898 34.851 9.012 8.579 20.758 12.93 34.899 12.93h110.644c14.14 0 25.883-4.351 34.899-12.93 9.226-8.777 13.902-20.503 13.902-34.855a205.752 205.752 0 00-.484-14.152c-.328-4.766-.993-9.946-1.97-15.403zm-32.12 42.68c-3.3 3.14-7.95 4.664-14.223 4.664H205.72c-6.27 0-10.926-1.523-14.219-4.66-1.969-1.875-4.586-5.274-4.586-13.129 0-4.11.137-8.172.406-12.066.258-3.704.785-7.805 1.575-12.188.765-4.258 1.73-8.23 2.875-11.812 1.03-3.22 2.445-6.418 4.199-9.508 1.547-2.723 3.289-5.02 5.176-6.824 1.558-1.489 3.515-2.688 5.98-3.668 1.664-.657 3.512-1.098 5.523-1.317a1103.503 1103.503 0 009.754 6.29c4.633 2.952 10.235 5.472 17.121 7.695 14.157 4.578 28.88 4.578 43.024.003 6.894-2.226 12.496-4.746 17.137-7.707a1164.63 1164.63 0 009.543-6.152c.066-.043.136-.086.199-.129 2.011.219 3.863.66 5.527 1.317 2.465.98 4.422 2.18 5.977 3.664 1.89 1.808 3.632 4.105 5.18 6.832 1.757 3.09 3.171 6.289 4.199 9.5 1.144 3.586 2.113 7.562 2.879 11.812.785 4.395 1.316 8.496 1.57 12.192l.004.011c.27 3.875.406 7.934.41 12.055 0 7.855-2.617 11.254-4.582 13.125zm0 0" /></svg>;
+}
+export function megaphone050(props) {
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512.001" {...props}><path d="M486.613 0h-58.5c-13.754 0-24.941 11.188-24.941 24.941v21.47c-44.777 49.417-102.77 70.706-192.723 70.972-28.742.082-56.879 11.918-77.199 32.469a109.962 109.962 0 00-8.434 9.59H59.47C26.679 159.441 0 186.116 0 218.91c0 32.79 26.68 59.469 59.469 59.469h58.562c11.285 18.535 28.078 33.379 48.059 42.219-1.496 31.574-9.867 60.492-23.996 82.28-16.422 25.325-32.461 29.11-40.563 29.11-22.058 0-40.004 17.946-40.004 40.004 0 22.063 17.946 40.008 40.004 40.008 42.024 0 80.27-23.293 107.696-65.586 20.691-31.906 33.343-72.312 36.41-115.48 31.14 2.343 57.816 7.828 80.824 16.613 29.527 11.27 54.656 28.64 76.707 53.012v12.32c0 13.75 11.191 24.941 24.941 24.941h58.5c13.754 0 24.942-11.191 24.942-24.941V24.94C511.555 11.187 500.363 0 486.613 0zM59.47 248.371c-16.246 0-29.461-13.219-29.461-29.46 0-16.247 13.215-29.466 29.46-29.466h48.93a103.132 103.132 0 00-5.761 34.946 105.539 105.539 0 002.96 23.98zM184.05 430.086c-21.707 33.476-51.012 51.91-82.52 51.91-5.511 0-10-4.488-10-10.004 0-5.515 4.489-10 10-10 14.192 0 41.598-5.558 65.739-42.789 15.933-24.57 25.785-56.164 28.39-90.41 4.29.531 8.649.809 13.07.809 2.333 0 4.63.027 6.918.054-2.793 37.817-13.761 72.93-31.597 100.43zm219.11-71.422c-19.716-16.894-41.528-29.812-65.997-39.152-35.105-13.399-77.117-19.914-128.434-19.914-41.605 0-75.738-33.852-76.09-75.461-.163-19.817 7.63-38.703 21.95-53.188 14.742-14.914 35.137-23.5 55.95-23.562 50.753-.149 92.366-6.746 127.214-20.168 24.219-9.328 45.844-22.184 65.414-38.95zm78.386 49.145h-48.371V30.004h48.37zm0 0" /></svg>;
 }
