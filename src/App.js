@@ -13,6 +13,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import ActivateAccount from "./pages/activate-account/";
 import Profile from "./pages/profile/";
+import Explore from "./pages/explore/";
 
 import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
@@ -170,6 +171,9 @@ const Routing = () => {
         </AuthRoute>
         <Route path="/elements">
           <Elements />
+        </Route>
+        <Route path="/explore">
+          <Explore />
         </Route>
         <AuthRoute
           privatePage={true}

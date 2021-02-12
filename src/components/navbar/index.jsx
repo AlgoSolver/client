@@ -260,7 +260,7 @@ export const AccountsNav = () => {
       <div className="wrapper">
         <div>
           <Link className="nav__brand" to="/">
-            AlgoSlover
+            AlgoSolver
           </Link>
         </div>
       </div>
@@ -276,7 +276,7 @@ const Navbar = ({ close }) => {
     >
       <div className="wrapper">
         <div className="nav__brand">
-          <Link to="/">AlgoSlover</Link>
+          <Link to="/">AlgoSolver</Link>
         </div>
         {isBigPhone ? (
           <NavMenu />

@@ -316,7 +316,7 @@ const Navbar = () => {
       initial={{ y: 300, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <div className="nav__brand">AlgoSlover</div>
+      <div className="nav__brand">AlgoSolver</div>
       {isBigPhone ? (
         <NavMenu />
       ) : (
