@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import classNames from "classnames";
+import Loading from '../loading/index'
 
 const types = [
   "primary",
@@ -191,24 +192,6 @@ const StyledButton = styled.button`
   }
 `;
 
-const donutSpin = keyframes`
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-`;
-
-const LoadingState = styled.span`
-  display: inline-block;
-  border: 4px solid ${({ theme, type }) => theme.colors.dark[3]};
-  border-left-color: ${({ theme, type }) => theme.colors.dark[1]};
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  animation: ${donutSpin} 0.8s linear infinite;
-`;
 const Button = ({
   children,
   disabled,
@@ -272,8 +255,8 @@ const Button = ({
           children
         )
       ) : (
-        <span className="center">
-          <LoadingState type={theme} />
+        <span className="center ">
+          <Loading full={false} type="dark" layer={0} />
         </span>
       )}
     </StyledButton>

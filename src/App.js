@@ -27,7 +27,6 @@ import CreateProblem from './pages/create-problem/'
 import Navbar, { AccountsNav } from "./components/navbar/";
 import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
-
 export const theme = {
   colors: {
     primary: ["#3568d4", "#3e7bfa", "#6698fa", "#ccddff"],
