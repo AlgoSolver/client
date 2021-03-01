@@ -289,7 +289,7 @@ const Hero = () => {
             big
             circle
             color="light"
-            icon={ArrowRight}
+            withIcon={ArrowRight}
             theme="light"
             outlined
           >
@@ -442,7 +442,7 @@ const NavMenu = () => {
               </div>
             </motion.nav>
           </div>
-        )}{" "}
+        )}
       </AnimatePresence>
     </div>
   );

@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import { useState } from "react";
-import { Hide , Show } from "../../assets/icons/";
+//import { Hide , Show } from "../../assets/icons/";
+
+const Show = ()=><div>Show</div>
+const Hide = ()=><div>Hide</div>
 
 const Unit = styled(motion.div)`
   position: relative;

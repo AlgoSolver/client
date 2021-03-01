@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Text from '../../components/Text/';
 import {TextInput,CheckBox,Toggle} from '../../components/form/';
-import {Activity} from '../../assets/icons/';
+import {Users} from '../../assets/icons/';
 
 const FormContainer= styled.div`
 	 padding:2rem;
@@ -19,7 +19,7 @@ const Form = ()=>{
            <TextInput placeholder="Normal" />
            <TextInput error="Invalid Email" placeholder="error" />
            <TextInput label="With Label" />
-           <TextInput placeholder="With Icon" icon={Activity} align="left"/>
+           <TextInput placeholder="With Icon" icon={Users} align="left"/>
             <TextInput placeholder="large" big/>
            <CheckBox label="remember" />
            <CheckBox label="remember2" color="green" />

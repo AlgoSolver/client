@@ -11,7 +11,10 @@ export default createGlobalStyle`
     margin:0;
     box-sizing:border-box;
   }
-     
+    svg{
+      width:24px;
+      height:auto;
+    } 
     body{
     font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';     -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

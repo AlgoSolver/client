@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../App.js";
+import { theme } from "../../utils/theme";
 import Text from "../../components/Text/";
 const ColorsContainer = styled.div`
   padding: 2rem;
