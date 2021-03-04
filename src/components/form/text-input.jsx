@@ -61,7 +61,7 @@ const Input = styled.input`
   width: 100%;
   border-radius: 0.6rem;
   height: 3.8rem;
-  font-family: "Linotte-Light";
+  font-family: "Linotte";
   font-size: 1.6rem;
   letter-spacing: 0.2px;
   padding-left: ${({ iconExist }) => (iconExist ? "4rem" : "1.5rem")};

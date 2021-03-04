@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import classNames from "classnames";
-import Loading from '../loading/index'
+import Loading from "../loading/index";
 
 const types = [
   "primary",
@@ -12,82 +12,6 @@ const types = [
   "dark",
   "blue",
 ];
-/* Components / Buttons / Default / Medium - 44px */
-// 
-// position: absolute;
-// width: 124px;
-// height: 44px;
-// 
-// 
-// 
-// /* Button Base */
-// 
-// position: absolute;
-// left: 0px;
-// right: 0px;
-// top: 0px;
-// bottom: 0px;
-// 
-// 
-// 
-// /* Color */
-// 
-// position: absolute;
-// left: 0%;
-// right: 0%;
-// top: 0%;
-// bottom: 0%;
-// 
-// /* Colors / White */
-// background: #FFFFFF;
-// border-radius: 4px;
-// 
-// 
-// /* Border */
-// 
-// position: absolute;
-// left: 0%;
-// right: 0%;
-// top: 0%;
-// bottom: 0%;
-// 
-// mix-blend-mode: normal;
-// /* Colors / Indigo / 500 */
-// border: 1px solid #374FC7;
-// box-sizing: border-box;
-// border-radius: 4px;
-// 
-// 
-// /* Content */
-// 
-// position: absolute;
-// height: 24px;
-// left: 16px;
-// right: 16px;
-// top: calc(50% - 24px/2);
-// 
-// 
-// 
-// /* Label */
-// 
-// position: absolute;
-// height: 16px;
-// left: 0px;
-// right: 0px;
-// top: calc(50% - 16px/2);
-// 
-// /* H200 / SemiBold - 14px */
-// font-family: Inter;
-// font-style: normal;
-// font-weight: 600;
-// font-size: 14px;
-// line-height: 16px;
-// /* identical to box height, or 114% */
-// text-align: center;
-// 
-// /* Colors / Indigo / 500 */
-// color: #374FC7;
-
 
 const StyledButton = styled.button`
   font-size: 1.5rem;
@@ -96,9 +20,9 @@ const StyledButton = styled.button`
     type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
   color: #fff;
   border-radius: 0.4rem;
-  height:4.2rem;
+  height: 4.2rem;
   min-width: 8rem;
-  padding:0 2rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +30,9 @@ const StyledButton = styled.button`
   transition: all 200ms ease-in-out;
   font-family: "Avenir";
   letter-spacing: 0.02rem;
-  border: 1px solid ${({type,theme,layer}) => type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
+  border: 1px solid
+    ${({ type, theme, layer }) =>
+      type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
   &.circle {
     border-radius: 2.1rem;
   }
@@ -167,7 +93,10 @@ const StyledButton = styled.button`
     &:hover {
       color: ${({ theme, type }) =>
         type === "light" ? theme.colors.dark[0] : theme.colors[type][1]};
-      background: ${({ theme, type }) => theme.colors[type].length > 5 ? theme.colors[type][6] : theme.colors[type][4]};
+      background: ${({ theme, type }) =>
+        theme.colors[type].length > 5
+          ? theme.colors[type][6]
+          : theme.colors[type][4]};
       border-color: ${({ theme, type }) => theme.colors[type][3]};
       path {
         stroke: ${({ theme, type }) =>
@@ -254,32 +183,27 @@ const StyledButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:1rem;
-    &.left{
+    gap: 1rem;
+    &.left {
       flex-direction: row-reverse;
     }
-    & > .icon{
+    & > .icon {
       display: flex;
-    align-items: center;
-    justify-content: center;
+      align-items: center;
+      justify-content: center;
     }
-     & > .cont{
-    padding-top:.2rem;
   }
 
-  }
-
-  &.icon{
-    min-width:auto;
+  &.icon {
+    min-width: auto;
     padding: 0 1rem;
-    &.big{
-      width:5.2rem;
-      height:5.2rem;
-      &.circle{
-          border-radius:2.6rem;
+    &.big {
+      width: 5.2rem;
+      height: 5.2rem;
+      &.circle {
+        border-radius: 2.6rem;
       }
     }
-    
   }
   &.flex {
     display: inline-flex;
@@ -330,12 +254,12 @@ const Button = ({
     scale && "scaling",
     disabled && "disabled",
     text && "text",
-    withIcon && 'withIcon',
+    withIcon && "withIcon",
     icon && "icon",
     color && "color",
     mg && "mg",
     ghost && "ghost",
-    iconLeft && 'left'
+    iconLeft && "left"
   );
 
   return (
