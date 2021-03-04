@@ -60,9 +60,9 @@ const LoginForm = ({ login }) => {
         big
       />
       <CheckBox label="remember" register={register()}>
-        remember me
+        Remember me
       </CheckBox>
-      <Button block big loading={isLoading}>
+      <Button block loading={isLoading}>
         Login
       </Button>
     </form>

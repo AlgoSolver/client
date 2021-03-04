@@ -126,7 +126,7 @@ const RestForm = ({ token }) => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button loading={isLoading} block big>
+        <Button loading={isLoading} block>
           Confirm
         </Button>
       </form>

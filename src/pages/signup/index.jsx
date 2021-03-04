@@ -107,7 +107,7 @@ const SignupForm = () => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button theme="dark" loading={isLoading} layer={0} block big>
+        <Button theme="dark" loading={isLoading} layer={0} block>
           Signup
         </Button>
       </form>
