@@ -66,7 +66,7 @@ const ModalBody = styled(motion.div)`
 `;
 
 const Title = ({ children }) => {
-	return <div className="modal__tile">{children}</div>;
+	return <div className="modal__title">{children}</div>;
 };
 const Body = ({ children }) => {
 	return <div className="modal__body">{children}</div>;
@@ -118,7 +118,7 @@ const Modal = ({
 						className={classes}
 					>
 						<div onClick={onHide} className="modal__close">
-							<Close />
+							<Close width="2rem"  />
 						</div>
 						{children}
 					</ModalBody>

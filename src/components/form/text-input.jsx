@@ -207,7 +207,7 @@ export const TextInput = ({
         placeholder={placeholder}
         {...rest}
       />
-      {iconExist && <Icon className="icon__wrapper">{icon()}</Icon>}
+      {iconExist && <Icon className="icon__wrapper">{icon("2rem")}</Icon>}
       {type === "password" && (
         <div className="form__password" onClick={() => setShow((e) => !e)}>
           {!show ? <Show /> : <Hide />}

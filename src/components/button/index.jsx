@@ -173,11 +173,12 @@ const StyledButton = styled.button`
     cursor: not-allowed !important;
   }
   &.loading {
-    background: ${({ theme, type }) => theme.colors[type][3]} !important;
-    border-color: ${({ theme, type }) => theme.colors[type][3]} !important;
+    background: ${({ theme, type }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, type }) => theme.colors.dark[4]} !important;
+    box-shadow: none;
+    border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
-    svg {
-    }
+    
   }
   &.withIcon {
     display: flex;

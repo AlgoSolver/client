@@ -15,13 +15,12 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1118px;
   margin: 0 auto;
-
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     .img {
+      align-self: flex-start;
       width: 35rem;
       img {
         width: 100%;

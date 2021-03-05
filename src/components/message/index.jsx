@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import Text from "../Text/";
 import { useState, useEffect } from "react";
+import {Close} from '../../assets/icons/index'
 const MessageContainer = styled(motion.div)`
   &.hooked {
     position: fixed;
     top: 3rem;
     left: 50%;
     transform: translateX(-50%);
-    min-width: 80rem;
+    max-width: 80rem;
     z-index: 100;
-    box-shadow: ${({ theme }) => theme.elevation[7].shadow};
+    box-shadow: ${({ theme }) => theme.elevation[5].shadow};
     margin: 0 2rem;
     .container {
       margin: 0;
@@ -31,8 +32,6 @@ const MessageContainer = styled(motion.div)`
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    width: 24px;
-    height: 24px;
     z-index: 3;
     cursor: pointer;
     display: flex;
@@ -56,7 +55,7 @@ const Messgae = ({
     if (hooked && open) {
       timer = setTimeout(() => {
         setOpen(false);
-      }, 5000);
+      }, 3000);
     }
     return () => {
       if (timer) {
@@ -80,9 +79,9 @@ const Messgae = ({
           layer={layer}
         >
           <div className="container">
-            {closeble && (
+            {(closeble || hooked) && (
               <div className="close" onClick={() => setOpen(false)}>
-                X
+                <Close width="1.6rem" />
               </div>
             )}
             {title && (

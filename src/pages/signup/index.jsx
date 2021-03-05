@@ -20,10 +20,10 @@ const Wrapper = styled.div`
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     .img {
+      align-self: flex-start;
       width: 35rem;
       img {
         width: 100%;
