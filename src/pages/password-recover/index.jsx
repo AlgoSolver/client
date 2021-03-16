@@ -63,7 +63,7 @@ const RecoveryForm = () => {
           error={checkErrors("email", errors)}
           big
         />
-        <Button loading={isLoading} block big theme="green">
+        <Button loading={isLoading} block  theme="green">
           Reset Password
         </Button>
       </form>

@@ -25,7 +25,7 @@ const Typography = ()=>{
            <Message closeble title="Informational" subTitle="Additional description and informations about copywriting."/>
            <Message type="green" title={"Success"} />
            <Message hooked type="red" subTitle="heloo there an error" />
-           <Message type="orange" title="Warning" subTitle="AAdditional description and informations about copywriting." />
+           <Message closeble type="yellow" title="Warning" subTitle="AAdditional description and informations about copywriting." />
 		</div>
 	</TypographyContainer>
 }

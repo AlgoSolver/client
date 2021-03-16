@@ -20,10 +20,10 @@ const Wrapper = styled.div`
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     .img {
+      align-self: flex-start;
       width: 35rem;
       img {
         width: 100%;
@@ -107,7 +107,7 @@ const SignupForm = () => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button theme="dark" loading={isLoading} layer={0} block big>
+        <Button theme="dark" loading={isLoading} layer={0} block>
           Signup
         </Button>
       </form>

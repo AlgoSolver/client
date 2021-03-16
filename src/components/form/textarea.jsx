@@ -8,13 +8,13 @@ const Unit= styled(motion.div)`
   .error {
     display: inline-block;
     margin: 0.4rem 0 0.4rem;
-    color: ${({ theme }) => theme.colors.red[1]};
+    color: ${({ theme }) => theme.colors.red[0]};
     font-size: 1.5rem;
   }
   `
 
 const Area = styled.textarea`
-    border: 0.2rem solid ${({ theme }) => theme.colors.light[0]};
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
     appearance: none;
     color: ${({ theme }) => theme.colors.dark[1]};
     padding:1rem;
@@ -32,25 +32,25 @@ const Area = styled.textarea`
     overflow-wrap: break-word;
     resize:none;
     &::placeholder {
-      color: ${({ theme }) => theme.colors.dark[3]};
+      color: ${({ theme }) => theme.colors.gray[1]};
       font-weight: bold;
       font-family: "Linotte-Light";
     }
     &:hover {
-      border-color: ${({ theme }) => theme.colors.dark[4]};
+      border-color: ${({ theme }) => theme.colors.gray[1]};
     }
     &:focus {
-      border-color: ${({ theme }) =>theme.colors.primary[1]};
+      border-color: ${({ theme }) =>theme.colors.primary[0]};
     }
     &:focus ~ .icon__wrapper{
        svg{
         *{
-          stroke: ${({ theme }) =>theme.colors.primary[1]}  !important;
+          stroke: ${({ theme }) =>theme.colors.primary[0]}  !important;
         }
        }
     }
     &.input__error {
-      border-color: ${({ theme }) =>theme.colors.red[1]};
+      border-color: ${({ theme }) =>theme.colors.red[0]};
     }
     &.medium{
       height:24rem;
@@ -61,13 +61,12 @@ const Area = styled.textarea`
   
 `;
 const Label = styled.label`
-  font-size: 1.6rem;
-  color: ${({ theme }) =>  theme.colors.dark[1]};
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.dark[0]};
   font-weight: 600;
   line-height: 1.6;
   display: inline-block;
-  font-family: "Linotte-Light";
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.2rem;
 `;
 
 

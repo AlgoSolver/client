@@ -1,6 +1,62 @@
 import { createGlobalStyle } from "styled-components";
+import AvenirRegular from "./assets/fonts/avenir_ff/Avenir-Regular.woff2";
+import AvenirBold from "./assets/fonts/avenir_ff/AvenirLTStd-Black.woff2";
+import HelveticRegular from "./assets/fonts/Helveica/HelveticaNeueCyr.woff2";
+import HelveticBold from "./assets/fonts/Helveica/HelveticaNeueCyr-Heavy.woff2";
+import MonoLisaRegular from "./assets/fonts/MonoLisa/MonoLisa.woff2";
+import MonoLisaBold from "./assets/fonts/MonoLisa/MonoLisa-Bold.woff2";
+import LinotteRegular from "./assets/fonts/Linotte/Linotte-Regular.woff2";
+import LinotteBold from "./assets/fonts/Linotte/Linotte-Bold.woff2";
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: 'Avenir';
+    src: url(${AvenirRegular}) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Avenir-Bold';
+    src: url(${AvenirBold}) format('woff2');
+    font-weight: 300;
+   font-style: normal;
+  }
+  @font-face {
+    font-family: 'Helvetic';
+    src: url(${HelveticRegular}) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Helvetic-Bold';
+    src: url(${HelveticBold}) format('woff2');
+    font-weight: 300;
+   font-style: normal;
+  }
+   @font-face {
+    font-family: 'MonoLisa';
+    src: url(${MonoLisaRegular}) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'MonoLisa-Bold';
+    src: url(${MonoLisaBold}) format('woff2');
+    font-weight: 300;
+   font-style: normal;
+  }
+  @font-face {
+    font-family: 'Linotte';
+    src: url(${LinotteRegular}) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Linotte-Bold';
+    src: url(${LinotteBold}) format('woff2');
+    font-weight: 300;
+   font-style: normal;
+  }
   html{
     font-size:62.5%;
   }
@@ -11,10 +67,7 @@ export default createGlobalStyle`
     margin:0;
     box-sizing:border-box;
   }
-    svg{
-      width:24px;
-      height:auto;
-    } 
+   
     body{
     font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';     -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 const Unit = styled(motion.div)`
   position: relative;
   margin-bottom: 1.5rem;
+  display: inline-block;
   .checkbox {
     cursor: pointer;
     margin: 0;
@@ -15,8 +16,10 @@ const Unit = styled(motion.div)`
       position: absolute;
       opacity: 0;
       &:checked ~ .checkbox__input {
-        border-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
-        background-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
+        border-color: ${({ theme, color }) =>
+          color ? theme.colors[color][1] : theme.colors.primary[1]};
+        background-color: ${({ theme, color }) =>
+          color ? theme.colors[color][1] : theme.colors.primary[1]};
         svg {
           path {
             transition: stroke-dashoffset 0.2s ease-in;
@@ -26,8 +29,6 @@ const Unit = styled(motion.div)`
       }
     }
     &__label {
-      -webkit-box-flex: 1;
-      -ms-flex: 1;
       flex: 1;
       font-weight: 400;
       font-size: 1.5rem;
@@ -39,8 +40,8 @@ const Unit = styled(motion.div)`
       float: left;
       margin: -0.1rem 10px 0 0;
       position: relative;
-      border-radius: 0.5rem;
-      border: 0.2rem solid #d5dbde;
+      border-radius: 0.4rem;
+      border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
       background-color: #fff;
       -webkit-transition: all 0.2s ease-out;
       -o-transition: all 0.2s ease-out;
@@ -57,8 +58,6 @@ const Unit = styled(motion.div)`
         -webkit-transition: opacity 0.2s ease-in-out 0.05s;
         -o-transition: opacity 0.2s ease-in-out 0.05s;
         transition: opacity 0.2s ease-in-out 0.05s;
-        -webkit-box-shadow: 0 3px 4px 0 rgba(255, 111, 0, 0.4);
-        box-shadow: 0 3px 4px 0 rgba(255, 111, 0, 0.4);
       }
       svg {
         position: absolute;
@@ -80,7 +79,7 @@ const Unit = styled(motion.div)`
     }
     &:hover {
       .checkbox__input {
-        border-color: ${({ theme,color }) => color ? theme.colors.[color][1]: theme.colors.primary[1]};
+        border-color: ${({ theme }) => theme.colors.gray[1]};
         &::after {
           opacity: 1;
         }
@@ -88,12 +87,7 @@ const Unit = styled(motion.div)`
     }
   }
 `;
-export const CheckBox = ({
-  label,
-  register,
-  color,
-  children
-}) => {
+export const CheckBox = ({ label, register, color, children }) => {
   return (
     <Unit color={color}>
       <label htmlFor={label} className="checkbox">

@@ -21,7 +21,6 @@ const Wrapper = styled.div`
   .container {
     margin-top: 5rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     .hello {
@@ -32,6 +31,7 @@ const Wrapper = styled.div`
       width: 100%;
     }
     .img {
+      align-self: flex-start;
       width: 35rem;
       img {
         width: 100%;
@@ -126,7 +126,7 @@ const RestForm = ({ token }) => {
           error={checkErrors("confirmedPassword", errors)}
           big
         />
-        <Button loading={isLoading} block big>
+        <Button loading={isLoading} block>
           Confirm
         </Button>
       </form>

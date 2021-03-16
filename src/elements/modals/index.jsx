@@ -35,10 +35,10 @@ const ModalExample = () => {
 					</Text>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button type="green" onClick={close} mg="0 1rem 0 0">
+					<Button small type="green" onClick={close} mg="0 1rem 0 0">
 						Confirm
 					</Button>
-					<Button type="red" ghost layer={4} onClick={close}>
+					<Button small type="light" onClick={close}>
 						Cancel
 					</Button>
 				</Modal.Footer>

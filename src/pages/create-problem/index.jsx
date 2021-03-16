@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const CreateProblemContainer = styled.div`
   padding: 3rem 0;
-  background: ${({ theme }) => theme.colors.light[4]};
+  
   border-top: 1px solid ${({ theme }) => theme.colors.light[0]};
   min-height: 100vh;
   .wrapper {
@@ -30,7 +30,7 @@ const StepNavContainer = styled.div`
 
   .stepper {
     &__bar {
-      background: ${({ theme }) => theme.colors.light[2]};
+      background: ${({ theme }) => theme.colors.gray[3]};
       height: 0.2rem;
       position: absolute;
       width: 100%;
@@ -48,7 +48,7 @@ const StepItem = styled.div`
   z-index: 3;
   .stepper {
     &__item {
-      background: ${({ theme }) => theme.colors.light[4]};
+      background: ${({ theme }) => theme.colors.light[0]};
       cursor: pointer;
       display: flex;
       align-items: center;

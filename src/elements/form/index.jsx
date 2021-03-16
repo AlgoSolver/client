@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Text from '../../components/Text/';
-import {TextInput,CheckBox,Toggle} from '../../components/form/';
+import {TextInput,CheckBox,Toggle,TextArea} from '../../components/form/';
 import {Users} from '../../assets/icons/';
 
 const FormContainer= styled.div`
@@ -21,6 +21,7 @@ const Form = ()=>{
            <TextInput label="With Label" />
            <TextInput placeholder="With Icon" icon={Users} align="left"/>
             <TextInput placeholder="large" big/>
+            <TextArea label="Text Area" />
            <CheckBox label="remember" />
            <CheckBox label="remember2" color="green" />
            <Toggle name="labed">
