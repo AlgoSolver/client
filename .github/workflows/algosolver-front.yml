@@ -28,12 +28,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
- #   - name: Restore node_modules from cache
- #     uses: actions/cache@v2
- #     with:
- #        path: |
- #          **/node_modules
- #        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+    - name: Restore node_modules from cache
+      uses: actions/cache@v2
+      with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
       run: npm install
@@ -41,7 +41,7 @@ jobs:
     - name: Build Production
       run: npm run build
       env:
-         CI: false
+         CI: true
 
 #     - name: Run the tests and generate coverage report
 #       run: npm test -- --coverage
@@ -56,15 +56,15 @@ jobs:
     #- name: Eject
       #id: npm eject
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Repo
-      uses: actions/checkout@master
+  # deploy:
+  #   name: Deploy
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout Repo
+  #     uses: actions/checkout@master
 
-    - name: Deploy to Firebase
-      run: |
-        sudo npm install -g firebase-tools
-        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+  #   - name: Deploy to Firebase
+  #     run: |
+  #       sudo npm install -g firebase-tools
+  #       firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
