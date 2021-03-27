@@ -17,7 +17,7 @@ export const theme = {
 
     dark: ["#141518", "#2C2D30", "#606266", "#7E8085", "#7E8085"],
     gray:["#9FA1A6","#BABDC2","#D5D7DB",'#E8EAED','#F8F9FA'],
-    light: ["#FAFAFB", "#ebebf0", "#f3f2f5", "#fafafc", "#ffffff"],
+    light: ["#FAFAFB", "#F1F1F5", "#f3f2f5", "#fafafc", "#ffffff"],
     blue: ["#004FC4", "#0063F7", "#5B8DEF", "#9DBFF9", "#E5F0FF"],
 
   },

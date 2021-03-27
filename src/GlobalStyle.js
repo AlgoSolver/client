@@ -67,18 +67,22 @@ export default createGlobalStyle`
     margin:0;
     box-sizing:border-box;
   }
-   
+
     body{
     font-family: -apple-system, BlinkMacSystemFont,'Avenir', 'Helveica' , 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';     -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       -webkit-overflow-scrolling: touch;
       min-width: 375px;
+      min-height:100vh;
       width: 100%;
       background: ${({ theme }) => theme.colors.light[0]};
       color: ${({ theme }) => theme.colors.dark[0]};
       transition: all 0.50s linear;
       margin:0;
       padding:0;
+      > #root{
+        height:100%;
+      }
     }
 
     a{
@@ -109,6 +113,6 @@ export default createGlobalStyle`
       max-width: 1200px;
       margin:0 auto;
       padding: 0px 2rem;
-      height:100%;      
+      height:100%;
     }
 `;
