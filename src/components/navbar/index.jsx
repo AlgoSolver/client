@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "../button/";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
@@ -49,9 +49,9 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
       <>
         {" "}
         <li className={`${menu}__item`}>
-          <Link onClick={close} to="/profile" className={`${menu}__link`}>
+          <NavLink activeClassName="active" onClick={close} to="/profile" className={`${menu}__link`}>
             {data.username}
-          </Link>
+          </NavLink>
         </li>
         <li className={`${menu}__item`}>
           <Logout />
@@ -63,12 +63,12 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
     return (
       <>
         <li className="nav__item">
-          <Link onClick={close} to="/accounts/login" className="nav__link">
+          <NavLink activeClassName="active" onClick={close} to="/accounts/login" className="nav__link">
             Login
-          </Link>
+          </NavLink>
         </li>
         <li className="nav__item">
-          <Link onClick={close} to="/accounts/signup">
+          <NavLink activeClassName="active" onClick={close} to="/accounts/signup">
             <Button
               big
               circle
@@ -81,7 +81,7 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
             >
               Signup
             </Button>
-          </Link>
+          </NavLink>
         </li>
       </>
     );
@@ -89,21 +89,21 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
     return (
       <>
         <li className="menu__item">
-          <Link onClick={close} to="/accounts/login" className="menu__link">
+          <NavLink activeClassName="active" onClick={close} to="/accounts/login" className="menu__link">
             login
-          </Link>
+          </NavLink>
         </li>
         <li className="menu__item">
-          <Link onClick={close} to="/accounts/signup" className="menu__link">
+          <NavLink activeClassName="active" onClick={close} to="/accounts/signup" className="menu__link">
             signup
-          </Link>
+          </NavLink>
         </li>
       </>
     );
 };
 const NavbarContainer = styled(motion.nav)`
   background: ${({ theme }) => theme.colors.light[4]};
-  box-shadow: ${({ theme }) => theme.elevation[4].shadow};
+  box-shadow: ${({ theme }) => theme.elevation[8].shadow};
   .wrapper {
     display: flex;
     align-items: center;
@@ -122,15 +122,22 @@ const NavbarContainer = styled(motion.nav)`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 100%;
     }
     &__list {
       list-style-type: none;
       display: flex;
       align-items: center;
+      height: 100%;
       &.list1 {
         flex: 1;
         justify-content: flex-start;
       }
+    }
+    &__item{
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
     &__item:not(:last-child) {
       margin-right: 1rem;
@@ -141,7 +148,30 @@ const NavbarContainer = styled(motion.nav)`
       text-transform: capitalize;
       color: ${({ theme }) => theme.colors.dark[2]};
       transition: background 0.2s ease, color 0.2s ease;
-      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0;
+        background: ${({ theme }) => theme.colors.primary[0]};;
+        border-radius: .3rem .3rem 0 0;
+        -webkit-transition: height .25s;
+        -o-transition: height .25s;
+        transition: height .25s;
+      }
+      &.active{
+        color: ${({ theme }) => theme.colors.dark[0]};
+        &::before {
+              height: .3rem;
+          }
+      }
       &:hover {
         color: ${({ theme }) => theme.colors.dark[0]};
       }
@@ -259,9 +289,9 @@ export const AccountsNav = () => {
     <AccountNavContainer>
       <div className="wrapper">
         <div>
-          <Link className="nav__brand" to="/">
+          <NavLink activeClassName="active" className="nav__brand" to="/">
             AlgoSolver
-          </Link>
+          </NavLink>
         </div>
       </div>
     </AccountNavContainer>
@@ -276,7 +306,7 @@ const Navbar = ({ close }) => {
     >
       <div className="wrapper">
         <div className="nav__brand">
-          <Link to="/">AlgoSolver</Link>
+          <NavLink activeClassName="active" to="/">AlgoSolver</NavLink>
         </div>
         {isBigPhone ? (
           <NavMenu />
@@ -284,24 +314,24 @@ const Navbar = ({ close }) => {
           <div className="nav__links">
             <ul className="nav__list list1">
               <li className="nav__item">
-                <Link to="/playground" className="nav__link">
+                <NavLink activeClassName="active" to="/playground" className="nav__link">
                   playground
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/explore" className="nav__link">
+                <NavLink activeClassName="active" to="/explore" className="nav__link">
                   explore
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/blog" className="nav__link">
+                <NavLink activeClassName="active" to="/blog" className="nav__link">
                   Blog
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/elements" className="nav__link">
+                <NavLink activeClassName="active" to="/elements" className="nav__link">
                   elements
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <ul className="nav__list">
@@ -348,28 +378,28 @@ const NavMenu = () => {
               <div className="menu__body">
                 <ul className="menu__list list1">
                   <li className="menu__item">
-                    <Link
+                    <NavLink activeClassName="active"
                       onClick={close}
                       to="/playground"
                       className="menu__link"
                     >
                       playground
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="menu__item">
-                    <Link onClick={close} to="/explore" className="menu__link">
+                    <NavLink activeClassName="active" onClick={close} to="/explore" className="menu__link">
                       explore
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="menu__item">
-                    <Link onClick={close} to="/blog" className="menu__link">
+                    <NavLink activeClassName="active" onClick={close} to="/blog" className="menu__link">
                       Blog
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="menu__item">
-                    <Link onClick={close} to="/elements" className="menu__link">
+                    <NavLink activeClassName="active" onClick={close} to="/elements" className="menu__link">
                       elements
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
                 <ul className="menu__list">

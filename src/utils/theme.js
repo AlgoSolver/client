@@ -17,9 +17,9 @@ export const theme = {
 
     dark: ["#141518", "#2C2D30", "#606266", "#7E8085", "#7E8085"],
     gray:["#9FA1A6","#BABDC2","#D5D7DB",'#E8EAED','#F8F9FA'],
-    light: ["#f9f9f9", "#ebebf0", "#f3f2f5", "#fafafc", "#ffffff"],
+    light: ["#FAFAFB", "#ebebf0", "#f3f2f5", "#fafafc", "#ffffff"],
     blue: ["#004FC4", "#0063F7", "#5B8DEF", "#9DBFF9", "#E5F0FF"],
-    
+
   },
   gradients: [
     "linear-gradient(45deg, #374FC7 0%, #6B4BCC 100%)",
@@ -30,6 +30,7 @@ export const theme = {
     "linear-gradient(147.14deg, #FF3B3B 6.95%, #6600CC 93.05%)",
     "linear-gradient(147.14deg, #73DFE7 6.95%, #0063F7 93.05%)",
     "linear-gradient(145.51deg, #AC5DD9 7.21%, #004FC4 94.47%)",
+
   ],
   elevation: [
     {
@@ -71,6 +72,12 @@ export const theme = {
         "0px 2px 8px rgba(40, 41, 61, 0.08), 0px 20px 32px rgba(96, 97, 112, 0.24)",
       desc: "06 Modals, Dialogue",
     },
+    {
+      shadow:
+        "inset 0px -1px 0px #e2e2ea",
+      desc: "07 bottom navbar",
+    },
+
   ],
   breakpoints: {
     phone: "max-width: 37.5em", // 600px
