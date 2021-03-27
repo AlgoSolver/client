@@ -14,6 +14,7 @@ import Login from "./pages/login";
 import ActivateAccount from "./pages/activate-account/";
 import Profile from "./pages/profile/";
 import Explore from "./pages/explore/";
+import Problems from "./pages/problems/";
 import Playground from "./pages/playground/";
 import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
@@ -85,6 +86,9 @@ const Routing = () => {
         </Route>
         <Route path="/playground">
           <Playground />
+        </Route>
+        <Route path="/problems">
+          <Problems />
         </Route>
         <AuthRoute
           privatePage={true}

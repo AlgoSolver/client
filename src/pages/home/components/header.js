@@ -224,7 +224,7 @@ const Row = styled.div`
       color: ${({ theme }) => theme.colors.light[2]};
     }
     a {
-      
+
       button {
         width: 100%;
         margin:0 auto;
@@ -334,6 +334,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item">
+              <Link to="/problems" className="nav__link">
+                problems
+              </Link>
+            </li>
+            <li className="nav__item">
               <Link to="/blog" className="nav__link">
                 Blog
               </Link>
@@ -415,6 +420,11 @@ const NavMenu = () => {
                   <li className="menu__item">
                     <Link to="/explore" className="menu__link">
                       explore
+                    </Link>
+                  </li>
+                  <li className="menu__item">
+                    <Link to="/problems" className="menu__link">
+                      problems
                     </Link>
                   </li>
                   <li className="menu__item">

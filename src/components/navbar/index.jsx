@@ -324,6 +324,11 @@ const Navbar = ({ close }) => {
                 </NavLink>
               </li>
               <li className="nav__item">
+                <NavLink activeClassName="active" to="/problems" className="nav__link">
+                  problems
+                </NavLink>
+              </li>
+              <li className="nav__item">
                 <NavLink activeClassName="active" to="/blog" className="nav__link">
                   Blog
                 </NavLink>
@@ -389,6 +394,11 @@ const NavMenu = () => {
                   <li className="menu__item">
                     <NavLink activeClassName="active" onClick={close} to="/explore" className="menu__link">
                       explore
+                    </NavLink>
+                  </li>
+                  <li className="menu__item">
+                    <NavLink activeClassName="active" onClick={close} to="/problems" className="menu__link">
+                      problems
                     </NavLink>
                   </li>
                   <li className="menu__item">
