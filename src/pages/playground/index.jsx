@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MonacoEditor,{EditorDidMount} from "@monaco-editor/react";
-import prettier from 'prettier';
+// import prettier from 'prettier';
 import {useRef} from 'react'
 const EditorContainer=styled.div`
   position: relative;
