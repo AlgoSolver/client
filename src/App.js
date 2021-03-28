@@ -16,6 +16,7 @@ import Profile from "./pages/profile/";
 import Explore from "./pages/explore/";
 import Problems from "./pages/problems/";
 import Playground from "./pages/playground/";
+import Problem from "./pages/problem/";
 import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
 import NewPassword from "./pages/new-password";
@@ -86,6 +87,9 @@ const Routing = () => {
         </Route>
         <Route path="/playground">
           <Playground />
+        </Route>
+        <Route path="/problems/:id">
+          <Problem />
         </Route>
         <Route path="/problems">
           <Problems />
