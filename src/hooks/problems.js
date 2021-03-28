@@ -17,8 +17,9 @@ const configOptions={
 }
 
 export const useProblems=(page=1)=>{
+  console.log(page)
   return useQuery(
-    'problems',
+    ['problems',page],
     ()=>request(`/problems?page=${page}`,'get'),
     configOptions
   )
