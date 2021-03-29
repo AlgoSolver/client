@@ -11,6 +11,7 @@ const Unit= styled(motion.div)`
     color: ${({ theme }) => theme.colors.red[0]};
     font-size: 1.5rem;
   }
+  height:${({flex})=>flex ? "100%" : "auto"}
   `
 
 const Area = styled.textarea`
@@ -28,7 +29,7 @@ const Area = styled.textarea`
     font-size: 1.6rem;
     letter-spacing: 0.2px;
     height:18rem;
-    overflow: hidden;
+    overflow: auto;
     overflow-wrap: break-word;
     resize:none;
     &::placeholder {
@@ -52,13 +53,16 @@ const Area = styled.textarea`
     &.input__error {
       border-color: ${({ theme }) =>theme.colors.red[0]};
     }
+    &.flex{
+      height:100%;
+    }
     &.medium{
       height:24rem;
     }
     &.big{
       height: 44rem;
     }
-  
+
 `;
 const Label = styled.label`
   font-size: 1.4rem;
@@ -81,16 +85,18 @@ export const TextArea = ({
 	icon,
 	big,
   medium,
+  flex,
 	...rest
 })=>{
 	let iconExist = icon ? true : false;
 	const classes = classNames(
 	error && 'input__error',
   big && 'big',
-  medium && 'medium'
+  medium && 'medium',
+  flex && 'flex'
 	)
 	return (
-    <Unit iconExist>
+    <Unit iconExist flex>
       {label && <Label htmlFor={name}>{label}</Label>}
         <Area
           iconExist={iconExist}
@@ -101,7 +107,7 @@ export const TextArea = ({
           type={type}
           placeholder={placeholder}
          {...rest}
-        />  
+        />
          <AnimatePresence exitBeforeEnter>
           {error && (
             <motion.span
@@ -117,4 +123,3 @@ export const TextArea = ({
     </Unit>
   );
 };
-
