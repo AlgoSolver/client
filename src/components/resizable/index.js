@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ResizableBox, ResizableBoxProps } from 'react-resizable';
+import { ResizableBox } from 'react-resizable';
 
 
 
@@ -7,7 +7,7 @@ const Resizable= ({ direction, children }) => {
   let resizableProps;
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-  const [width, setWidth] = useState(window.innerWidth * 0.75);
+  const [width, setWidth] = useState(window.innerWidth * 0.50);
 
   useEffect(() => {
     let timer: any;
@@ -18,8 +18,8 @@ const Resizable= ({ direction, children }) => {
       timer = setTimeout(() => {
         setInnerHeight(window.innerHeight);
         setInnerWidth(window.innerWidth);
-        if (window.innerWidth * 0.75 < width) {
-          setWidth(window.innerWidth * 0.75);
+        if (window.innerWidth * 0.2 < width) {
+          setWidth(window.innerWidth * 0.2);
         }
       }, 100);
     };

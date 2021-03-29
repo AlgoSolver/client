@@ -1,5 +1,5 @@
-import MonacoEditor,{EditorDidMount} from "@monaco-editor/react";
-import prettier from 'prettier';
+import MonacoEditor/*,{EditorDidMount}*/ from "@monaco-editor/react";
+//import prettier from 'prettier';
 import {useRef} from 'react';
 import styled from 'styled-components'
 import Button from '../button'
@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {useState,useEffect} from 'react'
 import {TextArea} from '../form'
 import Text from '../Text'
-import Message from '../Text'
+//import Message from '../Text'
 
 const EditorContainer=styled.div`
     display:flex;
@@ -123,13 +123,14 @@ const Console = ({tab=1,closeConsole})=>{
   const handleTabChange = (idx)=>{
     if(idx !== currentTab) setCurrentTab(idx)
   }
+
   useEffect(()=>{
     if(!mounted){
       mounted = true;
       return
     }
-    if(tab !== currentTab || currentTab==0) setCurrentTab(tab);
-  },[tab])
+    if(tab !== currentTab || currentTab === 0) setCurrentTab(tab);
+  },[tab,setCurrentTab, currentTab])
   return <AnimatePresence>
     {currentTab && <div className="console">
       <ConsoleContainer
@@ -169,7 +170,7 @@ const EditorFooter = ()=>{
 
     <div className="editor-footer">
       <div className="open-console">
-        <Button theme="dark"  layer={1} small onClick={()=>setIsConsoleOpen(e=>e==1 ? 0 : 1)}>
+        <Button theme="dark"  layer={1} small onClick={()=>setIsConsoleOpen(e=>e===1 ? 0 : 1)}>
             Console
         </Button>
       </div>
@@ -188,11 +189,11 @@ const Editor = ({ initialValue='',light }) => {
 
 	 const editorRef = useRef();
   const onEditorDidMount = (getValue, monacoEditor) => {
-    // editorRef.current = monacoEditor;
-    // monacoEditor.onDidChangeModelContent(() => {
-    //   // update('code', + getValue());
-    // });
-    // monacoEditor.getModel()?.updateOptions({ tabSize: 4 });
+    editorRef.current = monacoEditor;
+    monacoEditor.onDidChangeModelContent(() => {
+       console.log(getValue());
+    });
+     monacoEditor.getModel()?.updateOptions({ tabSize: 4 });
   };
 	// const onFormatClick = ()=>{
   //     const code = editorRef.current.getModel().getValue();
@@ -243,37 +244,37 @@ const Editor = ({ initialValue='',light }) => {
 </div>
    <EditorFooter />
   </EditorContainer>
-	return (
-		<EditorContainer>
-    <div className="editor-container">
-		<MonacoEditor
-			editorDidMount={onEditorDidMount}
-			value={initialValue}
-			language="cpp"
-			theme={light ? 'light' : 'dark'}
-			height="100%"
-			options={{
-				wordWrap: "on",
-				minimap: { enabled: false },
-				showUnused: false,
-				folding: false,
-				lineNumbersMinChars: 3,
-				fontSize: 14,
-				scrollBeyondLastLine: false,
-				automaticLayout: true,
-			}}
-		/>
-    </div>
-    <div className="editor-footer">
-      <Button  theme="light" mg="0 .8rem 0 0" small>
-        Run Code
-      </Button>
-      <Button theme="green" small>
-          Submit Code
-      </Button>
-    </div>
-		</EditorContainer>
-	);
+	// return (
+	// 	<EditorContainer>
+  //   <div className="editor-container">
+	// 	<MonacoEditor
+	// 		editorDidMount={onEditorDidMount}
+	// 		value={initialValue}
+	// 		language="cpp"
+	// 		theme={light ? 'light' : 'dark'}
+	// 		height="100%"
+	// 		options={{
+	// 			wordWrap: "on",
+	// 			minimap: { enabled: false },
+	// 			showUnused: false,
+	// 			folding: false,
+	// 			lineNumbersMinChars: 3,
+	// 			fontSize: 14,
+	// 			scrollBeyondLastLine: false,
+	// 			automaticLayout: true,
+	// 		}}
+	// 	/>
+  //   </div>
+  //   <div className="editor-footer">
+  //     <Button  theme="light" mg="0 .8rem 0 0" small>
+  //       Run Code
+  //     </Button>
+  //     <Button theme="green" small>
+  //         Submit Code
+  //     </Button>
+  //   </div>
+	// 	</EditorContainer>
+	// );
 };
 
 export default Editor;
