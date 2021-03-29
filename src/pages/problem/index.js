@@ -3,14 +3,8 @@ import { useParams } from "react-router-dom";
 import Editor from "../../components/editor";
 import Resizable from "../../components/resizable";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 6.4rem);
-`;
 const PlaygroungWrapper = styled.div`
-  flex: 1;
-  width: 100%;
+  height: calc(100vh - 6.4rem);
   display: flex;
   .react-resizable-handle {
     display: block;
@@ -53,13 +47,14 @@ const ProblemContainer = styled.div`
   position: relative;
   height: 100%;
   width: calc(100% - 10px);
+  overflow: hidden;
+
 `;
 const Problem = () => {
   const { id } = useParams();
 
   return (
-    <Container>
-      <PlaygroungWrapper>
+    <PlaygroungWrapper>
         <Resizable direction="horizontal">
         <ProblemContainer>
           sfnjksdfsd
@@ -67,7 +62,6 @@ const Problem = () => {
         </Resizable>
           <Editor initialValue="// use show() instead of console.log();" />
       </PlaygroungWrapper>
-    </Container>
   );
 };
 export default Problem;

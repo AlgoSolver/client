@@ -142,7 +142,7 @@ const Problems = () => {
         Loading...
       </Text>
     );
-  return (
+  if(data?.docs) return (
     <>
       <Control>
         <Text type="h3">Control</Text>
@@ -184,6 +184,7 @@ const Problems = () => {
     </ProblemsTable>
     </>
   );
+  else return null
 };
 const Main = () => {
   return (
