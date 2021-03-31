@@ -15,6 +15,6 @@ RUN npm install
 COPY . .
 
 # pull official base image
-FROM nginx
+FROM nginx:1.19.9
 
 COPY --from=build /app/build /usr/share/nginx
