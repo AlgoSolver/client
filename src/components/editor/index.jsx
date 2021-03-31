@@ -1,14 +1,18 @@
 import MonacoEditor/*,{EditorDidMount}*/ from "@monaco-editor/react";
-//import prettier from 'prettier';
+import prettier from 'prettier';
 import {useRef} from 'react';
 import styled from 'styled-components'
 import Button from '../button'
+import parser from 'prettier/parser-babel'
+
 import {ICQ,ArrowDown2} from '../../assets/icons'
 import { motion, AnimatePresence } from "framer-motion";
-import {useState,useEffect} from 'react'
+import {useState,useEffect,memo} from 'react'
 import {TextArea} from '../form'
 import Text from '../Text'
 //import Message from '../Text'
+import {updateCodePlayGround,useCodePlayGround} from  '../../hooks/problems'
+import {setLocalStorage,getLocalStorage} from '../../utils/local-storage';
 
 const EditorContainer=styled.div`
     display:flex;
@@ -162,7 +166,19 @@ const Console = ({tab=1,closeConsole})=>{
   </AnimatePresence>
 }
 
-const EditorFooter = ()=>{
+const SubmitCode = (id)=>{
+  const {data,loading} =  useCodePlayGround(id)
+  console.log(data,loading)
+  return <div className="submit" >
+    <Button  theme="light" mg="0 .8rem 0 0" small>
+      Run Code
+    </Button>
+    <Button theme="primary" small>
+        Submit Code
+    </Button>
+  </div>
+}
+const EditorFooter = memo(({id})=>{
   const [isConsoleOpen,setIsConsoleOpen] =useState(0);
   return <div className="foot">
 
@@ -174,107 +190,77 @@ const EditorFooter = ()=>{
             Console
         </Button>
       </div>
-      <div className="submit" >
-        <Button  theme="light" mg="0 .8rem 0 0" small>
-          Run Code
-        </Button>
-        <Button theme="primary" small>
-            Submit Code
-        </Button>
-      </div>
+      <SubmitCode id={id} />
     </div>
   </div>
-}
-const Editor = ({ initialValue='',light }) => {
-
-	 const editorRef = useRef();
+})
+let timer;
+const Editor = ({ initialValue='',light,id }) => {
+  const code = getLocalStorage(`problem-code-${id}`);
+	const editorRef = useRef();
   const onEditorDidMount = (getValue, monacoEditor) => {
     editorRef.current = monacoEditor;
-    monacoEditor.onDidChangeModelContent(() => {
-       console.log(getValue());
-    });
-     monacoEditor.getModel()?.updateOptions({ tabSize: 4 });
-  };
-	// const onFormatClick = ()=>{
-  //     const code = editorRef.current.getModel().getValue();
-	//   const formatedCode = prettier.format(code,{
-	//   	parser:'babel',
-	//   	plugins:[parser],
-	//   	printWidth: 80,
-  //       tabWidth: 2,
-  //       useTabs: false,
-  //       semi: true,
-  //       singleQuote: false,
-  //       quoteProps: "as-needed",
-  //       jsxSingleQuote: false,
-  //       trailingComma: "none",
-  //       bracketSpacing: true,
-  //       jsxBracketSameLine: false,
-  //       arrowParens: "always",
-	//   }).replace(/\n$/,'');
-	//   // chnage
-	//   editorRef.current.setValue(formatedCode)
-	// }
+      monacoEditor.getModel()?.updateOptions({ tabSize: 4 });
+    };
+    function handleEditorChange(value, event) {
+      if(timer){
+        clearTimeout(timer);
+      }
+      timer = setTimeout(()=>{
+        updateCodePlayGround({code:value});
+        setLocalStorage(`problem-code-${id}`,value);
+      },750)
+    }
+	const onFormatClick = ()=>{
+      const code = editorRef.current.getModel().getValue();
+	  const formatedCode = prettier.format(code,{
+	  	parser:'babel',
+	  	plugins:[parser],
+	  	printWidth: 80,
+        tabWidth: 2,
+        useTabs: false,
+        semi: true,
+        singleQuote: false,
+        quoteProps: "as-needed",
+        jsxSingleQuote: false,
+        trailingComma: "none",
+        bracketSpacing: true,
+        jsxBracketSameLine: false,
+        arrowParens: "always",
+	  }).replace(/\n$/,'');
+	  // chnage
+	  editorRef.current.setValue(formatedCode)
+	}
   return <EditorContainer>
     <div>
       <div className="editor-header">
-        <Button theme="light" ghost icon small title="Format the code">
+        <Button theme="light" onClick={onFormatClick} ghost icon small title="Format the code">
             <ICQ />
         </Button>
       </div>
     </div>
     <div class="editor-monaco">
-  <MonacoEditor
-    editorDidMount={onEditorDidMount}
-    value={initialValue}
-    language="cpp"
-    theme={light ? 'light' : 'dark'}
-    height="100%"
-    options={{
-      wordWrap: "on",
-      minimap: { enabled: false },
-      showUnused: false,
-      folding: false,
-      lineNumbersMinChars: 3,
-      fontSize: 14,
-      scrollBeyondLastLine: false,
-      automaticLayout: true,
-    }}
-  />
-</div>
-   <EditorFooter />
+    <MonacoEditor
+        editorDidMount={onEditorDidMount}
+        onChange={handleEditorChange}
+        value={code || initialValue}
+        language="cpp"
+        theme={light ? 'light' : 'dark'}
+        height="100%"
+        options={{
+          wordWrap: "on",
+          minimap: { enabled: false },
+          showUnused: false,
+          folding: false,
+          lineNumbersMinChars: 3,
+          fontSize: 14,
+          scrollBeyondLastLine: false,
+          automaticLayout: true
+        }}
+      />
+    </div>
+   <EditorFooter id={id}/>
   </EditorContainer>
-	// return (
-	// 	<EditorContainer>
-  //   <div className="editor-container">
-	// 	<MonacoEditor
-	// 		editorDidMount={onEditorDidMount}
-	// 		value={initialValue}
-	// 		language="cpp"
-	// 		theme={light ? 'light' : 'dark'}
-	// 		height="100%"
-	// 		options={{
-	// 			wordWrap: "on",
-	// 			minimap: { enabled: false },
-	// 			showUnused: false,
-	// 			folding: false,
-	// 			lineNumbersMinChars: 3,
-	// 			fontSize: 14,
-	// 			scrollBeyondLastLine: false,
-	// 			automaticLayout: true,
-	// 		}}
-	// 	/>
-  //   </div>
-  //   <div className="editor-footer">
-  //     <Button  theme="light" mg="0 .8rem 0 0" small>
-  //       Run Code
-  //     </Button>
-  //     <Button theme="green" small>
-  //         Submit Code
-  //     </Button>
-  //   </div>
-	// 	</EditorContainer>
-	// );
 };
 
 export default Editor;

@@ -133,6 +133,7 @@ const Problems = () => {
   const handlePageClick = (data) => {
     if(data?.selected >= 0 ) history.push(`/problems?page=${+data.selected +1}`)
   };
+  console.log(data)
   useEffect(()=>{
     console.log(loc.search)
   },[loc.search])

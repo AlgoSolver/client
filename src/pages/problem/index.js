@@ -1,9 +1,18 @@
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 import Editor from "../../components/editor";
 import Resizable from "../../components/resizable";
 import Text from "../../components/Text"
-import {NavLink,useLocation} from 'react-router-dom'
+import {useProblem} from '../../hooks/problems'
+import Loading from "../../shared/loading";
+import MarkdownPreviewer from '../../components/markdown-previewer'
+import {
+  Switch,
+  Route,
+  NavLink,
+  Redirect,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
 const PlaygroungWrapper = styled.div`
   height: calc(100vh - 6.4rem);
   display: flex;
@@ -81,25 +90,25 @@ const ProblemDescriptionContainer = styled.div`
   background: ${({theme})=>theme.colors.light[4]};
   position: relative;
   height: 100%;
+  padding:2rem;
 
 `;
 
-const Tabs = ({id})=>{
-  const loc = useLocation();
-  let path = loc.pathname.split("/")
+const Tabs = ()=>{
+  let { url } = useRouteMatch();
   return <div className="tabs">
     <div className="tabs__list">
-      <NavLink as="div" to={`/${path[1]}/${path[2]}/description`} className="tabs__item" activeClassNam="active">
+      <NavLink as="div" to={`${url}/description`} className="tabs__item" activeClassNam="active">
         <span>
           Description
         </span>
       </NavLink>
-      <NavLink as="div" to={`/${path[1]}/${path[2]}/submissions`} className="tabs__item" activeClassNam="active">
+      <NavLink as="div" to={`${url}/submissions`} className="tabs__item" activeClassNam="active">
         <span>
           Submissions
         </span>
       </NavLink>
-      <NavLink as="div" to={`/${path[1]}/${path[2]}/solution`} className="tabs__item" activeClassNam="active">
+      <NavLink as="div" to={`${url}/solution`} className="tabs__item" activeClassNam="active">
         <span>
           Solution
         </span>
@@ -107,28 +116,58 @@ const Tabs = ({id})=>{
     </div>
   </div>
 }
-const ProblemDescription = ()=>{
+const ProblemDescription = ({content})=>{
+  return <ProblemDescriptionContainer>
+    <MarkdownPreviewer content={content} />
+  </ProblemDescriptionContainer>
+}
+const ProblemSubmissions = ()=>{
   return <ProblemDescriptionContainer>
     <Text type="h3" center>
-      Title
+      Submissions
     </Text>
   </ProblemDescriptionContainer>
 }
-const Problem = ()=>{
+const ProblemSolution = ()=>{
+  return <ProblemDescriptionContainer>
+    <Text type="h3" center>
+    Solution
+    </Text>
+  </ProblemDescriptionContainer>
+}
+
+
+const Problem = ({description})=>{
+  let { path } = useRouteMatch();
   return <ProblemContainer>
-    <Tabs />
-    <ProblemDescription />
+       <Tabs />
+        <Switch>
+        <Route exact path={`${path}/solution`}>
+         <ProblemSolution />
+        </Route>
+        <Route exact path={`${path}/description`}>
+         <ProblemDescription content={description} />
+        </Route>
+        <Route exact path={`${path}/submissions`}>
+         <ProblemSubmissions />
+        </Route>
+        <Redirect to={`${path}/description`} />
+        </Switch>
   </ProblemContainer>
 }
 const Main = () => {
   const { id } = useParams();
-  console.log(id)
+  const {data, isLoading} = useProblem(id);
+  if(isLoading) return <Loading />
   return (
     <PlaygroungWrapper>
         <Resizable direction="horizontal">
-         <Problem />
-        </Resizable>
-          <Editor initialValue="// use show() instead of console.log();" />
+         <Problem description={data.description} />
+        </Resizable>isLoading
+          <Editor id={id} initialValue='#include "bits/stdc++.h";
+using namespace std;
+int main(){
+}' />
       </PlaygroungWrapper>
   );
 };
