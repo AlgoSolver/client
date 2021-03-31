@@ -20,6 +20,7 @@ import Problem from "./pages/problem/";
 import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
 import NewPassword from "./pages/new-password";
+import UserSubmissions from "./pages/user-submissions";
 
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
@@ -87,6 +88,9 @@ const Routing = () => {
         </Route>
         <Route path="/playground">
           <Playground />
+        </Route>
+        <Route path="/:username/submissions">
+          <UserSubmissions />
         </Route>
         <Route path="/problems/:id">
           <Problem />
