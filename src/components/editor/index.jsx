@@ -11,7 +11,7 @@ import { useState, useEffect, memo } from "react";
 import { TextArea } from "../form";
 import Text from "../Text";
 //import Message from '../Text'
-import { updateCodePlayGround, useCodePlayGround } from "../../hooks/problems";
+import { updateCodePlayGround, useCodePlayGround,useRunCode,useSubmitCode } from "../../hooks/problems";
 import { setLocalStorage, getLocalStorage } from "../../utils/local-storage";
 
 const EditorContainer = styled.div`
@@ -113,6 +113,10 @@ const ConsoleContainer = styled(motion.div)`
     }
   }
 `;
+const initialValueCode = `#include "bits/stdc++.h";
+using namespace std;
+int main(){
+}`;
 let mounted = false;
 const Results = () => {
   return (
@@ -202,10 +206,27 @@ const Console = ({ tab = 1, closeConsole }) => {
   );
 };
 
-const SubmitCode = (id) => {
-  const { data, loading } = useCodePlayGround(id);
-  const handleSubmitCode = () => console.log(data);
-  const handleRunCode = () => console.log(data);
+const SubmitCode = ({id}) => {
+  const { data  , isLoading } = useCodePlayGround(id);
+  const {mutate, data:res} = useRunCode();
+  const {mutate:submitCode , data:submitCodeRes } = useSubmitCode();
+  const handleRunCode = () => {
+      mutate({
+        sourceCode:data.code,
+        input:data.testCase,
+        lang:'C++',
+        timeLimit:2
+      });
+  }
+  const  handleSubmitCode = () => {
+      submitCode({
+        problem:id,
+        code:{
+          sourceCode:data.code,
+          language:'C++'
+         }
+      })
+  }
   return (
     <div className="submit">
       <Button onClick={handleRunCode} theme="light" mg="0 .8rem 0 0" small>
@@ -298,7 +319,7 @@ const Editor = ({ initialValue = "", light, id }) => {
         <MonacoEditor
           editorDidMount={onEditorDidMount}
           onChange={handleEditorChange}
-          value={code || initialValue}
+          value={code || initialValueCode}
           language="cpp"
           theme={light ? "light" : "dark"}
           height="100%"

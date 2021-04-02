@@ -57,7 +57,7 @@ const ProblemContainer = styled.div`
   position: relative;
   height: 100%;
   width: calc(100% - 10px);
-  overflow: hidden;
+  overflow: auto;
   .tabs {
     background: ${({ theme }) => theme.colors.light[0]};
     display: flex;
@@ -90,6 +90,8 @@ const ProblemDescriptionContainer = styled.div`
   height: 100%;
   padding: 2rem;
 `;
+
+
 
 const Tabs = () => {
   let { url } = useRouteMatch();
@@ -180,12 +182,7 @@ const Main = () => {
         <Problem description={data.description} />
       </Resizable>
       isLoading
-      <Editor
-        id={id}
-        initialValue='#include "bits/stdc++.h";
-using namespace std;
-int main(){
-}'
+      <Editor id={id}
       />
     </PlaygroungWrapper>
   );

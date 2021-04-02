@@ -1,15 +1,13 @@
 import {useQuery,useMutation,useQueryClient} from 'react-query';
 import axios from '../api'
 
-
-
 const request = async (url,method,data=null)=>{
 	try{
 		const res = await axios[method](url,data);
 		return res.data;
 	}catch(err){
 		throw new Error(err?.response?.data?.message || 'Network Error, please try again later.')
-		
+
 	}
 }
 const configOptions={
@@ -72,15 +70,15 @@ export const usePasswordRecovery=()=>{
 	return useMutation((data)=>request('/user/email-verification','post',data),{
 		retry:false
 	})
-} 
+}
 
 export const useTokenVerification = ()=>{
 	return useMutation((data)=>request('/user/token-verification','post',data),{
 		retry:false
-	}) 
+	})
 }
 export const usePassswordReset = ()=>{
 	return useMutation((data)=>request('/user/reset-password','post',data),{
 		retry:false
-	}) 
+	})
 }

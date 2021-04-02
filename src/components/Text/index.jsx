@@ -55,7 +55,7 @@ const StyledText = styled.div`
     display:inline-block;
   }
   &.pre{
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
     overflow-x: auto;
     font-size: 1.6rem;
     font-family: MonoLisa;
@@ -63,7 +63,7 @@ const StyledText = styled.div`
     background:${({theme}) => theme.colors.light[0]};
     color:${({theme}) => theme.colors.primary[0]};
     border-radius:1rem;
-   
+
   }
   &.bold {
     font-family: ${({ family }) => family + "-Bold"};
@@ -95,6 +95,7 @@ const Text = ({
   layer=0,
   transform = "initial",
   center,
+  ...rest
 }) => {
   const classes = classNames(
     className,
@@ -118,6 +119,7 @@ const Text = ({
       pd={pd}
       color={color}
       transform={transform}
+      {...rest}
     >
       {children}
     </StyledText>

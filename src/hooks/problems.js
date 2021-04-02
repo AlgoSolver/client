@@ -1,7 +1,18 @@
-import {useQuery} from 'react-query'
+import {useQuery,useMutation} from 'react-query'
 import client from './index'
 import axios from '../api'
+import 	 fetch from 'axios'
 import {getLocalStorage} from '../utils/local-storage';
+
+const codeRequest= async (data)=>{
+	try{
+		const res = await fetch.post('https://algosolver-playground.herokuapp.com/api/runCode',data);
+		return res.data;
+	}catch(err){
+		throw new Error(err?.response?.data?.message || 'Network Error, please try again later.')
+
+	}
+}
 const request = async (url,method,data=null)=>{
 	try{
 		const res = await axios[method](url,data);
@@ -33,6 +44,29 @@ export const useProblems=(page=1)=>{
     ()=>request(`/problems?page=${page}`,'get'),
     configOptions
   )
+}
+export const useSubmitCode =()=>{
+	return useMutation(
+		(data)=>request(`/submissions`,'post',data),
+		configOptions
+	)
+}
+export const useRunCode = ()=>{
+	return useMutation(
+		(data)=>codeRequest(data),
+		{
+			retry:false,
+			onSuccess:(data)=>{
+				console.log(data)
+			}
+		}
+	)
+}
+export const useTemp = (name, path)=>{
+	return useQuery(name,
+		()=>request(path,"get"),
+		configOptions
+	)
 }
 export const useProblem=(id)=>{
 	return useQuery(
