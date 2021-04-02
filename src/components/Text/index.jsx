@@ -80,6 +80,9 @@ const StyledText = styled.div`
   &.center {
     text-align: center;
   }
+  &.inline{
+    display:inline-block;
+  }
 `;
 
 const Text = ({
@@ -95,6 +98,7 @@ const Text = ({
   layer=0,
   transform = "initial",
   center,
+  inline,
   ...rest
 }) => {
   const classes = classNames(
@@ -102,6 +106,7 @@ const Text = ({
     bold && "bold",
     size && "size",
     center && "center",
+    inline && "inline",
     type,
     mg,
     "mg",

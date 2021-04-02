@@ -9,9 +9,9 @@ const Container = styled.div`
 
 `
 // Custom component to render Genres
-const Status = ({ values,cell,id }) => {
+const Status = ({ values,id }) => {
   return (
-    <Link to={`/submission/:${id}`}>
+    <Link to={`/submission/${id}`}>
      <span>
      <Text style={{display:"inline-block"}} type="h5" color={values === 'Accepted' ? "green": "red"}>
         {values}
@@ -20,9 +20,16 @@ const Status = ({ values,cell,id }) => {
      </Link>
   );
 }
+const FormatDate = ({ value }) => {
+  return (
+     <span>
+        {new Date(value).toLocaleString()}
+     </span>
+  );
+}
 const Problem = ({ values,id }) => {
   return (
-    <Link to={`/problems/:${id}`}>
+    <Link to={`/problems/${id}`}>
      <span>
      <Text style={{display:"inline-block"}}  type="h5">
         {values}
@@ -35,6 +42,7 @@ let columns = [
   {
     Header: "Time Submitted",
     accessor: "createdAt",
+    Cell:({cell:{value}})=><FormatDate value={value} />
   },
   {
     Header: "Title",
@@ -47,31 +55,19 @@ let columns = [
     Cell: (x) => <Status values={x.cell.value} id={x.rowsById[x.cell.row.id].original._id} cell={x} />
   },
   {
-    Header: "Run Time (ms)",
-    accessor: "usedTime",
+    Header: "Expected Complexity",
+    accessor: "expectedComplexity",
   },
 ];
 
-let data = [
-  {
-    show: {
-      name: 44813,
-      type: "http://www.tvmaze.com/shows/44813/the-snow-spider",
-    },
-  },
-  {
-    show: {
-      name: 44813,
-      type: "http://www.tvmaze.com/shows/44813/the-snow-spider",
-    },
-  },
-];
+
 
 const UserSubmissions = () => {
   const {data:user} = useAuth();
   let id=0;
   if(user && user._id) id = user._id
   const {data:submissions, isLoading} = useTemp('submissions',"/submissions/user/" + id);
+  console.log(submissions)
   if(isLoading) return <Loading />
   return (
     <Container className="wrapper">

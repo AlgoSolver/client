@@ -21,6 +21,7 @@ import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
 import NewPassword from "./pages/new-password";
 import UserSubmissions from "./pages/user-submissions";
+import Submission from "./pages/submission";
 
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
@@ -85,6 +86,9 @@ const Routing = () => {
         </AuthRoute>
         <Route path="/blog">
           <Blog />
+        </Route>
+        <Route path="/submission/:id">
+          <Submission />
         </Route>
         <Route path="/playground">
           <Playground />

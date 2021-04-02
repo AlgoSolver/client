@@ -115,4 +115,8 @@ export default createGlobalStyle`
       padding: 0px 2rem;
       height:100%;
     }
+    .line{
+      display:flex;
+      align-item:center
+    }
 `;
