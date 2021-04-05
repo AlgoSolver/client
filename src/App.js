@@ -1,5 +1,5 @@
 // export { default as App } from './app';
-import  { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import {
   BrowserRouter as Router,
@@ -26,12 +26,12 @@ import Submission from "./pages/submission";
 import Blog from "./pages/blog";
 import NewPost from "./pages/new-post";
 
-import CreateProblem from './pages/create-problem/'
+import CreateProblem from "./pages/create-problem/";
 
 import Navbar, { AccountsNav } from "./components/navbar/";
 import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
-import {theme} from './utils/theme'
+import { theme } from "./utils/theme";
 
 function App() {
   return (
@@ -52,15 +52,17 @@ const Routing = () => {
   const fallbackForPrivate = "/profile";
   return (
     <>
+      {" "}
       {location.pathname !== "/" ? (
         !location.pathname?.includes("accounts") ? (
           <Navbar />
         ) : (
           <AccountsNav />
         )
-      ) : null}
+      ) : null}{" "}
       <Switch>
-        <AuthRoute fallback={fallbackForPrivate} exact path="/">
+        {" "}
+        <AuthRoute fallback={fallbackForPrivate} exact="exact" path="/">
           <Home />
         </AuthRoute>
         <AuthRoute fallback={fallbackForPrivate} path="/accounts/login">
@@ -111,6 +113,7 @@ const Routing = () => {
         </AuthRoute>
         <AuthRoute
           // privatePage={true}
+
           // fallback={fallbackForPublic}
           path="/create-problem"
         >

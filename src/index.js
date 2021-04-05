@@ -3,19 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClientProvider} from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import  client from './hooks';
+import {ReactQueryDevtools} from 'react-query/devtools';
+import client from './hooks';
 
 ReactDOM.render(
-  // <React.StrictMode>
-  	<QueryClientProvider client={client}>
-  	<ReactQueryDevtools initialIsOpen={false} />
-    <App />
-    </QueryClientProvider>
-  // </React.StrictMode>
-    ,
-  document.getElementById('root')
-);
+// <React.StrictMode>
+<QueryClientProvider client={client}>
+  <ReactQueryDevtools initialIsOpen={false}/>
+  <App/>
+</QueryClientProvider>,
+// </React.StrictMode>
+
+document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

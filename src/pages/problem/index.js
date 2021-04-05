@@ -181,7 +181,6 @@ const Main = () => {
       <Resizable direction="horizontal">
         <Problem description={data.description} />
       </Resizable>
-      isLoading
       <Editor id={id}
       />
     </PlaygroungWrapper>

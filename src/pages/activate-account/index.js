@@ -7,9 +7,6 @@ import Message from "../../components/message/";
 import {useActivateAccount} from '../../hooks/user'
 import {useEffect} from 'react';
 const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1118px;
-  margin: 0 auto;
   .container {
     display: flex;
     align-items: center;
@@ -38,7 +35,6 @@ const ActivateEmail = ({ token }) => {
   if (data?.email)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-        {" "}
         <Message
           title="Account Verifycation Success"
           subTitle={`conguratilation ${data.usename}, your accuout has been
@@ -58,7 +54,7 @@ const ActivateEmail = ({ token }) => {
 const Activate = () => {
   const { token } = useParams();
   return (
-    <Wrapper>
+    <Wrapper className="wrapper">
       <div className="container">
         {!token ? (
           <Message subTitle="Inalid Token" type="red" />
