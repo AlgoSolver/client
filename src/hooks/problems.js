@@ -7,7 +7,7 @@ import {getLocalStorage} from '../utils/local-storage';
 const codeRequest = async (data) => {
   try {
     const res = await fetch.post('https://algosolver-playground.herokuapp.com/api/runCode', data);
-    console.log(res.data)
+    res.data.id = (Math.random() * 10000)
     return res.data;
   } catch (err) {
     throw new Error(
@@ -60,11 +60,15 @@ export const useProblems = (page = 1) => {
 export const useSubmitCode = () => {
   return useMutation((data) => request(`/submissions`, 'post', data), configOptions)
 }
+
+export const useListen = (key)=>{
+  return useQuery(key,()=>{},configOptions);
+}
 export const useRunCode = () => {
   return useMutation((data) => codeRequest(data), {
     retry: false,
     onSuccess: (data) => {
-      console.log(data)
+      client.setQueryData('runCodeResults',data);
     }
   })
 }

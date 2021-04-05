@@ -1,9 +1,9 @@
 import MonacoEditor /*,{EditorDidMount}*/ from "@monaco-editor/react";
-import prettier from "prettier";
+//import prettier from "prettier";
 import { useRef } from "react";
 import styled from "styled-components";
 import Button from "../button";
-import parser from "prettier/parser-babel";
+//import parser from "prettier/parser-babel";
 
 import { ICQ, ArrowDown2 } from "../../assets/icons";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,9 +11,14 @@ import { useState, useEffect, memo } from "react";
 import { TextArea } from "../form";
 import Text from "../Text";
 //import Message from '../Text'
-import { updateCodePlayGround, useCodePlayGround,useRunCode,useSubmitCode } from "../../hooks/problems";
+import {
+  updateCodePlayGround,
+  useCodePlayGround,
+  useRunCode,
+  useSubmitCode,
+  useListen
+} from "../../hooks/problems";
 import { setLocalStorage, getLocalStorage } from "../../utils/local-storage";
-
 const EditorContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -117,51 +122,75 @@ const initialValueCode = `#include "bits/stdc++.h";
 using namespace std;
 int main(){
 }`;
-let mounted = false;
+
+const OutPutResultContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const OutPutResult = ({results}) => {
+  return (
+    <OutPutResultContainer>
+      <div>
+        <Text type="p" color={results.codeStatus === "Accepted" ? "green" : "red"}>
+          {results.codeStatus}
+        </Text>
+         <Text type="p" layer={2}>
+          Runtime : {results.usedTime}
+        </Text>
+      </div>
+    </OutPutResultContainer>
+  );
+};
 const Results = () => {
+  const {data:results} = useListen('runCodeResults')
   return (
     <div className="results">
-      <Text type="p" color="red" layer={3}>
-        You must run your code first
-      </Text>
+      {results?.codeStatus ? (
+        <OutPutResult results={results} />
+      ) : (
+        <Text type="p" color="red" layer={3}>
+          You must run your code first
+        </Text>
+      )}
     </div>
   );
 };
 let testCaseTimer;
-const TestCase = ({ defaultTestCase = 0 }) => {
+const TestCase = ({handleChange,value}) => {
+  
+  return (
+    <TextArea
+      flex
+      value={value}
+      onChange={(e) => handleChange(e.target.value)}
+    ></TextArea>
+  );
+};
+
+const TabBody = ({currentTab,defaultTestCase = null,results})=>{
   const [testCase, setTestCase] = useState(defaultTestCase);
+  const textAreaRef = useRef(null);
   useEffect(() => {
+    if(!textAreaRef?.current){
+         textAreaRef.current=true
+         return;
+    }
     if (testCaseTimer) {
       clearTimeout(testCaseTimer);
     }
     testCaseTimer = setTimeout(() => {
       updateCodePlayGround({ testCase });
-    }, 500);
+    }, 500);  
+    return ()=> testCaseTimer ? clearTimeout(testCaseTimer) :null;
   }, [testCase]);
-  return (
-    <TextArea
-      flex
-      value={testCase}
-      onChange={(e) => setTestCase(e.target.value)}
-    ></TextArea>
-  );
-};
-const Console = ({ tab = 1, closeConsole }) => {
-  const [currentTab, setCurrentTab] = useState(tab);
-  const handleTabChange = (idx) => {
-    if (idx !== currentTab) setCurrentTab(idx);
-  };
-
-  useEffect(() => {
-    if (!mounted) {
-      mounted = true;
-      return;
-    }
-    if (tab !== currentTab || currentTab === 0) setCurrentTab(tab);
-  }, [tab, setCurrentTab, currentTab]);
+  return currentTab === 1 ? <TestCase  value={testCase} handleChange={(e)=>setTestCase(e)} /> : <Results results={results} />
+}
+const Console = ({ isWidowOpen , closeConsole ,resultData}) => {
+  const [currentTab, setCurrentTab] = useState(1);
   return (
     <AnimatePresence>
-      {currentTab && (
+      {isWidowOpen && (
         <div className="console">
           <ConsoleContainer
             initial={{ y: -350, opacity: 0 }}
@@ -172,7 +201,7 @@ const Console = ({ tab = 1, closeConsole }) => {
               <div
                 className="tabs__list"
                 as="button"
-                onClick={() => handleTabChange(1)}
+                onClick={() => currentTab === 2 ? setCurrentTab(1): null}
               >
                 <div className={`tabs__item ${currentTab === 1 && "active"}`}>
                   <span>Test Case</span>
@@ -180,7 +209,7 @@ const Console = ({ tab = 1, closeConsole }) => {
                 <div
                   className={`tabs__item ${currentTab === 2 && "active"}`}
                   as="button"
-                  onClick={() => handleTabChange(2)}
+                  onClick={() => currentTab === 1 ? setCurrentTab(2): null}
                 >
                   <span>Results</span>
                 </div>
@@ -197,7 +226,7 @@ const Console = ({ tab = 1, closeConsole }) => {
               </Button>
             </div>
             <div className="body">
-              {currentTab === 1 ? <TestCase /> : <Results />}
+              <TabBody currentTab={currentTab} />
             </div>
           </ConsoleContainer>
         </div>
@@ -206,56 +235,75 @@ const Console = ({ tab = 1, closeConsole }) => {
   );
 };
 
-const SubmitCode = ({id}) => {
-  const { data  , isLoading } = useCodePlayGround(id);
-  const {mutate, data:res} = useRunCode();
-  const {mutate:submitCode , data:submitCodeRes } = useSubmitCode();
+const SubmitCode = memo(({ id }) => {
+  const { data } = useCodePlayGround(id);
+  const {
+    mutate,
+    data: runCodeRes,
+    isLoading: isRunCodeLoading,
+  } = useRunCode();
+  const {
+    mutate: submitCode,
+    data: submitCodeRes,
+    isLoading: isRunSubmitLoading,
+  } = useSubmitCode();
   const handleRunCode = () => {
-      mutate({
-        sourceCode:data.code,
-        input:data.testCase,
-        lang:'C++',
-        timeLimit:2
-      });
-  }
-  const  handleSubmitCode = () => {
-      submitCode({
-        problem:id,
-        code:{
-          sourceCode:data.code,
-          language:'C++'
-         }
-      })
-  }
+    mutate({
+      sourceCode: data.code,
+      input: data.testCase,
+      lang: "C++",
+      timeLimit: 2,
+    });
+  };
+  const handleSubmitCode = () => {
+    submitCode({
+      problem: id,
+      code: {
+        sourceCode: data.code,
+        language: "C++",
+      },
+    });
+  }; 
+  if(submitCodeRes) console.log(submitCodeRes,runCodeRes) 
   return (
     <div className="submit">
-      <Button onClick={handleRunCode} theme="light" mg="0 .8rem 0 0" small>
+      <Button
+        onClick={handleRunCode}
+        disabled={isRunCodeLoading || isRunSubmitLoading}
+        theme="light"
+        mg="0 .8rem 0 0"
+        small
+      >
         Run Code
       </Button>
-      <Button theme="primary" small onClick={handleSubmitCode}>
+      <Button
+        theme="primary"
+        disabled={isRunCodeLoading || isRunSubmitLoading}
+        small
+        onClick={handleSubmitCode}
+      >
         Submit Code
       </Button>
     </div>
   );
-};
+});
 const EditorFooter = memo(({ id }) => {
   const [isConsoleOpen, setIsConsoleOpen] = useState(0);
   return (
     <div className="foot">
-      <Console tab={isConsoleOpen} closeConsole={() => setIsConsoleOpen(0)} />
-
+      <Console isWidowOpen={isConsoleOpen} closeConsole={() => setIsConsoleOpen(0)} />
       <div className="editor-footer">
         <div className="open-console">
           <Button
             theme="dark"
             layer={1}
             small
-            onClick={() => setIsConsoleOpen((e) => (e === 1 ? 0 : 1))}
+            onClick={() => setIsConsoleOpen(e=> e === 0 ? 1 : 0)}
           >
             Console
           </Button>
         </div>
-        <SubmitCode id={id} />
+        <SubmitCode id={id}  />
       </div>
     </div>
   );
@@ -276,41 +324,34 @@ const Editor = ({ initialValue = "", light, id }) => {
       updateCodePlayGround({ code: value });
       setLocalStorage(`problem-code-${id}`, value);
     }, 750);
-  }
-  const onFormatClick = () => {
-    const code = editorRef.current.getModel().getValue();
-    const formatedCode = prettier
-      .format(code, {
-        parser: "babel",
-        plugins: [parser],
-        printWidth: 80,
-        tabWidth: 2,
-        useTabs: false,
-        semi: true,
-        singleQuote: false,
-        quoteProps: "as-needed",
-        jsxSingleQuote: false,
-        trailingComma: "none",
-        bracketSpacing: true,
-        jsxBracketSameLine: false,
-        arrowParens: "always",
-      })
-      .replace(/\n$/, "");
-    // chnage
-    editorRef.current.setValue(formatedCode);
-  };
+   }
+  // const onFormatClick = () => {
+  //   const code = editorRef.current.getModel().getValue();
+  //   const formatedCode = prettier
+  //     .format(code, {
+  //       parser: "babel",
+  //       plugins: [parser],
+  //       printWidth: 80,
+  //       tabWidth: 2,
+  //       useTabs: false,
+  //       semi: true,
+  //       singleQuote: false,
+  //       quoteProps: "as-needed",
+  //       jsxSingleQuote: false,
+  //       trailingComma: "none",
+  //       bracketSpacing: true,
+  //       jsxBracketSameLine: false,
+  //       arrowParens: "always",
+  //     })
+  //     .replace(/\n$/, "");
+  //   // chnage
+  //   editorRef.current.setValue(formatedCode);
+  // };
   return (
     <EditorContainer>
       <div>
         <div className="editor-header">
-          <Button
-            theme="light"
-            onClick={onFormatClick}
-            ghost
-            icon
-            small
-            title="Format the code"
-          >
+          <Button theme="light" ghost icon small title="Format the code">
             <ICQ />
           </Button>
         </div>
