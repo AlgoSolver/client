@@ -2,9 +2,12 @@ import styled from "styled-components";
 import Button from "../../../components/button/";
 import { Play, EditSquare, Setting } from "../../../assets/icons/";
 import Modal from "../../../components/modal";
-import {useState} from 'react'
+import { useState } from "react";
 import Text from "../../../components/Text";
-import {Toggle} from '../../../components/form/'
+import { Toggle } from "../../../components/form/";
+import { useListen, useRunCodeOnPlayground } from "../../../hooks/problems";
+import { updateState } from "../../../hooks/";
+
 const EditorHeaderContainer = styled.div`
 	background: ${({ theme }) => theme.colors.light[4]};
 	padding: 1rem;
@@ -36,9 +39,9 @@ const Settings = () => {
 				</Modal.Title>
 				<Modal.Body>
 					<Toggle name="theme" big>
-					  <Text type="p" layer={1} mg="0">
-					  Activate the dark theme
-					  </Text>
+						<Text type="p" layer={1} mg="0">
+							Activate the dark theme
+						</Text>
 					</Toggle>
 				</Modal.Body>
 				<Modal.Footer>
@@ -53,17 +56,37 @@ const Settings = () => {
 		</div>
 	);
 };
+const ControllButtons = () => {
+	const code = useListen("playground-code");
+	const input = useListen("playground-input");
+	const { mutate, isLoading } = useRunCodeOnPlayground();
+	const runCode = () => {
+		updateState("playground-console", {
+			codeStatus: "Compiling Program..",
+		});
+		mutate({
+			sourceCode: code.data,
+			input: input.data || "0",
+			lang: "C++",
+			timeLimit: 2,
+		});
+	};
+
+	return (
+		<div className="left">
+			<Button icon small disabled={isLoading} onClick={runCode}>
+				Run &nbsp; <Play />
+			</Button>
+			<Button small icon disabled={isLoading} type="light">
+				Save &nbsp; <EditSquare />
+			</Button>
+		</div>
+	);
+};
 const EditorHeader = () => {
 	return (
 		<EditorHeaderContainer>
-			<div className="left">
-				<Button icon small>
-					Run &nbsp; <Play />
-				</Button>
-				<Button small icon type="light">
-					Save &nbsp; <EditSquare />
-				</Button>
-			</div>
+			<ControllButtons />
 			<div className="right">
 				<Settings />
 			</div>
