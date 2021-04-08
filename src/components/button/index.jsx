@@ -178,7 +178,6 @@ const StyledButton = styled.button`
     box-shadow: none;
     border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
-    
   }
   &.withIcon {
     display: flex;
@@ -198,6 +197,14 @@ const StyledButton = styled.button`
   &.icon {
     min-width: auto;
     padding: 0 1rem;
+    svg {
+      path {
+        stroke: ${({ theme, type }) =>
+          types.some((item) => type === item)
+            ? theme.colors.light[4]
+            : theme.colors.dark[0]};
+      }
+    }
     &.big {
       width: 5.2rem;
       height: 5.2rem;

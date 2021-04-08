@@ -22,25 +22,25 @@ const Unit = styled(motion.div)`
             color ? theme.colors[color][1] : theme.colors.primary[1]};
           &::after {
             background-color: white;
-            transform: translateX(1.9rem);
+            transform: translateX(2.4rem);
           }
         }
       }
       label {
         background: ${({ theme }) => theme.colors.gray[2]};
-        width: 4rem;
-        height: 2.2rem;
+        width: 5rem;
+        height: 2.8rem;
         display: flex;
         align-items: center;
-        border-radius: 5.2rem;
+        border-radius: 5.4rem;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
 
         &::after {
           content: "";
           padding-top: 0.3rem;
-          width: 1.6rem;
-          height: 1.6rem;
+          width: 2rem;
+          height: 2rem;
           position: relative;
 
           left: 0.3rem;
