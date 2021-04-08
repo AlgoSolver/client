@@ -118,7 +118,7 @@ const Modal = ({
 						className={classes}
 					>
 						<div onClick={onHide} className="modal__close">
-							<Close width="2rem"  />
+							<Close width="2rem" />
 						</div>
 						{children}
 					</ModalBody>
