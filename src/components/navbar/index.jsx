@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
 import { useAuth, useLogout } from "../../hooks/user";
 const AccountNavContainer = styled(motion.nav)`
+  background: ${({ theme }) => theme.colors.light[4]};
+  box-shadow: ${({ theme }) => theme.elevation[8].shadow};
   .wrapper {
     width: 100%;
     display: flex;
@@ -15,7 +17,7 @@ const AccountNavContainer = styled(motion.nav)`
     height: 6.4rem;
   }
   .nav__brand {
-    color: ${({ theme }) => theme.colors.primary[0]};
+    color: ${({ theme }) => theme.colors.dark[1]};
     font-size: 3.6rem;
     font-family: "Avenir-bold";
   }
@@ -49,7 +51,12 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
       <>
         {" "}
         <li className={`${menu}__item`}>
-          <NavLink activeClassName="active" onClick={close} to="/profile" className={`${menu}__link`}>
+          <NavLink
+            activeClassName="active"
+            onClick={close}
+            to="/profile"
+            className={`${menu}__link`}
+          >
             {data.username}
           </NavLink>
         </li>
@@ -63,12 +70,21 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
     return (
       <>
         <li className="nav__item">
-          <NavLink activeClassName="active" onClick={close} to="/accounts/login" className="nav__link">
+          <NavLink
+            activeClassName="active"
+            onClick={close}
+            to="/accounts/login"
+            className="nav__link"
+          >
             Login
           </NavLink>
         </li>
         <li className="nav__item">
-          <NavLink activeClassName="active" onClick={close} to="/accounts/signup">
+          <NavLink
+            activeClassName="active"
+            onClick={close}
+            to="/accounts/signup"
+          >
             <Button
               big
               circle
@@ -89,12 +105,22 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
     return (
       <>
         <li className="menu__item">
-          <NavLink activeClassName="active" onClick={close} to="/accounts/login" className="menu__link">
+          <NavLink
+            activeClassName="active"
+            onClick={close}
+            to="/accounts/login"
+            className="menu__link"
+          >
             login
           </NavLink>
         </li>
         <li className="menu__item">
-          <NavLink activeClassName="active" onClick={close} to="/accounts/signup" className="menu__link">
+          <NavLink
+            activeClassName="active"
+            onClick={close}
+            to="/accounts/signup"
+            className="menu__link"
+          >
             signup
           </NavLink>
         </li>
@@ -134,7 +160,7 @@ const NavbarContainer = styled(motion.nav)`
         justify-content: flex-start;
       }
     }
-    &__item{
+    &__item {
       height: 100%;
       display: flex;
       align-items: center;
@@ -153,24 +179,24 @@ const NavbarContainer = styled(motion.nav)`
       justify-content: center;
       height: 100%;
       position: relative;
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
         height: 0;
-        background: ${({ theme }) => theme.colors.primary[0]};;
-        border-radius: .3rem .3rem 0 0;
-        -webkit-transition: height .25s;
-        -o-transition: height .25s;
-        transition: height .25s;
+        background: ${({ theme }) => theme.colors.primary[0]};
+        border-radius: 0.3rem 0.3rem 0 0;
+        -webkit-transition: height 0.25s;
+        -o-transition: height 0.25s;
+        transition: height 0.25s;
       }
-      &.active{
+      &.active {
         color: ${({ theme }) => theme.colors.dark[0]};
         &::before {
-              height: .3rem;
-          }
+          height: 0.3rem;
+        }
       }
       &:hover {
         color: ${({ theme }) => theme.colors.dark[0]};
@@ -306,7 +332,9 @@ const Navbar = ({ close }) => {
     >
       <div className="wrapper">
         <div className="nav__brand">
-          <NavLink activeClassName="active" to="/">AlgoSolver</NavLink>
+          <NavLink activeClassName="active" to="/">
+            AlgoSolver
+          </NavLink>
         </div>
         {isBigPhone ? (
           <NavMenu />
@@ -314,27 +342,47 @@ const Navbar = ({ close }) => {
           <div className="nav__links">
             <ul className="nav__list list1">
               <li className="nav__item">
-                <NavLink activeClassName="active" to="/playground" className="nav__link">
+                <NavLink
+                  activeClassName="active"
+                  to="/playground"
+                  className="nav__link"
+                >
                   playground
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink activeClassName="active" to="/explore" className="nav__link">
+                <NavLink
+                  activeClassName="active"
+                  to="/explore"
+                  className="nav__link"
+                >
                   explore
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink activeClassName="active" to="/problems" className="nav__link">
+                <NavLink
+                  activeClassName="active"
+                  to="/problems"
+                  className="nav__link"
+                >
                   problems
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink activeClassName="active" to="/blog" className="nav__link">
+                <NavLink
+                  activeClassName="active"
+                  to="/blog"
+                  className="nav__link"
+                >
                   Blog
                 </NavLink>
               </li>
               <li className="nav__item">
-                <NavLink activeClassName="active" to="/elements" className="nav__link">
+                <NavLink
+                  activeClassName="active"
+                  to="/elements"
+                  className="nav__link"
+                >
                   elements
                 </NavLink>
               </li>
@@ -383,7 +431,8 @@ const NavMenu = () => {
               <div className="menu__body">
                 <ul className="menu__list list1">
                   <li className="menu__item">
-                    <NavLink activeClassName="active"
+                    <NavLink
+                      activeClassName="active"
                       onClick={close}
                       to="/playground"
                       className="menu__link"
@@ -392,22 +441,42 @@ const NavMenu = () => {
                     </NavLink>
                   </li>
                   <li className="menu__item">
-                    <NavLink activeClassName="active" onClick={close} to="/explore" className="menu__link">
+                    <NavLink
+                      activeClassName="active"
+                      onClick={close}
+                      to="/explore"
+                      className="menu__link"
+                    >
                       explore
                     </NavLink>
                   </li>
                   <li className="menu__item">
-                    <NavLink activeClassName="active" onClick={close} to="/problems" className="menu__link">
+                    <NavLink
+                      activeClassName="active"
+                      onClick={close}
+                      to="/problems"
+                      className="menu__link"
+                    >
                       problems
                     </NavLink>
                   </li>
                   <li className="menu__item">
-                    <NavLink activeClassName="active" onClick={close} to="/blog" className="menu__link">
+                    <NavLink
+                      activeClassName="active"
+                      onClick={close}
+                      to="/blog"
+                      className="menu__link"
+                    >
                       Blog
                     </NavLink>
                   </li>
                   <li className="menu__item">
-                    <NavLink activeClassName="active" onClick={close} to="/elements" className="menu__link">
+                    <NavLink
+                      activeClassName="active"
+                      onClick={close}
+                      to="/elements"
+                      className="menu__link"
+                    >
                       elements
                     </NavLink>
                   </li>

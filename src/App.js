@@ -52,16 +52,14 @@ const Routing = () => {
   const fallbackForPrivate = "/profile";
   return (
     <>
-      {" "}
       {location.pathname !== "/" ? (
         !location.pathname?.includes("accounts") ? (
           <Navbar />
         ) : (
           <AccountsNav />
         )
-      ) : null}{" "}
+      ) : null}
       <Switch>
-        {" "}
         <AuthRoute fallback={fallbackForPrivate} exact="exact" path="/">
           <Home />
         </AuthRoute>

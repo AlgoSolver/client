@@ -11,12 +11,12 @@ import {Draft} from './draft';
 const Form = ({ children,...rest }) => {
   return (
     <FormWrapper {...rest}>
-      <FormContainer>{children}</FormContainer>
+        {children}
     </FormWrapper>
   );
 };
 
- const Divider = ({mg="2rem 0 1rem"}) => {
+ const Divider = ({mg="0.5 0 .5rem"}) => {
   return (
     <DividerContainer mg={mg}>
       <div>
@@ -33,27 +33,16 @@ const Form = ({ children,...rest }) => {
  
  
 const FormWrapper = styled(motion.div)`
-  padding: 2rem 0;
+  padding: 2rem;
   flex:1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
-const FormContainer = styled.div`
-  width: 39rem;
-  padding: 2rem 2rem 2rem;
-  border-radius: 2rem;
-  margin: 0 auto;
-  form {
-    width: 100%;
-  }
-`;
+
 
 const DividerContainer = styled.div`
   position: relative;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 1rem;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
   margin:${({mg})=>mg};
   font-size: 1.6rem;
   line-height: 17.5px;
@@ -69,7 +58,7 @@ const DividerContainer = styled.div`
     content: "";
     width: 100%;
     height: 1px;
-    background-color: ${({theme})=>theme.colors.dark[4]};
+    background-color: ${({theme})=>theme.colors.gray[3]};
     -ms-flex-item-align: center;
     align-self: center;
   }
@@ -77,12 +66,12 @@ const DividerContainer = styled.div`
     content: "";
     width: 100%;
     height: 1px;
-    background-color: ${({theme})=>theme.colors.dark[4]};
+    background-color: ${({theme})=>theme.colors.gray[3]};
     -ms-flex-item-align: center;
     align-self: center;
   }
   div {
-    padding: 0 17.5px;
+    padding: 0 1rem;
   }
 `;
 export  {TextInput,Form,Toggle,CheckBox,Divider,TextArea,Select,Draft};
