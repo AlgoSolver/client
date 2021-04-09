@@ -97,7 +97,7 @@ const Signup = () => {
           Sign Up
         </Text>
         <Text type="p" layer={2} center mg="0 0 1rem 0">
-          Just sign in if you have an account in here. Enjoy our Website
+          Let’s Sign up first for enter into AlgoSolver Website
         </Text>
         <div className="form__body">
           <SignupForm />

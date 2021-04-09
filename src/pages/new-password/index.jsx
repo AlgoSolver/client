@@ -5,41 +5,13 @@ import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 import { Link, useParams } from "react-router-dom";
-import signupImg from "../../assets/images/1.png";
-import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import Message from "../../components/message/";
 import { useEffect } from "react";
 import LoadingPage from "../../shared/loading/";
 import {useTokenVerification,usePassswordReset} from '../../hooks/user'
+import AuthContainer from "../../components/auth-container/";
 
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1118px;
-  margin: 0 auto;
-
-  .container {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    .hello {
-      display: flex;
-      align-items: center;
-
-      justify-content: center;
-      width: 100%;
-    }
-    .img {
-      align-self: flex-start;
-      width: 35rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-`;
 const ConfirmMessage = styled(motion.div)`
   width: 100%;
 `;
@@ -53,22 +25,24 @@ const RenderForm = ({ token }) => {
   if (isError)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+            <div className="form__body">
+
         <Message subTitle={error.message} type="red" />
         <Link to="/accounts/recover">
           <Button theme="yellow" circle>
             reset password
           </Button>
         </Link>
+        </div>
       </Form>
     );
   if (data?.email)
     return (
-      <div className="container">
-        <ImgContainer />
         <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+         <div className="form__body">
           <RestForm token={token}/>
+          </div>
         </Form>
-      </div>
     );
   else return null;
 };
@@ -134,26 +108,11 @@ const RestForm = ({ token }) => {
   );
 };
 
-const ImgContainer = () => {
-  const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
-  if (!isBigPhone)
-    return (
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className="img"
-      >
-        <img src={signupImg} alt="" />
-      </motion.div>
-    );
-  return null;
-};
 
 const Reset = () => {
   const { token } = useParams();
   return (
-    <Wrapper>
-      <div className="container">
+    <AuthContainer>
         {!token ? (
           <div className="hello">
             {token} <Message subTitle="Inalid Token" type="red" />
@@ -161,8 +120,7 @@ const Reset = () => {
         ) : (
           <RenderForm token={token} />
         )}
-      </div>
-    </Wrapper>
+    </AuthContainer>
   );
 };
 
