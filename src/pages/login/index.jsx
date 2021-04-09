@@ -7,18 +7,17 @@ import { Link } from "react-router-dom";
 import Message from "../../components/message/";
 import AuthContainer from "../../components/auth-container/";
 import GoogleLogin from "react-google-login";
-import {useLogin,useGoogleLogin} from '../../hooks/user';
-
+import { useLogin, useGoogleLogin } from "../../hooks/user";
 
 const LoginForm = ({ login }) => {
-  const {isLoading,isError,error,mutate} = useLogin();
+  const { isLoading, isError, error, mutate } = useLogin();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (e) => {
-  mutate(e);
+    mutate(e);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-     <Message show={isError} subTitle={error?.message} type="red" /> 
+      <Message show={isError} subTitle={error?.message} type="red" />
       <TextInput
         type="text"
         name="email"
@@ -50,27 +49,16 @@ const LoginForm = ({ login }) => {
 
 const Login = () => {
   return (
-      <AuthContainer>
-        <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-          <Text
-            mg="0 0 1rem 0"
-            type="h1"
-            layer={1}
-            bold
-            center
-          >
-            Login
-          </Text>
-          <Text
-            type="p"
-            layer={2}
-            center
-             mg="0 0 1rem 0"
-          >
-            Just sign in if you have an account in here. Enjoy our Website
-          </Text>
-          <div className="form__body">
-          <LoginForm  />
+    <AuthContainer>
+      <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+        <Text mg="0 0 1rem 0" type="h1" layer={1} bold center>
+          Log In
+        </Text>
+        <Text type="p" layer={2} center mg="0 0 1rem 0">
+          Just sign in if you have an account in here. Enjoy our Website
+        </Text>
+        <div className="form__body">
+          <LoginForm />
           <div
             style={{
               alignItems: "center",
@@ -84,22 +72,24 @@ const Login = () => {
           </div>
           <Divider />
           <Google />
-          </div>
-          <div className="center">
+        </div>
+        <div className="center">
           <Link to="/accounts/signup">
-          <Button link layer={2}>Already have an Square account? Log in</Button>
+            <Button link layer={2}>
+              Don't have an account? Sign up
+            </Button>
           </Link>
-          </div>
-        </Form>
+        </div>
+      </Form>
     </AuthContainer>
   );
 };
 
 const Google = () => {
- // const { res, request, error } = useFetch();
-  const {mutate,isLoading,isError,error} = useGoogleLogin();
-  const responseGoogle =  (response) => {
-     mutate({idToken:response.tokenId});
+  // const { res, request, error } = useFetch();
+  const { mutate, isLoading, isError, error } = useGoogleLogin();
+  const responseGoogle = (response) => {
+    mutate({ idToken: response.tokenId });
     // try {
     //   await request("/user/google-login", "post", {
     //     idToken: response.tokenId,
@@ -125,25 +115,24 @@ const Google = () => {
   // console.log(res);
   return (
     <>
-    <GoogleLogin
-      clientId={`151428129813-nhg7fihrmv53ml959a4bfd2gq2rjsrr0.apps.googleusercontent.com`}
-      onSuccess={responseGoogle}
-      onFailure={()=>{}}
-      render={(renderProps) => (
-        <Button
-          onClick={renderProps.onClick}
-          disabled={renderProps.disabled}
-          loading={isLoading}
-          big
-          theme="light"
-          block
-        >
-          Log in with Google
-        </Button>
-      )}
-      
-    />
-    <Message show={isError} subTitle={error?.message} type="red" />
+      <GoogleLogin
+        clientId={`151428129813-nhg7fihrmv53ml959a4bfd2gq2rjsrr0.apps.googleusercontent.com`}
+        onSuccess={responseGoogle}
+        onFailure={() => {}}
+        render={(renderProps) => (
+          <Button
+            onClick={renderProps.onClick}
+            disabled={renderProps.disabled}
+            loading={isLoading}
+            big
+            theme="light"
+            block
+          >
+            Log in with Google
+          </Button>
+        )}
+      />
+      <Message show={isError} subTitle={error?.message} type="red" />
     </>
   );
 };

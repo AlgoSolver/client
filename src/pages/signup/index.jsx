@@ -5,38 +5,15 @@ import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 import { Link } from "react-router-dom";
-import signupImg from "../../assets/images/5.png";
-//import hand from "../../assets/images/Saly-8.png";
-import {useSignup} from '../../hooks/user'
-
-import { useMediaQuery } from "react-responsive";
-import { motion } from "framer-motion";
+import { useSignup } from "../../hooks/user";
 import Message from "../../components/message/";
+import AuthContainer from "../../components/auth-container/";
 
-const Wrapper = styled.div`
-  width: 100%;
-  max-width: 1118px;
-  margin: 0 auto;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    .img {
-      align-self: flex-start;
-      width: 35rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-`;
 const ConfirmMessage = styled.div`
   width: 100%;
 `;
 const SignupForm = () => {
-  const {isLoading,data,isError,error,mutate} = useSignup();
+  const { isLoading, data, isError, error, mutate } = useSignup();
   const { register, handleSubmit, errors, watch } = useForm();
   const cp = watch("password");
 
@@ -60,9 +37,6 @@ const SignupForm = () => {
   }
   return (
     <>
-      <Text mg="0 0 1rem 0" type="h2" size="3.2rem" family="Avenir" bold center>
-        Create Your Account
-      </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Message show={isError} subTitle={error?.message} type="red" />
         <TextInput
@@ -114,61 +88,29 @@ const SignupForm = () => {
     </>
   );
 };
-const Switch = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 2rem;
-  span {
-    font-size: 1.5rem;
-    font-weight: 300;
-    display: inline-block;
-    margin-right: 0.8rem;
-  }
-`;
-const ImgContainer = () => {
-  const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
-  if (!isBigPhone)
-    return (
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className="img"
-      >
-        {/* <AnimatePresence> */}
-        {/*   {!user?.data?.email ? ( */}
-            <motion.img exit={{ y: 100, opacity: 0 }} src={signupImg} alt="" />
-        {/*   ) : ( */}
-        {/*     <motion.img */}
-        {/*       initial={{ y: -100, opacity: 0 }} */}
-        {/*       animate={{ y: 0, opacity: 1 }} */}
-        {/*       src={hand} */}
-        {/*       alt="" */}
-        {/*     /> */}
-        {/*   )} */}
-        {/* </AnimatePresence> */}
-      </motion.div>
-    );
-  return null;
-};
+
 const Signup = () => {
   return (
-    <Wrapper>
-      <Switch>
-        <span>Already have an account?</span>
-        <Link to="/accounts/login">
-          <Button theme="dark" layer={0} circle>
-            login
-          </Button>
-        </Link>
-      </Switch>
-      <div className="container">
-        <ImgContainer />
-        <Form initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
+    <AuthContainer>
+      <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+        <Text mg="0 0 1rem 0" type="h1" layer={1} bold center>
+          Sign Up
+        </Text>
+        <Text type="p" layer={2} center mg="0 0 1rem 0">
+          Just sign in if you have an account in here. Enjoy our Website
+        </Text>
+        <div className="form__body">
           <SignupForm />
-        </Form>
-      </div>
-    </Wrapper>
+        </div>
+        <div className="center">
+          <Link to="/accounts/login">
+            <Button link layer={2}>
+              Already have an account? Log in
+            </Button>
+          </Link>
+        </div>
+      </Form>
+    </AuthContainer>
   );
 };
 
