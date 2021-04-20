@@ -21,6 +21,8 @@ import Signup from "./pages/signup";
 import PasswordRecovery from "./pages/password-recover/";
 import NewPassword from "./pages/new-password";
 import UserSubmissions from "./pages/user-submissions";
+import UserPlaygrounds from "./pages/user-playgrounds";
+
 import Submission from "./pages/submission";
 
 import Blog from "./pages/blog";
@@ -49,7 +51,7 @@ function App() {
 const Routing = () => {
   const location = useLocation();
   const fallbackForPublic = "/";
-  const fallbackForPrivate = "/profile";
+  const fallbackForPrivate = "/explore"; // until estblish the main page of signed user
   return (
     <>
       {location.pathname !== "/" ? (
@@ -93,8 +95,11 @@ const Routing = () => {
         <Route path="/playground">
           <Playground />
         </Route>
-        <Route path="/:username/submissions">
+        <Route exact path="/:username/submissions">
           <UserSubmissions />
+        </Route>
+        <Route exact path="/:username/playgrounds">
+          <UserPlaygrounds />
         </Route>
         <Route path="/problems/:id">
           <Problem />
@@ -117,16 +122,16 @@ const Routing = () => {
         >
           <CreateProblem />
         </AuthRoute>
-        <Route path="/elements">
+        <Route exact path="/elements">
           <Elements />
         </Route>
-        <Route path="/explore">
+        <Route exact path="/explore">
           <Explore />
         </Route>
         <AuthRoute
           privatePage={true}
           fallback={fallbackForPublic}
-          path="/profile"
+          path="/:username"
         >
           <Profile />
         </AuthRoute>

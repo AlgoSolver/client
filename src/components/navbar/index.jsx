@@ -143,14 +143,14 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
                    Profile
                 </Text>
               </DropdownLink>
-              <DropdownLink onClick={close} to="/submission">
+              <DropdownLink onClick={close} to={`/${data.username}/submissions`}>
                 <Text layer={2} type="h5" mg="0">
                   Your Submission
                 </Text>
               </DropdownLink>
-              <DropdownLink onClick={close} to={"code"}>
+              <DropdownLink onClick={close} to={`/${data.username}/playgrounds`}>
                 <Text layer={2} type="h5" mg="0">
-                  Your Codes
+                  Your Playgrounds
                 </Text>
               </DropdownLink>
               <Divider mg=".4rem 0" />
