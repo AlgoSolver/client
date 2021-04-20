@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import Button from "../button/";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
 import { useAuth, useLogout } from "../../hooks/user";
+import {ArrowDown2} from '../../assets/icons';
+import Dropdown from '../dropdown'
+import Text from '../Text'
 const AccountNavContainer = styled(motion.nav)`
   background: ${({ theme }) => theme.colors.light[4]};
   box-shadow: ${({ theme }) => theme.elevation[8].shadow};
@@ -23,6 +26,60 @@ const AccountNavContainer = styled(motion.nav)`
   }
 `;
 
+const UserEntityContainer=styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  &:hover{
+    .user__name{
+      background: ${({ theme }) => theme.colors.light[1]};
+    }
+  }
+  .user__img{
+    position: absolute;
+    width:5rem;
+    height:5rem;
+    top:0;
+    left:0;
+    transform: translate(-50%,-.5rem);
+    border-radius: 2.5rem;
+    overflow: hidden;
+    img{
+      width:100%;
+      max-width: 100%;
+    }
+  }
+  .user__name{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right:1rem;
+    padding-left:3.5rem;
+    border-radius:15rem;
+    background: ${({ theme }) => theme.colors.light[3]};
+    box-shadow: ${({ theme }) => theme.elevation[4].shadow};
+    transition: background .3s easy;
+    span{
+      font-size:1.6rem;
+      display: inline-block;
+      margin-right: .5rem;
+    }
+
+  }
+`
+const DropdownLinkContainer = styled(Link)`
+  display: block;
+  .link_container{
+    padding:.8rem 1.6rem;
+    transition: background .3s;
+    background: ${({ theme }) => theme.colors.light[4]};
+    &:hover{
+      background: ${({ theme }) => theme.colors.light[3]};
+    }
+  }
+`
 const Logout = () => {
   const { isLoading, isError, error, mutate } = useLogout();
   const logout = () => {
@@ -44,24 +101,57 @@ const Logout = () => {
     </>
   );
 };
+const DropdownLink = ({children,to})=>{
+  return <DropdownLinkContainer to={to}>
+    <div className="link_container">
+      {children}
+    </div>
+  </DropdownLinkContainer>
+}
+const UserEntity = ({username,img})=>{
+  return <UserEntityContainer>
+    <div className="user__img">
+      <img alt={username} src={img} />
+    </div>
+    <div className="user__name">
+      <span>
+        {username}
+      </span>
+        <ArrowDown2 />
+      </div>
+  </UserEntityContainer>
+}
+
 const RenderAuth = ({ menu = "menu", close = () => {} }) => {
   const { data } = useAuth(false);
   if (data?.username) {
     return (
       <>
-        {" "}
         <li className={`${menu}__item`}>
-          <NavLink
-            activeClassName="active"
-            onClick={close}
-            to="/profile"
-            className={`${menu}__link`}
+          <Dropdown
+            body={()=><UserEntity username={data.username} img={'https://avatars.githubusercontent.com/u/79712616?v=4'} />}
+            direction="right"
+            width="15.5rem"
           >
-            {data.username}
-          </NavLink>
-        </li>
-        <li className={`${menu}__item`}>
-          <Logout />
+            <>
+              <DropdownLink to={`/${data.username}`}>
+                <Text type="h5" mg="0">
+                   Profile
+                </Text>
+              </DropdownLink>
+              <DropdownLink  to="/submission">
+                <Text type="h5" mg="0">
+                  Your Submission
+                </Text>
+              </DropdownLink>
+              <DropdownLink  to={"code"}>
+                <Text type="h5" mg="0">
+                  Your Codes
+                </Text>
+              </DropdownLink>
+              <Logout />
+            </>
+          </Dropdown>
         </li>
       </>
     );
@@ -86,13 +176,7 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
             to="/accounts/signup"
           >
             <Button
-              big
               circle
-              style={{
-                height: " 4.8rem",
-                padding: "0 2.4rem",
-                marginLeft: "2rem",
-              }}
               theme="primary"
             >
               Signup
@@ -135,6 +219,7 @@ const NavbarContainer = styled(motion.nav)`
     align-items: center;
     padding: 0 2rem;
     height: 6.4rem;
+    overflow: visible;
   }
   .nav {
     &__brand {
