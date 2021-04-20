@@ -6,9 +6,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
 import { useAuth, useLogout } from "../../hooks/user";
-import {ArrowDown2} from '../../assets/icons';
+import {ArrowDown2,Logout as LogoutIcon} from '../../assets/icons';
 import Dropdown from '../dropdown'
 import Text from '../Text'
+import {Divider} from '../divider'
+
 const AccountNavContainer = styled(motion.nav)`
   background: ${({ theme }) => theme.colors.light[4]};
   box-shadow: ${({ theme }) => theme.elevation[8].shadow};
@@ -48,6 +50,7 @@ const UserEntityContainer=styled.div`
     img{
       width:100%;
       max-width: 100%;
+      user-select: none;
     }
   }
   .user__name{
@@ -58,13 +61,14 @@ const UserEntityContainer=styled.div`
     padding-right:1rem;
     padding-left:3.5rem;
     border-radius:15rem;
-    background: ${({ theme }) => theme.colors.light[3]};
+    background: ${({ theme }) => theme.colors.light[4]};
     box-shadow: ${({ theme }) => theme.elevation[4].shadow};
     transition: background .3s easy;
     span{
       font-size:1.6rem;
       display: inline-block;
       margin-right: .5rem;
+      user-select: none;
     }
 
   }
@@ -75,6 +79,7 @@ const DropdownLinkContainer = styled(Link)`
     padding:.8rem 1.6rem;
     transition: background .3s;
     background: ${({ theme }) => theme.colors.light[4]};
+    user-select: none;
     &:hover{
       background: ${({ theme }) => theme.colors.light[3]};
     }
@@ -95,14 +100,14 @@ const Logout = () => {
           subTitle={error.message}
         />
       )}
-      <Button loading={isLoading} onClick={logout}>
+      <Button withIcon={()=><LogoutIcon />} type="light" mg=".6rem 1.6rem 0" style={{width: "-webkit-fill-available"}} loading={isLoading} onClick={logout}>
         Logout
       </Button>
     </>
   );
 };
-const DropdownLink = ({children,to})=>{
-  return <DropdownLinkContainer to={to}>
+const DropdownLink = ({children,to,onClick})=>{
+  return <DropdownLinkContainer to={to} onClick={onClick}>
     <div className="link_container">
       {children}
     </div>
@@ -132,25 +137,26 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
             body={()=><UserEntity username={data.username} img={'https://avatars.githubusercontent.com/u/79712616?v=4'} />}
             direction="right"
             width="15.5rem"
-          >
-            <>
-              <DropdownLink to={`/${data.username}`}>
-                <Text type="h5" mg="0">
+            main={(close)=>(<>
+              <DropdownLink onClick={close} to={`/${data.username}`}>
+                <Text layer={2} type="h5" mg="0">
                    Profile
                 </Text>
               </DropdownLink>
-              <DropdownLink  to="/submission">
-                <Text type="h5" mg="0">
+              <DropdownLink onClick={close} to="/submission">
+                <Text layer={2} type="h5" mg="0">
                   Your Submission
                 </Text>
               </DropdownLink>
-              <DropdownLink  to={"code"}>
-                <Text type="h5" mg="0">
+              <DropdownLink onClick={close} to={"code"}>
+                <Text layer={2} type="h5" mg="0">
                   Your Codes
                 </Text>
               </DropdownLink>
+              <Divider mg=".4rem 0" />
               <Logout />
-            </>
+            </>)}
+          >
           </Dropdown>
         </li>
       </>

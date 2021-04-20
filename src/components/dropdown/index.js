@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {motion, AnimatePresence} from 'framer-motion'
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import classnames from 'classnames';
 
 const Container = styled.div`
@@ -20,6 +20,7 @@ const DropDownContainer = styled(motion.ul)`
   text-align: left;
   width: max-content;
   margin-top: .8rem;
+  user-select:none;
   &.left{
     left:0;
   }
@@ -29,20 +30,26 @@ const DropDownContainer = styled(motion.ul)`
 
 `
 
-const Dropdown = ({body,children,direction="left",width})=>{
+const Dropdown = ({body,main,direction="left",width})=>{
   const classes = classnames(
     direction
   )
-  console.log(width)
-  const [show,setShow] = useState(false);
-      return <Container>
+    const [show,setShow] = useState(false);
+    function eventHandler(){
+        setShow(false)
+    }
+    useEffect(()=>{
+      document.body.addEventListener('click',eventHandler);
+      return ()=>   document.body.removeEventListener('click',eventHandler)
+    },[])
+      return <Container onClick={(e)=>e.stopPropagation()}>
       <div style={{display:"inline-block"}} onClick={()=>setShow(e=>!e)}>
         {body()}
       </div>
       <AnimatePresence>
       { show && <DropDownContainer initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className={classes} width={width}>
         <div>
-        {children}
+        {main(eventHandler)}
       </div>
       </DropDownContainer>
     }
