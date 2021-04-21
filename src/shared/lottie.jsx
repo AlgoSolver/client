@@ -1,6 +1,6 @@
 import Lottie from "react-lottie";
 
-export default function LottieAnimation({ lotti, width, height }) {
+export default function LottieAnimation({ lotti, width="100%", height="100%" }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -12,11 +12,11 @@ export default function LottieAnimation({ lotti, width, height }) {
 
   return (
     <div>
-      <Lottie 
-        options={defaultOptions} 
-        height="100%" 
-        width="100%"
-        isPaused={false} 
+      <Lottie
+        options={defaultOptions}
+        height={width}
+        width={width}
+        isPaused={false}
       />
     </div>
   );
