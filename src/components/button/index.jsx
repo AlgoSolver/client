@@ -16,8 +16,8 @@ const types = [
 const StyledButton = styled.button`
   font-size: 1.5rem;
   line-height: 1.6;
-  background: ${({ theme, appearnc, layer }) =>
-    appearnc === "light" ? theme.colors[appearnc][4] : theme.colors[appearnc][layer]};
+  background: ${({ theme, type, layer }) =>
+    type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
   color: #fff;
   border-radius: 0.4rem;
   height: 4.2rem;
@@ -31,8 +31,8 @@ const StyledButton = styled.button`
   font-family: "Avenir";
   letter-spacing: 0.02rem;
   border: 1px solid
-    ${({ appearnc, theme, layer }) =>
-      appearnc === "light" ? theme.colors[appearnc][4] : theme.colors[appearnc][layer]};
+    ${({ type, theme, layer }) =>
+      type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
   &.circle {
     border-radius: 2.1rem;
   }
@@ -56,30 +56,29 @@ const StyledButton = styled.button`
     }
   }
   &.contained {
-    color: ${({ theme, appearnc }) =>
-      types.some((item) => appearnc === item)
+    color: ${({ theme, type }) =>
+      types.some((item) => type === item)
         ? theme.colors.light[4]
         : theme.colors.dark[0]};
     &:hover {
-      background: ${({ theme, appearnc, layer }) => theme.colors[appearnc][layer + 1]};
-      border-color: ${({ theme, appearnc, layer }) =>
-        theme.colors[appearnc][layer + 1]};
+      background: ${({ theme, type, layer }) => theme.colors[type][layer + 1]};
+      border-color: ${({ theme, type, layer }) =>
+        theme.colors[type][layer + 1]};
     }
-
     &:active {
-      background: ${({ theme, appearnc }) => theme.colors[appearnc][0]};
-      border-color: ${({ theme, appearnc }) => theme.colors[appearnc][0]};
+      background: ${({ theme, type }) => theme.colors[type][0]};
+      border-color: ${({ theme, type }) => theme.colors[type][0]};
       box-shadow: ${({ theme }) => theme.elevation[3].shadow};
     }
     &:focus {
-      border-color: ${({ theme, appearnc }) =>
-        theme.colors[appearnc][4] || theme.colors[appearnc][3]};
+      border-color: ${({ theme, type }) =>
+        theme.colors[type][4] || theme.colors[type][3]};
     }
     .icon {
       svg {
         path {
-          stroke: ${({ theme, appearnc }) =>
-            types.some((item) => appearnc === item)
+          stroke: ${({ theme, type }) =>
+            types.some((item) => type === item)
               ? theme.colors.light[4]
               : theme.colors.dark[0]};
         }
@@ -88,37 +87,35 @@ const StyledButton = styled.button`
   }
   &.outlined {
     background: transparent;
-    color: ${({ theme, appearnc }) => theme.colors[appearnc][0]};
-    border-color: ${({ theme, appearnc }) => theme.colors[appearnc][0]};
+    color: ${({ theme, type }) => theme.colors[type][0]};
+    border-color: ${({ theme, type }) => theme.colors[type][0]};
     &:hover {
-      color: ${({ theme, appearnc }) =>
-        appearnc === "light" ? theme.colors.dark[0] : theme.colors[appearnc][1]};
-      background: ${({ theme, appearnc }) =>
-        theme.colors[appearnc].length > 5
-          ? theme.colors[appearnc][6]
-          : theme.colors[appearnc][4]};
-      border-color: ${({ theme, appearnc }) => theme.colors[appearnc][3]};
+      color: ${({ theme, type }) =>
+        type === "light" ? theme.colors.dark[0] : theme.colors[type][1]};
+      background: ${({ theme, type }) =>
+        theme.colors[type].length > 5
+          ? theme.colors[type][6]
+          : theme.colors[type][4]};
+      border-color: ${({ theme, type }) => theme.colors[type][3]};
       path {
-        stroke: ${({ theme, appearnc }) =>
-          appearnc === "light"
+        stroke: ${({ theme, type }) =>
+          type === "light"
             ? theme.colors.dark[0]
-            : theme.colors[appearnc][1]} !important;
+            : theme.colors[type][1]} !important;
       }
     }
-
     &:active {
-      background: ${({ theme, appearnc }) => theme.colors[appearnc][4]};
-      border-color: ${({ theme, appearnc }) => theme.colors[appearnc][2]};
+      background: ${({ theme, type }) => theme.colors[type][4]};
+      border-color: ${({ theme, type }) => theme.colors[type][2]};
       box-shadow: ${({ theme }) => theme.elevation[2].shadow};
     }
     &:focus {
-      border-color: ${({ theme, appearnc }) => theme.colors[appearnc][0]};
+      border-color: ${({ theme, type }) => theme.colors[type][0]};
     }
-
     .icon {
       svg {
         path {
-          stroke: ${({ theme, appearnc }) => theme.colors[appearnc][1]};
+          stroke: ${({ theme, type }) => theme.colors[type][1]};
         }
       }
     }
@@ -144,7 +141,7 @@ const StyledButton = styled.button`
     color: ${({ color, theme }) => (color ? color : theme.colors.dark[1])};
     box-shadow: none;
     &:hover {
-      background: ${({ theme, appearnc }) => theme.colors.primary[3]};
+      background: ${({ theme, type }) => theme.colors.primary[3]};
     }
   }
   &.ghost {
@@ -154,7 +151,7 @@ const StyledButton = styled.button`
     color: ${({ color, theme }) => (color ? color : theme.colors.dark[1])};
     box-shadow: none;
     &:hover {
-      background: ${({ theme, appearnc, layer }) => theme.colors[appearnc][layer]};
+      background: ${({ theme, type, layer }) => theme.colors[type][layer]};
     }
   }
   &.squared {
@@ -164,19 +161,18 @@ const StyledButton = styled.button`
     display: block;
     width: 100%;
   }
-
   &.disabled {
-    background: ${({ theme, appearnc }) => theme.colors.gray[3]} !important;
-    color: ${({ theme, appearnc }) => theme.colors.dark[4]} !important;
+    background: ${({ theme, type }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, type }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, appearnc }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.loading {
-    background: ${({ theme, appearnc }) => theme.colors.gray[3]} !important;
-    color: ${({ theme, appearnc }) => theme.colors.dark[4]} !important;
+    background: ${({ theme, type }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, type }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, appearnc }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.withIcon {
@@ -193,14 +189,13 @@ const StyledButton = styled.button`
       justify-content: center;
     }
   }
-
   &.icon {
     min-width: auto;
     padding: 0 1rem;
     svg {
       path {
-        stroke: ${({ theme, appearnc }) =>
-          types.some((item) => appearnc === item)
+        stroke: ${({ theme, type }) =>
+          types.some((item) => type === item)
             ? theme.colors.light[4]
             : theme.colors.dark[0]};
       }
@@ -227,7 +222,7 @@ const Button = ({
   children,
   disabled,
   big,
-  type = "primary",
+  theme = "primary",
   block,
   outlined,
   link,
@@ -242,7 +237,6 @@ const Button = ({
   text,
   iconLeft,
   ghost,
-  buttonType="submit",
   color = null,
   icon = null,
   scale = true,
@@ -275,11 +269,10 @@ const Button = ({
     <StyledButton
       style={style}
       className={classes}
-      appearnc={type}
+      type={theme}
       layer={layer}
       mg={mg}
       disabled={disabled || loading}
-
       {...rest}
     >
       {!loading ? (
@@ -293,7 +286,7 @@ const Button = ({
         )
       ) : (
         <span className="center ">
-          <Loading full={false} appearnc="dark" layer={0} />
+          <Loading full={false} type="dark" layer={0} />
         </span>
       )}
     </StyledButton>
