@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import Text from '../../components/Text';
 import Header from './elements/header'
+import Codes from './elements/codes';
+
 const Container = styled.div`
 
 `
 const Playgrounds = ()=>{
   return <Container>
     <Header />
-    <Text>
-      My Playgrounds
-    </Text>
+    <Codes />
   </Container>
 }
 
