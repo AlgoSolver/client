@@ -16,8 +16,8 @@ const types = [
 const StyledButton = styled.button`
   font-size: 1.5rem;
   line-height: 1.6;
-  background: ${({ theme, type, layer }) =>
-    type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
+  background: ${({ theme, buttonType, layer }) =>
+    buttonType === "light" ? theme.colors[buttonType][4] : theme.colors[buttonType][layer]};
   color: #fff;
   border-radius: 0.4rem;
   height: 4.2rem;
@@ -31,8 +31,8 @@ const StyledButton = styled.button`
   font-family: "Avenir";
   letter-spacing: 0.02rem;
   border: 1px solid
-    ${({ type, theme, layer }) =>
-      type === "light" ? theme.colors[type][4] : theme.colors[type][layer]};
+    ${({ buttonType, theme, layer }) =>
+      buttonType === "light" ? theme.colors[buttonType][4] : theme.colors[buttonType][layer]};
   &.circle {
     border-radius: 2.1rem;
   }
@@ -56,29 +56,29 @@ const StyledButton = styled.button`
     }
   }
   &.contained {
-    color: ${({ theme, type }) =>
-      types.some((item) => type === item)
+    color: ${({ theme, buttonType }) =>
+      types.some((item) => buttonType === item)
         ? theme.colors.light[4]
         : theme.colors.dark[0]};
     &:hover {
-      background: ${({ theme, type, layer }) => theme.colors[type][layer + 1]};
-      border-color: ${({ theme, type, layer }) =>
-        theme.colors[type][layer + 1]};
+      background: ${({ theme, buttonType, layer }) => theme.colors[buttonType][layer + 1]};
+      border-color: ${({ theme, buttonType, layer }) =>
+        theme.colors[buttonType][layer + 1]};
     }
     &:active {
-      background: ${({ theme, type }) => theme.colors[type][0]};
-      border-color: ${({ theme, type }) => theme.colors[type][0]};
+      background: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
+      border-color: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
       box-shadow: ${({ theme }) => theme.elevation[3].shadow};
     }
     &:focus {
-      border-color: ${({ theme, type }) =>
-        theme.colors[type][4] || theme.colors[type][3]};
+      border-color: ${({ theme, buttonType }) =>
+        theme.colors[buttonType][4] || theme.colors[buttonType][3]};
     }
     .icon {
       svg {
         path {
-          stroke: ${({ theme, type }) =>
-            types.some((item) => type === item)
+          stroke: ${({ theme, buttonType }) =>
+            types.some((item) => buttonType === item)
               ? theme.colors.light[4]
               : theme.colors.dark[0]};
         }
@@ -87,35 +87,35 @@ const StyledButton = styled.button`
   }
   &.outlined {
     background: transparent;
-    color: ${({ theme, type }) => theme.colors[type][0]};
-    border-color: ${({ theme, type }) => theme.colors[type][0]};
+    color: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
+    border-color: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
     &:hover {
-      color: ${({ theme, type }) =>
-        type === "light" ? theme.colors.dark[0] : theme.colors[type][1]};
-      background: ${({ theme, type }) =>
-        theme.colors[type].length > 5
-          ? theme.colors[type][6]
-          : theme.colors[type][4]};
-      border-color: ${({ theme, type }) => theme.colors[type][3]};
+      color: ${({ theme, buttonType }) =>
+        buttonType === "light" ? theme.colors.dark[0] : theme.colors[buttonType][1]};
+      background: ${({ theme, buttonType }) =>
+        theme.colors[buttonType].length > 5
+          ? theme.colors[buttonType][6]
+          : theme.colors[buttonType][4]};
+      border-color: ${({ theme, buttonType }) => theme.colors[buttonType][3]};
       path {
-        stroke: ${({ theme, type }) =>
-          type === "light"
+        stroke: ${({ theme, buttonType }) =>
+          buttonType === "light"
             ? theme.colors.dark[0]
-            : theme.colors[type][1]} !important;
+            : theme.colors[buttonType][1]} !important;
       }
     }
     &:active {
-      background: ${({ theme, type }) => theme.colors[type][4]};
-      border-color: ${({ theme, type }) => theme.colors[type][2]};
+      background: ${({ theme, buttonType }) => theme.colors[buttonType][4]};
+      border-color: ${({ theme, buttonType }) => theme.colors[buttonType][2]};
       box-shadow: ${({ theme }) => theme.elevation[2].shadow};
     }
     &:focus {
-      border-color: ${({ theme, type }) => theme.colors[type][0]};
+      border-color: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
     }
     .icon {
       svg {
         path {
-          stroke: ${({ theme, type }) => theme.colors[type][1]};
+          stroke: ${({ theme, buttonType }) => theme.colors[buttonType][1]};
         }
       }
     }
@@ -141,7 +141,7 @@ const StyledButton = styled.button`
     color: ${({ color, theme }) => (color ? color : theme.colors.dark[1])};
     box-shadow: none;
     &:hover {
-      background: ${({ theme, type }) => theme.colors.primary[3]};
+      background: ${({ theme, buttonType }) => theme.colors.primary[3]};
     }
   }
   &.ghost {
@@ -151,7 +151,7 @@ const StyledButton = styled.button`
     color: ${({ color, theme }) => (color ? color : theme.colors.dark[1])};
     box-shadow: none;
     &:hover {
-      background: ${({ theme, type, layer }) => theme.colors[type][layer]};
+      background: ${({ theme, buttonType, layer }) => theme.colors[buttonType][layer]};
     }
   }
   &.squared {
@@ -162,17 +162,17 @@ const StyledButton = styled.button`
     width: 100%;
   }
   &.disabled {
-    background: ${({ theme, type }) => theme.colors.gray[3]} !important;
-    color: ${({ theme, type }) => theme.colors.dark[4]} !important;
+    background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, buttonType }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.loading {
-    background: ${({ theme, type }) => theme.colors.gray[3]} !important;
-    color: ${({ theme, type }) => theme.colors.dark[4]} !important;
+    background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, type }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, buttonType }) => theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.withIcon {
@@ -194,8 +194,8 @@ const StyledButton = styled.button`
     padding: 0 1rem;
     svg {
       path {
-        stroke: ${({ theme, type }) =>
-          types.some((item) => type === item)
+        stroke: ${({ theme, buttonType }) =>
+          types.some((item) => buttonType === item)
             ? theme.colors.light[4]
             : theme.colors.dark[0]};
       }
@@ -234,6 +234,7 @@ const Button = ({
   layer = 0,
   loading,
   small,
+  buttonType="submit",
   text,
   iconLeft,
   ghost,
@@ -243,6 +244,7 @@ const Button = ({
   iconsize = "2.4rem",
   iconfill = "#1c1c28",
   mg,
+  type,
   ...rest
 }) => {
   const classes = classNames(
@@ -269,7 +271,8 @@ const Button = ({
     <StyledButton
       style={style}
       className={classes}
-      type={theme}
+      buttonType={type || theme}
+      type={buttonType}
       layer={layer}
       mg={mg}
       disabled={disabled || loading}
@@ -286,7 +289,7 @@ const Button = ({
         )
       ) : (
         <span className="center ">
-          <Loading full={false} type="dark" layer={0} />
+          <Loading full={false} buttonType="dark" layer={0} />
         </span>
       )}
     </StyledButton>

@@ -6,6 +6,7 @@ import {QueryClientProvider} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 import client from './hooks';
 
+
 ReactDOM.render(
 // <React.StrictMode>
 <QueryClientProvider client={client}>

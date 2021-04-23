@@ -34,11 +34,12 @@ import Navbar, { AccountsNav } from "./components/navbar/";
 import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
 import { theme } from "./utils/theme";
-
+import {Toaster} from 'react-hot-toast'
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Toaster />
       <Router>
         <WithAuth>
           <Routing />

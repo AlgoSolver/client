@@ -1,4 +1,4 @@
-import {useInfiniteQuery} from 'react-query';
+import {useInfiniteQuery,useMutation} from 'react-query';
 import axios from '../api';
 //import client from "./index";
 
@@ -24,7 +24,23 @@ export const useCodes = (props)=>
       ({pageParam=1})=>{
         return request('/code?page='+ pageParam,'get')},
       {
+        select:(data)=>{
+          console.log(data)
+          return {
+            pages:{
+              ...data.pages[data.pages.length],
+              docs:data.pages.map(item=>item.docs).flat()
+            }
+          }
+        },
         ...props,
         ...configOptions
       }
     )
+
+export const useCreateCode = ()=>{
+  return useMutation(
+    (data)=>request('/code','post',data),
+    {...configOptions}
+  )
+}
