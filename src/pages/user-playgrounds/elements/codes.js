@@ -30,6 +30,7 @@ const CodeContainer = styled.div`
 const Code = ({code})=>{
   return <CodeContainer>
     <Text type="h4">{code.name || "Untitled"}</Text>
+  {code?.updatedAt && <Text type="p" size="1.4rem" mg="0" layer={2}>Last Modified: { (new Date(code.updatedAt)).toLocaleString() }</Text>}
     <div className="right">
       <Button type="light" circle icon>
         <Delete />
@@ -61,10 +62,9 @@ const Codes = ()=>{
   if(status==='loading') return <Container className="wrapper">
   <InlineLoading />
   </Container>
-
   return <Container className="wrapper">
    {data?.pages && <CodeList data={data.pages} />}
-   {!data?.pages?.length || data?.pages[0]?.docs?.length === 0 ? <Text center layer={2} color="red">
+   {!data?.pages?.docs || data?.pages?.docs?.length === 0 ? <Text center layer={2} color="red">
      You Don't have any playgrounds yet..
    </Text> :null}
   <div className="center">
