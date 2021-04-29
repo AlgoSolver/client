@@ -14,12 +14,14 @@ const EditorContainer = styled.div`
 		padding-left: 10px;
 	}
 `;
-const initialValueCode = `#include <iostream>;
-using namespace std;
-int main(){
-}`;
+// const init = `#include <iostream>;
+// using namespace std;
+// int main(){
+// }`;
 let timer;
-const Editor = () => {
+const Editor = ({
+	initialValue,
+}) => {
 	function handleEditorChange(value, event) {
 		if (timer) {
 			clearTimeout(timer);
@@ -31,7 +33,7 @@ const Editor = () => {
 	return (
 		<EditorContainer>
 			<MonacoEditor
-				value={initialValueCode}
+				value={initialValue}
 				onChange={handleEditorChange}
 				language="cpp"
 				height="100%"

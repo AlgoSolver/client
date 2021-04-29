@@ -5,7 +5,9 @@ import Output from "./elements/output";
 import EditorFooter from "./elements/editor-footer";
 import Resizable from "../../components/resizable/";
 import { useEffect } from "react";
-import { updateState } from "../../hooks/";
+import { updateState,useQuery } from "../../hooks/";
+import {useParams} from 'react-router-dom';
+import Loading from '../../shared/loading'
 const EditorContainer = styled.div`
   height: calc(100vh - 6.4rem);
   display: flex;
@@ -36,19 +38,28 @@ const EditorContainer = styled.div`
 `;
 
 const Playground = () => {
+  const {id} = useParams();
+  const {isLoading,data} = useQuery('play-code','/code/'+id,{cacheTime:0});
   useEffect(() => {
+    if(data?.code){
+      	updateState("playground-code", data.code);
+    }
     return () => {
       updateState("playground-input", "");
       updateState("playground-code", "");
       updateState("playground-console", "");
     };
-  }, []);
+  }, [data?.code]);
+  console.log(data)
+  if(isLoading){
+    return <Loading />
+  }
   return (
     <EditorContainer>
       <Resizable direction="horizontal">
         <div className="editor">
-          <EditorHeader />
-          <Editor />
+          <EditorHeader id={id} name={data.name} />
+          <Editor initialValue={data.code} />
           <EditorFooter />
         </div>
       </Resizable>

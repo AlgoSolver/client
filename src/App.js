@@ -93,6 +93,9 @@ const Routing = () => {
         <Route path="/submission/:id">
           <Submission />
         </Route>
+        <Route exact path="/playground/:id">
+          <Playground />
+        </Route>
         <Route path="/playground">
           <Playground />
         </Route>

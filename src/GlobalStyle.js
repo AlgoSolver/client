@@ -119,4 +119,10 @@ export default createGlobalStyle`
       display:flex;
       align-item:center
     }
+    .link{
+      color:${({theme})=>theme.colors.blue[0]};
+      &:hover{
+        text-decoration:underline;
+      }
+    }
 `;

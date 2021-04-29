@@ -8,6 +8,8 @@ import { Delete, Edit } from "../../../assets/icons";
 import Modal from "../../../components/modal";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import PlaygroundModal from "../../../components/playground-modal";
+import {Link} from 'react-router-dom'
 const Container = styled.div`
   padding: 4rem 0;
 `;
@@ -91,19 +93,34 @@ const DeleteCode = ({ codeId }) => {
     </>
   );
 };
-const UpdateCode = () => {
+const UpdateCode = ({codeId,name}) => {
+  const [show, setSow] = useState(false);
+  const open = () => setSow(true);
+  const close = () => setSow(false);
   return (
     <>
-      <Button type="light" circle icon>
+      <Button onClick={open} type="light" circle icon>
         <Edit />
       </Button>
+      <PlaygroundModal
+        defaultValue={name}
+        show={show}
+        close={close}
+        method="patch"
+        path={`/code/${codeId}`}
+        message="Playground updated successfully"
+       />
     </>
   );
 };
 const Code = ({ code }) => {
   return (
     <CodeContainer>
-      <Text type="h4">{code.name || "Untitled"}</Text>
+      <Text type="h4">
+        <Link className="link" to={`/playground/${code._id}`}>
+          {code.name || "Untitled"}
+        </Link>
+        </Text>
       {code?.updatedAt && (
         <Text type="p" size="1.4rem" mg="0" layer={2}>
           Last Modified: {new Date(code.updatedAt).toLocaleString()}
@@ -111,7 +128,7 @@ const Code = ({ code }) => {
       )}
       <div className="right">
         <DeleteCode codeId={code._id} />
-        <UpdateCode codeId={code._id} />
+      <UpdateCode codeId={code._id} name={code.name} />
       </div>
     </CodeContainer>
   );

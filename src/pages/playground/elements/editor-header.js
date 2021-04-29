@@ -6,7 +6,8 @@ import { useState } from "react";
 import Text from "../../../components/Text";
 import { Toggle } from "../../../components/form/";
 import { useListen, useRunCodeOnPlayground } from "../../../hooks/problems";
-import { updateState } from "../../../hooks/";
+import { updateState, useMutation } from "../../../hooks/";
+import toast from "react-hot-toast";
 
 const EditorHeaderContainer = styled.div`
 	background: ${({ theme }) => theme.colors.light[4]};
@@ -17,6 +18,8 @@ const EditorHeaderContainer = styled.div`
 	align-items: center;
 	.left {
 		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 		> :not(:last-child) {
 			margin-right: 0.8rem;
 		}
@@ -56,9 +59,11 @@ const Settings = () => {
 		</div>
 	);
 };
-const ControllButtons = () => {
+const ControllButtons = ({id,name}) => {
 	const code = useListen("playground-code");
 	const input = useListen("playground-input");
+	const {mutate : saveMutate ,isLoading : saveLoading,data} = useMutation('/code/'+id,'patch');
+
 	const { mutate, isLoading } = useRunCodeOnPlayground();
 	const runCode = () => {
 		updateState("playground-console", {
@@ -73,20 +78,34 @@ const ControllButtons = () => {
 	};
 
 	return (
-		<div className="left">
+		<div className="left ">
+			<Text mg="0" pd="0" layer="1" type="h5">
+				{name}
+			</Text>
 			<Button icon small disabled={isLoading} onClick={runCode}>
 				Run &nbsp; <Play />
 			</Button>
-			<Button small icon disabled={isLoading} type="light">
+			<Button small onClick={()=>{
+					saveMutate({code:code.data},{
+						onSuccess:()=>{
+							toast.success(<Text type="h5">Saved Successfuly</Text>);
+						},
+						onError:(err)=>{
+							toast.error(
+								<Text type="h4">{err.message || "un expected error"}</Text>
+							)
+						}
+					})
+				}} icon disabled={ isLoading || data?.code === code.data} loading={saveLoading} type="light">
 				Save &nbsp; <EditSquare />
 			</Button>
 		</div>
 	);
 };
-const EditorHeader = () => {
+const EditorHeader = ({id,name}) => {
 	return (
 		<EditorHeaderContainer>
-			<ControllButtons />
+			<ControllButtons id={id} name={name}/>
 			<div className="right">
 				<Settings />
 			</div>
