@@ -93,10 +93,10 @@ const Routing = () => {
         <Route path="/submission/:id">
           <Submission />
         </Route>
-        <Route exact path="/playground/:id">
+        <Route exact path="/playground/new/empty">
           <Playground />
         </Route>
-        <Route path="/playground">
+        <Route exact path="/playground/:id">
           <Playground />
         </Route>
         <Route exact path="/:username/submissions">
@@ -118,14 +118,16 @@ const Routing = () => {
         >
           <NewPost />
         </AuthRoute>
-        <AuthRoute
+        {/* <AuthRoute
           // privatePage={true}
 
           // fallback={fallbackForPublic}
           path="/create-problem"
-        >
+        > */}
+        <Route  path="/create-problem">
           <CreateProblem />
-        </AuthRoute>
+      </Route>
+        {/* </AuthRoute> */}
         <Route exact path="/elements">
           <Elements />
         </Route>

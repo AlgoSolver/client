@@ -4,9 +4,10 @@ import EditorHeader from "./elements/editor-header";
 import Output from "./elements/output";
 import EditorFooter from "./elements/editor-footer";
 import Resizable from "../../components/resizable/";
+import Head from "../../components/head/";
 import { useEffect } from "react";
 import { updateState,useQuery } from "../../hooks/";
-import {useParams} from 'react-router-dom';
+import {useParams , useLocation} from 'react-router-dom';
 import Loading from '../../shared/loading'
 const EditorContainer = styled.div`
   height: calc(100vh - 6.4rem);
@@ -37,7 +38,13 @@ const EditorContainer = styled.div`
   }
 `;
 
-const Playground = () => {
+const initial = `#include <iostream>;
+using namespace std;
+int main(){
+cout<<"Hello, AlgoSolver!"<<endl;
+return 0;
+}`
+const SignedPlayground = ({isSignedPlayground})=>{
   const {id} = useParams();
   const {isLoading,data} = useQuery('play-code','/code/'+id,{cacheTime:0});
   useEffect(() => {
@@ -50,15 +57,15 @@ const Playground = () => {
       updateState("playground-console", "");
     };
   }, [data?.code]);
-  console.log(data)
   if(isLoading){
     return <Loading />
   }
   return (
     <EditorContainer>
+      <Head title={data.name} description="user playground" />
       <Resizable direction="horizontal">
         <div className="editor">
-          <EditorHeader id={id} name={data.name} />
+          <EditorHeader isSignedPlayground={isSignedPlayground} id={id} name={data.name} />
           <Editor initialValue={data.code} />
           <EditorFooter />
         </div>
@@ -68,6 +75,37 @@ const Playground = () => {
       </div>
     </EditorContainer>
   );
+}
+const UnSignedPlayground = ({isSignedPlayground})=>{
+  useEffect(() => {
+    updateState("playground-code", initial);
+    return () => {
+      updateState("playground-input", "");
+      updateState("playground-code", "");
+      updateState("playground-console", "");
+    };
+  }, []);
+  return (
+    <EditorContainer>
+      <Head title="Empty Playground" description="user playground" />
+      <Resizable direction="horizontal">
+        <div className="editor">
+          <EditorHeader isSignedPlayground={isSignedPlayground} />
+          <Editor initialValue={initial}  />
+          <EditorFooter />
+        </div>
+      </Resizable>
+      <div className="controller">
+        <Output />
+      </div>
+    </EditorContainer>
+  );
+}
+const Playground = () => {
+  const {pathname} = useLocation();
+  console.log(pathname);
+  if(pathname === "/playground/new/empty") return <UnSignedPlayground isSignedPlayground={false}  />
+  return <SignedPlayground isSignedPlayground={true}/>
 };
 
 export default Playground;

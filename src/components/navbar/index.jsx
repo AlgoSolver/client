@@ -435,7 +435,7 @@ const Navbar = ({ close }) => {
               <li className="nav__item">
                 <NavLink
                   activeClassName="active"
-                  to="/playground"
+                  to="/playground/new/empty"
                   className="nav__link"
                 >
                   playground

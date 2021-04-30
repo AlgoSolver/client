@@ -8,6 +8,9 @@ import { Toggle } from "../../../components/form/";
 import { useListen, useRunCodeOnPlayground } from "../../../hooks/problems";
 import { updateState, useMutation } from "../../../hooks/";
 import toast from "react-hot-toast";
+import Tooltip from '../../../components/tooltip';
+import PlaygroundModal from '../../../components/playground-modal';
+
 
 const EditorHeaderContainer = styled.div`
 	background: ${({ theme }) => theme.colors.light[4]};
@@ -59,7 +62,34 @@ const Settings = () => {
 		</div>
 	);
 };
-const ControllButtons = ({id,name}) => {
+
+const SavePlaygroundModel = ({code})=>{
+	const [show, setSow] = useState(false);
+  const open = () => setSow(true);
+  const close = () => setSow(false);
+	return <>
+	<Button small icon  onClick={open} type="light">
+	   Save &nbsp; <EditSquare />
+  </Button>
+	<PlaygroundModal
+		show={show}
+		close={close}
+		method="post"
+		path="/code"
+		message="Playground Saved successfully"
+		data={{code}}
+	 />
+	</>
+}
+const NotSignedUser = ()=>{
+	return <Tooltip message="You have to login first" place="right" name="save">
+		<Button small icon disabled={true}  type="light">
+		Save &nbsp; <EditSquare />
+   </Button>
+</Tooltip>
+
+}
+const ControllButtons = ({id,name,userId,isSignedPlayground}) => {
 	const code = useListen("playground-code");
 	const input = useListen("playground-input");
 	const {mutate : saveMutate ,isLoading : saveLoading,data} = useMutation('/code/'+id,'patch');
@@ -80,32 +110,33 @@ const ControllButtons = ({id,name}) => {
 	return (
 		<div className="left ">
 			<Text mg="0" pd="0" layer="1" type="h5">
-				{name}
+				{name || "Untitled"}
 			</Text>
 			<Button icon small disabled={isLoading} onClick={runCode}>
 				Run &nbsp; <Play />
 			</Button>
-			<Button small onClick={()=>{
-					saveMutate({code:code.data},{
-						onSuccess:()=>{
-							toast.success(<Text type="h5">Saved Successfuly</Text>);
-						},
-						onError:(err)=>{
-							toast.error(
-								<Text type="h4">{err.message || "un expected error"}</Text>
-							)
-						}
-					})
-				}} icon disabled={ isLoading || data?.code === code.data} loading={saveLoading} type="light">
-				Save &nbsp; <EditSquare />
-			</Button>
+			{ !userId ? <NotSignedUser />: isSignedPlayground ? <Button small onClick={()=>{
+				saveMutate({code:code.data},{
+					onSuccess:()=>{
+						toast.success(<Text type="h5">Saved Successfuly</Text>);
+					},
+					onError:(err)=>{
+						toast.error(
+							<Text type="h4">{err.message || "un expected error"}</Text>
+						)
+					}
+				})
+			}} icon disabled={ isLoading || data?.code === code.data} loading={saveLoading} type="light">
+			Save &nbsp; <EditSquare />
+	</Button> : < SavePlaygroundModel code={code.data} />  }
 		</div>
 	);
 };
-const EditorHeader = ({id,name}) => {
+const EditorHeader = ({id,name,isSignedPlayground}) => {
+	const user = useListen('auth');
 	return (
 		<EditorHeaderContainer>
-			<ControllButtons id={id} name={name}/>
+			<ControllButtons id={id} name={name} isSignedPlayground={isSignedPlayground} userId={user?.data?._id}/>
 			<div className="right">
 				<Settings />
 			</div>

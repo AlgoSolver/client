@@ -15,7 +15,8 @@ const PlaygroundModal =  ({
   show,
   method,
   path,
-  message
+  message,
+  data={},
 })=> {
   const history = useHistory();
   const { isLoading, mutate } = useMutation(path,method);
@@ -28,9 +29,11 @@ const PlaygroundModal =  ({
       );
       return;
     }
-    mutate(e, {
+    mutate({...e,...data}, {
       onSuccess: (data) => {
         toast.success(<Text type="h4">{message}</Text>);
+        const xdata = client.getQueryData('codes');
+        if(xdata?.pages){
         client.setQueryData("codes", (oldData) => {
 
           if (oldData?.pages[0]?.docs) {
@@ -57,7 +60,9 @@ const PlaygroundModal =  ({
               },
             ],
           };
+
         });
+      }
         method === 'post' ? history.push("/playground/" + data._id) : close();
       },
       onError: (err) =>
