@@ -9,10 +9,9 @@ export const useCodes = (props)=>
         return request('/code?page='+ pageParam,'get')},
       {
         select:(data)=>{
-          console.log(data)
           return {
             pages:{
-              ...data.pages[data.pages.length],
+              ...data.pages[data.pages.length-1],
               docs:data.pages.map(item=>item.docs).flat()
             }
           }

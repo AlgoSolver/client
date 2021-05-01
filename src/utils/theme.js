@@ -86,4 +86,7 @@ export const theme = {
     tabLAnd: "max-width: 75em", //1200px
     bigDesktop: "min-width: 112.5em", //1800px
   },
+  sizes:{
+    nav:'6.4rem'
+  }
 };

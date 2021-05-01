@@ -5,6 +5,7 @@ import Output from "./elements/output";
 import EditorFooter from "./elements/editor-footer";
 import Resizable from "../../components/resizable/";
 import Head from "../../components/head/";
+import Text from "../../components/Text/";
 import { useEffect } from "react";
 import { updateState,useQuery } from "../../hooks/";
 import {useParams , useLocation} from 'react-router-dom';
@@ -38,12 +39,30 @@ const EditorContainer = styled.div`
   }
 `;
 
+const ProblemNotFoundContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:calc(100vh - ${({theme})=>theme.sizes.nav});
+  background: ${({theme})=>theme.colors.dark[0]};
+`
 const initial = `#include <iostream>;
 using namespace std;
 int main(){
 cout<<"Hello, AlgoSolver!"<<endl;
 return 0;
 }`
+const ProblemNotFound = ()=>{
+  return <ProblemNotFoundContainer>
+      <Text color="light" type="h1" size="8rem" layer={4}>
+        404 Not Found
+      </Text>
+      <Text color="light" type="p"  layer={2}>
+        No playground found with this ID
+      </Text>
+  </ProblemNotFoundContainer>
+}
 const SignedPlayground = ({isSignedPlayground})=>{
   const {id} = useParams();
   const {isLoading,data} = useQuery('play-code','/code/'+id,{cacheTime:0});
@@ -60,21 +79,24 @@ const SignedPlayground = ({isSignedPlayground})=>{
   if(isLoading){
     return <Loading />
   }
-  return (
-    <EditorContainer>
-      <Head title={data.name} description="user playground" />
-      <Resizable direction="horizontal">
-        <div className="editor">
-          <EditorHeader isSignedPlayground={isSignedPlayground} id={id} name={data.name} />
-          <Editor initialValue={data.code} />
-          <EditorFooter />
+  if(data?.code){
+    return (
+      <EditorContainer>
+        <Head title={data.name} description="user playground" />
+        <Resizable direction="horizontal">
+          <div className="editor">
+            <EditorHeader isSignedPlayground={isSignedPlayground} id={id} name={data.name} />
+            <Editor initialValue={data.code} />
+            <EditorFooter />
+          </div>
+        </Resizable>
+        <div className="controller">
+          <Output />
         </div>
-      </Resizable>
-      <div className="controller">
-        <Output />
-      </div>
-    </EditorContainer>
-  );
+      </EditorContainer>
+    );
+  }
+  return <ProblemNotFound />
 }
 const UnSignedPlayground = ({isSignedPlayground})=>{
   useEffect(() => {
@@ -103,7 +125,6 @@ const UnSignedPlayground = ({isSignedPlayground})=>{
 }
 const Playground = () => {
   const {pathname} = useLocation();
-  console.log(pathname);
   if(pathname === "/playground/new/empty") return <UnSignedPlayground isSignedPlayground={false}  />
   return <SignedPlayground isSignedPlayground={true}/>
 };

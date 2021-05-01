@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import PlaygroundModal from "../../../components/playground-modal";
 import {Link} from 'react-router-dom'
+import Head from "../../../components/head/";
+
 const Container = styled.div`
   padding: 4rem 0;
 `;
@@ -137,6 +139,7 @@ const CodeList = ({ data }) => {
   return data.docs.map((item) => <Code code={item} />);
 };
 const Codes = () => {
+  const user = client.getQueryData('auth')
   const {
     status,
     data,
@@ -157,6 +160,7 @@ const Codes = () => {
     );
   return (
     <Container className="wrapper">
+      <Head  title="Your Playgrounds"  description={`${user?.username} has ${data.pages.totalDocs} Playgrounds available`}/>
       {data?.pages && <CodeList data={data.pages} />}
       {!data?.pages?.docs || data?.pages?.docs?.length === 0 ? (
         <Text center layer={2} color="red">
