@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Text from "../../components/Text";
 import { useProblems } from "../../hooks/problems";
 import ReactPaginate from "react-paginate";
-import { Link, useLocation,useHistory } from "react-router-dom";
-import {useEffect} from 'react'
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { useEffect } from "react";
 const Wrapper = styled.div`
   display: flex;
   .problems {
@@ -124,74 +124,75 @@ const Paginator = styled.div`
 `;
 
 const Problems = () => {
-
   const history = useHistory();
   const loc = useLocation();
-  let initialPage =+(loc?.search?.split('=')[1])
-  const { data, isLoading } = useProblems(initialPage || 1 );
+  let initialPage = +loc?.search?.split("=")[1];
+  const { data, isLoading } = useProblems(initialPage || 1);
   //console.log(loc.search,data, isLoading, isError, error);
   const handlePageClick = (data) => {
-    if(data?.selected >= 0 ) history.push(`/problems?page=${+data.selected +1}`)
+    if (data?.selected >= 0)
+      history.push(`/problems?page=${+data.selected + 1}`);
   };
-  console.log(data)
-  useEffect(()=>{
-    console.log(loc.search)
-  },[loc.search])
+  console.log(data);
+  useEffect(() => {
+    console.log(loc.search);
+  }, [loc.search]);
   if (isLoading)
     return (
       <Text type="h3" center>
         Loading...
       </Text>
     );
-  if(data?.docs) return (
-    <>
-      <Control>
-        <Text type="h3">Control</Text>
-      </Control>
-      <ProblemsTable>
-      <div className="table">
-        <div className="table__row table__row_head">
-          <div className="table__cell">#</div>
-          <div className="table__cell">Title</div>
-          <div className="table__cell">Difficulty</div>
-          <div className="table__cell">Solution</div>
-        </div>
-        {data.docs.map((item, idx) => (
-          <div className="table__row" key={item._id}>
-            <div className="table__cell">{idx}</div>
-            <div className="table__cell">
-              <Link to={`/problems/${item._id}`}>{item.title}</Link>
+  if (data?.docs)
+    return (
+      <>
+        <Control>
+          <Text type="h3">Control</Text>
+        </Control>
+        <ProblemsTable>
+          <div className="table">
+            <div className="table__row table__row_head">
+              <div className="table__cell">#</div>
+              <div className="table__cell">Title</div>
+              <div className="table__cell">Difficulty</div>
+              <div className="table__cell">Solution</div>
             </div>
-            <div className="table__cell">difficulty</div>
-            <div className="table__cell">solution</div>
+            {data.docs.map((item, idx) => (
+              <div className="table__row" key={item._id}>
+                <div className="table__cell">{idx}</div>
+                <div className="table__cell">
+                  <Link to={`/problems/${item._id}`}>{item.title}</Link>
+                </div>
+                <div className="table__cell">difficulty</div>
+                <div className="table__cell">solution</div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <Paginator>
-        <ReactPaginate
-          previousLabel={"Previous"}
-          nextLabel={"Next"}
-          breakLabel={"..."}
-          breakClassName={"break-me"}
-          pageCount={data.totalPages}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          activeClassName={"active"}
-          initialPage={initialPage -1 }
-        />
-      </Paginator>
-    </ProblemsTable>
-    </>
-  );
-  else return null
+          <Paginator>
+            <ReactPaginate
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={data.totalPages}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+              initialPage={initialPage - 1}
+            />
+          </Paginator>
+        </ProblemsTable>
+      </>
+    );
+  else return null;
 };
 const Main = () => {
   return (
     <Wrapper className="wrapper">
       <div className="problems">
-          <Problems />
+        <Problems />
       </div>
       <Sidebar>
         <Text type="h3">Sidebar</Text>

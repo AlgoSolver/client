@@ -224,10 +224,9 @@ const Row = styled.div`
       color: ${({ theme }) => theme.colors.light[2]};
     }
     a {
-
       button {
         width: 100%;
-        margin:0 auto;
+        margin: 0 auto;
       }
     }
     @media (max-width: 767px) {

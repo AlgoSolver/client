@@ -1,6 +1,6 @@
 import Text from "../../components/Text/";
 import styled from "styled-components";
-import { Form, TextInput} from "../../components/form/";
+import { Form, TextInput } from "../../components/form/";
 import Button from "../../components/button/";
 import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import Message from "../../components/message/";
 import { useEffect } from "react";
 import LoadingPage from "../../shared/loading/";
-import {useTokenVerification,usePassswordReset} from '../../hooks/user'
+import { useTokenVerification, usePassswordReset } from "../../hooks/user";
 import AuthContainer from "../../components/auth-container/";
 
 const ConfirmMessage = styled(motion.div)`
@@ -17,38 +17,37 @@ const ConfirmMessage = styled(motion.div)`
 `;
 
 const RenderForm = ({ token }) => {
-  const {data,isLoading,isError,error,mutate} = useTokenVerification(); 
+  const { data, isLoading, isError, error, mutate } = useTokenVerification();
   useEffect(() => {
-    mutate({token});
-  }, [token,mutate]);
+    mutate({ token });
+  }, [token, mutate]);
   if (isLoading) return <LoadingPage />;
   if (isError)
     return (
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-            <div className="form__body">
-
-        <Message subTitle={error.message} type="red" />
-        <Link to="/accounts/recover">
-          <Button theme="yellow" circle>
-            reset password
-          </Button>
-        </Link>
+        <div className="form__body">
+          <Message subTitle={error.message} type="red" />
+          <Link to="/accounts/recover">
+            <Button theme="yellow" circle>
+              reset password
+            </Button>
+          </Link>
         </div>
       </Form>
     );
   if (data?.email)
     return (
-        <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
-         <div className="form__body">
-          <RestForm token={token}/>
-          </div>
-        </Form>
+      <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+        <div className="form__body">
+          <RestForm token={token} />
+        </div>
+      </Form>
     );
   else return null;
 };
 
 const RestForm = ({ token }) => {
-  const {data,isLoading,isError,error,mutate} = usePassswordReset(); 
+  const { data, isLoading, isError, error, mutate } = usePassswordReset();
   const { register, handleSubmit, errors, watch } = useForm();
   const cp = watch("password");
   const onSubmit = (data) => mutate({ ...data, token });
@@ -108,18 +107,17 @@ const RestForm = ({ token }) => {
   );
 };
 
-
 const Reset = () => {
   const { token } = useParams();
   return (
     <AuthContainer>
-        {!token ? (
-          <div className="hello">
-            {token} <Message subTitle="Inalid Token" type="red" />
-          </div>
-        ) : (
-          <RenderForm token={token} />
-        )}
+      {!token ? (
+        <div className="hello">
+          {token} <Message subTitle="Inalid Token" type="red" />
+        </div>
+      ) : (
+        <RenderForm token={token} />
+      )}
     </AuthContainer>
   );
 };

@@ -5,7 +5,7 @@ import classNames from "classnames";
 const StyledText = styled.div`
   font-weight: 300;
   font-size: 1.6rem;
-  color: ${({theme,color,layer}) => theme.colors[color][layer]};
+  color: ${({ theme, color, layer }) => theme.colors[color][layer]};
   text-transform: ${({ transform }) => transform};
   font-family: ${({ family }) => family};
   &.h1 {
@@ -50,20 +50,19 @@ const StyledText = styled.div`
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
-  &.span{
-    font-size:1.5rem;
-    display:inline-block;
+  &.span {
+    font-size: 1.5rem;
+    display: inline-block;
   }
-  &.pre{
+  &.pre {
     white-space: pre-wrap;
     overflow-x: auto;
     font-size: 1.6rem;
     font-family: MonoLisa;
     padding: 2rem;
-    background:${({theme}) => theme.colors.light[0]};
-    color:${({theme}) => theme.colors.primary[0]};
-    border-radius:1rem;
-
+    background: ${({ theme }) => theme.colors.light[0]};
+    color: ${({ theme }) => theme.colors.primary[0]};
+    border-radius: 1rem;
   }
   &.bold {
     font-family: ${({ family }) => family + "-Bold"};
@@ -80,8 +79,8 @@ const StyledText = styled.div`
   &.center {
     text-align: center;
   }
-  &.inline{
-    display:inline-block;
+  &.inline {
+    display: inline-block;
   }
 `;
 
@@ -90,12 +89,12 @@ const Text = ({
   type = "h3",
   className,
   bold,
-  color="dark",
+  color = "dark",
   size,
   family = "Avenir",
   mg,
   pd,
-  layer=0,
+  layer = 0,
   transform = "initial",
   center,
   inline,

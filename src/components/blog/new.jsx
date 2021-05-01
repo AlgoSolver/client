@@ -92,7 +92,7 @@ const handleContentChange = (e) => {
     localStorage.setItem("9753-content", e);
   }, 500);
 };
-const NewPost= ({ data }) => {
+const NewPost = ({ data }) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (e) => console.log(e);
   return (

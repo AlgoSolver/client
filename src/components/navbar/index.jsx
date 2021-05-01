@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Button from "../button/";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
 import { useAuth, useLogout } from "../../hooks/user";
-import {ArrowDown2,Logout as LogoutIcon} from '../../assets/icons';
-import Dropdown from '../dropdown'
-import Text from '../Text'
-import {Divider} from '../divider'
+import { ArrowDown2, Logout as LogoutIcon } from "../../assets/icons";
+import Dropdown from "../dropdown";
+import Text from "../Text";
+import { Divider } from "../divider";
 
 const AccountNavContainer = styled(motion.nav)`
   background: ${({ theme }) => theme.colors.light[4]};
@@ -28,63 +28,62 @@ const AccountNavContainer = styled(motion.nav)`
   }
 `;
 
-const UserEntityContainer=styled.div`
+const UserEntityContainer = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
-  &:hover{
-    .user__name{
+  &:hover {
+    .user__name {
       background: ${({ theme }) => theme.colors.light[1]};
     }
   }
-  .user__img{
+  .user__img {
     position: absolute;
-    width:5rem;
-    height:5rem;
-    top:0;
-    left:0;
-    transform: translate(-50%,-.5rem);
+    width: 5rem;
+    height: 5rem;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -0.5rem);
     border-radius: 2.5rem;
     overflow: hidden;
-    img{
-      width:100%;
+    img {
+      width: 100%;
       max-width: 100%;
       user-select: none;
     }
   }
-  .user__name{
+  .user__name {
     height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right:1rem;
-    padding-left:3.5rem;
-    border-radius:15rem;
+    padding-right: 1rem;
+    padding-left: 3.5rem;
+    border-radius: 15rem;
     background: ${({ theme }) => theme.colors.light[4]};
     box-shadow: ${({ theme }) => theme.elevation[4].shadow};
-    transition: background .3s easy;
-    span{
-      font-size:1.6rem;
+    transition: background 0.3s easy;
+    span {
+      font-size: 1.6rem;
       display: inline-block;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
       user-select: none;
     }
-
   }
-`
+`;
 const DropdownLinkContainer = styled(Link)`
   display: block;
-  .link_container{
-    padding:.8rem 1.6rem;
-    transition: background .3s;
+  .link_container {
+    padding: 0.8rem 1.6rem;
+    transition: background 0.3s;
     background: ${({ theme }) => theme.colors.light[4]};
     user-select: none;
-    &:hover{
+    &:hover {
       background: ${({ theme }) => theme.colors.light[3]};
     }
   }
-`
+`;
 const Logout = () => {
   const { isLoading, isError, error, mutate } = useLogout();
   const logout = () => {
@@ -100,32 +99,39 @@ const Logout = () => {
           subTitle={error.message}
         />
       )}
-      <Button withIcon={()=><LogoutIcon />} type="light" mg=".6rem 1.6rem 0" style={{width: "-webkit-fill-available"}} loading={isLoading} onClick={logout}>
+      <Button
+        withIcon={() => <LogoutIcon />}
+        type="light"
+        mg=".6rem 1.6rem 0"
+        style={{ width: "-webkit-fill-available" }}
+        loading={isLoading}
+        onClick={logout}
+      >
         Logout
       </Button>
     </>
   );
 };
-const DropdownLink = ({children,to,onClick})=>{
-  return <DropdownLinkContainer to={to} onClick={onClick}>
-    <div className="link_container">
-      {children}
-    </div>
-  </DropdownLinkContainer>
-}
-const UserEntity = ({username,img})=>{
-  return <UserEntityContainer>
-    <div className="user__img">
-      <img alt={username} src={img} />
-    </div>
-    <div className="user__name">
-      <span>
-        {username}
-      </span>
+const DropdownLink = ({ children, to, onClick }) => {
+  return (
+    <DropdownLinkContainer to={to} onClick={onClick}>
+      <div className="link_container">{children}</div>
+    </DropdownLinkContainer>
+  );
+};
+const UserEntity = ({ username, img }) => {
+  return (
+    <UserEntityContainer>
+      <div className="user__img">
+        <img alt={username} src={img} />
+      </div>
+      <div className="user__name">
+        <span>{username}</span>
         <ArrowDown2 />
       </div>
-  </UserEntityContainer>
-}
+    </UserEntityContainer>
+  );
+};
 
 const RenderAuth = ({ menu = "menu", close = () => {} }) => {
   const { data } = useAuth(false);
@@ -134,30 +140,42 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
       <>
         <li className={`${menu}__item`}>
           <Dropdown
-            body={()=><UserEntity username={data.username} img={'https://avatars.githubusercontent.com/u/79712616?v=4'} />}
+            body={() => (
+              <UserEntity
+                username={data.username}
+                img={"https://avatars.githubusercontent.com/u/79712616?v=4"}
+              />
+            )}
             direction="right"
             width="15.5rem"
-            main={(close)=>(<>
-              <DropdownLink onClick={close} to={`/${data.username}`}>
-                <Text layer={2} type="h5" mg="0">
-                   Profile
-                </Text>
-              </DropdownLink>
-              <DropdownLink onClick={close} to={`/${data.username}/submissions`}>
-                <Text layer={2} type="h5" mg="0">
-                  Your Submission
-                </Text>
-              </DropdownLink>
-              <DropdownLink onClick={close} to={`/${data.username}/playgrounds`}>
-                <Text layer={2} type="h5" mg="0">
-                  Your Playgrounds
-                </Text>
-              </DropdownLink>
-              <Divider mg=".4rem 0" />
-              <Logout />
-            </>)}
-          >
-          </Dropdown>
+            main={(close) => (
+              <>
+                <DropdownLink onClick={close} to={`/${data.username}`}>
+                  <Text layer={2} type="h5" mg="0">
+                    Profile
+                  </Text>
+                </DropdownLink>
+                <DropdownLink
+                  onClick={close}
+                  to={`/${data.username}/submissions`}
+                >
+                  <Text layer={2} type="h5" mg="0">
+                    Your Submission
+                  </Text>
+                </DropdownLink>
+                <DropdownLink
+                  onClick={close}
+                  to={`/${data.username}/playgrounds`}
+                >
+                  <Text layer={2} type="h5" mg="0">
+                    Your Playgrounds
+                  </Text>
+                </DropdownLink>
+                <Divider mg=".4rem 0" />
+                <Logout />
+              </>
+            )}
+          ></Dropdown>
         </li>
       </>
     );
@@ -181,10 +199,7 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
             onClick={close}
             to="/accounts/signup"
           >
-            <Button
-              circle
-              theme="primary"
-            >
+            <Button circle theme="primary">
               Signup
             </Button>
           </NavLink>

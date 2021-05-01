@@ -9,7 +9,7 @@ import Modal from "../../../components/modal";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import PlaygroundModal from "../../../components/playground-modal";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import Head from "../../../components/head/";
 
 const Container = styled.div`
@@ -95,7 +95,7 @@ const DeleteCode = ({ codeId }) => {
     </>
   );
 };
-const UpdateCode = ({codeId,name}) => {
+const UpdateCode = ({ codeId, name }) => {
   const [show, setSow] = useState(false);
   const open = () => setSow(true);
   const close = () => setSow(false);
@@ -111,7 +111,7 @@ const UpdateCode = ({codeId,name}) => {
         method="patch"
         path={`/code/${codeId}`}
         message="Playground updated successfully"
-       />
+      />
     </>
   );
 };
@@ -122,7 +122,7 @@ const Code = ({ code }) => {
         <Link className="link" to={`/playground/${code._id}`}>
           {code.name || "Untitled"}
         </Link>
-        </Text>
+      </Text>
       {code?.updatedAt && (
         <Text type="p" size="1.4rem" mg="0" layer={2}>
           Last Modified: {new Date(code.updatedAt).toLocaleString()}
@@ -130,7 +130,7 @@ const Code = ({ code }) => {
       )}
       <div className="right">
         <DeleteCode codeId={code._id} />
-      <UpdateCode codeId={code._id} name={code.name} />
+        <UpdateCode codeId={code._id} name={code.name} />
       </div>
     </CodeContainer>
   );
@@ -139,7 +139,7 @@ const CodeList = ({ data }) => {
   return data.docs.map((item) => <Code code={item} />);
 };
 const Codes = () => {
-  const user = client.getQueryData('auth')
+  const user = client.getQueryData("auth");
   const {
     status,
     data,
@@ -160,7 +160,10 @@ const Codes = () => {
     );
   return (
     <Container className="wrapper">
-      <Head  title="Your Playgrounds"  description={`${user?.username} has ${data.pages.totalDocs} Playgrounds available`}/>
+      <Head
+        title="Your Playgrounds"
+        description={`${user?.username} has ${data.pages.totalDocs} Playgrounds available`}
+      />
       {data?.pages && <CodeList data={data.pages} />}
       {!data?.pages?.docs || data?.pages?.docs?.length === 0 ? (
         <Text center layer={2} color="red">

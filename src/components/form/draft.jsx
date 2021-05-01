@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   EditorState,
   convertToRaw,
-  convertFromHTML, 
+  convertFromHTML,
   ContentState,
 } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
@@ -35,13 +35,13 @@ const DraftContainer = styled.div`
     line-height: 1.5;
     border-radius: 0.8rem;
     padding: 0 0.6rem;
-     border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
     font-size: 1.6rem;
     min-height: 24rem;
   }
 
   .toolbar-class {
-     border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray[2]};
     border-radius: 0.8rem;
   }
 

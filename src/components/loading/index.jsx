@@ -13,15 +13,15 @@ const Bouncing = keyframes`
     }
 `;
 const LoadingPage = styled.div`
-  &.full{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background: transparent;
-}
+  &.full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: transparent;
+  }
   .modal__container {
     width: 100%;
     height: 100%;
@@ -34,11 +34,12 @@ const LoadingPage = styled.div`
   .bouncingLoader:before,
   .bouncingLoader:after {
     display: inline-block;
-    width: ${({full})=> full ? "3rem" : '1rem'};
-    height: ${({full})=> full ? "3rem" : '1rem'};
-    background: ${({theme,type,layer}) => theme.colors[type][layer]};
+    width: ${({ full }) => (full ? "3rem" : "1rem")};
+    height: ${({ full }) => (full ? "3rem" : "1rem")};
+    background: ${({ theme, type, layer }) => theme.colors[type][layer]};
     border-radius: 50%;
-    animation:${({full})=> full ? FullBouncing :Bouncing} 0.6s infinite alternate;
+    animation: ${({ full }) => (full ? FullBouncing : Bouncing)} 0.6s infinite
+      alternate;
   }
   .bouncingLoader > div,
   .bouncingLoader:before,
@@ -46,7 +47,7 @@ const LoadingPage = styled.div`
     content: " ";
   }
   .bouncingLoader > div {
-    margin: 0 ${({full})=> full ? '1rem' :'.3rem'};
+    margin: 0 ${({ full }) => (full ? "1rem" : ".3rem")};
   }
   .bouncingLoader > div {
     animation-delay: 0.2s;
@@ -55,10 +56,20 @@ const LoadingPage = styled.div`
     animation-delay: 0.4s;
   }
 `;
-const LoadingModal = ({ loading=true,full=true,type="primary",layer=1 }) => {
+const LoadingModal = ({
+  loading = true,
+  full = true,
+  type = "primary",
+  layer = 1,
+}) => {
   if (loading) {
     return (
-      <LoadingPage full={full} layer={layer} type={type} className={full ? "full" : ''}>
+      <LoadingPage
+        full={full}
+        layer={layer}
+        type={type}
+        className={full ? "full" : ""}
+      >
         <div className="modal__container">
           <div className="bouncingLoader">
             <div></div>

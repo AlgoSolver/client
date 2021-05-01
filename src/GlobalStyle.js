@@ -120,7 +120,7 @@ export default createGlobalStyle`
       align-item:center
     }
     .link{
-      color:${({theme})=>theme.colors.blue[0]};
+      color:${({ theme }) => theme.colors.blue[0]};
       &:hover{
         text-decoration:underline;
       }

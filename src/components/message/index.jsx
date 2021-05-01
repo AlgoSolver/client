@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import Text from "../Text/";
 import { useState, useEffect } from "react";
-import {Close} from '../../assets/icons/index'
+import { Close } from "../../assets/icons/index";
 const MessageContainer = styled(motion.div)`
   &.hooked {
     position: fixed;
@@ -62,7 +62,7 @@ const Messgae = ({
         clearTimeout(timer);
       }
     };
-  }, [setOpen,hooked,open]);
+  }, [setOpen, hooked, open]);
   useEffect(() => {
     setOpen(show);
   }, [show]);

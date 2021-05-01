@@ -1,6 +1,10 @@
 import Lottie from "react-lottie";
 
-export default function LottieAnimation({ lotti, width="100%", height="100%" }) {
+export default function LottieAnimation({
+  lotti,
+  width = "100%",
+  height = "100%",
+}) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -20,4 +24,4 @@ export default function LottieAnimation({ lotti, width="100%", height="100%" }) 
       />
     </div>
   );
-};
+}

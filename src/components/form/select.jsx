@@ -87,7 +87,7 @@ export const Select = ({
         className={classes}
         name={name}
         type={type}
-        placeholder= {placeholder}
+        placeholder={placeholder}
         {...rest}
       >
         {options.map((item, idx) => (

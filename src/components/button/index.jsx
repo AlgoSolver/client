@@ -17,7 +17,9 @@ const StyledButton = styled.button`
   font-size: 1.5rem;
   line-height: 1.6;
   background: ${({ theme, buttonType, layer }) =>
-    buttonType === "light" ? theme.colors[buttonType][4] : theme.colors[buttonType][layer]};
+    buttonType === "light"
+      ? theme.colors[buttonType][4]
+      : theme.colors[buttonType][layer]};
   color: #fff;
   border-radius: 0.4rem;
   height: 4.2rem;
@@ -32,7 +34,9 @@ const StyledButton = styled.button`
   letter-spacing: 0.02rem;
   border: 1px solid
     ${({ buttonType, theme, layer }) =>
-      buttonType === "light" ? theme.colors[buttonType][4] : theme.colors[buttonType][layer]};
+      buttonType === "light"
+        ? theme.colors[buttonType][4]
+        : theme.colors[buttonType][layer]};
   &.circle {
     border-radius: 2.1rem;
   }
@@ -61,7 +65,8 @@ const StyledButton = styled.button`
         ? theme.colors.light[4]
         : theme.colors.dark[0]};
     &:hover {
-      background: ${({ theme, buttonType, layer }) => theme.colors[buttonType][layer + 1]};
+      background: ${({ theme, buttonType, layer }) =>
+        theme.colors[buttonType][layer + 1]};
       border-color: ${({ theme, buttonType, layer }) =>
         theme.colors[buttonType][layer + 1]};
     }
@@ -91,7 +96,9 @@ const StyledButton = styled.button`
     border-color: ${({ theme, buttonType }) => theme.colors[buttonType][0]};
     &:hover {
       color: ${({ theme, buttonType }) =>
-        buttonType === "light" ? theme.colors.dark[0] : theme.colors[buttonType][1]};
+        buttonType === "light"
+          ? theme.colors.dark[0]
+          : theme.colors[buttonType][1]};
       background: ${({ theme, buttonType }) =>
         theme.colors[buttonType].length > 5
           ? theme.colors[buttonType][6]
@@ -151,7 +158,8 @@ const StyledButton = styled.button`
     color: ${({ color, theme }) => (color ? color : theme.colors.dark[1])};
     box-shadow: none;
     &:hover {
-      background: ${({ theme, buttonType, layer }) => theme.colors[buttonType][layer]};
+      background: ${({ theme, buttonType, layer }) =>
+        theme.colors[buttonType][layer]};
     }
   }
   &.squared {
@@ -165,14 +173,16 @@ const StyledButton = styled.button`
     background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
     color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, buttonType }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, buttonType }) =>
+      theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.loading {
     background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
     color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important;
     box-shadow: none;
-    border-color: ${({ theme, buttonType }) => theme.colors.light[0]} !important;
+    border-color: ${({ theme, buttonType }) =>
+      theme.colors.light[0]} !important;
     cursor: not-allowed !important;
   }
   &.withIcon {
@@ -234,7 +244,7 @@ const Button = ({
   layer = 0,
   loading,
   small,
-  buttonType="submit",
+  buttonType = "submit",
   text,
   iconLeft,
   ghost,

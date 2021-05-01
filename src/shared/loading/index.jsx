@@ -7,32 +7,32 @@ const Bouncing = keyframes`
     }
 `;
 
-const BouncingContainer =  styled.div`
-&.bouncingLoader > div,
-&.bouncingLoader:before,
-&.bouncingLoader:after {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: ${({theme}) => theme.colors.primary[1]};
-  border-radius: 50%;
-  animation: ${Bouncing} 0.6s infinite alternate;
-}
-&.bouncingLoader > div,
-&.bouncingLoader:before,
-&.bouncingLoader:after {
-  content: " ";
-}
-&.bouncingLoader > div {
-  margin: 0 10px;
-}
-&.bouncingLoader > div {
-  animation-delay: 0.2s;
-}
-&.bouncingLoader:after {
-  animation-delay: 0.4s;
-}
-`
+const BouncingContainer = styled.div`
+  &.bouncingLoader > div,
+  &.bouncingLoader:before,
+  &.bouncingLoader:after {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: ${({ theme }) => theme.colors.primary[1]};
+    border-radius: 50%;
+    animation: ${Bouncing} 0.6s infinite alternate;
+  }
+  &.bouncingLoader > div,
+  &.bouncingLoader:before,
+  &.bouncingLoader:after {
+    content: " ";
+  }
+  &.bouncingLoader > div {
+    margin: 0 10px;
+  }
+  &.bouncingLoader > div {
+    animation-delay: 0.2s;
+  }
+  &.bouncingLoader:after {
+    animation-delay: 0.4s;
+  }
+`;
 const LoadingPage = styled.div`
   position: fixed;
   top: 0;
@@ -49,24 +49,25 @@ const LoadingPage = styled.div`
     justify-content: center;
     background: transparent;
   }
-
 `;
 
-export const InlineLoading = ()=>{
-  return <div className="center">
-    <BouncingContainer className="bouncingLoader">
-      <div></div>
-  </BouncingContainer>
-  </div>
-}
-const LoadingModal = ({ loading=true,inline=false }) => {
+export const InlineLoading = () => {
+  return (
+    <div className="center">
+      <BouncingContainer className="bouncingLoader">
+        <div></div>
+      </BouncingContainer>
+    </div>
+  );
+};
+const LoadingModal = ({ loading = true, inline = false }) => {
   if (loading) {
     return (
       <LoadingPage inline>
         <div className="modal__container">
           <BouncingContainer className="bouncingLoader">
             <div></div>
-        </BouncingContainer>
+          </BouncingContainer>
         </div>
       </LoadingPage>
     );

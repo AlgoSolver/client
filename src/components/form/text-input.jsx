@@ -2,72 +2,72 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import { useState } from "react";
-import { Hide , Show } from "../../assets/icons/";
+import { Hide, Show } from "../../assets/icons/";
 
 /* Components / Input / Default / 12px padding */
 
 // position: absolute;
 // width: 360px;
 // height: 44px;
-// 
-// 
-// 
+//
+//
+//
 // /* Base */
-// 
+//
 // position: absolute;
 // left: 0px;
 // right: 0px;
 // top: 0%;
 // bottom: 0%;
-// 
-// 
-// 
+//
+//
+//
 // /* Color */
-// 
+//
 // position: absolute;
 // left: 0%;
 // right: 0%;
 // top: 0%;
 // bottom: 0%;
-// 
+//
 // /* Colors / White */
 // background: #FFFFFF;
 // mix-blend-mode: normal;
 // border-radius: 4px;
-// 
-// 
+//
+//
 // /* Border */
-// 
+//
 // position: absolute;
 // left: 0%;
 // right: 0%;
 // top: 0%;
 // bottom: 0%;
-// 
+//
 // /* Borders / 1px / Gray / 200 */
 // border: 1px solid #D5D7DB;
 // box-sizing: border-box;
 // border-radius: 4px;
-// 
-// 
+//
+//
 // /* Content */
-// 
+//
 // position: absolute;
 // height: 24px;
 // left: 12px;
 // right: 12px;
 // top: calc(50% - 24px/2);
-// 
-// 
-// 
+//
+//
+//
 // /* Text */
-// 
+//
 // position: absolute;
 // height: 16px;
 // left: 0px;
 // right: 0px;
 // top: calc(50% - 16px/2);
-// 
+//
 // /* H200 / Regular - 14px */
 // font-family: Inter;
 // font-style: normal;
@@ -75,10 +75,9 @@ import { Hide , Show } from "../../assets/icons/";
 // font-size: 14px;
 // line-height: 16px;
 // /* identical to box height, or 114% */
-// 
+//
 // /* Colors / Gray / 300 */
 // color: #BABDC2;
-
 
 // const Show = ()=><div>Show</div>
 // const Hide = ()=><div>Hide</div>
@@ -96,17 +95,17 @@ const Unit = styled(motion.div)`
     position: absolute;
     top: 50%;
     right: 0.8rem;
-display:flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 2;
   }
-  .input__container{
+  .input__container {
     position: relative;
-    svg{
-      path{
-        stroke:${({ theme }) => theme.colors.dark[2]};
+    svg {
+      path {
+        stroke: ${({ theme }) => theme.colors.dark[2]};
       }
     }
   }
@@ -197,22 +196,23 @@ export const TextInput = ({
   return (
     <Unit iconExist>
       {label && <Label htmlFor={name}>{label}</Label>}
-      <div className="input__container"><Input
-        iconExist={iconExist}
-        ref={register}
-        id={name}
-        className={classes}
-        name={name}
-        type={show ? "text" : type}
-        placeholder={placeholder}
-        {...rest}
-      />
-      {iconExist && <Icon className="icon__wrapper">{icon("2rem")}</Icon>}
-      {type === "password" && (
-        <div className="form__password" onClick={() => setShow((e) => !e)}>
-          {!show ? <Show /> : <Hide />}
-        </div>
-      )}
+      <div className="input__container">
+        <Input
+          iconExist={iconExist}
+          ref={register}
+          id={name}
+          className={classes}
+          name={name}
+          type={show ? "text" : type}
+          placeholder={placeholder}
+          {...rest}
+        />
+        {iconExist && <Icon className="icon__wrapper">{icon("2rem")}</Icon>}
+        {type === "password" && (
+          <div className="form__password" onClick={() => setShow((e) => !e)}>
+            {!show ? <Show /> : <Hide />}
+          </div>
+        )}
       </div>
       {children ? children : null}
       <AnimatePresence exitBeforeEnter>

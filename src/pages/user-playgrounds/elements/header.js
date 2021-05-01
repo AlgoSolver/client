@@ -8,13 +8,10 @@ import { Plus } from "../../../assets/icons";
 import { useState } from "react";
 import PlaygroundModal from "../../../components/playground-modal";
 
-
-
 const Container = styled.div`
   background: ${({ theme }) => theme.gradients[5]};
   padding: 2rem;
 `;
-
 
 const CreatePlayGroundModel = ({ children }) => {
   const [show, setSow] = useState(false);
@@ -25,7 +22,13 @@ const CreatePlayGroundModel = ({ children }) => {
       <div onClick={open} style={{ display: "inline-block" }}>
         {children}
       </div>
-      <PlaygroundModal method="post" path="/code" close={close} show={show} message="Playground Created successfully" />
+      <PlaygroundModal
+        method="post"
+        path="/code"
+        close={close}
+        show={show}
+        message="Playground Created successfully"
+      />
     </div>
   );
 };

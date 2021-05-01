@@ -11,7 +11,7 @@ import { useState } from "react";
 
 const CreateProblemContainer = styled.div`
   padding: 3rem 0;
-  
+
   border-top: 1px solid ${({ theme }) => theme.colors.light[0]};
   min-height: 100vh;
   .wrapper {

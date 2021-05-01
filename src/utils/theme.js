@@ -1,25 +1,78 @@
-
 // primary : [1,2,3] light, ow:dark
 // green, red, orange,teal,purple : [1,2] light, ow:dark
 // dark :all:light
 // gray: 1 light , ow:dark
 
-
 export const theme = {
   colors: {
-    primary: ["#374FC7", "#3E55CC", "#556BDA", "#8394ED","#BEC8FB","#DAE0FD","#F7F8FF"],
-    red: ["#F2323F", "#FA3F48", "#FC5F64", "#FC9C9E", "#FCDCDD",'#FCDCDD','#FCF2F2'],
-    green: ["#3DBA4E", "#47C257", "#5DD26D", "#8AE896", "#C2F7C9",'#DCFAE0','#F7FCF8'],
-    yellow: ["#FCB017", "#FFBC21", "#FEC63D", "#FDE7B1", "#FDE7B1",'#FDF1D3','#FCFAF4'],
-    orange: ["#F76F34", "#FC895E", "#FC895E", "#FCB59B", "#FCD4C6",'#FCE4DB','#FCF4F0'],
-    teal: ["#23BA99", "#2EC39F",'#4FDCB9', "#93F4DB", "#C1F8EA", "#D8FAF2",'#F0FCF9'],
-    purple: ["#6B4BCC", "#7355D3", "#D8CEF9", "#BCAAF6", "#D8CEF9",'#F5F3FC','#F5F3FC'],
+    primary: [
+      "#374FC7",
+      "#3E55CC",
+      "#556BDA",
+      "#8394ED",
+      "#BEC8FB",
+      "#DAE0FD",
+      "#F7F8FF",
+    ],
+    red: [
+      "#F2323F",
+      "#FA3F48",
+      "#FC5F64",
+      "#FC9C9E",
+      "#FCDCDD",
+      "#FCDCDD",
+      "#FCF2F2",
+    ],
+    green: [
+      "#3DBA4E",
+      "#47C257",
+      "#5DD26D",
+      "#8AE896",
+      "#C2F7C9",
+      "#DCFAE0",
+      "#F7FCF8",
+    ],
+    yellow: [
+      "#FCB017",
+      "#FFBC21",
+      "#FEC63D",
+      "#FDE7B1",
+      "#FDE7B1",
+      "#FDF1D3",
+      "#FCFAF4",
+    ],
+    orange: [
+      "#F76F34",
+      "#FC895E",
+      "#FC895E",
+      "#FCB59B",
+      "#FCD4C6",
+      "#FCE4DB",
+      "#FCF4F0",
+    ],
+    teal: [
+      "#23BA99",
+      "#2EC39F",
+      "#4FDCB9",
+      "#93F4DB",
+      "#C1F8EA",
+      "#D8FAF2",
+      "#F0FCF9",
+    ],
+    purple: [
+      "#6B4BCC",
+      "#7355D3",
+      "#D8CEF9",
+      "#BCAAF6",
+      "#D8CEF9",
+      "#F5F3FC",
+      "#F5F3FC",
+    ],
 
     dark: ["#141518", "#2C2D30", "#606266", "#7E8085", "#7E8085"],
-    gray:["#9FA1A6","#BABDC2","#D5D7DB",'#E8EAED','#F8F9FA'],
+    gray: ["#9FA1A6", "#BABDC2", "#D5D7DB", "#E8EAED", "#F8F9FA"],
     light: ["#FAFAFB", "#e2e2ea", "#f3f2f5", "#fafafc", "#ffffff"],
     blue: ["#004FC4", "#0063F7", "#5B8DEF", "#9DBFF9", "#E5F0FF"],
-
   },
   gradients: [
     "linear-gradient(45deg, #374FC7 0%, #6B4BCC 100%)",
@@ -30,7 +83,6 @@ export const theme = {
     "linear-gradient(147.14deg, #FF3B3B 6.95%, #6600CC 93.05%)",
     "linear-gradient(147.14deg, #73DFE7 6.95%, #0063F7 93.05%)",
     "linear-gradient(145.51deg, #AC5DD9 7.21%, #004FC4 94.47%)",
-
   ],
   elevation: [
     {
@@ -73,11 +125,9 @@ export const theme = {
       desc: "06 Modals, Dialogue",
     },
     {
-      shadow:
-        "inset 0px -1px 0px #e2e2ea",
+      shadow: "inset 0px -1px 0px #e2e2ea",
       desc: "07 bottom navbar",
     },
-
   ],
   breakpoints: {
     phone: "max-width: 37.5em", // 600px
@@ -86,7 +136,7 @@ export const theme = {
     tabLAnd: "max-width: 75em", //1200px
     bigDesktop: "min-width: 112.5em", //1800px
   },
-  sizes:{
-    nav:'6.4rem'
-  }
+  sizes: {
+    nav: "6.4rem",
+  },
 };

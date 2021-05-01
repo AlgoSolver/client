@@ -34,7 +34,7 @@ import Navbar, { AccountsNav } from "./components/navbar/";
 import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
 import { theme } from "./utils/theme";
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -124,9 +124,9 @@ const Routing = () => {
           // fallback={fallbackForPublic}
           path="/create-problem"
         > */}
-        <Route  path="/create-problem">
+        <Route path="/create-problem">
           <CreateProblem />
-      </Route>
+        </Route>
         {/* </AuthRoute> */}
         <Route exact path="/elements">
           <Elements />

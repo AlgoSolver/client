@@ -7,9 +7,9 @@ import Resizable from "../../components/resizable/";
 import Head from "../../components/head/";
 import Text from "../../components/Text/";
 import { useEffect } from "react";
-import { updateState,useQuery } from "../../hooks/";
-import {useParams , useLocation} from 'react-router-dom';
-import Loading from '../../shared/loading'
+import { updateState, useQuery } from "../../hooks/";
+import { useParams, useLocation } from "react-router-dom";
+import Loading from "../../shared/loading";
 const EditorContainer = styled.div`
   height: calc(100vh - 6.4rem);
   display: flex;
@@ -44,31 +44,35 @@ const ProblemNotFoundContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height:calc(100vh - ${({theme})=>theme.sizes.nav});
-  background: ${({theme})=>theme.colors.dark[0]};
-`
+  height: calc(100vh - ${({ theme }) => theme.sizes.nav});
+  background: ${({ theme }) => theme.colors.dark[0]};
+`;
 const initial = `#include <iostream>;
 using namespace std;
 int main(){
 cout<<"Hello, AlgoSolver!"<<endl;
 return 0;
-}`
-const ProblemNotFound = ()=>{
-  return <ProblemNotFoundContainer>
+}`;
+const ProblemNotFound = () => {
+  return (
+    <ProblemNotFoundContainer>
       <Text color="light" type="h1" size="8rem" layer={4}>
         404 Not Found
       </Text>
-      <Text color="light" type="p"  layer={2}>
+      <Text color="light" type="p" layer={2}>
         No playground found with this ID
       </Text>
-  </ProblemNotFoundContainer>
-}
-const SignedPlayground = ({isSignedPlayground})=>{
-  const {id} = useParams();
-  const {isLoading,data} = useQuery('play-code','/code/'+id,{cacheTime:0});
+    </ProblemNotFoundContainer>
+  );
+};
+const SignedPlayground = ({ isSignedPlayground }) => {
+  const { id } = useParams();
+  const { isLoading, data } = useQuery("play-code", "/code/" + id, {
+    cacheTime: 0,
+  });
   useEffect(() => {
-    if(data?.code){
-      	updateState("playground-code", data.code);
+    if (data?.code) {
+      updateState("playground-code", data.code);
     }
     return () => {
       updateState("playground-input", "");
@@ -76,16 +80,20 @@ const SignedPlayground = ({isSignedPlayground})=>{
       updateState("playground-console", "");
     };
   }, [data?.code]);
-  if(isLoading){
-    return <Loading />
+  if (isLoading) {
+    return <Loading />;
   }
-  if(data?.code){
+  if (data?.code) {
     return (
       <EditorContainer>
         <Head title={data.name} description="user playground" />
         <Resizable direction="horizontal">
           <div className="editor">
-            <EditorHeader isSignedPlayground={isSignedPlayground} id={id} name={data.name} />
+            <EditorHeader
+              isSignedPlayground={isSignedPlayground}
+              id={id}
+              name={data.name}
+            />
             <Editor initialValue={data.code} />
             <EditorFooter />
           </div>
@@ -96,9 +104,9 @@ const SignedPlayground = ({isSignedPlayground})=>{
       </EditorContainer>
     );
   }
-  return <ProblemNotFound />
-}
-const UnSignedPlayground = ({isSignedPlayground})=>{
+  return <ProblemNotFound />;
+};
+const UnSignedPlayground = ({ isSignedPlayground }) => {
   useEffect(() => {
     updateState("playground-code", initial);
     return () => {
@@ -113,7 +121,7 @@ const UnSignedPlayground = ({isSignedPlayground})=>{
       <Resizable direction="horizontal">
         <div className="editor">
           <EditorHeader isSignedPlayground={isSignedPlayground} />
-          <Editor initialValue={initial}  />
+          <Editor initialValue={initial} />
           <EditorFooter />
         </div>
       </Resizable>
@@ -122,11 +130,12 @@ const UnSignedPlayground = ({isSignedPlayground})=>{
       </div>
     </EditorContainer>
   );
-}
+};
 const Playground = () => {
-  const {pathname} = useLocation();
-  if(pathname === "/playground/new/empty") return <UnSignedPlayground isSignedPlayground={false}  />
-  return <SignedPlayground isSignedPlayground={true}/>
+  const { pathname } = useLocation();
+  if (pathname === "/playground/new/empty")
+    return <UnSignedPlayground isSignedPlayground={false} />;
+  return <SignedPlayground isSignedPlayground={true} />;
 };
 
 export default Playground;

@@ -1,4 +1,4 @@
-export const checkErrors = (type,errors) => {
+export const checkErrors = (type, errors) => {
   if (type === "name" && errors && errors.name) {
     if (errors.name.type === "required") {
       return "Name is required";

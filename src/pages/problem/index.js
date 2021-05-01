@@ -91,8 +91,6 @@ const ProblemDescriptionContainer = styled.div`
   padding: 2rem;
 `;
 
-
-
 const Tabs = () => {
   let { url } = useRouteMatch();
   return (
@@ -181,8 +179,7 @@ const Main = () => {
       <Resizable direction="horizontal">
         <Problem description={data.description} />
       </Resizable>
-      <Editor id={id}
-      />
+      <Editor id={id} />
     </PlaygroungWrapper>
   );
 };

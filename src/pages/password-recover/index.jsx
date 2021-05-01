@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { checkErrors } from "../../shared/libs/error-messages";
 import { Link } from "react-router-dom";
 import Message from "../../components/message/";
-import {usePasswordRecovery} from '../../hooks/user'
+import { usePasswordRecovery } from "../../hooks/user";
 import AuthContainer from "../../components/auth-container/";
 
 const ConfirmMessage = styled.div`
@@ -14,7 +14,7 @@ const ConfirmMessage = styled.div`
 `;
 
 const RecoveryForm = () => {
-  const {data,isLoading,isError,error,mutate} = usePasswordRecovery()
+  const { data, isLoading, isError, error, mutate } = usePasswordRecovery();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (e) => mutate(e);
   if (data?.email) {
@@ -47,7 +47,7 @@ const RecoveryForm = () => {
           error={checkErrors("email", errors)}
           big
         />
-        <Button loading={isLoading} block  theme="green">
+        <Button loading={isLoading} block theme="green">
           Reset Password
         </Button>
       </form>
@@ -58,17 +58,17 @@ const RecoveryForm = () => {
 const Recovery = () => {
   return (
     <AuthContainer>
-     <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
+      <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         <Text mg="0 0 1rem 0" type="h1" layer={1} bold center>
-           Password Recovery
+          Password Recovery
         </Text>
         <Text type="p" layer={2} center mg="0 0 1rem 0">
-           Enter your email and we'll email you a password recovery link
+          Enter your email and we'll email you a password recovery link
         </Text>
         <div className="form__body">
           <RecoveryForm />
-      </div>
-      <div className="center">
+        </div>
+        <div className="center">
           <Link to="/accounts/signup">
             <Button link layer={2}>
               Don't have an account? Sign up
