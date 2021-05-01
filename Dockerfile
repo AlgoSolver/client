@@ -1,20 +1,18 @@
 # pull official base image
-FROM node:alpine as build
+FROM node:alpine3.13
 
 # set working directory
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
 # install app dependencies
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 
 # add app
-COPY . .
+COPY . ./
 
-# pull official base image
-FROM nginx:1.19.9
+# listener port at runtime
+EXPOSE 3000
 
-COPY --from=build /app/build /usr/share/nginx
+# start app
+CMD ["npm", "start"]
