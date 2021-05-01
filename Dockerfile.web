@@ -2,8 +2,8 @@
 FROM s403o/client
 
 # set working directory
-#RUN mkdir /app
-RUN groupadd -r secapp && useradd -r -s /bin/false -g secapp secapp
+RUN mkdir /app
+# RUN groupadd -r secapp && useradd -r -s /bin/false -g secapp secapp
 WORKDIR /app
 
 # install app dependencies
@@ -12,11 +12,11 @@ RUN npm install
 
 # add app
 COPY . ./
-RUN chown -R secapp:secapp /app
+# RUN chown -R secapp:secapp /app
 
 # listener port at runtime
 EXPOSE 3000
 
 # start app
-USER secapp
+# USER secapp
 CMD ["npm", "start"]
