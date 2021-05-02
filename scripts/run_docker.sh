@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #run app at localhost:12345
 
-
 docker run -it --rm \
 -v ${PWD}:/app \
 -v /app/node_modules \
