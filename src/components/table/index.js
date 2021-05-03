@@ -7,31 +7,34 @@ const Container = styled.div`
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    min-width: 40rem;
     width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: ${({ theme }) => theme.elevation[3].shadow};
+    background-color:${({ theme }) => theme.colors.light[4]};
     thead tr {
-      background-color: ${({ theme }) => theme.colors.primary[0]};
-      color: #ffffff;
+     color: ${({ theme }) => theme.colors.dark[1]};
+      background-color:${({ theme }) => theme.colors.light[4]};
       text-align: left;
       font-size: 1.6rem !important;
     }
     th,
     td {
-      padding: 12px 15px;
+      padding: .8rem;
       font-size: 1.5rem;
+      color: ${({ theme }) => theme.colors.dark[2]};
     }
     tbody tr {
       border-bottom: 1px solid #dddddd;
     }
 
-    tbody tr:nth-of-type(even) {
+    tbody tr:nth-of-type(odd) {
       background-color: #f3f3f3;
     }
 
     tbody tr:last-of-type {
-      border-bottom: 2px solid ${({ theme }) => theme.colors.primary[0]};
+      border-bottom: 2px solid ${({ theme }) => theme.colors.light[4]};
     }
     tbody tr.active-row {
       font-weight: bold;

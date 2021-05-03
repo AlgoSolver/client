@@ -79,6 +79,10 @@ const Buttons = () => {
       </div>
       <div className="body">
         <Button loading></Button>
+        <Button loading type="red"></Button>
+        <Button loading type="dark"></Button>
+      <Button loading type="blue"></Button>
+      <Button loading type="light"></Button>
       </div>
       <div className="body">
         <Button withIcon={Users}>two freinds</Button>

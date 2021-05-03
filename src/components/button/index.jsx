@@ -178,8 +178,10 @@ const StyledButton = styled.button`
     cursor: not-allowed !important;
   }
   &.loading {
-    background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
-    color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important;
+    ${'' /* background: ${({ theme, buttonType }) => theme.colors.gray[3]} !important;
+    color: ${({ theme, buttonType }) => theme.colors.dark[4]} !important; */}
+    background: ${({theme,buttonType})=>
+    theme.colors[buttonType].length > 5 ? theme.colors[buttonType][3] : theme.colors.gray[3]} !important;
     box-shadow: none;
     border-color: ${({ theme, buttonType }) =>
       theme.colors.light[0]} !important;
