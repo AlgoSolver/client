@@ -1,86 +1,27 @@
 import styled from "styled-components";
 import Text from "../../components/Text";
 import { useProblems } from "../../hooks/problems";
-import ReactPaginate from "react-paginate";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../shared/loading";
 import Table from "../../components/table";
+import Paginator from "../../components/paginator";
 
 const Wrapper = styled.div`
   display: flex;
   .problems {
     flex: 1;
+    margin-bottom: 1rem;
+
   }
 `;
-const Control = styled.div``;
+const Control = styled.div`
+`;
 const Sidebar = styled.div`
   width: 30rem;
 `;
 
-const Paginator = styled.div`
-  width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors.light[1]};
-  .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    width: 100%;
-    padding: 1rem;
-    > li {
-      &.previous,
-      &.next {
-        a {
-          width: auto;
-          padding: 1rem;
-          min-width: 8rem;
-          border: none;
-          background: ${({ theme }) => theme.colors.primary[0]};
-          cursor: pointer;
-          margin: 0 1rem;
-          color: ${({ theme }) => theme.colors.light[4]};
-        }
-        &.disabled {
-          a {
-            background: ${({ theme }) => theme.colors.primary[3]};
-            user-select: none;
-          }
-        }
-      }
-      a {
-        width: 3rem;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 1.5rem;
-        margin: 0 0.2rem;
-        font-size: 1.4rem;
-        border: 2px solid transparent;
-        transition: border-color 0.3s ease;
-        cursor: pointer;
-        &:hover {
-          border-color: ${({ theme }) => theme.colors.primary[0]};
-        }
-      }
-      &.active {
-        a {
-          border-color: ${({ theme }) => theme.colors.primary[0]};
-        }
-      }
-      &.break-me {
-        a {
-          width: auto;
-          font-size: 1.6rem;
-          letter-spacing: 0.4rem;
-          border: none;
-          user-select: none;
-        }
-      }
-    }
-  }
-`;
+
 let columns = [
   {
     Header: "Title",
@@ -143,7 +84,6 @@ const Problems = () => {
     if (data?.selected >= 0)
       history.push(`/problems?page=${+data.selected + 1}`);
   };
-  console.log(data)
   useEffect(() => {
     console.log(loc.search);
   }, [loc.search]);
@@ -156,21 +96,11 @@ const Problems = () => {
           <Text type="h3">Control</Text>
         </Control>
         <Table columns={columns} data={data.docs} />
-          <Paginator>
-            <ReactPaginate
-              previousLabel={"Previous"}
-              nextLabel={"Next"}
-              breakLabel={"..."}
-              breakClassName={"break-me"}
-              pageCount={data.totalPages}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
-              onPageChange={handlePageClick}
-              containerClassName={"pagination"}
-              activeClassName={"active"}
-              initialPage={initialPage - 1}
-            />
-          </Paginator>
+        <Paginator
+          totalPages={data.totalPages}
+          initialPage={initialPage - 1}
+          onPageChange={handlePageClick}
+        />
       </>
     );
   else return null;
