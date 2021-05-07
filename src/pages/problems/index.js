@@ -4,6 +4,9 @@ import { useProblems } from "../../hooks/problems";
 import ReactPaginate from "react-paginate";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { useEffect } from "react";
+import Loading from "../../shared/loading";
+import Table from "../../components/table";
+
 const Wrapper = styled.div`
   display: flex;
   .problems {
@@ -14,51 +17,7 @@ const Control = styled.div``;
 const Sidebar = styled.div`
   width: 30rem;
 `;
-const ProblemsTable = styled.div`
-  background: ${({ theme }) => theme.colors.light[4]};
-  padding: 2rem;
-  border-radius: 1.6rem;
-  .table {
-    display: table;
-    width: 100%;
-    &__row {
-      display: table-row;
-      vertical-align: baseline;
-      transition: background 0.3s;
-      &:nth-child(even) {
-        background: ${({ theme }) => theme.colors.light[0]};
-      }
-      &:hover {
-        background: ${({ theme }) => theme.colors.light[1]};
-      }
-    }
-    &__cell {
-      display: table-cell;
-      vertical-align: middle;
-      padding: 1rem;
-      color: ${({ theme }) => theme.colors.dark[2]};
-      font-size: 1.5rem;
-      &:nth-child(2) {
-        width: 100%;
-        a {
-          color: ${({ theme }) => theme.colors.blue[1]};
-          transition: color 0.2s;
-          &:hover {
-            color: ${({ theme }) => theme.colors.blue[0]};
-          }
-        }
-      }
-    }
-    .table__row_head {
-      box-shadow: ${({ theme }) => theme.elevation[8].shadow};
-      .table__cell {
-        font-size: 1.6rem;
-        font-weight: 500;
-        color: ${({ theme }) => theme.colors.dark[1]};
-      }
-    }
-  }
-`;
+
 const Paginator = styled.div`
   width: 100%;
   border-top: 1px solid ${({ theme }) => theme.colors.light[1]};
@@ -122,7 +81,58 @@ const Paginator = styled.div`
     }
   }
 `;
-
+let columns = [
+  {
+    Header: "Title",
+    accessor: "title",
+    Cell: (x) => {
+      return <Text mg="0"
+        pd="0"
+        size="1.4rem"
+        layer={2}
+         style={{ display: "inline-block" }} type="h5">
+           <Link className="link" to={`/problems/${x.rowsById[x.cell.row.id]?.original?._id}`}>
+          {x.cell.value}
+        </Link>
+        </Text>
+  },
+},
+  // {
+  //   Header: "Title",
+  //   accessor: "problem.title",
+  //   Cell: (x) => (
+  //     <Problem
+  //       values={x.cell.value}
+  //       id={x.rowsById[x.cell.row.id]?.original?.problem._id}
+  //       cell={x}
+  //     />
+  //   ),
+  // },
+  // {
+  //   Header: "Status",
+  //   accessor: "status",
+  //   Cell: (x) => (
+  //     <Status
+  //       values={x.cell.value}
+  //       id={x.rowsById[x.cell.row.id].original._id}
+  //       cell={x}
+  //     />
+  //   ),
+  // },
+  {
+    Header: "Time Limit",
+    accessor: "timeLimit",
+    Cell: (x) => {
+      return <Text mg="0"
+        pd="0"
+        size="1.4rem"
+        layer={2}
+         style={{ display: "inline-block" }} type="h5">
+          {x.cell.value}s
+        </Text>
+  },
+  },
+];
 const Problems = () => {
   const history = useHistory();
   const loc = useLocation();
@@ -133,41 +143,19 @@ const Problems = () => {
     if (data?.selected >= 0)
       history.push(`/problems?page=${+data.selected + 1}`);
   };
-  console.log(data);
+  console.log(data)
   useEffect(() => {
     console.log(loc.search);
   }, [loc.search]);
   if (isLoading)
-    return (
-      <Text type="h3" center>
-        Loading...
-      </Text>
-    );
+    return <Loading />
   if (data?.docs)
     return (
       <>
         <Control>
           <Text type="h3">Control</Text>
         </Control>
-        <ProblemsTable>
-          <div className="table">
-            <div className="table__row table__row_head">
-              <div className="table__cell">#</div>
-              <div className="table__cell">Title</div>
-              <div className="table__cell">Difficulty</div>
-              <div className="table__cell">Solution</div>
-            </div>
-            {data.docs.map((item, idx) => (
-              <div className="table__row" key={item._id}>
-                <div className="table__cell">{idx}</div>
-                <div className="table__cell">
-                  <Link to={`/problems/${item._id}`}>{item.title}</Link>
-                </div>
-                <div className="table__cell">difficulty</div>
-                <div className="table__cell">solution</div>
-              </div>
-            ))}
-          </div>
+        <Table columns={columns} data={data.docs} />
           <Paginator>
             <ReactPaginate
               previousLabel={"Previous"}
@@ -183,7 +171,6 @@ const Problems = () => {
               initialPage={initialPage - 1}
             />
           </Paginator>
-        </ProblemsTable>
       </>
     );
   else return null;
