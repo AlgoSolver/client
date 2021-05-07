@@ -31,7 +31,12 @@ const EditorContainer = styled.div`
     min-width: 10px;
     height: 100%;
     cursor: col-resize;
-    background: ${({ theme }) => theme.colors.dark[2]};
+    background: ${({ theme }) => theme.colors.gray[1]};
+    border:1px solid  ${({ theme }) => theme.colors.gray[2]};
+    transition: background .2s ease;
+    &:hover{
+      background: ${({ theme }) => theme.colors.gray[0]};
+    }
   }
   .controller {
     flex: 1;
