@@ -12,32 +12,37 @@ const Wrapper = styled.div`
   .problems {
     flex: 1;
     margin-bottom: 1rem;
-
   }
 `;
-const Control = styled.div`
-`;
+const Control = styled.div``;
 const Sidebar = styled.div`
   width: 30rem;
 `;
-
 
 let columns = [
   {
     Header: "Title",
     accessor: "title",
     Cell: (x) => {
-      return <Text mg="0"
-        pd="0"
-        size="1.4rem"
-        layer={2}
-         style={{ display: "inline-block" }} type="h5">
-           <Link className="link" to={`/problems/${x.rowsById[x.cell.row.id]?.original?._id}`}>
-          {x.cell.value}
-        </Link>
+      return (
+        <Text
+          mg="0"
+          pd="0"
+          size="1.4rem"
+          layer={2}
+          style={{ display: "inline-block" }}
+          type="h5"
+        >
+          <Link
+            className="link"
+            to={`/problems/${x.rowsById[x.cell.row.id]?.original?._id}`}
+          >
+            {x.cell.value}
+          </Link>
         </Text>
+      );
+    },
   },
-},
   // {
   //   Header: "Title",
   //   accessor: "problem.title",
@@ -64,14 +69,19 @@ let columns = [
     Header: "Time Limit",
     accessor: "timeLimit",
     Cell: (x) => {
-      return <Text mg="0"
-        pd="0"
-        size="1.4rem"
-        layer={2}
-         style={{ display: "inline-block" }} type="h5">
+      return (
+        <Text
+          mg="0"
+          pd="0"
+          size="1.4rem"
+          layer={2}
+          style={{ display: "inline-block" }}
+          type="h5"
+        >
           {x.cell.value}s
         </Text>
-  },
+      );
+    },
   },
 ];
 const Problems = () => {
@@ -87,8 +97,7 @@ const Problems = () => {
   useEffect(() => {
     console.log(loc.search);
   }, [loc.search]);
-  if (isLoading)
-    return <Loading />
+  if (isLoading) return <Loading />;
   if (data?.docs)
     return (
       <>

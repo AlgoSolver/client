@@ -14,7 +14,7 @@ const Status = ({ values, id }) => {
         <Text
           style={{ display: "inline-block" }}
           type="h5"
-            size="1.4rem"
+          size="1.4rem"
           color={values === "Accepted" ? "green" : "red"}
           mg="0"
           pd="0"
@@ -30,15 +30,18 @@ const FormatDate = ({ value }) => {
 };
 const Problem = ({ values, id }) => {
   return (
-        <Text mg="0"
-        pd="0"
-        size="1.4rem"
-        layer={2}
-         style={{ display: "inline-block" }} type="h5">
-           <Link className="link" to={`/problems/${id}`}>
-          {values}
-        </Link>
-        </Text>
+    <Text
+      mg="0"
+      pd="0"
+      size="1.4rem"
+      layer={2}
+      style={{ display: "inline-block" }}
+      type="h5"
+    >
+      <Link className="link" to={`/problems/${id}`}>
+        {values}
+      </Link>
+    </Text>
   );
 };
 let columns = [

@@ -50,9 +50,9 @@ const PlaygroungWrapper = styled.div`
     height: 100%;
     cursor: col-resize;
     background: ${({ theme }) => theme.colors.gray[1]};
-    border:1px solid  ${({ theme }) => theme.colors.gray[2]};
-    transition: background .2s ease;
-    &:hover{
+    border: 1px solid ${({ theme }) => theme.colors.gray[2]};
+    transition: background 0.2s ease;
+    &:hover {
       background: ${({ theme }) => theme.colors.gray[0]};
     }
   }

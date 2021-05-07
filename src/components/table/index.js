@@ -12,16 +12,16 @@ const Container = styled.div`
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: ${({ theme }) => theme.elevation[3].shadow};
-    background-color:${({ theme }) => theme.colors.light[4]};
+    background-color: ${({ theme }) => theme.colors.light[4]};
     thead tr {
-     color: ${({ theme }) => theme.colors.dark[1]};
-      background-color:${({ theme }) => theme.colors.light[4]};
+      color: ${({ theme }) => theme.colors.dark[1]};
+      background-color: ${({ theme }) => theme.colors.light[4]};
       text-align: left;
       font-size: 1.6rem !important;
     }
     th,
     td {
-      padding: .8rem;
+      padding: 0.8rem;
       font-size: 1.5rem;
       color: ${({ theme }) => theme.colors.dark[2]};
     }

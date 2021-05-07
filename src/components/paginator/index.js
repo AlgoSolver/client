@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import ReactPaginate from "react-paginate";
 
-
 const PaginatorContainer = styled.div`
   width: 100%;
-  background:${({ theme }) => theme.colors.light[4]};
+  background: ${({ theme }) => theme.colors.light[4]};
   border-radius: 1.5rem;
   box-shadow: ${({ theme }) => theme.elevation[3].shadow};
   .pagination {
@@ -13,12 +12,12 @@ const PaginatorContainer = styled.div`
     align-items: center;
     list-style-type: none;
     width: 100%;
-    padding: .6rem 1rem;
+    padding: 0.6rem 1rem;
     > li {
       color: ${({ theme }) => theme.colors.dark[2]};
       &.previous,
       &.next {
-        flex:1;
+        flex: 1;
         a {
           width: auto;
           padding: 1rem;
@@ -37,7 +36,7 @@ const PaginatorContainer = styled.div`
           }
         }
       }
-      &.next{
+      &.next {
         text-align: right;
       }
       a {
@@ -60,7 +59,6 @@ const PaginatorContainer = styled.div`
         a {
           border-color: ${({ theme }) => theme.colors.primary[0]};
           color: ${({ theme }) => theme.colors.dark[0]};
-
         }
       }
       &.break-me {
@@ -76,8 +74,9 @@ const PaginatorContainer = styled.div`
   }
 `;
 
-const Paginator = ({totalPages,onPageChange,initialPage})=>{
-  return <PaginatorContainer>
+const Paginator = ({ totalPages, onPageChange, initialPage }) => {
+  return (
+    <PaginatorContainer>
       <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
@@ -91,6 +90,7 @@ const Paginator = ({totalPages,onPageChange,initialPage})=>{
         activeClassName={"active"}
         initialPage={initialPage}
       />
-  </PaginatorContainer>
-}
+    </PaginatorContainer>
+  );
+};
 export default Paginator;
