@@ -94,7 +94,11 @@ const handleContentChange = (e) => {
 };
 const NewPost = ({ data }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (e) => console.log(e);
+  const onSubmit = (e) => {
+    let {tags} = e;
+    tags = tags.split(',').map(item=>item.replace(/\s/g, ''))
+    console.log(tags)
+  };
   return (
     <Container>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -103,6 +107,7 @@ const NewPost = ({ data }) => {
             onChange={(e) => handleHeaderChange(e.target.value)}
             ref={register({
               required: true,
+              pattern: /^[A-Za-z0-9_.+-, ]/i,
             })}
             name="header"
             placeholder="Write The Header Here..."
@@ -125,6 +130,8 @@ const NewPost = ({ data }) => {
           <ContentField
             ref={register({
               required: true,
+              maxLength:3000,
+              minLength:250
             })}
             name="content"
             className="content"

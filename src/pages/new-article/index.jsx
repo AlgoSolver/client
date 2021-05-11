@@ -24,16 +24,15 @@ const NewPost = () => {
     <div className="wrapper">
       <NavContainer>
         <Button
-          theme={isNew ? "primary" : "light"}
-          text={!isNew}
+          type={isNew ? "primary" : "light"}
           onClick={() => setNew(true)}
+          mg="0 .6rem 0 0"
         >
           New
         </Button>
         <Button
-          theme={!isNew ? "primary" : "light"}
+          type={!isNew ? "primary" : "light"}
           onClick={() => setNew(false)}
-          text={isNew}
         >
           Preview
         </Button>
