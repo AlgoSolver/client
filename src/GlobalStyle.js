@@ -11,7 +11,6 @@ import MonoLisaBold from "./assets/fonts/MonoLisa/MonoLisa-Bold.woff2";
 import LinotteRegular from "./assets/fonts/Linotte/Linotte-Regular.woff2";
 import LinotteBold from "./assets/fonts/Linotte/Linotte-Bold.woff2";
 
-
 export default createGlobalStyle`
   @font-face {
     font-family: 'Avenir';

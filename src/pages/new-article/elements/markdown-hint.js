@@ -10,7 +10,7 @@ const HintContainer = styled.div`
       min-width: 30rem;
       background: ${({ theme }) => theme.colors.light[4]};
       box-shadow: ${({ theme }) => theme.elevation[3].shadow};
-      border-radius:1.5rem;
+      border-radius: 1.5rem;
       padding: 1.5rem;
       color: ${({ theme }) => theme.colors.dark[1]};
     }
@@ -61,10 +61,10 @@ const Hint = () => {
           <div className="hint__column">[Link](https://...) </div>
           <div className="hint__column2">Link</div>
         </div>
-          <Divider mg="1rem" />
+        <Divider mg="1rem" />
         <div className="hint__row">
           <div className="hint__column">![image_name](https://...) </div>
-        <div className="hint__column2">Image</div>
+          <div className="hint__column2">Image</div>
         </div>
         <Divider mg="1rem" />
         <div className="hint__row">

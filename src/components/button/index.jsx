@@ -210,25 +210,21 @@ const StyledButton = styled.button`
     padding: 0 1rem;
     svg {
       path {
-        ${({theme,fill,buttonType})=>{
-          if(fill){
-
+        ${({ theme, fill, buttonType }) => {
+          if (fill) {
             return {
               fill: types.some((item) => buttonType === item)
                 ? theme.colors.light[4]
-                : theme.colors.dark[0]
-              };
-            }
-            return {
-              stroke: types.some((item) => buttonType === item)
-                ? theme.colors.light[4]
-                : theme.colors.dark[0]
-            }
+                : theme.colors.dark[0],
+            };
           }
-          }
-        }
-
-
+          return {
+            stroke: types.some((item) => buttonType === item)
+              ? theme.colors.light[4]
+              : theme.colors.dark[0],
+          };
+        }}
+      }
     }
     &.big {
       width: 5.2rem;
@@ -295,7 +291,7 @@ const Button = ({
     color && "color",
     mg && "mg",
     ghost && "ghost",
-    iconLeft && "left",
+    iconLeft && "left"
   );
 
   return (

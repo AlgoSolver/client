@@ -39,7 +39,7 @@ const NewPost = () => {
         </Button>
       </NavContainer>
       <Container>{isNew ? <PostForm /> : <Preview />}</Container>
-  </div>
+    </div>
   );
 };
 

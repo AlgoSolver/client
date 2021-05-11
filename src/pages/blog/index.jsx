@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Text from "../../components/Text/";
 import Article from "./elements/article";
-import ContributeBox from './elements/contribute-box'
+import ContributeBox from "./elements/contribute-box";
 
 const BlogContainer = styled.div`
   width: 97rem;
@@ -39,10 +39,10 @@ const Blog = () => {
           </Text>
           <div className="row__board__container">
             <Article />
-          <Article />
-        <Article />
-      <Article />
-    <Article />
+            <Article />
+            <Article />
+            <Article />
+            <Article />
           </div>
         </div>
         <div className="row__sidebar">
