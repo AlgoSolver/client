@@ -95,9 +95,9 @@ const handleContentChange = (e) => {
 const NewPost = ({ data }) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (e) => {
-    let {tags} = e;
-    tags = tags.split(',').map(item=>item.replace(/\s/g, ''))
-    console.log(tags)
+    let { tags } = e;
+    tags = tags.split(",").map((item) => item.replace(/\s/g, ""));
+    console.log(tags);
   };
   return (
     <Container>
@@ -130,8 +130,8 @@ const NewPost = ({ data }) => {
           <ContentField
             ref={register({
               required: true,
-              maxLength:3000,
-              minLength:250
+              maxLength: 3000,
+              minLength: 250,
             })}
             name="content"
             className="content"
