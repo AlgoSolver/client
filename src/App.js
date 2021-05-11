@@ -26,7 +26,7 @@ import UserPlaygrounds from "./pages/user-playgrounds";
 import Submission from "./pages/submission";
 
 import Blog from "./pages/blog";
-import NewPost from "./pages/new-post";
+import NewArticle from "./pages/new-article";
 
 import CreateProblem from "./pages/create-problem/";
 
@@ -116,7 +116,7 @@ const Routing = () => {
           fallback={fallbackForPublic}
           path="/new-post"
         >
-          <NewPost />
+          <NewArticle />
         </AuthRoute>
         {/* <AuthRoute
           // privatePage={true}

@@ -1,26 +1,18 @@
-import New from "../../components/blog/new";
-import Preview from "../../components/blog/preview";
-
 import styled from "styled-components";
-import Button from "../../components/button/";
-import { Divider } from "../../components/divider/";
-import Text from "../../components/Text/";
-import { useState } from "react";
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  min-height: calc(100vh - 7.4rem);
-`;
+import { Divider } from "../../../components/divider/";
+import Text from "../../../components/Text/";
+
 const HintContainer = styled.div`
   margin: 0 1rem;
+  margin-bottom: 4rem;
   .hint {
     &__board {
       min-width: 30rem;
-      background: ${({ theme }) => theme.colors.dark[2]};
-      box-shadow: ${({ theme }) => theme.elevation[2].shadow};
-      border-radius: 0.6rem;
-      padding: 1rem;
-      color: ${({ theme }) => theme.colors.light[4]};
+      background: ${({ theme }) => theme.colors.light[4]};
+      box-shadow: ${({ theme }) => theme.elevation[3].shadow};
+      border-radius:1.5rem;
+      padding: 1.5rem;
+      color: ${({ theme }) => theme.colors.dark[1]};
     }
     &__row {
       display: flex;
@@ -30,54 +22,7 @@ const HintContainer = styled.div`
     }
   }
 `;
-const NavContainer = styled.div`
-  min-height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  button {
-    margin: 0 1rem;
-  }
-`;
 
-//const bar
-const NewPost = () => {
-  const [isNew, setNew] = useState(true);
-  return (
-    <>
-      <NavContainer>
-        <Button
-          theme={isNew ? "primary" : "light"}
-          text={!isNew}
-          onClick={() => setNew(true)}
-        >
-          New
-        </Button>
-        <Button
-          theme={!isNew ? "primary" : "light"}
-          onClick={() => setNew(false)}
-          text={isNew}
-        >
-          Preview
-        </Button>
-      </NavContainer>
-      <Container>{isNew ? <PostForm /> : <Preview />}</Container>
-    </>
-  );
-};
-
-const PostForm = () => {
-  const header = localStorage.getItem("9753-header");
-  const tags = localStorage.getItem("9753-tags");
-  const content = localStorage.getItem("9753-content");
-  const data = { header, tags, content };
-  return (
-    <>
-      <New data={data} />
-      <Hint />
-    </>
-  );
-};
 const Hint = () => {
   return (
     <HintContainer>
@@ -115,6 +60,11 @@ const Hint = () => {
         <div className="hint__row">
           <div className="hint__column">[Link](https://...) </div>
           <div className="hint__column2">Link</div>
+        </div>
+          <Divider mg="1rem" />
+        <div className="hint__row">
+          <div className="hint__column">![image_name](https://...) </div>
+        <div className="hint__column2">Image</div>
         </div>
         <Divider mg="1rem" />
         <div className="hint__row">
@@ -164,4 +114,5 @@ const Hint = () => {
     </HintContainer>
   );
 };
-export default NewPost;
+
+export default Hint;

@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import Text from "../../components/Text/";
-import BlogItem from "../../components/blog/";
-import { Box } from "../../components/gate/";
-import Button from "../../components/button/";
-import { Link } from "react-router-dom";
+import Article from "./elements/article";
+import ContributeBox from './elements/contribute-box'
 
 const BlogContainer = styled.div`
   width: 97rem;
@@ -40,27 +38,15 @@ const Blog = () => {
             Posts
           </Text>
           <div className="row__board__container">
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
+            <Article />
+          <Article />
+        <Article />
+      <Article />
+    <Article />
           </div>
         </div>
         <div className="row__sidebar">
-          <Box>
-            <Text type="h4" mg="0">
-              Want to write a post?
-            </Text>
-            <Text type="p" mg=".4rem 0 .8rem">
-              Share your Knowlege and write something you good at.
-            </Text>
-            <div style={{ textAlign: "right" }}>
-              <Link to="/new-post">
-                <Button small>Write a post</Button>
-              </Link>
-            </div>
-          </Box>
+          <ContributeBox />
         </div>
       </div>
     </BlogContainer>

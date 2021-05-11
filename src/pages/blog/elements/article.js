@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Divider } from "../divider";
-import Text from "../Text";
-import Button from "../button/";
+import { Divider } from "../../../components/divider";
+import Text from "../../../components/Text/";
+import Button from "../../../components/button/";
 const StyledBlogItem = styled.div`
   background: ${({ theme }) => theme.colors.light[4]};
   width: 100%;

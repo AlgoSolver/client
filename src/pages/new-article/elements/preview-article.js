@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import Text from "../Text";
+import Text from "../../../components/Text/";
+import {Divider} from "../../../components/divider/";
+import Button from "../../../components/button/";
 
+import {Facebook1,Linkedin,Twitter1} from "../../../assets/icons/";
+
+import {useAuth} from '../../../hooks/user'
 let marked = require("marked");
 
 const Container = styled.div`
@@ -13,10 +18,21 @@ const Container = styled.div`
     &__body {
       width: 100%;
       background: ${({ theme }) => theme.colors.light[4]};
-      border-radius: 0.6rem;
-      box-shadow: ${({ theme }) => theme.elevation[2]};
+      border-radius: 1.5rem;
+      box-shadow: ${({ theme }) => theme.elevation[3]};
       padding: 2rem;
       font-size: 1.6rem;
+
+      .content{
+        max-width: 60.2rem;
+        width:100%;
+        margin:0 auto;
+        font-family: Droid;
+      }
+      img{
+        max-width: 100%;
+        width:100%;
+      }
       h1 {
         font-size: 5.3rem;
         line-height: 1.15em;
@@ -37,6 +53,9 @@ const Container = styled.div`
         line-height: 1.5em;
         margin: 1rem 0;
       }
+      b, strong {
+      font-weight: 700;
+      }
       h5 {
         font-size: 1.7rem;
         line-height: 1.55em;
@@ -52,6 +71,7 @@ const Container = styled.div`
         font-style: normal;
         font-size: 1.6rem;
         line-height: 2.4rem;
+        margin: 1em 0;
       }
       ul {
         list-style-type: disc;
@@ -61,6 +81,9 @@ const Container = styled.div`
         padding-left: 2.5rem;
         margin: 1rem 0;
       }
+     li {
+        margin-bottom: 5px;
+    }
       code {
         background: rgba(0, 0, 0, 0.1);
         color: ${({ theme }) => theme.colors.dark[1]};
@@ -106,6 +129,49 @@ const TagItem = styled.div`
   font-size: 1.6rem;
   margin: 0.4rem;
 `;
+const ShareRowContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  .user-info{
+    display: flex;
+    align-items: center;
+    img{
+      width:3.5rem;;
+      height:3.5rem;
+      border-radius: 9999px;
+      margin-right: .6rem;
+    }
+  }
+  .share-buttons{
+    display: flex;
+    align-items: center;
+    svg{
+      width:2rem;
+      height:2rem;
+    }
+  }
+`
+const ShareRow = ()=>{
+  const user = useAuth();
+  return <ShareRowContainer>
+    <div className="user-info">
+      <img src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt={user?.data?.username}/> <Text pd="0 0 0 .6rem" type="p">{user?.data?.username}</Text>
+    </div>
+    <div className="share-buttons">
+      <Button icon small type="light"  fill>
+         <Facebook1 />
+      </Button>
+      <Button icon type="light" small fill>
+         <Twitter1 />
+      </Button>
+      <Button icon type="light" small fill>
+         <Linkedin />
+      </Button>
+    </div>
+  </ShareRowContainer>
+}
 const Preview = () => {
   const header = localStorage.getItem("9753-header");
   const tags = localStorage.getItem("9753-tags");
@@ -121,17 +187,23 @@ const Preview = () => {
   return (
     <Container>
       <div className="preview__body">
+        <div className="content">
         {header && (
-          <Text type="h1" size="6rem" bold>
+          <Text type="h1" center family="Droid" bold>
             {header}
           </Text>
         )}
-        {tags && <Tag>{renderTags()}</Tag>}
-        <div
+        <Text type="p" family="Droid" size="1.4rem;" mg="0" color="dark" layer={2}>{(new Date()).toDateString()}</Text>
+       <ShareRow />
+      <Divider mg="1rem 0" />
+
+      <div
           dangerouslySetInnerHTML={{
             __html: marked(content),
           }}
         ></div>
+      {tags && <Tag>{renderTags()}</Tag>}
+    </div>
       </div>
     </Container>
   );

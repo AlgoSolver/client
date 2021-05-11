@@ -1,12 +1,16 @@
 import { createGlobalStyle } from "styled-components";
+
 import AvenirRegular from "./assets/fonts/avenir_ff/Avenir-Regular.woff2";
 import AvenirBold from "./assets/fonts/avenir_ff/AvenirLTStd-Black.woff2";
+import DroidSerifRegular from "./assets/fonts/DroidSerif/DroidSerif-Regular.woff2";
+import DroidSerifBold from "./assets/fonts/DroidSerif/DroidSerif-Bold.woff2";
 import HelveticRegular from "./assets/fonts/Helveica/HelveticaNeueCyr.woff2";
 import HelveticBold from "./assets/fonts/Helveica/HelveticaNeueCyr-Heavy.woff2";
 import MonoLisaRegular from "./assets/fonts/MonoLisa/MonoLisa.woff2";
 import MonoLisaBold from "./assets/fonts/MonoLisa/MonoLisa-Bold.woff2";
 import LinotteRegular from "./assets/fonts/Linotte/Linotte-Regular.woff2";
 import LinotteBold from "./assets/fonts/Linotte/Linotte-Bold.woff2";
+
 
 export default createGlobalStyle`
   @font-face {
@@ -18,6 +22,18 @@ export default createGlobalStyle`
   @font-face {
     font-family: 'Avenir-Bold';
     src: url(${AvenirBold}) format('woff2');
+    font-weight: 300;
+   font-style: normal;
+  }
+  @font-face {
+    font-family: 'Droid';
+    src: url(${DroidSerifRegular}) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Droid-Bold';
+    src: url(${DroidSerifBold}) format('woff2');
     font-weight: 300;
    font-style: normal;
   }
