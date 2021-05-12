@@ -5,6 +5,7 @@ import { useTemp } from "../../hooks/problems";
 import { useAuth } from "../../hooks/user";
 import Loading from "../../shared/loading";
 import { Link } from "react-router-dom";
+
 const Container = styled.div``;
 // Custom component to render Genres
 const Status = ({ values, id }) => {
@@ -78,15 +79,30 @@ let columns = [
   },
 ];
 
+let timer;
 const UserSubmissions = () => {
   const { data: user } = useAuth();
   let id = 0;
   if (user && user._id) id = user._id;
-  const { data: submissions, isLoading } = useTemp(
+
+  const { data: submissions, isLoading, refetch } = useTemp(
     "submissions",
     "/submissions/user/" + id
   );
-  console.log(submissions);
+  console.log(submissions)
+  if(submissions && submissions[0]?.status === 'Pending'){
+      if(timer){
+        clearTimeout(timer);
+      }
+      if(submissions && submissions[0]?.status === 'Pending'){
+        timer=setTimeout(()=>refetch(),5000);
+      }
+  }
+  else{
+    if(timer){
+      clearTimeout(timer);
+    }
+  }
   if (isLoading) return <Loading />;
   return (
     <Container className="wrapper">

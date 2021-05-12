@@ -36,7 +36,6 @@ const Submission = () => {
           </Text>
         </Link>{" "}
         <Text layer={1} type="h2">
-          {" "}
           Submission
         </Text>
       </div>
@@ -96,7 +95,7 @@ const Submission = () => {
               Language:
             </Text>
             <Text type="p" mg="0 0  0 0.8rem" inline>
-              {data.code.language}
+              {data.language}
             </Text>
           </div>
         </div>
@@ -104,7 +103,8 @@ const Submission = () => {
       <Text mg="1rem" type="h2">
         Code
       </Text>
-      <TextArea value={data.code.sourceCode} big readOnly></TextArea>
+      <TextArea value={data.sourceCode} big readOnly></TextArea>
+    {data?.errorMessage && <Text type="p"><pre>{data.errorMessage}</pre></Text>}
     </div>
   );
 };

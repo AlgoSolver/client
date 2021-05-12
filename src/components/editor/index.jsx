@@ -147,6 +147,7 @@ const OutPutResult = ({ results }) => {
 };
 const Results = () => {
   const { data: results } = useListen("runCodeResults");
+  console.log(results)
   return (
     <div className="results">
       {results?.codeStatus ? (
@@ -262,12 +263,10 @@ const SubmitCode = memo(({ id }) => {
     });
   };
   const handleSubmitCode = () => {
+    console.log(id,data.code)
     submitCode({
       problem: id,
-      code: {
-        sourceCode: data.code,
-        language: "C++",
-      },
+      sourceCode: data.code,
     });
   };
   if (submitCodeRes) console.log(submitCodeRes, runCodeRes);

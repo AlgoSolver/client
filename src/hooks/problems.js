@@ -82,8 +82,8 @@ export const useRunCodeOnPlayground = () => {
     },
   });
 };
-export const useTemp = (name, path) => {
-  return useQuery(name, () => request(path, "get"), configOptions);
+export const useTemp = (name, path,options={}) => {
+  return useQuery(name, () => request(path, "get"), {...configOptions,...options});
 };
 export const useProblem = (id) => {
   return useQuery(["problem", id], () => request(`/problems/${id}`, "get"), {
