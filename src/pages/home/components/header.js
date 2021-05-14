@@ -328,8 +328,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/explore" className="nav__link">
-                explore
+              <Link to="/practise" className="nav__link">
+                practise
               </Link>
             </li>
             <li className="nav__item">
@@ -417,8 +417,8 @@ const NavMenu = () => {
                     </Link>
                   </li>
                   <li className="menu__item">
-                    <Link to="/explore" className="menu__link">
-                      explore
+                    <Link to="/practise" className="menu__link">
+                      practise
                     </Link>
                   </li>
                   <li className="menu__item">

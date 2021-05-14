@@ -459,10 +459,10 @@ const Navbar = ({ close }) => {
               <li className="nav__item">
                 <NavLink
                   activeClassName="active"
-                  to="/explore"
+                  to="/practise"
                   className="nav__link"
                 >
-                  explore
+                  practise
                 </NavLink>
               </li>
               <li className="nav__item">
@@ -550,10 +550,10 @@ const NavMenu = () => {
                     <NavLink
                       activeClassName="active"
                       onClick={close}
-                      to="/explore"
+                      to="/practise"
                       className="menu__link"
                     >
-                      explore
+                      practise
                     </NavLink>
                   </li>
                   <li className="menu__item">

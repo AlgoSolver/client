@@ -1,7 +1,17 @@
 import Button from "../../components/button/";
 import { Link } from "react-router-dom";
 import Box from "../../components/box/";
-const Explore = () => {
+import {useQuery} from "../../hooks/";
+import Tracks from './elements/tracks';
+
+const Practise = () => {
+  const {data} = useQuery('tracks',"/track");
+  console.log(data,"heloo")
+  if(data?.length){
+    return <div className="wrapper">
+      <Tracks tracks={data} />
+      </div>
+  }
   return (
     <div className="wrapper">
       <div className="center">
@@ -14,7 +24,7 @@ const Explore = () => {
           height="20rem"
         >
           <Link to="/create-problem">
-            <Button>Create Problem</Button>
+            <Button>Createss Problem</Button>
           </Link>
         </Box>
       </div>
@@ -22,4 +32,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default Practise;

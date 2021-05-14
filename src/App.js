@@ -13,7 +13,7 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import ActivateAccount from "./pages/activate-account/";
 import Profile from "./pages/profile/";
-import Explore from "./pages/explore/";
+import Practise from "./pages/practise/";
 import Problems from "./pages/problems/";
 import Playground from "./pages/playground/";
 import Problem from "./pages/problem/";
@@ -131,8 +131,8 @@ const Routing = () => {
         <Route exact path="/elements">
           <Elements />
         </Route>
-        <Route exact path="/explore">
-          <Explore />
+        <Route exact path="/practise">
+          <Practise />
         </Route>
         <AuthRoute
           privatePage={true}
