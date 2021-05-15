@@ -131,7 +131,7 @@ const Routing = () => {
         <Route exact path="/elements">
           <Elements />
         </Route>
-        <Route exact path="/practise">
+        <Route path="/practise">
           <Practise />
         </Route>
         <AuthRoute

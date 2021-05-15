@@ -104,7 +104,11 @@ const Submission = () => {
         Code
       </Text>
       <TextArea value={data.sourceCode} big readOnly></TextArea>
-    {data?.errorMessage && <Text type="p"><pre>{data.errorMessage}</pre></Text>}
+      {data?.errorMessage && (
+        <Text type="p">
+          <pre>{data.errorMessage}</pre>
+        </Text>
+      )}
     </div>
   );
 };

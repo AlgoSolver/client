@@ -83,7 +83,7 @@ const OutputHeader = () => {
         break;
     }
   }
-  console.log(data,"ehl")
+  console.log(data, "ehl");
   return (
     <Fragment>
       <div className="header">
@@ -111,7 +111,7 @@ const OutputHeader = () => {
               {status} in {data?.usedTime ? data.usedTime + " ms" : "N/A"}
             </Text>
             <pre>{data?.output}</pre>
-          <pre>{data?.errorMessage}</pre>
+            <pre>{data?.errorMessage}</pre>
           </div>
         ) : null}
       </div>

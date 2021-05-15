@@ -89,17 +89,16 @@ const UserSubmissions = () => {
     "submissions",
     "/submissions/user/" + id
   );
-  console.log(submissions)
-  if(submissions && submissions[0]?.status === 'Pending'){
-      if(timer){
-        clearTimeout(timer);
-      }
-      if(submissions && submissions[0]?.status === 'Pending'){
-        timer=setTimeout(()=>refetch(),5000);
-      }
-  }
-  else{
-    if(timer){
+  console.log(submissions);
+  if (submissions && submissions[0]?.status === "Pending") {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    if (submissions && submissions[0]?.status === "Pending") {
+      timer = setTimeout(() => refetch(), 5000);
+    }
+  } else {
+    if (timer) {
       clearTimeout(timer);
     }
   }
