@@ -1,6 +1,6 @@
-import Button from "../../components/button/";
-import { Link, Switch, Route, Redirect } from "react-router-dom";
-import Box from "../../components/box/";
+//import Button from "../../components/button/";
+import {  Switch, Route, Redirect } from "react-router-dom";
+//import Box from "../../components/box/";
 import { useQuery } from "../../hooks/";
 import Tracks from "./elements/tracks";
 import Loading from "../../shared/loading/";
@@ -29,24 +29,24 @@ const Practise = () => {
   if (isLoading) return <Loading />;
   return null;
 
-  return (
-    <div className="wrapper">
-      <div className="center">
-        <Box
-          m="4rem 0"
-          width="30rem"
-          center
-          shadow={2}
-          radius="1rem"
-          height="20rem"
-        >
-          <Link to="/create-problem">
-            <Button>Createss Problem</Button>
-          </Link>
-        </Box>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="wrapper">
+  //     <div className="center">
+  //       <Box
+  //         m="4rem 0"
+  //         width="30rem"
+  //         center
+  //         shadow={2}
+  //         radius="1rem"
+  //         height="20rem"
+  //       >
+  //         <Link to="/create-problem">
+  //           <Button>Createss Problem</Button>
+  //         </Link>
+  //       </Box>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Practise;

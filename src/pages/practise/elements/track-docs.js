@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Text from "../../../components/Text";
 import { Divider } from "../../../components/divider";
-import { Link, useParams, NavLink, useHistory } from "react-router-dom";
+import { useParams, NavLink, useHistory } from "react-router-dom";
 import { useQuery } from "../../../hooks/";
 import Loading, { InlineLoading } from "../../../shared/loading/";
 import { ArrowDown2, ArrowUp2 } from "../../../assets/icons";
