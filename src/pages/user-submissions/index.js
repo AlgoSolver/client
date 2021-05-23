@@ -45,7 +45,7 @@ const Problem = ({ values, id }) => {
     </Text>
   );
 };
-let columns = [
+let columns1 = [
   {
     Header: "Time Submitted",
     accessor: "createdAt",
@@ -79,6 +79,16 @@ let columns = [
   },
 ];
 
+export const SubmissionsTable = ({ columns = columns1, data, exclude }) => {
+  return (
+    <Table
+      columns={
+        exclude ? columns.filter((item, idx) => idx !== exclude) : columns
+      }
+      data={data}
+    />
+  );
+};
 let timer;
 const UserSubmissions = () => {
   const { data: user } = useAuth();
@@ -106,7 +116,7 @@ const UserSubmissions = () => {
   return (
     <Container className="wrapper">
       <Text type="h2">Submissions</Text>
-      <Table columns={columns} data={submissions} />
+      <SubmissionsTable data={submissions} />
     </Container>
   );
 };

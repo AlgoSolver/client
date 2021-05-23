@@ -1,5 +1,5 @@
 //import Button from "../../components/button/";
-import {  Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 //import Box from "../../components/box/";
 import { useQuery } from "../../hooks/";
 import Tracks from "./elements/tracks";

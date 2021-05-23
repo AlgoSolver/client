@@ -1,8 +1,5 @@
-import styled from 'styled-components';
-import {
-  useRouteMatch,
-  NavLink
-} from "react-router-dom";
+import styled from "styled-components";
+import { useRouteMatch, NavLink } from "react-router-dom";
 
 const TabContainer = styled.div`
   .tabs {
@@ -30,40 +27,40 @@ const TabContainer = styled.div`
       }
     }
   }
-`
+`;
 
 export const Tabs = () => {
   let { url } = useRouteMatch();
   return (
-  <TabContainer>
-    <div className="tabs">
-      <div className="tabs__list">
-        <NavLink
-          as="div"
-          to={`${url}/description`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Description</span>
-        </NavLink>
-        <NavLink
-          as="div"
-          to={`${url}/submissions`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Submissions</span>
-        </NavLink>
-        <NavLink
-          as="div"
-          to={`${url}/solution`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Solution</span>
-        </NavLink>
+    <TabContainer>
+      <div className="tabs">
+        <div className="tabs__list">
+          <NavLink
+            as="div"
+            to={`${url}/description`}
+            className="tabs__item"
+            activeClassNam="active"
+          >
+            <span>Description</span>
+          </NavLink>
+          <NavLink
+            as="div"
+            to={`${url}/submissions`}
+            className="tabs__item"
+            activeClassNam="active"
+          >
+            <span>Submissions</span>
+          </NavLink>
+          <NavLink
+            as="div"
+            to={`${url}/solution`}
+            className="tabs__item"
+            activeClassNam="active"
+          >
+            <span>Solution</span>
+          </NavLink>
+        </div>
       </div>
-    </div>
     </TabContainer>
   );
 };

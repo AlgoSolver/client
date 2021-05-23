@@ -2,9 +2,14 @@ import styled from "styled-components";
 import Editor from "../../components/editor";
 import Resizable from "../../components/resizable";
 import { useProblem } from "../../hooks/problems";
-import Message from '../../components/message'
+import Message from "../../components/message";
 import Loading from "../../shared/loading";
-import {ProblemSolution,ProblemSubmissions,ProblemDescription,Tabs} from './elements';
+import {
+  ProblemSolution,
+  ProblemSubmissions,
+  ProblemDescription,
+  Tabs,
+} from "./elements";
 import {
   Switch,
   Route,
@@ -87,12 +92,15 @@ const ProblemRoutes = ({ description }) => {
 };
 const Problem = () => {
   const { id } = useParams();
-  const { data, isLoading, isError,error} = useProblem(id);
+  const { data, isLoading, isError, error } = useProblem(id);
   console.log(error);
   if (isLoading) return <Loading />;
-  if(isError) return <div className="wrapper">
-    <Message subTitle={error?.message} type="red" />
-  </div>
+  if (isError)
+    return (
+      <div className="wrapper">
+        <Message subTitle={error?.message} type="red" />
+      </div>
+    );
   return (
     <PlaygroungWrapper>
       <Resizable direction="horizontal">
