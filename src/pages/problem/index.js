@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import Editor from "../../components/editor";
 import Resizable from "../../components/resizable";
-import Text from "../../components/Text";
 import { useProblem } from "../../hooks/problems";
+import Message from '../../components/message'
 import Loading from "../../shared/loading";
-import MarkdownPreviewer from "../../components/markdown-previewer";
+import {ProblemSolution,ProblemSubmissions,ProblemDescription,Tabs} from './elements';
 import {
   Switch,
   Route,
-  NavLink,
   Redirect,
   useParams,
   useRouteMatch,
 } from "react-router-dom";
+
 const PlaygroungWrapper = styled.div`
   height: calc(100vh - 6.4rem);
   display: flex;
@@ -63,99 +63,9 @@ const ProblemContainer = styled.div`
   height: 100%;
   width: calc(100% - 10px);
   overflow: auto;
-  .tabs {
-    background: ${({ theme }) => theme.colors.light[0]};
-    display: flex;
-    justify-content: space-between;
-    box-shadow: ${({ theme }) => theme.elevation[8].shadow};
-    align-items: center;
-    &__list {
-      display: flex;
-      align-items: center;
-    }
-    &__item {
-      padding: 1.6rem 1rem;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.2s;
-      span {
-        font-size: 1.4rem;
-        font-weight: 300;
-        color: ${({ theme }) => theme.colors.dark[2]};
-      }
-      &.active {
-        background: ${({ theme }) => theme.colors.light[4]};
-      }
-    }
-  }
-`;
-const ProblemDescriptionContainer = styled.div`
-  background: ${({ theme }) => theme.colors.light[4]};
-  position: relative;
-  height: 100%;
-  padding: 2rem;
 `;
 
-const Tabs = () => {
-  let { url } = useRouteMatch();
-  return (
-    <div className="tabs">
-      <div className="tabs__list">
-        <NavLink
-          as="div"
-          to={`${url}/description`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Description</span>
-        </NavLink>
-        <NavLink
-          as="div"
-          to={`${url}/submissions`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Submissions</span>
-        </NavLink>
-        <NavLink
-          as="div"
-          to={`${url}/solution`}
-          className="tabs__item"
-          activeClassNam="active"
-        >
-          <span>Solution</span>
-        </NavLink>
-      </div>
-    </div>
-  );
-};
-const ProblemDescription = ({ content }) => {
-  return (
-    <ProblemDescriptionContainer>
-      <MarkdownPreviewer content={content} />
-    </ProblemDescriptionContainer>
-  );
-};
-const ProblemSubmissions = () => {
-  return (
-    <ProblemDescriptionContainer>
-      <Text type="h3" center>
-        Submissions
-      </Text>
-    </ProblemDescriptionContainer>
-  );
-};
-const ProblemSolution = () => {
-  return (
-    <ProblemDescriptionContainer>
-      <Text type="h3" center>
-        Solution
-      </Text>
-    </ProblemDescriptionContainer>
-  );
-};
-
-const Problem = ({ description }) => {
+const ProblemRoutes = ({ description }) => {
   let { path } = useRouteMatch();
   return (
     <ProblemContainer>
@@ -175,17 +85,21 @@ const Problem = ({ description }) => {
     </ProblemContainer>
   );
 };
-const Main = () => {
+const Problem = () => {
   const { id } = useParams();
-  const { data, isLoading } = useProblem(id);
+  const { data, isLoading, isError,error} = useProblem(id);
+  console.log(error);
   if (isLoading) return <Loading />;
+  if(isError) return <div className="wrapper">
+    <Message subTitle={error?.message} type="red" />
+  </div>
   return (
     <PlaygroungWrapper>
       <Resizable direction="horizontal">
-        <Problem description={data.description} />
+        <ProblemRoutes description={data.description} />
       </Resizable>
       <Editor id={id} />
     </PlaygroungWrapper>
   );
 };
-export default Main;
+export default Problem;
