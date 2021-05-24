@@ -3,11 +3,12 @@ import Text from "../../../components/Text";
 import { Divider } from "../../../components/divider";
 import { useParams, NavLink, useHistory } from "react-router-dom";
 import { useQuery } from "../../../hooks/";
-import Loading, { InlineLoading } from "../../../shared/loading/";
+import Loading from "../../../shared/loading/";
+import { Spinner } from "../../../components/spinner";
 import { ArrowDown2, ArrowUp2 } from "../../../assets/icons";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import MarkdownPreviewer from "../../../components/markdown-previewer";
+import { RenderedMarkdown } from "../../../components/markdown-previewer";
 
 const DocsContainer = styled.div`
   display: flex;
@@ -124,9 +125,9 @@ const SubjectDescription = ({ topic, track, isFullPath, main }) => {
   return (
     <SubjectDescriptionContainer>
       {isLoading ? (
-        <InlineLoading />
+        <Spinner size="5rem" />
       ) : (
-        <MarkdownPreviewer content={data.description} />
+        <RenderedMarkdown content={data.description} />
       )}
     </SubjectDescriptionContainer>
   );
