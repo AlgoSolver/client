@@ -1,15 +1,15 @@
 import MonacoEditor /*,{EditorDidMount}*/ from "@monaco-editor/react";
 //import prettier from "prettier";
-import { useRef } from "react";
 import styled from "styled-components";
 import Button from "../button";
 //import parser from "prettier/parser-babel";
 
 import { ICQ, ArrowDown2 } from "../../assets/icons";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo ,useRef, useContext,createContext} from "react";
 import { TextArea } from "../form";
 import Text from "../Text";
+import {Spinner} from '../spinner'
 //import Message from '../Text'
 import {
   updateCodePlayGround,
@@ -128,10 +128,12 @@ const OutPutResultContainer = styled.div`
   align-items: center;
 `;
 
+const ConsoleContext = createContext();
+
 const OutPutResult = ({ results }) => {
   return (
     <OutPutResultContainer>
-      <div>
+      <div >
         <Text
           type="p"
           color={results.codeStatus === "Accepted" ? "green" : "red"}
@@ -147,18 +149,15 @@ const OutPutResult = ({ results }) => {
 };
 const Results = () => {
   const { data: results } = useListen("runCodeResults");
-  console.log(results);
-  return (
-    <div className="results">
-      {results?.codeStatus ? (
-        <OutPutResult results={results} />
-      ) : (
-        <Text type="p" color="red" layer={3}>
-          You must run your code first
-        </Text>
-      )}
+  if(results?.isLoading) return <Spinner size="4rem" />
+  if(results?.codeStatus){
+    return <OutPutResult results={results} />
+  }
+  return <div className="results">
+    <Text type="p" color="red" layer={3}>
+      You must run your code first
+    </Text>
     </div>
-  );
 };
 let testCaseTimer;
 const TestCase = ({ handleChange, value }) => {
@@ -171,8 +170,10 @@ const TestCase = ({ handleChange, value }) => {
   );
 };
 
-const TabBody = ({ currentTab, defaultTestCase = null, results }) => {
-  const [testCase, setTestCase] = useState(defaultTestCase);
+const WindowBody = memo(() => {
+  const {currentWindow} = useContext(ConsoleContext);
+  console.log("Body")
+  const [testCase, setTestCase] = useState();
   const textAreaRef = useRef(null);
   useEffect(() => {
     if (!textAreaRef?.current) {
@@ -187,53 +188,63 @@ const TabBody = ({ currentTab, defaultTestCase = null, results }) => {
     }, 500);
     return () => (testCaseTimer ? clearTimeout(testCaseTimer) : null);
   }, [testCase]);
-  return currentTab === 1 ? (
+  return currentWindow === 0 ? (
     <TestCase value={testCase} handleChange={(e) => setTestCase(e)} />
   ) : (
-    <Results results={results} />
+    <Results />
   );
-};
-const Console = ({ isWidowOpen, closeConsole, resultData }) => {
-  const [currentTab, setCurrentTab] = useState(1);
+});
+
+const WindowHead = ()=>{
+  const {currentWindow,setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext);
+  return <div className="tabs">
+    <div
+      className="tabs__list"
+      as="button"
+    >
+      <div className={`tabs__item ${currentWindow === 0 && "active"}`} onClick={()=>{
+        if(currentWindow === 1) setCurrentWindow(0)
+      }
+      }>
+        <span>Test Case</span>
+      </div>
+      <div
+        className={`tabs__item ${currentWindow === 1 && "active"}`}
+        as="button"
+        onClick={()=>{
+          if(currentWindow === 0) setCurrentWindow(1)
+        }
+        }
+      >
+        <span>Results</span>
+      </div>
+    </div>
+    <Button
+      theme="light"
+      ghost
+      icon
+      small
+      title="close"
+      onClick={()=>setIsWindowOpen(false)}
+    >
+      <ArrowDown2 />
+    </Button>
+  </div>
+}
+const Console = () => {
+  const {isWindowOpen} = useContext(ConsoleContext);
   return (
     <AnimatePresence>
-      {isWidowOpen && (
+      {isWindowOpen && (
         <div className="console">
           <ConsoleContainer
             initial={{ y: -350, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="tabs">
-              <div
-                className="tabs__list"
-                as="button"
-                onClick={() => (currentTab === 2 ? setCurrentTab(1) : null)}
-              >
-                <div className={`tabs__item ${currentTab === 1 && "active"}`}>
-                  <span>Test Case</span>
-                </div>
-                <div
-                  className={`tabs__item ${currentTab === 2 && "active"}`}
-                  as="button"
-                  onClick={() => (currentTab === 1 ? setCurrentTab(2) : null)}
-                >
-                  <span>Results</span>
-                </div>
-              </div>
-              <Button
-                theme="light"
-                ghost
-                icon
-                small
-                title="close"
-                onClick={closeConsole}
-              >
-                <ArrowDown2 />
-              </Button>
-            </div>
+            <WindowHead />
             <div className="body">
-              <TabBody currentTab={currentTab} />
+              <WindowBody  />
             </div>
           </ConsoleContainer>
         </div>
@@ -242,10 +253,12 @@ const Console = ({ isWidowOpen, closeConsole, resultData }) => {
   );
 };
 
-const SubmitCode = memo(({ id }) => {
+const SubmitCode = memo(({ id  }) => {
+  const {setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext)
+
   const { data } = useCodePlayGround(id);
   const {
-    mutate,
+    mutate: runCode,
     data: runCodeRes,
     isLoading: isRunCodeLoading,
   } = useRunCode();
@@ -255,11 +268,20 @@ const SubmitCode = memo(({ id }) => {
     isLoading: isRunSubmitLoading,
   } = useSubmitCode();
   const handleRunCode = () => {
-    mutate({
+    setCurrentWindow(1)
+    setIsWindowOpen(true)
+    runCode({
       sourceCode: data.code,
       input: data.testCase,
       lang: "C++",
       timeLimit: 2,
+    },{
+      onSuccess:(data)=>{
+        console.log(data)
+      },
+      onError:(err)=>{
+        console.log(err)
+      }
     });
   };
   const handleSubmitCode = () => {
@@ -293,27 +315,27 @@ const SubmitCode = memo(({ id }) => {
   );
 });
 const EditorFooter = memo(({ id }) => {
-  const [isConsoleOpen, setIsConsoleOpen] = useState(0);
+  const [currentWindow,setCurrentWindow] = useState(0);
+  const [isWindowOpen,setIsWindowOpen] = useState(false)
   return (
+    <ConsoleContext.Provider value={{currentWindow,setCurrentWindow,isWindowOpen,setIsWindowOpen}}>
     <div className="foot">
-      <Console
-        isWidowOpen={isConsoleOpen}
-        closeConsole={() => setIsConsoleOpen(0)}
-      />
+      <Console />
       <div className="editor-footer">
         <div className="open-console">
           <Button
             theme="dark"
             layer={1}
             small
-            onClick={() => setIsConsoleOpen((e) => (e === 0 ? 1 : 0))}
-          >
+            onClick={()=>setIsWindowOpen(e=>!e)}
+            >
             Console
           </Button>
         </div>
-        <SubmitCode id={id} />
+        <SubmitCode  id={id} />
       </div>
     </div>
+    </ConsoleContext.Provider>
   );
 });
 let timer;
@@ -333,28 +355,6 @@ const Editor = ({ initialValue = "", light, id }) => {
       setLocalStorage(`problem-code-${id}`, value);
     }, 750);
   }
-  // const onFormatClick = () => {
-  //   const code = editorRef.current.getModel().getValue();
-  //   const formatedCode = prettier
-  //     .format(code, {
-  //       parser: "babel",
-  //       plugins: [parser],
-  //       printWidth: 80,
-  //       tabWidth: 2,
-  //       useTabs: false,
-  //       semi: true,
-  //       singleQuote: false,
-  //       quoteProps: "as-needed",
-  //       jsxSingleQuote: false,
-  //       trailingComma: "none",
-  //       bracketSpacing: true,
-  //       jsxBracketSameLine: false,
-  //       arrowParens: "always",
-  //     })
-  //     .replace(/\n$/, "");
-  //   // chnage
-  //   editorRef.current.setValue(formatedCode);
-  // };
   return (
     <EditorContainer>
       <div>

@@ -69,10 +69,12 @@ export const useListen = (key) => {
 export const useRunCode = () => {
   return useMutation((data) => codeRequest(data), {
     retry: false,
-    onSuccess: (data) => {
-      client.setQueryData("runCodeResults", data);
-    },
-  });
+    onSettled:(data)=>client.setQueryData("runCodeResults", data),
+    onMutate:()=>{
+      console.log('mutate')
+      client.setQueryData("runCodeResults",(oldData)=>typeof oldData === 'object' ? ({...oldData,isLoading:true}) : ({isLoading:true}))
+    }
+    });
 };
 export const useRunCodeOnPlayground = () => {
   return useMutation((data) => codeRequest(data), {
