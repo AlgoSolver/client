@@ -39,6 +39,7 @@ export const useCodePlayGround = (id) => {
     ...configOptions,
     initialData: {
       code: getLocalStorage(`problem-code-${id}`),
+      testCase:getLocalStorage(`problem-test-${id}`),
     },
   });
 };
@@ -71,8 +72,9 @@ export const useRunCode = () => {
     retry: false,
     onSettled:(data)=>client.setQueryData("runCodeResults", data),
     onMutate:()=>{
-      console.log('mutate')
-      client.setQueryData("runCodeResults",(oldData)=>typeof oldData === 'object' ? ({...oldData,isLoading:true}) : ({isLoading:true}))
+      client.setQueryData("runCodeResults",(oldData)=>{
+        return oldData ? ({...oldData,isLoading:true}) : ({isLoading:true})
+      })
     }
     });
 };

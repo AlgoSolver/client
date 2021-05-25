@@ -3,7 +3,6 @@ import MonacoEditor /*,{EditorDidMount}*/ from "@monaco-editor/react";
 import styled from "styled-components";
 import Button from "../button";
 //import parser from "prettier/parser-babel";
-
 import { ICQ, ArrowDown2 } from "../../assets/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, memo ,useRef, useContext,createContext} from "react";
@@ -79,7 +78,7 @@ const EditorContainer = styled.div`
 `;
 const ConsoleContainer = styled(motion.div)`
   border-top: 1px solid ${({ theme }) => theme.colors.light[1]};
-  height: 35vh;
+  min-height: 35vh;
   background: ${({ theme }) => theme.colors.light[4]};
   display: flex;
   flex-direction: column;
@@ -110,6 +109,7 @@ const ConsoleContainer = styled(motion.div)`
   .body {
     flex: 1;
     padding: 1rem;
+    height:20.2rem;
     .results {
       height: 100%;
       display: flex;
@@ -124,25 +124,64 @@ int main(){
 }`;
 
 const OutPutResultContainer = styled.div`
-  display: flex;
-  align-items: center;
+  .row {
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+  pre{
+    height:3rem;
+    background: ${({theme})=>theme.colors.light[1]};
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    border-radius: .3rem;
+    padding:0 1rem;
+    font-size:1.4rem;
+    font-family: Monolisa;
+    box-sizing: content-box;
+  }
 `;
 
 const ConsoleContext = createContext();
-
 const OutPutResult = ({ results }) => {
   return (
     <OutPutResultContainer>
-      <div >
+      <div className="row">
         <Text
-          type="p"
+          type="h5"
+          mg="0"
           color={results.codeStatus === "Accepted" ? "green" : "red"}
         >
           {results.codeStatus}
         </Text>
-        <Text type="p" layer={2}>
-          Runtime : {results.usedTime}
+        <Text type="p" size="1.3rem" layer={2}>
+          Runtime : {results.usedTime ? results.usedTime + " ms" : "N/A"}
         </Text>
+      </div>
+      <div>
+        <Text mg="0" type="h5">
+          Your Input
+        </Text>
+        <pre>
+
+        </pre>
+      </div>
+      <div>
+        <Text mg="0" type="h5">
+          Your Output
+        </Text>
+        <pre>
+            {results?.output}
+        </pre>
+      </div>
+      <div>
+        <Text mg="0" type="h5">
+          Expected Output
+        </Text>
+        <pre>
+
+        </pre>
       </div>
     </OutPutResultContainer>
   );
@@ -160,20 +199,21 @@ const Results = () => {
     </div>
 };
 let testCaseTimer;
-const TestCase = ({ handleChange, value }) => {
+const TestCase = memo(({ handleChange,defaultTestCases }) => {
+
   return (
     <TextArea
       flex
-      value={value}
+      value={defaultTestCases}
       onChange={(e) => handleChange(e.target.value)}
     ></TextArea>
   );
-};
+});
 
-const WindowBody = memo(() => {
+const WindowBody = memo(({id}) => {
+  const defaultTestCases = getLocalStorage(`problem-test-${id}`);
   const {currentWindow} = useContext(ConsoleContext);
-  console.log("Body")
-  const [testCase, setTestCase] = useState();
+  const [testCase, setTestCase] = useState(defaultTestCases);
   const textAreaRef = useRef(null);
   useEffect(() => {
     if (!textAreaRef?.current) {
@@ -184,12 +224,13 @@ const WindowBody = memo(() => {
       clearTimeout(testCaseTimer);
     }
     testCaseTimer = setTimeout(() => {
+      setLocalStorage(`problem-test-${id}`, testCase);
       updateCodePlayGround({ testCase });
-    }, 500);
+    }, 200);
     return () => (testCaseTimer ? clearTimeout(testCaseTimer) : null);
-  }, [testCase]);
+  }, [testCase,id]);
   return currentWindow === 0 ? (
-    <TestCase value={testCase} handleChange={(e) => setTestCase(e)} />
+    <TestCase defaultTestCases={testCase} handleChange={(e) => setTestCase(e)} />
   ) : (
     <Results />
   );
@@ -231,7 +272,7 @@ const WindowHead = ()=>{
     </Button>
   </div>
 }
-const Console = () => {
+const Console = ({id}) => {
   const {isWindowOpen} = useContext(ConsoleContext);
   return (
     <AnimatePresence>
@@ -244,7 +285,7 @@ const Console = () => {
           >
             <WindowHead />
             <div className="body">
-              <WindowBody  />
+              <WindowBody  id={id}  />
             </div>
           </ConsoleContainer>
         </div>
@@ -320,7 +361,7 @@ const EditorFooter = memo(({ id }) => {
   return (
     <ConsoleContext.Provider value={{currentWindow,setCurrentWindow,isWindowOpen,setIsWindowOpen}}>
     <div className="foot">
-      <Console />
+      <Console id={id}  />
       <div className="editor-footer">
         <div className="open-console">
           <Button
@@ -351,7 +392,7 @@ const Editor = ({ initialValue = "", light, id }) => {
       clearTimeout(timer);
     }
     timer = setTimeout(() => {
-      updateCodePlayGround({ code: value });
+      updateCodePlayGround({ code: value});
       setLocalStorage(`problem-code-${id}`, value);
     }, 750);
   }
@@ -384,7 +425,7 @@ const Editor = ({ initialValue = "", light, id }) => {
           }}
         />
       </div>
-      <EditorFooter id={id} />
+      <EditorFooter id={id}  />
     </EditorContainer>
   );
 };
