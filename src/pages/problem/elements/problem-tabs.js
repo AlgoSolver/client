@@ -24,6 +24,8 @@ const TabContainer = styled.div`
       }
       &.active {
         background: ${({ theme }) => theme.colors.light[4]};
+        border:1px solid ${({ theme }) => theme.colors.light[1]};
+        border-bottom: none;
       }
     }
   }

@@ -4,8 +4,9 @@ import ReactPaginate from "react-paginate";
 const PaginatorContainer = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.colors.light[4]};
-  border-radius: 1.5rem;
-  box-shadow: ${({ theme }) => theme.elevation[3].shadow};
+  border-radius: .8rem;
+  box-shadow: ${({ theme }) => theme.elevation[9].shadow};
+  margin-bottom: 4rem;
   .pagination {
     display: flex;
     justify-content: center;

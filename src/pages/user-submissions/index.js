@@ -5,6 +5,7 @@ import { useTemp } from "../../hooks/problems";
 import { useAuth } from "../../hooks/user";
 import Loading from "../../shared/loading";
 import { Link } from "react-router-dom";
+import Message from "../../components/message";
 
 const Container = styled.div``;
 // Custom component to render Genres
@@ -116,7 +117,7 @@ const UserSubmissions = () => {
   return (
     <Container className="wrapper">
       <Text type="h2">Submissions</Text>
-      <SubmissionsTable data={submissions} />
+    {submissions && submissions?.length ? <SubmissionsTable data={submissions} /> : <Message type="yellow" subTitle="You don't have any previous submissions" />}
     </Container>
   );
 };

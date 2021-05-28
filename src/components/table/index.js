@@ -9,10 +9,11 @@ const Container = styled.div`
     font-size: 0.9em;
     min-width: 40rem;
     width: 100%;
-    border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: ${({ theme }) => theme.elevation[3].shadow};
+    border-radius: .8rem;
+    box-shadow: ${({ theme }) => theme.elevation[9].shadow};
     background-color: ${({ theme }) => theme.colors.light[4]};
+    margin-bottom: 4rem;
     thead tr {
       color: ${({ theme }) => theme.colors.dark[1]};
       background-color: ${({ theme }) => theme.colors.light[4]};

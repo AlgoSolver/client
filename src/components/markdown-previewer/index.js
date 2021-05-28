@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 let marked = require("marked");
 
@@ -548,7 +548,7 @@ const components = {
     const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
       <SyntaxHighlighter
-        style={tomorrow}
+        style={atomDark}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, "")}

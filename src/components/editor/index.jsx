@@ -8,16 +8,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, memo ,useRef, useContext,createContext} from "react";
 import { TextArea } from "../form";
 import Text from "../Text";
+import axios from '../../api'
 import {Spinner} from '../spinner'
-//import Message from '../Text'
+
 import {
   updateCodePlayGround,
   useCodePlayGround,
   useRunCode,
   useSubmitCode,
-  useListen,
+  useListen
 } from "../../hooks/problems";
+import client from "../../hooks";
 import { setLocalStorage, getLocalStorage } from "../../utils/local-storage";
+import {  useHistory,Prompt } from 'react-router-dom'
 const EditorContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -103,6 +106,8 @@ const ConsoleContainer = styled(motion.div)`
       }
       &.active {
         background: ${({ theme }) => theme.colors.light[4]};
+        border:1px solid ${({ theme }) => theme.colors.light[1]};
+        border-bottom: none;
       }
     }
   }
@@ -294,13 +299,16 @@ const Console = ({id}) => {
   );
 };
 
+let refetchTimer;
 const SubmitCode = memo(({ id  }) => {
-  const {setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext)
+  const {setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext);
+  const [isPending,setIsPending] = useState(false);
+  const [lastSubmission,setLastSubmission] = useState(null)
+  const history = useHistory();
 
   const { data } = useCodePlayGround(id);
   const {
     mutate: runCode,
-    data: runCodeRes,
     isLoading: isRunCodeLoading,
   } = useRunCode();
   const {
@@ -308,6 +316,7 @@ const SubmitCode = memo(({ id  }) => {
     data: submitCodeRes,
     isLoading: isRunSubmitLoading,
   } = useSubmitCode();
+
   const handleRunCode = () => {
     setCurrentWindow(1)
     setIsWindowOpen(true)
@@ -326,18 +335,111 @@ const SubmitCode = memo(({ id  }) => {
     });
   };
   const handleSubmitCode = () => {
-    console.log(id, data.code);
+    setLastSubmission(null)
+    history.push('/problems/' + id + '/submissions');
     submitCode({
       problem: id,
       sourceCode: data.code,
-    });
+    },{
+      onSuccess:(data)=>{
+        let ff = client.getQueryData([id,"submissions"]);
+        let ss = client.getQueryData("submissions");
+        if(ff){
+        client.setQueryData([id,"submissions"],(oldData)=>{
+          if(oldData){
+            return [
+              data,
+              ...oldData
+            ]
+          }
+          return oldData;
+        })
+      }
+      if(ss){
+        client.setQueryData('submissions',(oldData)=>{
+          if(oldData){
+            return [
+              data,
+              ...oldData
+            ]
+          }
+          return oldData;
+        })
+      }
+      }
+      });
+
+
   };
-  if (submitCodeRes) console.log(submitCodeRes, runCodeRes);
+  const fetchStatus = async ()=>{
+    try{
+      const res = await axios.get('/submissions/'+submitCodeRes._id);
+       setLastSubmission(res.data);
+    }catch(err){
+      console.log(err)
+    }
+  }
+  if(isPending){
+    if(refetchTimer){
+      clearTimeout(refetchTimer);
+    }
+    refetchTimer = setTimeout(()=>{
+      fetchStatus();
+    },5000)
+  }
+  useEffect(()=>{
+    if(submitCodeRes?.status === "Pending" ){
+      if( !lastSubmission || lastSubmission.status==="Pending" ){
+        setIsPending(true)
+      }
+      else {
+        if(refetchTimer) clearTimeout(refetchTimer);
+        let ff = client.getQueryData([id,"submissions"]);
+        let ss = client.getQueryData("submissions");
+        if(ff){
+        client.setQueryData([id, "submissions"],(oldData)=>{
+          if(oldData){
+            let x = oldData.slice();
+            x[0] = lastSubmission;
+            return x;
+          }
+          return oldData;
+        });
+      }
+      if(ss){
+        client.setQueryData('submissions',(oldData)=>{
+          if(oldData){
+            return [
+              data,
+              ...oldData
+            ]
+          }
+          return oldData;
+        })
+      }
+      setIsPending(false);
+    }
+      }
+      // eslint-disable-next-line
+  },[submitCodeRes,lastSubmission])
+  useEffect(()=>{
+    return ()=>{
+      if(refetchTimer) clearTimeout(refetchTimer);
+    }
+  },[])
   return (
     <div className="submit">
+      <Prompt
+        when={isPending}
+        message={(location, action) => {
+          return location.pathname.startsWith(`/problems/${id}`)
+            ? true
+            : `Are you sure you want to go to ${location.pathname}?`
+        }}
+      />
       <Button
         onClick={handleRunCode}
-        disabled={isRunCodeLoading || isRunSubmitLoading}
+        disabled={isRunCodeLoading || isRunSubmitLoading || isPending}
         theme="light"
         mg="0 .8rem 0 0"
         small
@@ -346,7 +448,7 @@ const SubmitCode = memo(({ id  }) => {
       </Button>
       <Button
         theme="primary"
-        disabled={isRunCodeLoading || isRunSubmitLoading}
+        disabled={isRunCodeLoading || isRunSubmitLoading || isPending}
         small
         onClick={handleSubmitCode}
       >

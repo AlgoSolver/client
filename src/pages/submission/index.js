@@ -3,7 +3,8 @@ import { useTemp } from "../../hooks/problems";
 import Text from "../../components/Text";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../shared/loading";
-import { TextArea } from "../../components/form";
+import CodeHighlight from "../../components/code-highlight";
+
 const SubmissionHeader = styled.div`
   padding: 2rem;
   background: ${({ theme }) => theme.colors.light[4]};
@@ -103,7 +104,9 @@ const Submission = () => {
       <Text mg="1rem" type="h2">
         Code
       </Text>
-      <TextArea value={data.sourceCode} big readOnly></TextArea>
+      <CodeHighlight>
+        {data.sourceCode}
+      </CodeHighlight>
       {data?.errorMessage && (
         <Text type="p">
           <pre>{data.errorMessage}</pre>
