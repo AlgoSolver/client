@@ -35,15 +35,18 @@ import AuthRoute from "./shared/authRoute";
 import WithAuth from "./shared/withAuth";
 import { theme } from "./utils/theme";
 import { Toaster } from "react-hot-toast";
+import ErrorBoundary from "./ErrorBoundary";
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Toaster />
       <Router>
-        <WithAuth>
-          <Routing />
-        </WithAuth>
+        <ErrorBoundary>
+          <WithAuth>
+            <Routing />
+          </WithAuth>
+        </ErrorBoundary>
       </Router>
     </ThemeProvider>
   );

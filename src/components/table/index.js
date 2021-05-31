@@ -10,7 +10,7 @@ const Container = styled.div`
     min-width: 40rem;
     width: 100%;
     overflow: hidden;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     box-shadow: ${({ theme }) => theme.elevation[9].shadow};
     background-color: ${({ theme }) => theme.colors.light[4]};
     margin-bottom: 4rem;

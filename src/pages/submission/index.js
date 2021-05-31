@@ -104,9 +104,7 @@ const Submission = () => {
       <Text mg="1rem" type="h2">
         Code
       </Text>
-      <CodeHighlight>
-        {data.sourceCode}
-      </CodeHighlight>
+      <CodeHighlight>{data.sourceCode}</CodeHighlight>
       {data?.errorMessage && (
         <Text type="p">
           <pre>{data.errorMessage}</pre>

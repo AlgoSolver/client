@@ -39,7 +39,7 @@ export const useCodePlayGround = (id) => {
     ...configOptions,
     initialData: {
       code: getLocalStorage(`problem-code-${id}`),
-      testCase:getLocalStorage(`problem-test-${id}`),
+      testCase: getLocalStorage(`problem-test-${id}`),
     },
   });
 };
@@ -70,13 +70,13 @@ export const useListen = (key) => {
 export const useRunCode = () => {
   return useMutation((data) => codeRequest(data), {
     retry: false,
-    onSettled:(data)=>client.setQueryData("runCodeResults", data),
-    onMutate:()=>{
-      client.setQueryData("runCodeResults",(oldData)=>{
-        return oldData ? ({...oldData,isLoading:true}) : ({isLoading:true})
-      })
-    }
-    });
+    onSettled: (data) => client.setQueryData("runCodeResults", data),
+    onMutate: () => {
+      client.setQueryData("runCodeResults", (oldData) => {
+        return oldData ? { ...oldData, isLoading: true } : { isLoading: true };
+      });
+    },
+  });
 };
 export const useRunCodeOnPlayground = () => {
   return useMutation((data) => codeRequest(data), {

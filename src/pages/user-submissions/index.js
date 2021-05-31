@@ -117,7 +117,14 @@ const UserSubmissions = () => {
   return (
     <Container className="wrapper">
       <Text type="h2">Submissions</Text>
-    {submissions && submissions?.length ? <SubmissionsTable data={submissions} /> : <Message type="yellow" subTitle="You don't have any previous submissions" />}
+      {submissions && submissions?.length ? (
+        <SubmissionsTable data={submissions} />
+      ) : (
+        <Message
+          type="yellow"
+          subTitle="You don't have any previous submissions"
+        />
+      )}
     </Container>
   );
 };

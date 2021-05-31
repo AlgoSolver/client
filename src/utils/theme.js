@@ -129,9 +129,10 @@ export const theme = {
       desc: "07 bottom navbar",
     },
     {
-      shadow:" 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)",
-      desc:"08 box  shadow "
-    }
+      shadow:
+        " 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)",
+      desc: "08 box  shadow ",
+    },
   ],
   breakpoints: {
     phone: "max-width: 37.5em", // 600px

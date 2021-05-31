@@ -5,22 +5,29 @@ import Button from "../button";
 //import parser from "prettier/parser-babel";
 import { ICQ, ArrowDown2 } from "../../assets/icons";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, memo ,useRef, useContext,createContext} from "react";
+import {
+  useState,
+  useEffect,
+  memo,
+  useRef,
+  useContext,
+  createContext,
+} from "react";
 import { TextArea } from "../form";
 import Text from "../Text";
-import axios from '../../api'
-import {Spinner} from '../spinner'
+import axios from "../../api";
+import { Spinner } from "../spinner";
 
 import {
   updateCodePlayGround,
   useCodePlayGround,
   useRunCode,
   useSubmitCode,
-  useListen
+  useListen,
 } from "../../hooks/problems";
 import client from "../../hooks";
 import { setLocalStorage, getLocalStorage } from "../../utils/local-storage";
-import {  useHistory,Prompt } from 'react-router-dom'
+import { useHistory, Prompt } from "react-router-dom";
 const EditorContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -106,7 +113,7 @@ const ConsoleContainer = styled(motion.div)`
       }
       &.active {
         background: ${({ theme }) => theme.colors.light[4]};
-        border:1px solid ${({ theme }) => theme.colors.light[1]};
+        border: 1px solid ${({ theme }) => theme.colors.light[1]};
         border-bottom: none;
       }
     }
@@ -114,7 +121,7 @@ const ConsoleContainer = styled(motion.div)`
   .body {
     flex: 1;
     padding: 1rem;
-    height:20.2rem;
+    height: 20.2rem;
     .results {
       height: 100%;
       display: flex;
@@ -131,18 +138,18 @@ int main(){
 const OutPutResultContainer = styled.div`
   .row {
     display: flex;
-    gap:1rem;
+    gap: 1rem;
     align-items: center;
   }
-  pre{
-    height:3rem;
-    background: ${({theme})=>theme.colors.light[1]};
+  pre {
+    height: 3rem;
+    background: ${({ theme }) => theme.colors.light[1]};
     display: flex;
     align-items: center;
     overflow-x: auto;
-    border-radius: .3rem;
-    padding:0 1rem;
-    font-size:1.4rem;
+    border-radius: 0.3rem;
+    padding: 0 1rem;
+    font-size: 1.4rem;
     font-family: Monolisa;
     box-sizing: content-box;
   }
@@ -168,44 +175,39 @@ const OutPutResult = ({ results }) => {
         <Text mg="0" type="h5">
           Your Input
         </Text>
-        <pre>
-
-        </pre>
+        <pre></pre>
       </div>
       <div>
         <Text mg="0" type="h5">
           Your Output
         </Text>
-        <pre>
-            {results?.output}
-        </pre>
+        <pre>{results?.output}</pre>
       </div>
       <div>
         <Text mg="0" type="h5">
           Expected Output
         </Text>
-        <pre>
-
-        </pre>
+        <pre></pre>
       </div>
     </OutPutResultContainer>
   );
 };
 const Results = () => {
   const { data: results } = useListen("runCodeResults");
-  if(results?.isLoading) return <Spinner size="4rem" />
-  if(results?.codeStatus){
-    return <OutPutResult results={results} />
+  if (results?.isLoading) return <Spinner size="4rem" />;
+  if (results?.codeStatus) {
+    return <OutPutResult results={results} />;
   }
-  return <div className="results">
-    <Text type="p" color="red" layer={3}>
-      You must run your code first
-    </Text>
+  return (
+    <div className="results">
+      <Text type="p" color="red" layer={3}>
+        You must run your code first
+      </Text>
     </div>
+  );
 };
 let testCaseTimer;
-const TestCase = memo(({ handleChange,defaultTestCases }) => {
-
+const TestCase = memo(({ handleChange, defaultTestCases }) => {
   return (
     <TextArea
       flex
@@ -215,9 +217,9 @@ const TestCase = memo(({ handleChange,defaultTestCases }) => {
   );
 });
 
-const WindowBody = memo(({id}) => {
+const WindowBody = memo(({ id }) => {
   const defaultTestCases = getLocalStorage(`problem-test-${id}`);
-  const {currentWindow} = useContext(ConsoleContext);
+  const { currentWindow } = useContext(ConsoleContext);
   const [testCase, setTestCase] = useState(defaultTestCases);
   const textAreaRef = useRef(null);
   useEffect(() => {
@@ -233,52 +235,57 @@ const WindowBody = memo(({id}) => {
       updateCodePlayGround({ testCase });
     }, 200);
     return () => (testCaseTimer ? clearTimeout(testCaseTimer) : null);
-  }, [testCase,id]);
+  }, [testCase, id]);
   return currentWindow === 0 ? (
-    <TestCase defaultTestCases={testCase} handleChange={(e) => setTestCase(e)} />
+    <TestCase
+      defaultTestCases={testCase}
+      handleChange={(e) => setTestCase(e)}
+    />
   ) : (
     <Results />
   );
 });
 
-const WindowHead = ()=>{
-  const {currentWindow,setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext);
-  return <div className="tabs">
-    <div
-      className="tabs__list"
-      as="button"
-    >
-      <div className={`tabs__item ${currentWindow === 0 && "active"}`} onClick={()=>{
-        if(currentWindow === 1) setCurrentWindow(0)
-      }
-      }>
-        <span>Test Case</span>
+const WindowHead = () => {
+  const { currentWindow, setCurrentWindow, setIsWindowOpen } = useContext(
+    ConsoleContext
+  );
+  return (
+    <div className="tabs">
+      <div className="tabs__list" as="button">
+        <div
+          className={`tabs__item ${currentWindow === 0 && "active"}`}
+          onClick={() => {
+            if (currentWindow === 1) setCurrentWindow(0);
+          }}
+        >
+          <span>Test Case</span>
+        </div>
+        <div
+          className={`tabs__item ${currentWindow === 1 && "active"}`}
+          as="button"
+          onClick={() => {
+            if (currentWindow === 0) setCurrentWindow(1);
+          }}
+        >
+          <span>Results</span>
+        </div>
       </div>
-      <div
-        className={`tabs__item ${currentWindow === 1 && "active"}`}
-        as="button"
-        onClick={()=>{
-          if(currentWindow === 0) setCurrentWindow(1)
-        }
-        }
+      <Button
+        theme="light"
+        ghost
+        icon
+        small
+        title="close"
+        onClick={() => setIsWindowOpen(false)}
       >
-        <span>Results</span>
-      </div>
+        <ArrowDown2 />
+      </Button>
     </div>
-    <Button
-      theme="light"
-      ghost
-      icon
-      small
-      title="close"
-      onClick={()=>setIsWindowOpen(false)}
-    >
-      <ArrowDown2 />
-    </Button>
-  </div>
-}
-const Console = ({id}) => {
-  const {isWindowOpen} = useContext(ConsoleContext);
+  );
+};
+const Console = ({ id }) => {
+  const { isWindowOpen } = useContext(ConsoleContext);
   return (
     <AnimatePresence>
       {isWindowOpen && (
@@ -290,7 +297,7 @@ const Console = ({id}) => {
           >
             <WindowHead />
             <div className="body">
-              <WindowBody  id={id}  />
+              <WindowBody id={id} />
             </div>
           </ConsoleContainer>
         </div>
@@ -300,17 +307,14 @@ const Console = ({id}) => {
 };
 
 let refetchTimer;
-const SubmitCode = memo(({ id  }) => {
-  const {setCurrentWindow,setIsWindowOpen} = useContext(ConsoleContext);
-  const [isPending,setIsPending] = useState(false);
-  const [lastSubmission,setLastSubmission] = useState(null)
+const SubmitCode = memo(({ id }) => {
+  const { setCurrentWindow, setIsWindowOpen } = useContext(ConsoleContext);
+  const [isPending, setIsPending] = useState(false);
+  const [lastSubmission, setLastSubmission] = useState(null);
   const history = useHistory();
 
   const { data } = useCodePlayGround(id);
-  const {
-    mutate: runCode,
-    isLoading: isRunCodeLoading,
-  } = useRunCode();
+  const { mutate: runCode, isLoading: isRunCodeLoading } = useRunCode();
   const {
     mutate: submitCode,
     data: submitCodeRes,
@@ -318,115 +322,109 @@ const SubmitCode = memo(({ id  }) => {
   } = useSubmitCode();
 
   const handleRunCode = () => {
-    setCurrentWindow(1)
-    setIsWindowOpen(true)
-    runCode({
-      sourceCode: data.code,
-      input: data.testCase,
-      lang: "C++",
-      timeLimit: 2,
-    },{
-      onSuccess:(data)=>{
-        console.log(data)
+    setCurrentWindow(1);
+    setIsWindowOpen(true);
+    runCode(
+      {
+        sourceCode: data.code,
+        input: data.testCase,
+        lang: "C++",
+        timeLimit: 2,
       },
-      onError:(err)=>{
-        console.log(err)
+      {
+        onSuccess: (data) => {
+          console.log(data);
+        },
+        onError: (err) => {
+          console.log(err);
+        },
       }
-    });
+    );
   };
   const handleSubmitCode = () => {
-    setLastSubmission(null)
-    history.push('/problems/' + id + '/submissions');
-    submitCode({
-      problem: id,
-      sourceCode: data.code,
-    },{
-      onSuccess:(data)=>{
-        let ff = client.getQueryData([id,"submissions"]);
-        let ss = client.getQueryData("submissions");
-        if(ff){
-        client.setQueryData([id,"submissions"],(oldData)=>{
-          if(oldData){
-            return [
-              data,
-              ...oldData
-            ]
+    setLastSubmission(null);
+    history.push("/problems/" + id + "/submissions");
+    submitCode(
+      {
+        problem: id,
+        sourceCode: data.code,
+      },
+      {
+        onSuccess: (data) => {
+          let ff = client.getQueryData([id, "submissions"]);
+          let ss = client.getQueryData("submissions");
+          if (ff) {
+            client.setQueryData([id, "submissions"], (oldData) => {
+              if (oldData) {
+                return [data, ...oldData];
+              }
+              return oldData;
+            });
           }
-          return oldData;
-        })
-      }
-      if(ss){
-        client.setQueryData('submissions',(oldData)=>{
-          if(oldData){
-            return [
-              data,
-              ...oldData
-            ]
+          if (ss) {
+            client.setQueryData("submissions", (oldData) => {
+              if (oldData) {
+                return [data, ...oldData];
+              }
+              return oldData;
+            });
           }
-          return oldData;
-        })
+        },
       }
-      }
-      });
-
-
+    );
   };
-  const fetchStatus = async ()=>{
-    try{
-      const res = await axios.get('/submissions/'+submitCodeRes._id);
-       setLastSubmission(res.data);
-    }catch(err){
-      console.log(err)
+  const fetchStatus = async () => {
+    try {
+      const res = await axios.get("/submissions/" + submitCodeRes._id);
+      setLastSubmission(res.data);
+    } catch (err) {
+      console.log(err);
     }
-  }
-  if(isPending){
-    if(refetchTimer){
+  };
+  if (isPending) {
+    if (refetchTimer) {
       clearTimeout(refetchTimer);
     }
-    refetchTimer = setTimeout(()=>{
+    refetchTimer = setTimeout(() => {
       fetchStatus();
-    },5000)
+    }, 5000);
   }
-  useEffect(()=>{
-    if(submitCodeRes?.status === "Pending" ){
-      if( !lastSubmission || lastSubmission.status==="Pending" ){
-        setIsPending(true)
-      }
-      else {
-        if(refetchTimer) clearTimeout(refetchTimer);
-        let ff = client.getQueryData([id,"submissions"]);
+  useEffect(() => {
+    if (submitCodeRes?.status === "Pending") {
+      if (!lastSubmission || lastSubmission.status === "Pending") {
+        setIsPending(true);
+      } else {
+        if (refetchTimer) clearTimeout(refetchTimer);
+        let ff = client.getQueryData([id, "submissions"]);
         let ss = client.getQueryData("submissions");
-        if(ff){
-        client.setQueryData([id, "submissions"],(oldData)=>{
-          if(oldData){
-            let x = oldData.slice();
-            x[0] = lastSubmission;
-            return x;
-          }
-          return oldData;
-        });
+        if (ff) {
+          client.setQueryData([id, "submissions"], (oldData) => {
+            if (oldData) {
+              let x = oldData.slice();
+              x[0] = lastSubmission;
+              return x;
+            }
+            return oldData;
+          });
+        }
+        if (ss) {
+          client.setQueryData("submissions", (oldData) => {
+            if (oldData) {
+              return [data, ...oldData];
+            }
+            return oldData;
+          });
+        }
+        setIsPending(false);
       }
-      if(ss){
-        client.setQueryData('submissions',(oldData)=>{
-          if(oldData){
-            return [
-              data,
-              ...oldData
-            ]
-          }
-          return oldData;
-        })
-      }
-      setIsPending(false);
     }
-      }
-      // eslint-disable-next-line
-  },[submitCodeRes,lastSubmission])
-  useEffect(()=>{
-    return ()=>{
-      if(refetchTimer) clearTimeout(refetchTimer);
-    }
-  },[])
+    // eslint-disable-next-line
+  }, [submitCodeRes, lastSubmission]);
+  useEffect(() => {
+    return () => {
+      if (refetchTimer) clearTimeout(refetchTimer);
+    };
+  }, []);
   return (
     <div className="submit">
       <Prompt
@@ -434,7 +432,7 @@ const SubmitCode = memo(({ id  }) => {
         message={(location, action) => {
           return location.pathname.startsWith(`/problems/${id}`)
             ? true
-            : `Are you sure you want to go to ${location.pathname}?`
+            : `Are you sure you want to go to ${location.pathname}?`;
         }}
       />
       <Button
@@ -458,26 +456,28 @@ const SubmitCode = memo(({ id  }) => {
   );
 });
 const EditorFooter = memo(({ id }) => {
-  const [currentWindow,setCurrentWindow] = useState(0);
-  const [isWindowOpen,setIsWindowOpen] = useState(false)
+  const [currentWindow, setCurrentWindow] = useState(0);
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
   return (
-    <ConsoleContext.Provider value={{currentWindow,setCurrentWindow,isWindowOpen,setIsWindowOpen}}>
-    <div className="foot">
-      <Console id={id}  />
-      <div className="editor-footer">
-        <div className="open-console">
-          <Button
-            theme="dark"
-            layer={1}
-            small
-            onClick={()=>setIsWindowOpen(e=>!e)}
+    <ConsoleContext.Provider
+      value={{ currentWindow, setCurrentWindow, isWindowOpen, setIsWindowOpen }}
+    >
+      <div className="foot">
+        <Console id={id} />
+        <div className="editor-footer">
+          <div className="open-console">
+            <Button
+              theme="dark"
+              layer={1}
+              small
+              onClick={() => setIsWindowOpen((e) => !e)}
             >
-            Console
-          </Button>
+              Console
+            </Button>
+          </div>
+          <SubmitCode id={id} />
         </div>
-        <SubmitCode  id={id} />
       </div>
-    </div>
     </ConsoleContext.Provider>
   );
 });
@@ -494,7 +494,7 @@ const Editor = ({ initialValue = "", light, id }) => {
       clearTimeout(timer);
     }
     timer = setTimeout(() => {
-      updateCodePlayGround({ code: value});
+      updateCodePlayGround({ code: value });
       setLocalStorage(`problem-code-${id}`, value);
     }, 750);
   }
@@ -527,7 +527,7 @@ const Editor = ({ initialValue = "", light, id }) => {
           }}
         />
       </div>
-      <EditorFooter id={id}  />
+      <EditorFooter id={id} />
     </EditorContainer>
   );
 };

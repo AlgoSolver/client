@@ -4,7 +4,7 @@ import Resizable from "../../components/resizable";
 import { useProblem } from "../../hooks/problems";
 import Message from "../../components/message";
 import Loading from "../../shared/loading";
-import client, {request} from  "../../hooks/";
+import client, { request } from "../../hooks/";
 import { useAuth } from "../../hooks/user";
 
 import {
@@ -20,7 +20,7 @@ import {
   useParams,
   useRouteMatch,
 } from "react-router-dom";
-import {useEffect,useCallback} from 'react';
+import { useEffect, useCallback } from "react";
 const PlaygroungWrapper = styled.div`
   height: calc(100vh - 6.4rem);
   display: flex;
@@ -98,18 +98,22 @@ const Problem = () => {
   const { data, isLoading, isError, error } = useProblem(id);
   const auth = useAuth();
 
-  const fetchSubmission = useCallback(async ()=>{
+  const fetchSubmission = useCallback(async () => {
     try {
-          await client.fetchQuery([id, "submissions"],() => request(`/submissions/${id}/${auth?.data?._id}`, "get"),{
-           cacheTime:100000
-         })
-       } catch (error) {
-         console.log(error)
-       }
-  },[id,auth?.data?._id])
-  useEffect(()=>{
+      await client.fetchQuery(
+        [id, "submissions"],
+        () => request(`/submissions/${id}/${auth?.data?._id}`, "get"),
+        {
+          cacheTime: 100000,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id, auth?.data?._id]);
+  useEffect(() => {
     fetchSubmission();
-  },[fetchSubmission])
+  }, [fetchSubmission]);
   if (isLoading) return <Loading />;
   if (isError)
     return (
