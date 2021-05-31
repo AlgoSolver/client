@@ -29,7 +29,9 @@ export const useLogin = () => {
   return useMutation((data) => request("/user/login", "post", data), {
     retry: false,
     onSuccess: (data) => {
-      client.setQueryData("auth", data);
+      const { user, token } = data;
+      localStorage.setItem("algosolver_token", token);
+      client.setQueryData("auth", user);
     },
   });
 };
@@ -48,8 +50,9 @@ export const useGoogleLogin = () => {
   return useMutation((data) => request("/user/google-login", "post", data), {
     retry: false,
     onSuccess: (data) => {
-      //console.log(data)
-      client.setQueryData("auth", data);
+      const { user, token } = data;
+      localStorage.setItem("algosolver_token", token);
+      client.setQueryData("auth", user);
     },
   });
 };

@@ -5,6 +5,9 @@ const instance = axios.create({
     process.env.NODE_ENV === "development"
       ? process.env.REACT_APP_DEV_URL
       : process.env.REACT_APP_PROD_URL,
-  withCredentials: true,
+  headers: {
+    Authentication: "Bearer " + localStorage.getItem("algosolver_token"),
+  },
+  //withCredentials: true,
 });
 export default instance;
