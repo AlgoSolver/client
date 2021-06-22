@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import { useState } from "react";
 import { Hide, Show } from "../../assets/icons/";
-
+import {EXPAND_WITH_FADE} from '../../shared/constants'
 /* Components / Input / Default / 12px padding */
 
 // position: absolute;
@@ -217,14 +217,18 @@ export const TextInput = ({
       {children ? children : null}
       <AnimatePresence exitBeforeEnter>
         {error && (
-          <motion.span
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -5 }}
-            className="error"
+          <motion.div
+            style={{overflow:'hidden'}}
+            variants={EXPAND_WITH_FADE}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            transition="transition"
           >
-            {error}
-          </motion.span>
+          <span className="error">
+              {error}
+          </span>
+          </motion.div>
         )}
       </AnimatePresence>
     </Unit>

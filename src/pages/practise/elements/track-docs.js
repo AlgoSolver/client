@@ -9,6 +9,7 @@ import { ArrowDown2, ArrowUp2 } from "../../../assets/icons";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RenderedMarkdown } from "../../../components/markdown-previewer";
+import {EXPAND_WITH_FADE} from '../../../shared/constants'
 
 const DocsContainer = styled.div`
   display: flex;
@@ -75,18 +76,12 @@ const Topic = ({ topic, trackName }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{
-              y: -10,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -10,
-              opacity: 0,
-            }}
+            variants={EXPAND_WITH_FADE}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            transition="transition"
+            style={{overflow:"hidden"}}
           >
             <div className="subject-container">
               {topic.subjects.map((subject) => (
