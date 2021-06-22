@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Messgae from "../../components/message/";
-import { useAuth, useLogout } from "../../hooks/user";
+import { useAuth } from "../../hooks/user";
 import { ArrowDown2, Logout as LogoutIcon } from "../../assets/icons";
 import Dropdown from "../dropdown";
 import Text from "../Text";
@@ -85,9 +85,10 @@ const DropdownLinkContainer = styled(Link)`
   }
 `;
 const Logout = () => {
-  const { isLoading, isError, error, mutate } = useLogout();
+  const {isFetching,isError,error,refetch} = useAuth(false);
   const logout = () => {
-    mutate();
+  localStorage.removeItem("algosolver_token");
+  refetch();
   };
   return (
     <>
@@ -104,7 +105,7 @@ const Logout = () => {
         type="light"
         mg=".6rem 1.6rem 0"
         style={{ width: "-webkit-fill-available" }}
-        loading={isLoading}
+        loading={isFetching}
         onClick={logout}
       >
         Logout
