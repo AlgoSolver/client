@@ -114,21 +114,20 @@ const SubjectDescription = ({ topic, track, isFullPath, main }) => {
 
   const { isLoading, data } = useQuery(
     ["subject", subject],
-    "/subject/" + subject,
-    {enabled : isFullPath}
+    "/subject/" + subject
   );
-
+  console.log(data);
   return (
     <SubjectDescriptionContainer>
       {isLoading ? (
         <Spinner size="5rem" />
       ) : (
-        data && data.description ? <RenderedMarkdown content={data.description} /> : null
+        <RenderedMarkdown content={data.description} />
       )}
     </SubjectDescriptionContainer>
   );
 };
-const Docs = ({ trackName, topics, isFullPath }) => {
+const Docs = ({ trackName, topics }) => {
   return (
     <>
       <Text type="h2" bold layer="1" transform="capitalize">
@@ -137,7 +136,7 @@ const Docs = ({ trackName, topics, isFullPath }) => {
 
       <DocsContainer>
         <SideBar topics={topics} trackName={trackName} />
-        <SubjectDescription isFullPath={isFullPath} />
+        <SubjectDescription />
       </DocsContainer>
     </>
   );
@@ -153,16 +152,15 @@ const TrackDocs = () => {
   );
   let isFullPath = false;
   if (topic && subject) isFullPath = true;
-  if (data?.length && data[0]?.subjects?.length && !isFullPath && !isLoading)
+  if (data?.length && !isFullPath && !isLoading)
     history.push(
       `/practise/${track}/${data[0]?.name || "null"}/${
         data[0]?.subjects[0]?.name || "null"
       }`
     );
-
   if (isLoading) return <Loading />;
-  if (data?.length)
-    return <Docs trackName={track} topics={data} isFullPath={isFullPath} />;
+  if (data?.length || data?.length === 0)
+    return <Docs trackName={track} topics={data} />;
   return (
     <Text type="h1" center mg="2rem 0">
       Not Found {track}
