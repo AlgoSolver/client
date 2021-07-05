@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "../button";
 //import parser from "prettier/parser-babel";
 import { ICQ, ArrowDown2 } from "../../assets/icons";
+import toast from "react-hot-toast";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   useState,
@@ -26,8 +27,9 @@ import {
   useListen,
 } from "../../hooks/problems";
 import client from "../../hooks";
+import {useAuth} from "../../hooks/user";
 import { setLocalStorage, getLocalStorage } from "../../utils/local-storage";
-import { useHistory, Prompt } from "react-router-dom";
+import { useNavigate, Prompt } from "react-router-dom";
 const EditorContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -311,8 +313,8 @@ const SubmitCode = memo(({ id }) => {
   const { setCurrentWindow, setIsWindowOpen } = useContext(ConsoleContext);
   const [isPending, setIsPending] = useState(false);
   const [lastSubmission, setLastSubmission] = useState(null);
-  const history = useHistory();
-
+  const navigate = useNavigate();
+  const auth = useAuth();
   const { data } = useCodePlayGround(id);
   const { mutate: runCode, isLoading: isRunCodeLoading } = useRunCode();
   const {
@@ -342,36 +344,40 @@ const SubmitCode = memo(({ id }) => {
     );
   };
   const handleSubmitCode = () => {
-    setLastSubmission(null);
-    history.push("/problems/" + id + "/submissions");
-    submitCode(
-      {
-        problem: id,
-        sourceCode: data.code,
-      },
-      {
-        onSuccess: (data) => {
-          let ff = client.getQueryData([id, "submissions"]);
-          let ss = client.getQueryData("submissions");
-          if (ff) {
-            client.setQueryData([id, "submissions"], (oldData) => {
-              if (oldData) {
-                return [data, ...oldData];
-              }
-              return oldData;
-            });
-          }
-          if (ss) {
-            client.setQueryData("submissions", (oldData) => {
-              if (oldData) {
-                return [data, ...oldData];
-              }
-              return oldData;
-            });
-          }
+    if(auth?.data?._id){
+      setLastSubmission(null);
+      navigate("/problems/" + id + "/submissions");
+      submitCode(
+        {
+          problem: id,
+          sourceCode: data.code,
         },
-      }
-    );
+        {
+          onSuccess: (data) => {
+            let ff = client.getQueryData([id, "submissions"]);
+            let ss = client.getQueryData("submissions");
+            if (ff) {
+              client.setQueryData([id, "submissions"], (oldData) => {
+                if (oldData) {
+                  return [data, ...oldData];
+                }
+                return oldData;
+              });
+            }
+            if (ss) {
+              client.setQueryData("submissions", (oldData) => {
+                if (oldData) {
+                  return [data, ...oldData];
+                }
+                return oldData;
+              });
+            }
+          },
+        }
+      );
+    }else{
+      toast.error(<Text type="h4">You have to log in to be able to submit problems</Text>);
+    }
   };
   const fetchStatus = async () => {
     try {

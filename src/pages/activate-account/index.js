@@ -6,6 +6,7 @@ import Message from "../../components/message/";
 import { useActivateAccount } from "../../hooks/user";
 import { useEffect } from "react";
 import AuthContainer from "../../components/auth-container/";
+import Head from '../../components/head/'
 
 const ActivateEmail = ({ token }) => {
   const { data, mutate, isLoading, isError, error } = useActivateAccount();
@@ -51,6 +52,7 @@ const Activate = () => {
   const { token } = useParams();
   return (
     <AuthContainer className="wrapper">
+      <Head title="Activating Account" />
       <div className="container">
         {!token ? (
           <Message subTitle="Inalid Token" type="red" />

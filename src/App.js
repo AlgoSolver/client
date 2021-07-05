@@ -1,152 +1,132 @@
 // export { default as App } from './app';
-import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./GlobalStyle";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useLocation,
-} from "react-router-dom";
-
-import Elements from "./pages/elements/";
-import Home from "./pages/home";
-import Login from "./pages/login";
-import ActivateAccount from "./pages/activate-account/";
-import Profile from "./pages/profile/";
-import Practise from "./pages/practise/";
-import Problems from "./pages/problems/";
-import Playground from "./pages/playground/";
-import Problem from "./pages/problem/";
-import Signup from "./pages/signup";
-import PasswordRecovery from "./pages/password-recover/";
-import NewPassword from "./pages/new-password";
-import UserSubmissions from "./pages/user-submissions";
-import UserPlaygrounds from "./pages/user-playgrounds";
-
-import Submission from "./pages/submission";
-
-import Blog from "./pages/blog";
-import NewArticle from "./pages/new-article";
-
-import CreateProblem from "./pages/create-problem/";
+import { BrowserRouter as Router, Route, Navigate } from "react-router-dom";
 
 import Navbar, { AccountsNav } from "./components/navbar/";
-import AuthRoute from "./shared/authRoute";
-import WithAuth from "./shared/withAuth";
-import { theme } from "./utils/theme";
-import { Toaster } from "react-hot-toast";
+import Message from './components/message/'
+import { useAuth } from "./hooks/user";
+import Loading from "./shared/loading";
+import Navigations from './navigations/';
 import ErrorBoundary from "./ErrorBoundary";
+
 function App() {
+  const { data : user,isLoading,isError,error } = useAuth();
+  console.log(user);
+  if(isLoading) return <Loading />
+  if(isError) return <Message subTitle={error.messgae} />  
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Toaster />
       <Router>
-        <ErrorBoundary>
-          <WithAuth>
-            <Routing />
-          </WithAuth>
-        </ErrorBoundary>
+      <ErrorBoundary>
+      <div className="app-container">
+        <header className="app-container__up">
+          <Navbar />
+        </header>
+        <main className="app-container__middle">
+          <Navigations user={user} />
+        </main>
+        <footer className="app-container__down">
+
+        </footer>
+      </div>
+      </ErrorBoundary>
       </Router>
-    </ThemeProvider>
   );
 }
 
-const Routing = () => {
-  const location = useLocation();
-  const fallbackForPublic = "/";
-  const fallbackForPrivate = "/explore"; // until estblish the main page of signed user
-  return (
-    <>
-      {location.pathname !== "/" ? (
-        !location.pathname?.includes("accounts") ? (
-          <Navbar />
-        ) : (
-          <AccountsNav />
-        )
-      ) : null}
-      <Switch>
-        <AuthRoute fallback={fallbackForPrivate} exact="exact" path="/">
-          <Home />
-        </AuthRoute>
-        <AuthRoute fallback={fallbackForPrivate} path="/accounts/login">
-          <Login />
-        </AuthRoute>
-        <AuthRoute fallback={fallbackForPrivate} path="/accounts/signup">
-          <Signup />
-        </AuthRoute>
-        <AuthRoute fallback={fallbackForPrivate} path="/accounts/recover">
-          <PasswordRecovery />
-        </AuthRoute>
-        <AuthRoute
-          fallback={fallbackForPrivate}
-          path="/accounts/new-password/:token"
-        >
-          <NewPassword />
-        </AuthRoute>
-        <AuthRoute
-          fallback={fallbackForPrivate}
-          path="/accounts/activate-account/:token"
-        >
-          <ActivateAccount />
-        </AuthRoute>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path="/submission/:id">
-          <Submission />
-        </Route>
-        <Route exact path="/playground/new/empty">
-          <Playground />
-        </Route>
-        <Route exact path="/playground/:id">
-          <Playground />
-        </Route>
-        <Route exact path="/:username/submissions">
-          <UserSubmissions />
-        </Route>
-        <Route exact path="/:username/playgrounds">
-          <UserPlaygrounds />
-        </Route>
-        <Route path="/problems/:id">
-          <Problem />
-        </Route>
-        <Route path="/problems">
-          <Problems />
-        </Route>
-        <AuthRoute
-          privatePage={true}
-          fallback={fallbackForPublic}
-          path="/new-post"
-        >
-          <NewArticle />
-        </AuthRoute>
-        {/* <AuthRoute
-          // privatePage={true}
+// const Routing = () => {
+//   const location = useLocation();
+//   const fallbackForPublic = "/";
+//   const fallbackForPrivate = "/explore"; // until estblish the main page of signed user
+//   return (
+//     <>
+//       {location.pathname !== "/" ? (
+//         !location.pathname?.includes("accounts") ? (
+//           <Navbar />
+//         ) : (
+//           <AccountsNav />
+//         )
+//       ) : null}
+//       <Switch>
+//         <AuthRoute fallback={fallbackForPrivate} exact="exact" path="/">
+//           <Home />
+//         </AuthRoute>
+//         <AuthRoute fallback={fallbackForPrivate} path="/accounts/login">
+//           <Login />
+//         </AuthRoute>
+//         <AuthRoute fallback={fallbackForPrivate} path="/accounts/signup">
+//           <Signup />
+//         </AuthRoute>
+//         <AuthRoute fallback={fallbackForPrivate} path="/accounts/recover">
+//           <PasswordRecovery />
+//         </AuthRoute>
+//         <AuthRoute
+//           fallback={fallbackForPrivate}
+//           path="/accounts/new-password/:token"
+//         >
+//           <NewPassword />
+//         </AuthRoute>
+//         <AuthRoute
+//           fallback={fallbackForPrivate}
+//           path="/accounts/activate-account/:token"
+//         >
+//           <ActivateAccount />
+//         </AuthRoute>
+//         <Route path="/blog">
+//           <Blog />
+//         </Route>
+//         <Route path="/submission/:id">
+//           <Submission />
+//         </Route>
+//         <Route exact path="/playground/new/empty">
+//           <Playground />
+//         </Route>
+//         <Route exact path="/playground/:id">
+//           <Playground />
+//         </Route>
+//         <Route exact path="/:username/submissions">
+//           <UserSubmissions />
+//         </Route>
+//         <Route exact path="/:username/playgrounds">
+//           <UserPlaygrounds />
+//         </Route>
+//         <Route path="/problems/:id">
+//           <Problem />
+//         </Route>
+//         <Route path="/problems">
+//           <Problems />
+//         </Route>
+//         <AuthRoute
+//           privatePage={true}
+//           fallback={fallbackForPublic}
+//           path="/new-post"
+//         >
+//           <NewArticle />
+//         </AuthRoute>
+//         {/* <AuthRoute
+//           // privatePage={true}
 
-          // fallback={fallbackForPublic}
-          path="/create-problem"
-        > */}
-        <Route path="/create-problem">
-          <CreateProblem />
-        </Route>
-        {/* </AuthRoute> */}
-        <Route exact path="/elements">
-          <Elements />
-        </Route>
-        <Route path="/practise">
-          <Practise />
-        </Route>
-        <AuthRoute
-          privatePage={true}
-          fallback={fallbackForPublic}
-          path="/:username"
-        >
-          <Profile />
-        </AuthRoute>
-      </Switch>
-    </>
-  );
-};
+//           // fallback={fallbackForPublic}
+//           path="/create-problem"
+//         > */}
+//         <Route path="/create-problem">
+//           <CreateProblem />
+//         </Route>
+//         {/* </AuthRoute> */}
+//         <Route exact path="/elements">
+//           <Elements />
+//         </Route>
+//         <Route path="/practise">
+//           <Practise />
+//         </Route>
+//         <AuthRoute
+//           privatePage={true}
+//           fallback={fallbackForPublic}
+//           path="/:username"
+//         >
+//           <Profile />
+//         </AuthRoute>
+//       </Switch>
+//     </>
+//   );
+// };
 
 export default App;

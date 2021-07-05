@@ -6,6 +6,7 @@ import { useAuth } from "../../hooks/user";
 import Loading from "../../shared/loading";
 import { Link } from "react-router-dom";
 import Message from "../../components/message";
+import Head from '../../components/head'
 
 const Container = styled.div``;
 // Custom component to render Genres
@@ -116,6 +117,7 @@ const UserSubmissions = () => {
   if (isLoading) return <Loading />;
   return (
     <Container className="wrapper">
+      <Head title="Your Submissions" />
       <Text type="h2">Submissions</Text>
       {submissions && submissions?.length ? (
         <SubmissionsTable data={submissions} />

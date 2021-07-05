@@ -19,7 +19,8 @@ const EditorContainer = styled.div`
 // int main(){
 // }`;
 let timer;
-const Editor = ({ initialValue }) => {
+const Editor = ({ initialValue,readOnly }) => {
+  console.log(readOnly)
   function handleEditorChange(value, event) {
     if (timer) {
       clearTimeout(timer);
@@ -35,6 +36,7 @@ const Editor = ({ initialValue }) => {
         onChange={handleEditorChange}
         language="cpp"
         height="100%"
+
         options={{
           wordWrap: "on",
           minimap: { enabled: false },
@@ -44,6 +46,7 @@ const Editor = ({ initialValue }) => {
           fontSize: 14,
           scrollBeyondLastLine: false,
           automaticLayout: true,
+          readOnly
         }}
       />
     </EditorContainer>

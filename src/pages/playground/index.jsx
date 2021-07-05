@@ -8,7 +8,8 @@ import Head from "../../components/head/";
 import Text from "../../components/Text/";
 import { useEffect } from "react";
 import { updateState, useQuery } from "../../hooks/";
-import { useParams, useLocation } from "react-router-dom";
+import {useAuth } from "../../hooks/user";
+import { useParams, Routes, Route, Navigate } from "react-router-dom";
 import Loading from "../../shared/loading";
 const EditorContainer = styled.div`
   height: calc(100vh - 6.4rem);
@@ -72,6 +73,7 @@ const ProblemNotFound = () => {
 };
 const SignedPlayground = ({ isSignedPlayground }) => {
   const { id } = useParams();
+  const {data : user} = useAuth(false);
   const { isLoading, data } = useQuery("play-code", "/code/" + id, {
     cacheTime: 0,
   });
@@ -99,7 +101,7 @@ const SignedPlayground = ({ isSignedPlayground }) => {
               id={id}
               name={data.name}
             />
-            <Editor initialValue={data.code} />
+            <Editor readOnly={!user?._id || !(user?._id ===data.author)} initialValue={data.code} />
             <EditorFooter />
           </div>
         </Resizable>
@@ -137,10 +139,20 @@ const UnSignedPlayground = ({ isSignedPlayground }) => {
   );
 };
 const Playground = () => {
-  const { pathname } = useLocation();
-  if (pathname === "/playground/new/empty")
-    return <UnSignedPlayground isSignedPlayground={false} />;
-  return <SignedPlayground isSignedPlayground={true} />;
+  console.log('hey')
+  return (
+    <Routes>
+      <Route
+        path="new/empty"
+        element={<UnSignedPlayground isSignedPlayground={false} />}
+      />
+      <Route
+        path=":id*"
+        element={<SignedPlayground isSignedPlayground={true} />}
+      />
+      <Route path="*" elements={<Navigate to="new/empty" />} />
+    </Routes>
+  );
 };
 
 export default Playground;

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import LoadingPage from "../../shared/loading/";
 import { useTokenVerification, usePassswordReset } from "../../hooks/user";
 import AuthContainer from "../../components/auth-container/";
+import Head from '../../components/head/'
 
 const ConfirmMessage = styled(motion.div)`
   width: 100%;
@@ -111,6 +112,7 @@ const Reset = () => {
   const { token } = useParams();
   return (
     <AuthContainer>
+    <Head title="Recover Your Password" />
       {!token ? (
         <div className="hello">
           {token} <Message subTitle="Inalid Token" type="red" />

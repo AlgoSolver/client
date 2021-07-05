@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Text from "../../../components/Text";
 import { Divider } from "../../../components/divider";
-import { useParams, NavLink, useHistory } from "react-router-dom";
+import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { useQuery } from "../../../hooks/";
 import Loading from "../../../shared/loading/";
 import { Spinner } from "../../../components/spinner";
@@ -10,6 +10,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RenderedMarkdown } from "../../../components/markdown-previewer";
 import {EXPAND_WITH_FADE} from '../../../shared/constants'
+import Head from '../../../components/head/'
 
 const DocsContainer = styled.div`
   display: flex;
@@ -109,25 +110,26 @@ const SideBar = ({ topics, trackName }) => {
     </SidebarContainer>
   );
 };
-const SubjectDescription = ({ topic, track, isFullPath, main }) => {
+const SubjectDescription = ({ topics, track, isFullPath, main }) => {
   const { subject } = useParams();
-
   const { isLoading, data } = useQuery(
     ["subject", subject],
-    "/subject/" + subject
+    "/subject/" + subject,
+    {enabled : isFullPath}
   );
-  console.log(data);
+
   return (
     <SubjectDescriptionContainer>
+      <Head title={subject + " | "+ track} />
       {isLoading ? (
         <Spinner size="5rem" />
       ) : (
-        <RenderedMarkdown content={data.description} />
+        data && data.description ? <RenderedMarkdown content={data.description} /> : null
       )}
     </SubjectDescriptionContainer>
   );
 };
-const Docs = ({ trackName, topics }) => {
+const Docs = ({ trackName, topics, isFullPath }) => {
   return (
     <>
       <Text type="h2" bold layer="1" transform="capitalize">
@@ -136,7 +138,7 @@ const Docs = ({ trackName, topics }) => {
 
       <DocsContainer>
         <SideBar topics={topics} trackName={trackName} />
-        <SubjectDescription />
+        <SubjectDescription isFullPath={isFullPath} track={trackName}  />
       </DocsContainer>
     </>
   );
@@ -144,7 +146,7 @@ const Docs = ({ trackName, topics }) => {
 
 const TrackDocs = () => {
   const { track, topic, subject } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { data, isLoading } = useQuery(
     ["track", track],
     "/topic/" + track,
@@ -152,15 +154,16 @@ const TrackDocs = () => {
   );
   let isFullPath = false;
   if (topic && subject) isFullPath = true;
-  if (data?.length && !isFullPath && !isLoading)
-    history.push(
+  if (data?.length && data[0]?.subjects?.length && !isFullPath && !isLoading)
+    navigate(
       `/practise/${track}/${data[0]?.name || "null"}/${
         data[0]?.subjects[0]?.name || "null"
       }`
     );
+
   if (isLoading) return <Loading />;
-  if (data?.length || data?.length === 0)
-    return <Docs trackName={track} topics={data} />;
+  if (data?.length)
+    return <Docs trackName={track} topics={data} isFullPath={isFullPath} />;
   return (
     <Text type="h1" center mg="2rem 0">
       Not Found {track}

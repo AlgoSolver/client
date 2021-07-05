@@ -4,6 +4,7 @@ import Text from "../../components/Text";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../shared/loading";
 import CodeHighlight from "../../components/code-highlight";
+import Head from '../../components/head/'
 
 const SubmissionHeader = styled.div`
   padding: 2rem;
@@ -25,22 +26,40 @@ const Submission = () => {
     `/submissions/${id}`,
     { cacheTime: 1000 }
   );
-  console.log(data);
+  console.log(data,"hey");
   if (isLoading) return <Loading />;
   if (!data) return null;
   return (
     <div className="wrapper">
+      <Head title={data?.problem?.title + " submission results"} />
       <div className="line">
-        <Link>
+        <Link to={`/problems/${data.problem._id}`}>
           <Text mg="1rem" type="h2" color="blue">
             {data.problem.title}
           </Text>
-        </Link>{" "}
+        </Link>
         <Text layer={1} type="h2">
           Submission
         </Text>
       </div>
       <SubmissionHeader>
+        <div className="row">
+        <div>
+        <Text type="p" layer={2} inline>
+              By:
+          </Text>
+          <Text
+              type="p"
+              mg="0 0  0 0.8rem"
+              inline
+              color="blue"
+            >
+               <Link to={`/${data.author.username}`}>
+                  {data.author.username}
+                </Link>
+            </Text>
+            </div>
+        </div>
         <div className="row">
           <div>
             <Text type="p" layer={2} inline>

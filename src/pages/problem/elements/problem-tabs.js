@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRouteMatch, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const TabContainer = styled.div`
   .tabs {
@@ -32,14 +32,13 @@ const TabContainer = styled.div`
 `;
 
 export const Tabs = () => {
-  let { url } = useRouteMatch();
   return (
     <TabContainer>
       <div className="tabs">
         <div className="tabs__list">
           <NavLink
             as="div"
-            to={`${url}/description`}
+            to="description"
             className="tabs__item"
             activeClassNam="active"
           >
@@ -47,7 +46,7 @@ export const Tabs = () => {
           </NavLink>
           <NavLink
             as="div"
-            to={`${url}/submissions`}
+            to="submissions"
             className="tabs__item"
             activeClassNam="active"
           >
@@ -55,7 +54,7 @@ export const Tabs = () => {
           </NavLink>
           <NavLink
             as="div"
-            to={`${url}/solution`}
+            to="solution"
             className="tabs__item"
             activeClassNam="active"
           >

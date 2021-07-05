@@ -1,5 +1,12 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import axios from "../api";
+import {ROLES} from '../navigations/utils'
+export const INITIAL_USER = {
+  _id:null,
+  username:null,
+  email:null,
+  role:ROLES.SIGNEDOUT
+}
 
 const request = async (url, method, data = null) => {
   try {
@@ -40,7 +47,7 @@ export const useLogout = () => {
   return useMutation((data) => request("/user/logout", "post", data), {
     retry: false,
     onSuccess: (data) => {
-      client.setQueryData("auth", data);
+      client.setQueryData("auth", INITIAL_USER);
     },
   });
 };

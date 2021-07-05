@@ -1,7 +1,7 @@
 import Button from "../button";
 import Text from "../Text";
 import Modal from "../modal";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import client, { useMutation } from "../../hooks/";
 import toast from "react-hot-toast";
@@ -17,7 +17,7 @@ const PlaygroundModal = ({
   message,
   data = {},
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { isLoading, mutate } = useMutation(path, method);
   const { register, handleSubmit, errors } = useForm();
 
@@ -61,7 +61,7 @@ const PlaygroundModal = ({
               };
             });
           }
-          method === "post" ? history.push("/playground/" + data._id) : close();
+          method === "post" ? navigate("/playground/" + data._id) : close();
         },
         onError: (err) =>
           toast.error(

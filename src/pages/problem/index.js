@@ -6,7 +6,7 @@ import Message from "../../components/message";
 import Loading from "../../shared/loading";
 import client, { request } from "../../hooks/";
 import { useAuth } from "../../hooks/user";
-
+import Head from '../../components/head/'
 import {
   ProblemSolution,
   ProblemSubmissions,
@@ -14,11 +14,10 @@ import {
   Tabs,
 } from "./elements";
 import {
-  Switch,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
   useParams,
-  useRouteMatch,
 } from "react-router-dom";
 import { useEffect, useCallback } from "react";
 const PlaygroungWrapper = styled.div`
@@ -74,22 +73,15 @@ const ProblemContainer = styled.div`
 `;
 
 const ProblemRoutes = ({ description }) => {
-  let { path } = useRouteMatch();
   return (
     <ProblemContainer>
       <Tabs />
-      <Switch>
-        <Route exact path={`${path}/solution`}>
-          <ProblemSolution />
-        </Route>
-        <Route exact path={`${path}/description`}>
-          <ProblemDescription content={description} />
-        </Route>
-        <Route exact path={`${path}/submissions`}>
-          <ProblemSubmissions />
-        </Route>
-        <Redirect to={`${path}/description`} />
-      </Switch>
+      <Routes>
+        <Route path="solution" element={<ProblemSolution />} />
+        <Route path="description" element={<ProblemDescription content={description} />} />
+        <Route path="submissions" element={<ProblemSubmissions />} />
+        <Route path="*" element={<Navigate to="description" />} />
+      </Routes>
     </ProblemContainer>
   );
 };
@@ -112,8 +104,8 @@ const Problem = () => {
     }
   }, [id, auth?.data?._id]);
   useEffect(() => {
-    fetchSubmission();
-  }, [fetchSubmission]);
+    if(auth?.data?._id) fetchSubmission();
+  }, [ fetchSubmission, auth?.data?._id]);
   if (isLoading) return <Loading />;
   if (isError)
     return (
@@ -123,6 +115,7 @@ const Problem = () => {
     );
   return (
     <PlaygroungWrapper>
+      <Head title={data?.title} />
       <Resizable direction="horizontal">
         <ProblemRoutes description={data.description} />
       </Resizable>

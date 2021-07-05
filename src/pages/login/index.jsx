@@ -8,6 +8,7 @@ import Message from "../../components/message/";
 import AuthContainer from "../../components/auth-container/";
 import GoogleLogin from "react-google-login";
 import { useLogin, useGoogleLogin } from "../../hooks/user";
+import Head from '../../components/head/'
 
 const LoginForm = ({ login }) => {
   const { isLoading, isError, error, mutate } = useLogin();
@@ -50,6 +51,7 @@ const LoginForm = ({ login }) => {
 const Login = () => {
   return (
     <AuthContainer>
+      <Head title="Login | AlgoSolver" />
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         <Text mg="0 0 1rem 0" type="h1" layer={1} bold center>
           Log In

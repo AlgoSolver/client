@@ -1,52 +1,31 @@
-//import Button from "../../components/button/";
-import { Switch, Route, Redirect } from "react-router-dom";
-//import Box from "../../components/box/";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useQuery } from "../../hooks/";
 import Tracks from "./elements/tracks";
 import Loading from "../../shared/loading/";
 import TrackDocs from "./elements/track-docs";
+import Head from '../../components/head/'
+
+const PractiseRoutes = ({ data }) => {
+  return (
+    <Routes>
+      <Route path="" element={<Tracks tracks={data} />} />
+      <Route path=":track" element={<TrackDocs />} />
+      <Route exact path=":track/:topic/:subject" element={<TrackDocs />} />
+      <Route path="*" element={<Navigate to="/practise" />} />
+    </Routes>
+  );
+};
 const Practise = () => {
   const { data, isLoading } = useQuery("tracks", "/track");
-  console.log(data, "heloo");
   if (data?.length) {
     return (
       <div className="wrapper">
-        <Switch>
-          <Route exact path="/practise/:track">
-            <TrackDocs />
-          </Route>
-          <Route exact path="/practise/:track/:topic/:subject">
-            <TrackDocs />
-          </Route>
-          <Route path="/practise">
-            <Tracks tracks={data} />
-          </Route>
-          <Redirect to="/practise" />
-        </Switch>
+        <Head title="Practise with AlgoSolver" />
+        <PractiseRoutes data={data} />
       </div>
     );
   }
   if (isLoading) return <Loading />;
   return null;
-
-  // return (
-  //   <div className="wrapper">
-  //     <div className="center">
-  //       <Box
-  //         m="4rem 0"
-  //         width="30rem"
-  //         center
-  //         shadow={2}
-  //         radius="1rem"
-  //         height="20rem"
-  //       >
-  //         <Link to="/create-problem">
-  //           <Button>Createss Problem</Button>
-  //         </Link>
-  //       </Box>
-  //     </div>
-  //   </div>
-  // );
 };
-
 export default Practise;

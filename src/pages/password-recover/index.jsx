@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Message from "../../components/message/";
 import { usePasswordRecovery } from "../../hooks/user";
 import AuthContainer from "../../components/auth-container/";
+import Head from '../../components/head/'
 
 const ConfirmMessage = styled.div`
   width: 100%;
@@ -58,6 +59,7 @@ const RecoveryForm = () => {
 const Recovery = () => {
   return (
     <AuthContainer>
+      <Head title="Recover Your Password" />
       <Form initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }}>
         <Text mg="0 0 1rem 0" type="h1" layer={1} bold center>
           Password Recovery
