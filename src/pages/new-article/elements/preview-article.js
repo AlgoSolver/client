@@ -215,11 +215,13 @@ const Preview = () => {
           <ShareRow />
           <Divider mg="1rem 0" />
 
-          <div
-            dangerouslySetInnerHTML={{
-              __html: marked(content),
-            }}
-          ></div>
+          {content && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: marked(content),
+              }}
+            ></div>
+          )}
           {tags && <Tag>{renderTags()}</Tag>}
         </div>
       </div>

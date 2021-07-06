@@ -8,7 +8,6 @@ import Practise from "../pages/practise/";
 import Submission from "../pages/submission";
 import Blog from "../pages/blog";
 
-// import NewArticle from "../pages/new-article";
 
 // import CreateProblem from "../pages/create-problem/";
 

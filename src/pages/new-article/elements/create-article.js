@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import Button from "../../../components/button/";
 import { useForm } from "react-hook-form";
+import ErrorModal from "../../../components/error-modal/";
+import Message from "../../../components/message/";
 
+import {useCallback,useState} from 'react';
+import {useMutation} from '../../../hooks';
 const TitleField = styled.textarea`
   width: 100%;
   box-shadow: ${({ theme }) => theme.elevation[2].shadow};
@@ -92,16 +96,43 @@ const handleContentChange = (e) => {
     localStorage.setItem("9753-content", e);
   }, 500);
 };
+
+const createNewPostErrors = (errors)=>{
+  let returnedErrors=[];
+  if(errors?.header){
+    returnedErrors.push( errors.header.type === "required" ? "Header is Required." : "Header Must't contain special characters.")
+  }
+  if(errors?.tags){
+    returnedErrors.push( "Provide at least one tag.");
+  }
+  if(errors?.content){
+    returnedErrors.push( errors.content.type === "required" ? "Post Content is Required." : "the Length of the content must be more 250 and less than 3000.")
+  }
+  return returnedErrors;
+}
 const NewPost = ({ data }) => {
-  const { register, handleSubmit } = useForm();
+  const {isLoading,isError,error,mutate} = useMutation('/blog',"post")
+  const { register, handleSubmit,errors } = useForm();
+  const [isOpen,setIsOpen] = useState(false);
+  const hideModal = useCallback(()=>{
+    setIsOpen(false);
+  },[setIsOpen]);
   const onSubmit = (e) => {
+
     let { tags } = e;
     tags = tags.split(",").map((item) => item.replace(/\s/g, ""));
-    console.log(tags);
+      mutate({...e,tags});
   };
+  const onError=()=>{
+      setIsOpen(true);
+  }
+  let isThereError = errors?.tags || errors?.content || errors?.header;
   return (
+    <>
     <Container>
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+    <ErrorModal show={isOpen} close={hideModal} list={isThereError ? createNewPostErrors(errors) : []}/>
+      <form className="form" onSubmit={handleSubmit(onSubmit,onError)}>
+      {isError ? <Message type="red" subTitle={error.message} /> : null }
         <div className="header">
           <TitleField
             onChange={(e) => handleHeaderChange(e.target.value)}
@@ -141,10 +172,11 @@ const NewPost = ({ data }) => {
           />
         </div>
         <Footer>
-          <Button>Publish</Button>
+          <Button loading={isLoading}>Publish</Button>
         </Footer>
       </form>
     </Container>
+    </>
   );
 };
 

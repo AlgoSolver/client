@@ -187,11 +187,12 @@ export const TextInput = ({
   children,
   icon,
   big,
+  className,
   ...rest
 }) => {
   const [show, setShow] = useState(false);
   let iconExist = icon ? true : false;
-  const classes = classNames(error && "input__error", big && "big");
+  const classes = classNames(error && "input__error", big && "big",className);
 
   return (
     <Unit iconExist>

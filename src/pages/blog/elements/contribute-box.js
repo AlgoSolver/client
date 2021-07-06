@@ -20,7 +20,7 @@ const ContributeBox = () => {
         Share your Knowlege and write something you good at.
       </Text>
       <div style={{ textAlign: "right" }}>
-        <Link to="/new-post">
+        <Link to="new-article">
           <Button style={{ display: "inline-flex" }} type="dark">
             Contribute
           </Button>
