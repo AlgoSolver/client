@@ -1,7 +1,7 @@
 // export { default as App } from './app';
-import { BrowserRouter as Router, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Navbar, { AccountsNav } from "./components/navbar/";
+import Navbar from "./components/navbar/";
 import Message from './components/message/'
 import { useAuth } from "./hooks/user";
 import Loading from "./shared/loading";

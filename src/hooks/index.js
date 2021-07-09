@@ -12,6 +12,7 @@ export const request = async (url, method, data = null) => {
     const res = await axios[method](url, data);
     return res.data;
   } catch (err) {
+    if(err?.response?.status === 404) return err.response.data;
     throw new Error(
       err?.response?.data?.message || "Network Error, please try again later."
     );

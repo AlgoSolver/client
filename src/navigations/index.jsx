@@ -1,5 +1,5 @@
 import routes from "./init-routes.js";
-import { Routes, Route, Navigate, useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 
 
 const renderRoutes = (role)=>{

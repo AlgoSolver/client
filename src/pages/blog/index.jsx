@@ -11,7 +11,7 @@ import Messgae from "../../components/message/";
 import NewArticle from "../new-article";
 import {ROLES} from '../../navigations/utils.js'
 import ProtectedRoute from '../../navigations/protected-route'
-
+import BlogArticle from '../article/';
 const BlogContainer = styled.div`
   width: 97rem;
   margin: 3rem auto;
@@ -42,6 +42,7 @@ const BlogRoutes = () => {
   return (
     <Routes>
       <Route path="" element={<Blog />} />
+      <Route path=":id" element={<BlogArticle />} />
       <ProtectedRoute path="new-article" element={<NewArticle />} includedRoutes={
         [ROLES.STUDENT, ROLES.CONTENT_CREATOR, ROLES.ADMIN]
         } /> 
@@ -59,15 +60,7 @@ const BlogLoader = ({ search }) => {
   console.log(data);
   if (isLoading) return <Spinner />;
   if (isError) return <Messgae subTitle={error?.message} />;
-  return (
-    <Fragment>
-      <Article />
-      <Article />
-      <Article />
-      <Article />
-      <Article />
-    </Fragment>
-  );
+  if(data?.Blogs) return data?.Blogs.map(item=><Article key={item._id} data={item} />) 
 };
 const Blog = () => {
   const location = useLocation();

@@ -1,4 +1,4 @@
-import Elements from "../pages/elements/";
+//import Elements from "../pages/elements/";
 import Home from "../pages/home";
 import Account from '../pages/account';
 import User from '../pages/user/';

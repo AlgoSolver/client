@@ -3,7 +3,7 @@ import Button from "../../../components/button/";
 import { useForm } from "react-hook-form";
 import ErrorModal from "../../../components/error-modal/";
 import Message from "../../../components/message/";
-
+import {useNavigate} from 'react-router-dom'
 import {useCallback,useState} from 'react';
 import {useMutation} from '../../../hooks';
 const TitleField = styled.textarea`
@@ -92,11 +92,15 @@ const handleContentChange = (e) => {
     clearTimeout(contentTimer);
   }
   contentTimer = setTimeout(() => {
-    console.log("9753-content", e);
     localStorage.setItem("9753-content", e);
   }, 500);
 };
 
+const resetInputs = ()=>{
+   localStorage.removeItem("9753-content");
+   localStorage.removeItem("9753-tags");
+   localStorage.removeItem("9753-header");
+}
 const createNewPostErrors = (errors)=>{
   let returnedErrors=[];
   if(errors?.header){
@@ -113,6 +117,7 @@ const createNewPostErrors = (errors)=>{
 const NewPost = ({ data }) => {
   const {isLoading,isError,error,mutate} = useMutation('/blog',"post")
   const { register, handleSubmit,errors } = useForm();
+  const navigate = useNavigate();
   const [isOpen,setIsOpen] = useState(false);
   const hideModal = useCallback(()=>{
     setIsOpen(false);
@@ -121,7 +126,13 @@ const NewPost = ({ data }) => {
 
     let { tags } = e;
     tags = tags.split(",").map((item) => item.replace(/\s/g, ""));
-      mutate({...e,tags});
+      mutate({...e,tags},{
+        onSuccess:(data)=>{
+          console.log(data);
+          resetInputs();
+          navigate('/blog/'+data.id);
+        }
+      });
   };
   const onError=()=>{
       setIsOpen(true);

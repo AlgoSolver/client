@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Divider } from "../../../components/divider";
 import Text from "../../../components/Text/";
-import Button from "../../../components/button/";
+import {Tags} from '../../../components/article-previewer/';
+import {Link} from 'react-router-dom'
 const StyledBlogItem = styled.div`
   background: ${({ theme }) => theme.colors.light[4]};
   width: 100%;
@@ -10,7 +11,7 @@ const StyledBlogItem = styled.div`
   box-shadow: ${({ theme }) => theme.elevation[2].shadow};
   .blog {
     &__header {
-      display: flex;
+      display: inline-flex;
       align-items: center;
     }
     &__img {
@@ -19,6 +20,7 @@ const StyledBlogItem = styled.div`
       border-radius: 2.5rem;
       background: ${({ theme }) => theme.colors.purple[1]};
       margin-right: 1rem;
+      overflow:hidden;
     }
     &__author {
       flex: 1;
@@ -51,36 +53,33 @@ const StyledBlogItem = styled.div`
   }
 `;
 
-const BlogItem = () => {
+const BlogItem = ({data}) => {
   return (
     <StyledBlogItem className="blog">
-      <div className="blog__header">
-        <div className="blog__img"></div>
-        <div className="blog__author">
-          <span className="name">username</span>
-          <span className="date">date</span>
+      <Link className="blog__header" to={`/${data?.author?.username}`}>
+        <div className="blog__img">
+          <img src={data?.author?.imgURL} alt={data?.author?.username} />
         </div>
-      </div>
+        <div className="blog__author">
+          <span className="name">{data?.author?.username}</span>
+          <span className="date">{new Date(data?.createdAt).toLocaleString()}</span>
+        </div>
+      </Link>
       <Divider mg="1.2rem 0" />
       <div className="blog__body">
         <div className="blog__title">
-          <Text bold type="h3" size="2rem" mg="0">
-            A Simple Approach To Using Console.log For Debugging
+        <Link to={`${data._id}`}>
+          <Text bold type="h3" size="3rem" mg="0">
+            {data?.header}
           </Text>
+          </Link>
         </div>
+        
+        <Divider mg=".5rem 0" />
         <div className="blog__tags">
-          <Button link scale={false}>
-            #javascript
-          </Button>
-          <Button link scale={false}>
-            #console
-          </Button>
-          <Button link scale={false}>
-            #debuggin
-          </Button>
+          <Tags tags={data?.tags || []} />
         </div>
-        <Divider mg="1.2rem 0" />
-        <div className="blog__tail">
+       {/* <div className="blog__tail">
           <div className="blog__comment">
             <Button scale={false} small>
               add Comment
@@ -91,7 +90,7 @@ const BlogItem = () => {
               save
             </Button>
           </div>
-        </div>
+        </div>*/}
       </div>
     </StyledBlogItem>
   );

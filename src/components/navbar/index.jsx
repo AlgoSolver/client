@@ -1,17 +1,10 @@
-import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { NavLink } from "react-router-dom";
+import { NavLink , useLocation} from "react-router-dom";
 
-import { ArrowDown2, Logout as LogoutIcon } from "../../assets/icons";
-import Text from "../Text";
-import { Divider } from "../divider";
-
-import AccountNav from './navbar.account';
-import RenderAuth from './navbar.auth';
 import {NavbarContainer} from './navbar.elements'
 import MobileNavbar from './navbar.mobile'
 import DesktopNavbar from './navbar.desktop'
-
+import AccountsNav from './navbar.account'
 const Navbar = () => {
   const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   return (
@@ -35,4 +28,10 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const RenderNav = ()=>{
+  const location = useLocation();
+  if(location.pathname === "/") return null
+  if(location.pathname?.includes("accounts")) return <AccountsNav />
+  return <Navbar />
+}
+export default RenderNav;
