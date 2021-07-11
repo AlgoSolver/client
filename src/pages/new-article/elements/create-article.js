@@ -6,6 +6,8 @@ import Message from "../../../components/message/";
 import {useNavigate} from 'react-router-dom'
 import {useCallback,useState} from 'react';
 import {useMutation} from '../../../hooks';
+import toast from "react-hot-toast";
+import Text from '../../../components/Text/'
 const TitleField = styled.textarea`
   width: 100%;
   box-shadow: ${({ theme }) => theme.elevation[2].shadow};
@@ -130,6 +132,7 @@ const NewPost = ({ data }) => {
         onSuccess:(data)=>{
           console.log(data);
           resetInputs();
+          toast.success(<Text type="h4">The article has Published successfully</Text>);
           navigate('/blog/'+data.id);
         }
       });

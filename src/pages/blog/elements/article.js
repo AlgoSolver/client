@@ -68,7 +68,7 @@ const BlogItem = ({data}) => {
       <Divider mg="1.2rem 0" />
       <div className="blog__body">
         <div className="blog__title">
-        <Link to={`${data._id}`}>
+        <Link to={`/blog/${data._id}`}>
           <Text bold type="h3" size="3rem" mg="0">
             {data?.header}
           </Text>
