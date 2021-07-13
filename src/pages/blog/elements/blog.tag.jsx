@@ -23,7 +23,7 @@ const Tags = () => {
 		// eslint-disable-next-line
 	},[tag])
 	console.log(data);
-	if (isLoading || isFetching) return <Spinner />;
+	if (isLoading || isFetching) return <Spinner size="5rem" />;
 	if (isError) return <Messgae subTitle={error?.message} />;
 	if (data?.articles)
 		return (

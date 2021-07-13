@@ -132,7 +132,7 @@ const ConsoleContainer = styled(motion.div)`
     }
   }
 `;
-const initialValueCode = `#include "bits/stdc++.h";
+const initialValueCode = `#include <iostream>;
 using namespace std;
 int main(){
 }`;
@@ -328,7 +328,7 @@ const SubmitCode = memo(({ id }) => {
     setIsWindowOpen(true);
     runCode(
       {
-        sourceCode: data.code,
+        sourceCode: data.code || initialValueCode,
         input: data.testCase,
         lang: "C++",
         timeLimit: 2,
@@ -504,6 +504,9 @@ const Editor = ({ initialValue = "", light, id }) => {
       setLocalStorage(`problem-code-${id}`, value);
     }, 750);
   }
+  useEffect(()=>{
+    client.setQueryData("runCodeResults", {isLoading:false});
+  },[])
   return (
     <EditorContainer>
       <div>

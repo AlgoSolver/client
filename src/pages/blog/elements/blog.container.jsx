@@ -4,15 +4,23 @@ import { Spinner } from "../../../components/spinner/";
 import Article from "./article";
 import ContributeBox from "./contribute-box";
 import Text from "../../../components/Text/";
-
+import {useEffect,useRef} from 'react';
 const BlogLoader = ({ search }) => {
-	const { data, isLoading, error, isError } = useQuery(
+	const isMounted = useRef(false);
+	const { data, isLoading, error, isError,isFetching,refetch } = useQuery(
 		"articles",
 		`/blog${search}`,
 		{ cacheTime: 0 }
 	);
-	console.log(data);
-	if (isLoading) return <Spinner />;
+	useEffect(()=>{
+		if(!isMounted.current){
+			isMounted.current = true;
+			return;
+		}
+		refetch();
+		// eslint-disable-next-line
+	},[search])
+	if (isLoading || isFetching) return <Spinner size="5rem" />;
 	if (isError) return <Messgae subTitle={error?.message} />;
 	if (data?.Blogs)
 		return data?.Blogs.map((item) => (

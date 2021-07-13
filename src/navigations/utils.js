@@ -1,3 +1,5 @@
+import {useLocation} from 'react-router-dom'
+
 export const createRoute = (path,element,includedRoutes=[],fallback:'')=>({
 	path,
 	element,
@@ -10,4 +12,7 @@ export const ROLES = {
 	ADMIN : "ADMIN",
     SIGNEDOUT : "SIGNEDOUT",
     CONTENT_CREATOR : "CONTENT_CREATOR"
+}
+export function useSearchParams() {
+  return new URLSearchParams(useLocation().search);
 }

@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import Button from "../../../components/button";
 import Text from "../../../components/Text";
-import LottieAnimation from "../../../shared/lottie";
-import code from "../../../assets/animations/playground.json";
-import { useMediaQuery } from "react-responsive";
 import { Plus } from "../../../assets/icons";
 import { useState } from "react";
 import PlaygroundModal from "../../../components/playground-modal";
 
 const Container = styled.div`
   background: ${({ theme }) => theme.gradients[5]};
-  padding: 2rem;
+  padding: 4rem 2rem;
+  min-height:40vh;
+  margin-bottom:2rem;
 `;
 
 const CreatePlayGroundModel = ({ children }) => {
@@ -33,14 +32,12 @@ const CreatePlayGroundModel = ({ children }) => {
   );
 };
 const Header = () => {
-  const isBigPhone = useMediaQuery({ query: "(max-width: 767px)" });
   return (
     <Container>
       <div className="wrapper">
-        <Text center type="h1" bold color="light" mg="0">
+        <Text center type="h1" bold color="light" mg="0 0 2rem 0">
           My Playgrounds
         </Text>
-        <LottieAnimation lotti={code} width={isBigPhone ? "20rem" : "40rem"} />
         <div className="center">
           <CreatePlayGroundModel>
             <Button iconLeft type="light" circle withIcon={() => <Plus />} big>

@@ -91,8 +91,14 @@ const NotSignedUser = () => {
     </Tooltip>
   );
 };
+const initialData = `#include <iostream>;
+using namespace std;
+int main(){
+cout<<"Hello, AlgoSolver!"<<endl;
+return 0;
+}`;
 const ControllButtons = ({ id, name, userId, isSignedPlayground }) => {
-  const code = useListen("playground-code");
+  const code = useListen("playground-code", !isSignedPlayground ? {initialData}:{});
   const input = useListen("playground-input");
   const { mutate: saveMutate, isLoading: saveLoading, data } = useMutation(
     "/code/" + id,
@@ -104,6 +110,7 @@ const ControllButtons = ({ id, name, userId, isSignedPlayground }) => {
     updateState("playground-console", {
       codeStatus: "Compiling Program..",
     });
+    console.log(code.data,input.data);
     mutate({
       sourceCode: code.data,
       input: input.data || "0",

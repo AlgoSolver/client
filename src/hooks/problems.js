@@ -64,13 +64,15 @@ export const useSubmitCode = () => {
   );
 };
 
-export const useListen = (key) => {
-  return useQuery(key, () => {}, configOptions);
+export const useListen = (key,options={}) => {
+  return useQuery(key, () => {}, {...configOptions,...options});
 };
 export const useRunCode = () => {
   return useMutation((data) => codeRequest(data), {
     retry: false,
-    onSettled: (data) => client.setQueryData("runCodeResults", data),
+    onSettled: (data) => {
+      client.setQueryData("runCodeResults", data)
+    },
     onMutate: () => {
       client.setQueryData("runCodeResults", (oldData) => {
         return oldData ? { ...oldData, isLoading: true } : { isLoading: true };

@@ -50,7 +50,7 @@ const BlogRoutes = () => {
 
 const Blog = () => {
   const location = useLocation();
-  console.log(location);
+  console.log(location.search);
   return (
     <Fragment>
       <BlogHeader />

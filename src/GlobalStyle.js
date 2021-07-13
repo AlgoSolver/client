@@ -134,6 +134,9 @@ export default createGlobalStyle`
       display:flex;
       align-item:center
     }
+    .circle{
+      border-radius:99999px;
+    }
     .link{
       color:${({ theme }) => theme.colors.blue[0]};
       &:hover{
