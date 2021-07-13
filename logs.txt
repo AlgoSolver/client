@@ -1,0 +1,11 @@
+
+> front@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Failed to compile.
+
+./src/navigations/index.jsx
+Attempted import error: 'Navigate' is not exported from 'react-router-dom'.
+
+
