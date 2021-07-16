@@ -9,7 +9,7 @@ import Modal from "../../../components/modal";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import PlaygroundModal from "../../../components/playground-modal";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Head from "../../../components/head/";
 
 const Container = styled.div`
@@ -139,7 +139,7 @@ const CodeList = ({ data }) => {
   return data.docs.map((item) => <Code code={item} />);
 };
 const Codes = () => {
-  const user = client.getQueryData("auth");
+  const {username} = useParams();
   const {
     status,
     data,
@@ -148,6 +148,7 @@ const Codes = () => {
     fetchNextPage,
     hasNextPage,
   } = useCodes({
+    username,
     getNextPageParam: (oldPage) => {
       return oldPage.nextPage;
     },
@@ -162,7 +163,7 @@ const Codes = () => {
     <Container className="wrapper">
       <Head
         title="Your Playgrounds"
-        description={`${user?.username} has ${data.pages.totalDocs} Playgrounds available`}
+        description={`${username} has ${data.pages.totalDocs} Playgrounds available`}
       />
       {data?.pages && <CodeList data={data.pages} />}
       {!data?.pages?.docs || data?.pages?.docs?.length === 0 ? (

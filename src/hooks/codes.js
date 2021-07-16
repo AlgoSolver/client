@@ -1,11 +1,11 @@
 import { useInfiniteQuery, useMutation } from "react-query";
 import { request, configOptions } from "./index";
 
-export const useCodes = (props) =>
+export const useCodes = ({username,...props}) =>
   useInfiniteQuery(
     "codes",
     ({ pageParam = 1 }) => {
-      return request("/code?page=" + pageParam, "get");
+      return request(`/code/user/${username}?page=${pageParam}`, "get");
     },
     {
       select: (data) => {

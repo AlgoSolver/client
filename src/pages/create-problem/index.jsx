@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, useLocation, Route, Switch, Redirect } from "react-router-dom";
+import { Link, useLocation, Route, Routes, Navigate } from "react-router-dom";
 import Text from "../../components/Text/";
 import { TextInput, TextArea, Select, Draft } from "../../components/form/";
 import light from "../../assets/images/light.png";
@@ -543,18 +543,12 @@ int gcd (int a, int b) {
 
 const CreateProblemRoutes = () => {
   return (
-    <Switch>
-      <Route path="/create-problem/solution">
-        <Solution />
-      </Route>
-      <Route path="/create-problem/test-cases">
-        <TestCases />
-      </Route>
-      <Route path="/create-problem/question">
-        <Questinon />
-      </Route>
-      <Redirect from="*" to="/create-problem/question" />
-    </Switch>
+    <Routes>
+      <Route path="solution"  element={ <Solution /> } />
+      <Route path="test-cases"  element={ <TestCases /> } />
+      <Route path="question" element={ <Questinon /> } />
+      <Route path="*" element={<Navigate to="question" />} />
+    </Routes>
   );
 };
 const CreateProblem = () => {

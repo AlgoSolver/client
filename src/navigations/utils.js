@@ -1,10 +1,11 @@
 import {useLocation} from 'react-router-dom'
 
-export const createRoute = (path,element,includedRoutes=[],fallback:'')=>({
+export const createRoute = (path,element,includedRoutes=[],fallback:'',options={})=>({
 	path,
 	element,
 	includedRoutes,
-	fallback
+	fallback,
+	options
 });
 
 export const ROLES = {

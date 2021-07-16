@@ -7,20 +7,19 @@ import Playground from "../pages/playground/";
 import Practise from "../pages/practise/";
 import Submission from "../pages/submission";
 import Blog from "../pages/blog";
-
-
-// import CreateProblem from "../pages/create-problem/";
+import CreateProblem from "../pages/create-problem/";
 
 import {createRoute,ROLES} from './utils';
 
 const routes = [
-	createRoute('/', <Home />,[ROLES.SIGNEDOUT],"/hello"),
+	createRoute('/', <Home />,[ROLES.SIGNEDOUT],"/profie",{toProfile:true}),
 	createRoute('/accounts*', <Account />,[ROLES.SIGNEDOUT],"/"),
 	createRoute('/playground*', <Playground />),
 	createRoute('/problems*', <Problems />),
 	createRoute('/practise*',<Practise />),
 	createRoute('/blog*',<Blog />),
 	createRoute('/submission/:id', <Submission />),
+	createRoute('/create-problem*',<CreateProblem />),
 	createRoute('/:username*', <User />,[ROLES.STUDENT, ROLES.CONTENT_CREATOR, ROLES.ADMIN],"/"),
 ]
 

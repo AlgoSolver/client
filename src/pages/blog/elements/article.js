@@ -15,10 +15,12 @@ const StyledBlogItem = styled.div`
       align-items: center;
     }
     &__img {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 2.5rem;
-      background: ${({ theme }) => theme.colors.purple[1]};
+      img{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        object-fit:cover;
+      }
       margin-right: 1rem;
       overflow:hidden;
     }
