@@ -32,13 +32,12 @@ export const useAuth = (enabled = true) => {
 };
 
 export const useLogin = () => {
-  const client = useQueryClient();
   return useMutation((data) => request("/user/login", "post", data), {
     retry: false,
     onSuccess: (data) => {
-      const { user, token } = data;
+      const { token } = data;
       localStorage.setItem("algosolver_token", token);
-      client.setQueryData("auth", user);
+      window.location.reload();
     },
   });
 };

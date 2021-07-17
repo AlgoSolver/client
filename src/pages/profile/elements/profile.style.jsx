@@ -3,9 +3,14 @@ import styled from 'styled-components';
 export const ProfileContainer = styled.div` 
 	display:flex;
 	padding:2rem 0;
+	min-height:calc(100vh - 6rem);
 	gap:1rem;
 	.profile__most-recent{
 		flex:1
+	}
+	.profile__info{
+		display:flex;
+		flex-direction:column;
 	}
 `
 
