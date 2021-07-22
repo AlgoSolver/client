@@ -91,6 +91,7 @@ const DropdownLink = ({ children, to, onClick }) => {
 
 const RenderAuth = ({ menu = "menu", close = () => {} }) => {
   const { data } = useAuth(false);
+  console.log(data);
   if (data?.username) {
     return (
       <>
@@ -99,7 +100,7 @@ const RenderAuth = ({ menu = "menu", close = () => {} }) => {
             body={() => (
               <UserEntity
                 username={data.username}
-                img={"https://avatars.githubusercontent.com/u/79712616?v=4"}
+                img={data?.imgURL || "https://avatars.githubusercontent.com/u/79712616?v=4"}
               />
             )}
             direction="right"
