@@ -46,6 +46,8 @@ const UserEntityContainer = styled.div`
       width: 100%;
       max-width: 100%;
       user-select: none;
+      object-fit: cover;
+      height: 100%;
     }
   }
   .user__name {

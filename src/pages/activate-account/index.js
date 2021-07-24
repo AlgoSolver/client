@@ -33,7 +33,7 @@ const ActivateEmail = ({ token }) => {
         <div className="form__body">
           <Message
             title="Account Verifycation Success"
-            subTitle={`conguratilation ${data.usename}, your accuout has been
+            subTitle={`conguratilation ${data?.username || ""}, your accuout has been
         successfully activated. now go to`}
             type="green"
           />
