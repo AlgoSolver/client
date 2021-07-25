@@ -123,7 +123,7 @@ const Main = () => {
         <Problems />
       </div>
       <Sidebar>
-        <Text type="h3">Sidebar</Text>
+       
       </Sidebar>
     </Wrapper>
   );

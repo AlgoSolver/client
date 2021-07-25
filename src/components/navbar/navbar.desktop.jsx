@@ -41,15 +41,6 @@ const DesktopNavbar = () => {
 						Blog
 					</NavLink>
 				</li>
-				<li className="nav__item">
-					<NavLink
-						activeClassName="active"
-						to="/elements"
-						className="nav__link"
-					>
-						elements
-					</NavLink>
-				</li>
 			</ul>
 			<ul className="nav__list">
 				<RenderAuth menu="nav" />

@@ -1,12 +1,15 @@
-import Header from "./components/header";
-import { Section } from "../../sections/empty.jsx";
+import Header from "./elements/header";
+import Privilege from "./elements/home.privilege";
+import Features from "./elements/home.features";
+import End from "./elements/home.end";
+
 const Hero = () => {
   return (
     <>
       <Header />
-      <Section />
-      <Section />
-      <Section />
+      <Privilege />
+      <Features />
+      <End />
     </>
   );
 };

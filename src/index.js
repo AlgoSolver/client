@@ -7,7 +7,6 @@ import { theme } from "./utils/theme";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
-import { ReactQueryDevtools } from "react-query/devtools";
 import client from "./hooks";
 
 ReactDOM.render(
@@ -16,7 +15,6 @@ ReactDOM.render(
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Toaster />
-			<ReactQueryDevtools initialIsOpen={false} />
 			<App />
 		</ThemeProvider>
 	</QueryClientProvider>,

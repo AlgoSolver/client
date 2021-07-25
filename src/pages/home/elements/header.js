@@ -323,7 +323,7 @@ const Navbar = () => {
         <div className="nav__links">
           <ul className="nav__list list1">
             <li className="nav__item">
-              <Link to="/playground" className="nav__link">
+              <Link to="/playground/new/empty" className="nav__link">
                 playground
               </Link>
             </li>
@@ -340,11 +340,6 @@ const Navbar = () => {
             <li className="nav__item">
               <Link to="/blog" className="nav__link">
                 Blog
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link to="/elements" className="nav__link">
-                elements
               </Link>
             </li>
           </ul>
@@ -412,7 +407,7 @@ const NavMenu = () => {
               <div className="menu__body">
                 <ul className="menu__list list1">
                   <li className="menu__item">
-                    <Link to="/playground" className="menu__link">
+                    <Link to="/playground/new/empty" className="menu__link">
                       playground
                     </Link>
                   </li>
@@ -431,11 +426,7 @@ const NavMenu = () => {
                       Blog
                     </Link>
                   </li>
-                  <li className="menu__item">
-                    <Link to="/elements" className="menu__link">
-                      elements
-                    </Link>
-                  </li>
+                 
                 </ul>
                 <ul className="menu__list">
                   <li className="menu__item">

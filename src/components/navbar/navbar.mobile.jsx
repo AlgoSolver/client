@@ -43,7 +43,7 @@ const MobileNavbar = () => {
                       onClick={close}
                       to="/playground"
                       className="menu__link"
-                    >
+                    > 
                       playground
                     </NavLink>
                   </li>
@@ -77,16 +77,7 @@ const MobileNavbar = () => {
                       Blog
                     </NavLink>
                   </li>
-                  <li className="menu__item">
-                    <NavLink
-                      activeClassName="active"
-                      onClick={close}
-                      to="/elements"
-                      className="menu__link"
-                    >
-                      elements
-                    </NavLink>
-                  </li>
+                  
                 </ul>
                 <ul className="menu__list">
                   <RenderAuth close={close} />
