@@ -7,7 +7,7 @@ import Text from '../../../components/Text';
 
 const EndContainer = styled.div`
     padding:2rem;
-    background: ${({theme})=>theme.gradients[6]};
+    background: ${({theme})=>theme.gradients[0]};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +24,7 @@ const EndContainer = styled.div`
 const End  = () =>{
     return <EndContainer>
         <Text type="h1" bold color="light">
-            What are you wating for
+            What you are wating for
         </Text>
         <div className="row">
         <Text type="h4" color="light">

@@ -6,11 +6,13 @@ import thinking from '../../../assets/images/thinking.svg'
 
 const BoxContainer = styled.div`
     display: flex;
-    gap:1.5rem;
+    gap:2rem;
     padding:2rem;
+    padding-bottom: 6rem;
     flex-wrap: wrap;
     .box{
-        background:${({theme})=>theme.colors.yellow[5]};
+        background:${({theme})=>theme.colors.light[4]};
+        box-shadow:${({theme})=>theme.elevation[4].shadow};
         padding:2rem;
         border-radius: 1rem;
         flex:1;
@@ -27,7 +29,7 @@ const BoxContainer = styled.div`
     }
 `
 const PrivilegeContainer = styled.div`
-    background-color: ${({theme})=>theme.colors.light[0]};
+    background-color: ${({theme})=>theme.colors.light[2]};
    
 `
 
@@ -35,10 +37,10 @@ const Box = ({data})=>{
     return <div className="box">
         <div className="box__img"><img src={data.img} alt="" /></div>
         <div className="box__body">
-                <Text type="h2">
+                <Text type="h3" bold>
                     {data.title}
                 </Text>
-                <Text type="h4">
+                <Text type="p">
                     {data.body}
                 </Text>
         </div>

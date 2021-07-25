@@ -11,12 +11,12 @@ import { ArrowRight } from "../../../assets/icons/";
 
 const data=[
     {
-        title:"Tutotrials",
+        title:"Tutorials",
         body:`Practicing different tracks is a very powerful feature that will make the beginners feel comfortable with the coding, comfortable with the data-structure, comfortable with problem solving techniques. \nTutorials are supposed to help computer science students, competitive programmers to
         learn, apply and be more comfortable reading and writing algorithms and data structures
         solutions to the problems they face in their daily work in software development.`,
         img:graph,
-        button:"Go to Tutotrials",
+        button:"Go to Tutorials",
         to:"/practise"
     },
     {
@@ -58,13 +58,19 @@ const data=[
 ]
 
 const FeaturesContainer = styled.div`
-        padding:4rem 0;
+        background: ${({theme})=>theme.colors.light[4]};
 
 
 `
 const FeatureSectionContainer = styled.div`
+        > .right{
+            background: ${({theme})=>theme.colors.light[2]};
+        }
+        > .left{
+            background: ${({theme})=>theme.colors.light[4]};
+        }
     .feature{
-        padding:4rem 0;
+        padding:7rem 0;
         display: flex;
         flex-wrap: wrap;
         gap:4rem;
@@ -79,7 +85,7 @@ const FeatureSectionContainer = styled.div`
             display: flex;
             justify-content: center;
             img{
-                height:60vh;
+                height:400px;
                 width:100%;
             }
             flex:1
@@ -91,10 +97,12 @@ const FeatureSectionContainer = styled.div`
 
 `
 const FeatureSection = ({data,dir="left"})=>{
-    return <div className={"feature " + dir}>
+    return <div className={dir}>
+    <div className="wrapper">
+        <div className={"feature " + dir}>
         <div className="feature__text">
             <div>
-            <Text type="h1">
+            <Text type="h1" bold>
                 {data.title}
             </Text>
             <Text type="h4">
@@ -113,6 +121,8 @@ const FeatureSection = ({data,dir="left"})=>{
             <img src={data.img}  alt="" />
         </div>
     </div>
+    </div>
+    </div>
 }
 const Features = ()=>{
     return <FeaturesContainer>
@@ -120,10 +130,10 @@ const Features = ()=>{
             <Text type="h1" bold>
                 Our Features
             </Text>
+        </div>
             <FeatureSectionContainer>
                 {data.map((item,idx)=><FeatureSection data={item} key={idx} dir={ idx % 2 === 1 ? "right" : "left"} />)}
             </FeatureSectionContainer>
-        </div>
     </FeaturesContainer>
 }
 

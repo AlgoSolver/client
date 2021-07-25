@@ -31,6 +31,9 @@ export const checkErrors = (type, errors) => {
     if (errors.username.type === "maxLength") {
       return "username is too long, username must be at max 32 characters";
     }
+    if (errors.username.type === "pattern") {
+      return "invalid username";
+    }
   }
   if (type === "password" && errors && errors.password) {
     if (errors.password.type === "required") {

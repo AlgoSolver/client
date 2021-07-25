@@ -48,6 +48,7 @@ const SignupForm = () => {
             required: true,
             minLength: 8,
             maxLength: 32,
+            pattern:/^([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)$/
           })}
           error={checkErrors("username", errors)}
           big

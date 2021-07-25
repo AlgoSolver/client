@@ -39,7 +39,7 @@ const HeaderContainer = styled.header`
   }
 
   .custom-shape-divider-bottom-1611325617 .shape-fill {
-    fill: ${({ theme }) => theme.colors.light[0]};
+    fill: ${({ theme }) => theme.colors.light[2]};
   }
 
   /** For mobile devices **/
