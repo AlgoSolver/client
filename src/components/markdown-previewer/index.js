@@ -526,7 +526,7 @@ const GithubContainer = styled.div`
   }
 
   pre {
-    background-color: rgb(45, 45, 45);
+    background-color: #1D1F21;
     border: 1px solid #cccccc;
     font-size: 1.4rem;
     line-height: 19px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Text from "../../../components/Text";
+import { RenderedMarkdown } from "../../../components/markdown-previewer";
 
 const ProblemSolutionContainer = styled.div`
   background: ${({ theme }) => theme.colors.light[4]};
@@ -8,12 +8,10 @@ const ProblemSolutionContainer = styled.div`
   padding: 2rem;
 `;
 
-export const ProblemSolution = () => {
+export const ProblemSolution = ({content}) => {
   return (
     <ProblemSolutionContainer>
-      <Text type="h3" center>
-        Solution
-      </Text>
+      <RenderedMarkdown content={content} />
     </ProblemSolutionContainer>
   );
 };

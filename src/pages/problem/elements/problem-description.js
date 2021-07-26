@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MarkdownPreviewer from "../../../components/markdown-previewer";
+import { RenderedMarkdown } from "../../../components/markdown-previewer";
 
 const ProblemDescriptionContainer = styled.div`
   background: ${({ theme }) => theme.colors.light[4]};
@@ -11,7 +11,7 @@ const ProblemDescriptionContainer = styled.div`
 export const ProblemDescription = ({ content }) => {
   return (
     <ProblemDescriptionContainer>
-      <MarkdownPreviewer content={content} />
+      <RenderedMarkdown content={content} />
     </ProblemDescriptionContainer>
   );
 };

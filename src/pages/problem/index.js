@@ -72,13 +72,13 @@ const ProblemContainer = styled.div`
   overflow: auto;
 `;
 
-const ProblemRoutes = ({ description }) => {
+const ProblemRoutes = ({ problem }) => {
   return (
     <ProblemContainer>
       <Tabs />
       <Routes>
-        <Route path="solution" element={<ProblemSolution />} />
-        <Route path="description" element={<ProblemDescription content={description} />} />
+        <Route path="solution" element={<ProblemSolution content={problem.editorial || "This proplem does't have a solution yet."}/>} />
+        <Route path="description" element={<ProblemDescription content={problem.description} />} />
         <Route path="submissions" element={<ProblemSubmissions />} />
         <Route path="*" element={<Navigate to="description" />} />
       </Routes>
@@ -117,7 +117,7 @@ const Problem = () => {
     <PlaygroungWrapper>
       <Head title={data?.title} />
       <Resizable direction="horizontal">
-        <ProblemRoutes description={data.description} />
+        <ProblemRoutes problem={data} />
       </Resizable>
       <Editor id={id} />
     </PlaygroungWrapper>
