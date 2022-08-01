@@ -14,7 +14,7 @@
     "draftjs-to-html": "^0.9.1",
     "framer-motion": "^3.2.0",
     "history": "^5.0.0",
-    "marked": "^2.0.0",
+    "marked": "^4.0.10",
     "mini-create-react-context": "^0.4.1",
     "npm": "^7.21.0",
     "react": "^17.0.1",
